@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-firebase-authentication.json",
+  "type": "object",
+  "title": "GCP Firebase Configuration",
+  "description": "Configuration for authenticating with your Firestore databse",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "$ref": "../types/gcp-infrastructure-firestore.json"
+        },
+        "authentication": {
+          "title": "Authentication",
+          "type": "object",
+          "required": [
+            "firebase_config"
+          ],
+          "properties": {
+            "firebase_config": {
+              "type": "object",
+              "title": "Firebase Config",
+              "description": "Firebase configuration object",
+              "required": [
+                "apiKey",
+                "appId",
+                "authDomain",
+                "databaseUrl",
+                "measurementId",
+                "messageSenderId",
+                "projectId",
+                "storageBucket"
+              ],
+              "properties": {
+                "apiKey": {
+                  "type": "string",
+                  "title": "API KEY"
+                },
+                "appId": {
+                  "type": "string",
+                  "title": "App ID"
+                },
+                "authDomain": {
+                  "type": "string",
+                  "title": "Auth Domain"
+                },
+                "databaseUrl": {
+                  "type": "string",
+                  "title": "Database URL"
+                },
+                "measurementId": {
+                  "type": "string",
+                  "title": "Measurement ID"
+                },
+                "messageSenderId": {
+                  "type": "string",
+                  "title": "Message Sender ID"
+                },
+                "projectId": {
+                  "type": "string",
+                  "title": "Project ID"
+                },
+                "storageBucket": {
+                  "type": "string",
+                  "title": "Storage Bucket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}

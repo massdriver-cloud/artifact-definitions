@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/azure-service-principal.json",
+  "$md": {
+    "defaultTargetConnectionGroup": "credentials",
+    "defaultTargetConnectionGroupLabel": "Azure",
+    "importing": {
+      "group": "authentication"
+    },
+    "diagram": {
+      "isLinkable": false
+    }
+  },
+  "type": "object",
+  "title": "Azure Service Principal",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "client_id",
+        "tenant_id",
+        "client_secret",
+        "subscription_id"
+      ],
+      "properties": {
+        "tenant_id": {
+          "type": "string",
+          "title": "Tenant ID"
+        },
+        "client_id": {
+          "type": "string",
+          "title": "Client ID"
+        },
+        "client_secret": {
+          "type": "string",
+          "title": "Client Secret"
+        },
+        "subscription_id": {
+          "type": "string",
+          "title": "Subscription ID"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {}
+    }
+  }
+}

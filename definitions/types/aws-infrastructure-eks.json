@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS EKS infrastructure config",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "arn",
+    "oidc_provider_arn"
+  ],
+  "properties": {
+    "arn": {
+      "$ref": "./aws-arn.json"
+    },
+    "oidc_provider_arn": {
+      "$ref": "./aws-arn.json"
+    }
+  }
+}

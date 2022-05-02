@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-pubusb-subscription.json",
+  "type": "object",
+  "title": "GCP PubSub Subscription",
+  "description": "GCP PubSub Subscription",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["data", "specs"],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": ["infrastructure", "security"],
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "description": "PubSub subscription configuration",
+          "type": "object",
+          "$ref": "../types/gcp-infrastructure-pubsub-subscription.json"
+        },
+        "security": {
+          "title": "Access roles",
+          "type": "object",
+          "properties": {
+            "roles": {
+              "title": "Access roles mapped to GCP roles",
+              "type": "object",
+              "$ref": "../types/gcp-roles.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "subscription": {
+          "$ref": "../specs/subscription.json"
+        }
+      }
+    }
+  }
+}

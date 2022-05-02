@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Relational database specs",
+  "description": "Common metadata for relational databases.",
+  "examples": [
+    {
+      "engine": "postgresql",
+      "engine_version": "10.14",
+      "version": "10.14"
+    },
+    {
+      "engine": "mysql",
+      "engine_version": "5.7.mysql_aurora.2.03.2",
+      "version": "5.7"
+    }
+  ],
+  "required": [
+    "engine",
+    "version"
+  ],
+  "properties": {
+    "engine": {
+      "$id": "#/properties/engine",
+      "type": "string",
+      "title": "Engine",
+      "description": "The type of database server.",
+      "examples": [
+        "postgresql",
+        "mysql"
+      ]
+    },
+    "engine_version": {
+      "$id": "#/properties/version",
+      "type": "string",
+      "title": "Engine Version",
+      "description": "The cloud provider's database version.",
+      "examples": [
+        "5.7.mysql_aurora.2.03.2"
+      ]
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "string",
+      "title": "Version",
+      "description": "The database version.",
+      "default": "",
+      "examples": [
+        "12.2",
+        "5.7"
+      ]
+    }
+  }
+}

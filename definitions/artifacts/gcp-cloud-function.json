@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-cloud-function.json",
+  "type": "object",
+  "title": "GCP Cloud Function",
+  "description": "GCP Cloud Function",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "security"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "description": "Cloud Function infrastructure configuration",
+          "type": "object",
+          "$ref": "../types/gcp-infrastructure-cloud-function.json"
+        },
+        "security": {
+          "title": "Access roles",
+          "type": "object",
+          "properties": {
+            "roles": {
+              "title": "Access roles mapped to GCP roles",
+              "type": "object",
+              "$ref": "../types/gcp-roles.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}

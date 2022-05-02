@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schemas.massdriver.cloud/definitions/types/mongo-authentication.json",
+  "title": "Mongo Authentication",
+  "description": "Mongo connection string",
+  "additionalProperties": false,
+  "required": ["connection_string"],
+  "properties": {
+    "connection_string": {
+      "type": "string"
+    }
+  }
+}

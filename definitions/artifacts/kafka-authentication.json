@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/kafka-authentication.json",
+  "type": "object",
+  "title": "AWS MSK Cluster",
+  "description": "Highly scalable event bus managed by AWS.",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authenication",
+        "security"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "description": "Cloud specific kafka configuration data",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-kafka.json"
+            }
+          ]
+        },
+        "authenication": {
+          "$ref": "../types/kafka-authenication.json"
+        },
+        "security": {
+          "oneOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            }
+          ]
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "kafka": {
+          "$ref": "../specs/kafka.json"
+        }
+      }
+    }
+  }
+}

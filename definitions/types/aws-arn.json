@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "AWS ARN",
+  "description": "Amazon Resource Name",
+  "examples": [
+    "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+    "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+  ]
+}

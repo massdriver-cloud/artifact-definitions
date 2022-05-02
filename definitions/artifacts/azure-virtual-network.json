@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/azure-virtual-network.json",
+  "$md": {
+    "defaultTargetConnectionGroup": "networking",
+    "defaultTargetConnectionGroupLabel": "Azure",
+    "importing": {
+      "group": "networking"
+    }
+  },
+  "type": "object",
+  "title": "Massdriver Virtual Network (Azure)",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "observability"
+      ],
+      "properties": {
+        "observability": {
+          "title": "Observability configuration",
+          "required": [
+            "alarm_monitor_action_group_ari"
+          ],
+          "type": "object",
+          "properties": {
+            "alarm_monitor_action_group_ari": {
+              "$ref": "../types/azure-resource-id.json"
+            }
+          }
+        },
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "required": [
+            "vnet_id",
+            "cidr",
+            "resource_group",
+            "subnet_id"
+          ],
+          "type": "object",
+          "properties": {
+            "vnet_id": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "cidr": {
+              "$ref": "../types/cidr.json"
+            },
+            "resource_group": {
+              "$ref": "../types/azure-resource-group.json"
+            },
+            "subnet_id": {
+              "$ref": "../types/azure-resource-id.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
+    }
+  }
+}

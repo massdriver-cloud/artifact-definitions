@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-bucket-https.json",
+  "type": "object",
+  "title": "GCP HTTPS Bucket",
+  "description": "",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "security"
+      ],
+      "properties": {
+        "infrastructure": {
+          "$ref": "../types/gcp-infrastructure-load-balancer.json"
+        },
+        "security": {
+          "$ref": "../types/gcp-security.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}

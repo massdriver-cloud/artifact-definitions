@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS Security information",
+  "description": "Informs downstream services of ports to open for communication",
+  "additionalProperties": false,
+  "required": [
+    "groups"
+  ],
+  "properties": {
+    "groups": {
+      "type": "object",
+      "title": "AWS Security Group information",
+      "description": "Informs downstream services of ports to open for communication",
+      "patternProperties": {
+        "^.*$": {
+          "type": "object",
+          "required": [
+            "arn",
+            "port",
+            "protocol"
+          ],
+          "properties": {
+            "arn": {
+              "$ref": "./aws-arn.json"
+            },
+            "port": {
+              "type": "number"
+            },
+            "protocol": {
+              "type": "string",
+              "enum": [
+                "tcp",
+                "udp"
+              ]
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

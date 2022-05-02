@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "GCP Resource Name (GRN)",
+  "description": "GCP Resource Name (GRN)",
+  "examples": [
+    "projects/my-project/locations/us-central1/instances/my-instance"
+  ]
+}
+  

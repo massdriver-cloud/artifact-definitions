@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "GCP Region",
+  "description": "GCP region",
+  "examples": [
+    "us-west2"
+  ],
+  "enum": [
+    "us-east1",
+    "us-east4",
+    "us-west1",
+    "us-west2",
+    "us-west3",
+    "us-west4",
+    "us-central1"
+  ]
+} 

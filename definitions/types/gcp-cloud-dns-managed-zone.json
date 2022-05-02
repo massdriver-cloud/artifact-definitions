@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP Cloud DNS Managed Zone",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "Managed Zone Name"
+    }
+  }
+}

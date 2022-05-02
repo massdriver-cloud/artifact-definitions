@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/rdbms-authentication.json",
+  "$md": {
+    "importing": {
+      "group": "data"
+    }
+  },
+  "type": "object",
+  "title": "RDBMS Connection String",
+  "description": "Relational Database Connection String",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "properties": {
+        "security": {
+          "title": "Security details",
+          "description": "TBD",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            },
+            {
+              "$ref": "../types/azure-security.json"
+            },
+            {
+              "$ref": "../types/gcp-security.json"
+            }
+          ]
+        },
+        "infrastructure": {
+          "title": "Cloud provider details",
+          "description": "Cloud specific RDBMS configuration data.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-rds.json"
+            },
+            {
+              "$ref": "../types/gcp-infrastructure-cloudsql.json"
+            },
+            {
+              "$ref": "../types/arm-infrastructure-database.json"
+            }
+          ]
+        },
+        "authentication": {
+          "title": "Authentication details",
+          "type": "object",
+          "required": [
+            "username",
+            "password",
+            "hostname",
+            "port"
+          ],
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "hostname": {
+              "type": "string"
+            },
+            "port": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 65535
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rdbms"
+      ],
+      "properties": {
+        "rdbms": {
+          "$ref": "../specs/rdbms.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS specific infrastructure infromation for Kafka",
+  "description": "AWS resource name for kafka resources",
+  "additionalProperties": false,
+  "required": ["arn"],
+  "properties": {
+    "arn": {
+      "$ref": "./aws-arn.json"
+    }
+  }
+}

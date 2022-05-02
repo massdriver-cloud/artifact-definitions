@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/kubernetes-cluster.json",
+  "$md": {
+    "defaultTargetConnectionGroup": "credentials",
+    "defaultTargetConnectionGroupLabel": "Kubernetes",
+    "importing": {
+      "fileUploadType": "yaml",
+      "group": "authentication",
+      "fileUploadArtifactDataPath": [
+        "data",
+        "authentication"
+      ]
+    }
+  },
+  "type": "object",
+  "title": "Kubernetes Cluster",
+  "description": "Kubernetes cluster authentication and cloud-specific configuration.",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Cloud provider configuration",
+          "description": "Cloud specific Kubernetes configuration data.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-eks.json"
+            },
+            {
+              "$ref": "../types/azure-infrastructure-aks.json"
+            },
+            {
+              "$ref": "../types/gcp-infrastructure-gke.json"
+            }
+          ]
+        },
+        "authentication": {
+          "type": "object",
+          "required": [
+            "cluster",
+            "user"
+          ],
+          "properties": {
+            "cluster": {
+              "type": "object",
+              "required": [
+                "server",
+                "certificate-authority-data"
+              ],
+              "properties": {
+                "server": {
+                  "type": "string"
+                },
+                "certificate-authority-data": {
+                  "type": "string"
+                }
+              }
+            },
+            "user": {
+              "type": "object",
+              "required": [
+                "token"
+              ],
+              "properties": {
+                "token": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "properties": {
+        "kubernetes": {
+          "$ref": "../specs/kubernetes.json"
+        }
+      }
+    }
+  }
+}
