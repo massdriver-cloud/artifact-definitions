@@ -9,6 +9,10 @@
     },
     "diagram": {
       "isLinkable": false
+    },
+    "containerRepositories": {
+      "label": "ACR",
+      "cloud": "Azure"
     }
   },
   "type": "object",

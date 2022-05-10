@@ -9,6 +9,10 @@
     },
     "diagram": {
       "isLinkable": false
+    },
+    "containerRepositories": {
+      "label": "ECR",
+      "cloud": "AWS"
     }
   },
   "type": "object",
