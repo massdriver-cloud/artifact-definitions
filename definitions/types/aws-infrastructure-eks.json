@@ -6,14 +6,14 @@
   "additionalProperties": false,
   "required": [
     "arn",
-    "oidc_provider_arn"
+    "oidc_issuer_url"
   ],
   "properties": {
     "arn": {
       "$ref": "./aws-arn.json"
     },
-    "oidc_provider_arn": {
-      "$ref": "./aws-arn.json"
+    "oidc_issuer_url": {
+      "$ref": "./https-url.json"
     }
   }
 }
