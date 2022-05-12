@@ -4,10 +4,31 @@
   "title": "Mongo Authentication",
   "description": "Mongo connection string",
   "additionalProperties": false,
-  "required": ["connection_string"],
+  "required": [
+    "connection_string",
+    "username",
+    "password",
+    "hostname",
+    "port"
+  ],
   "properties": {
     "connection_string": {
       "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "port": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
     }
   }
+}
 }
