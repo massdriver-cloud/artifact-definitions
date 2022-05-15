@@ -5,16 +5,12 @@
   "description": "Mongo connection string",
   "additionalProperties": false,
   "required": [
-    "connection_string",
     "username",
     "password",
     "hostname",
     "port"
   ],
   "properties": {
-    "connection_string": {
-      "type": "string"
-    },
     "username": {
       "type": "string"
     },
@@ -30,5 +26,4 @@
       "maximum": 65535
     }
   }
-}
 }
