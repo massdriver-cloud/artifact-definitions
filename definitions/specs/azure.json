@@ -7,6 +7,9 @@
     "properties": {
       "region": {
         "$ref": "../types/azure-region.json"
+      },
+      "dfs_endpoint": {
+        "$ref": "../types/azure-dfs.json"
       }
     }
   }
