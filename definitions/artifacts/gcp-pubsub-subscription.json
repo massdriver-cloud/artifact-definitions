@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-pubsub-subscription.json",
-  "type": "object",
-  "title": "GCP PubSub Subscription",
-  "description": "GCP PubSub Subscription",
   "$md": {
+    "access": "public",
     "importing": {
       "group": "data"
     }
   },
+  "type": "object",
+  "title": "GCP PubSub Subscription",
+  "description": "GCP PubSub Subscription",
   "additionalProperties": false,
   "required": ["data", "specs"],
   "properties": {

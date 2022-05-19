@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-regional-cloud.json",
   "$md": {
+    "access": "public",
     "defaultTargetConnectionGroup": "networking",
     "defaultTargetConnectionGroupLabel": "GCP",
     "importing": {

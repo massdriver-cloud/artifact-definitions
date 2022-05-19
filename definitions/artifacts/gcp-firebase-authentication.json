@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-firebase-authentication.json",
-  "type": "object",
-  "title": "GCP Firebase Configuration",
-  "description": "Configuration for authenticating with your Firestore databse",
   "$md": {
+    "access": "public",
     "importing": {
       "group": "data"
     }
   },
+  "type": "object",
+  "title": "GCP Firebase Configuration",
+  "description": "Configuration for authenticating with your Firestore databse",
   "additionalProperties": false,
   "required": [
     "data",

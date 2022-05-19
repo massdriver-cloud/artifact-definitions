@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/kafka-authentication.json",
-  "type": "object",
-  "title": "AWS MSK Cluster",
-  "description": "Highly scalable event bus managed by AWS.",
   "$md": {
+    "access": "public",
     "importing": {
       "group": "data"
     }
   },
+  "type": "object",
+  "title": "AWS MSK Cluster",
+  "description": "Highly scalable event bus managed by AWS.",
   "additionalProperties": false,
   "required": [
     "data",
