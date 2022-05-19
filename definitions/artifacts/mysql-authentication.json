@@ -49,10 +49,10 @@
               "$ref": "../types/aws-infrastructure-rds.json"
             },
             {
-              "$ref": "../types/gcp-infrastructure-cloudsql.json"
+              "$ref": "../types/azure-infrastructure-database.json"
             },
             {
-              "$ref": "../types/arm-infrastructure-database.json"
+              "$ref": "../types/gcp-infrastructure-cloudsql.json"
             }
           ]
         },

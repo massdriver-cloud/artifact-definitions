@@ -5,10 +5,10 @@
     "description": "",
     "additionalProperties": false,
     "required": [
-      "id"
+      "ari"
     ],
     "properties": {
-      "id": {
+      "ari": {
         "$ref": "./azure-resource-id.json"
       }
     }
