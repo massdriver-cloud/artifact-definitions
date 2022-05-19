@@ -1,6 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/mongo-authentication.json",
+  "$md": {
+    "access": "public"
+  },
   "type": "object",
   "title": "mongo Cluster",
   "description": "mongo cluster authentication and cloud-specific configuration.",

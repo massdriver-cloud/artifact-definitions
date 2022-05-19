@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/env-file.json",
-  "type": "object",
-  "title": "Environment Variables",
-  "description": "A JSONified list of environment variables.",
   "$md": {
+    "access": "public",
     "importing": {
       "group": "data"
     }
   },
+  "type": "object",
+  "title": "Environment Variables",
+  "description": "A JSONified list of environment variables.",
   "required": [
     "data",
     "specs"

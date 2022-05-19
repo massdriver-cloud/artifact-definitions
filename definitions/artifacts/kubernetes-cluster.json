@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/kubernetes-cluster.json",
   "$md": {
+    "access": "public",
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "Kubernetes",
     "importing": {
