@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://schemas.massdriver.cloud/definitions/specs/azure.json",
+    "type": "object",
+    "title": "Azure Artifact Specs",
+    "description": "",
+    "required": [
+      "region"
+    ],
+    "properties": {
+      "region": {
+        "$ref": "../types/azure-region.json"
+      }
+    }
+  }
+  
