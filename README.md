@@ -146,6 +146,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 ```json
 {
   "$md": {
+    "access": "public",
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "Kubernetes",
     "importing": {
@@ -157,6 +158,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 }
 ```
 
+* access - `public` or `private` access to this definition.
 * defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
 * defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts
 * importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication
