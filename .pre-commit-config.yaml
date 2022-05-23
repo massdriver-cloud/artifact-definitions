@@ -11,6 +11,7 @@ repos:
 - repo: https://github.com/python-jsonschema/check-jsonschema
   rev: 0.15.0
   hooks:
+    - id: check-github-workflows
     - id: check-jsonschema
       name: "Check Artifacts Valid JSON Schema"
       files: ^definitions/
