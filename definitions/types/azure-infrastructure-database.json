@@ -5,10 +5,10 @@
   "description": "",
   "additionalProperties": false,
   "required": [
-    "id"
+    "ari"
   ],
   "properties": {
-    "id": {
+    "ari": {
       "type": "string"
     }
   }
