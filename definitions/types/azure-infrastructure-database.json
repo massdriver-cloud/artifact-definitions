@@ -9,7 +9,7 @@
   ],
   "properties": {
     "ari": {
-      "type": "string"
+      "$ref": "./azure-resource-id.json"
     }
   }
 }
