@@ -66,7 +66,7 @@ Example:
 
 AWS EKS generates a cluster admin credential for Kubernetes. Applications deploy to kubernetes, not EKS.
 
-The AWS EKS bundle should emit _two_ artifacts: 
+The AWS EKS bundle should emit _two_ artifacts:
 
 * `aws-eks-cluster` - This is used to connect infrastructure that _does not_ need k8s credentials
 * `k8s-cluster` - This is used to connect applications that _do_ need credentials
@@ -121,7 +121,7 @@ Types are a way to create composable infrastructure that is consistent across bu
 * Types _must_ be scoped by their 'cloud' if cloud specific. e.g.: `aws-`, `gcp-`, `k8s-`
 * Types that are not cloud specific, must _not_ be scoped. e.g.: `cidr`
 * Types _may_ be scalar definitions designed for reuse of descriptions, validations, etc. e.g.: `cidr.json` defines CIDR ranges
-* Types _must_ be sub-scoped if the represent a reusable `object` in artifacts. 
+* Types _must_ be sub-scoped if the represent a reusable `object` in artifacts.
   * e.g.: `aws-infrastructure-` should be used for configurations placed under `data.infrastructure` in AWS artifacts
   * e.g.: `gcp-security-` should be used for configurations placed under `data.security` in GCP artifacts
 
@@ -139,7 +139,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
       "fileUploadType": "json",
       "fileUploadArtifactDataPath": ["data"],
       "group": "authentication"
-    } 
+    }
   }
 }
 ```
@@ -154,7 +154,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
       "fileUploadType": "yaml",
       "fileUploadArtifactDataPath": ["data", "authentication"],
       "group": "authentication"
-    } 
+    }
   }
 }
 ```

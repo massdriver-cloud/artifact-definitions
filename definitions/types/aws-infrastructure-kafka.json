@@ -4,7 +4,9 @@
   "title": "AWS specific infrastructure infromation for Kafka",
   "description": "AWS resource name for kafka resources",
   "additionalProperties": false,
-  "required": ["arn"],
+  "required": [
+    "arn"
+  ],
   "properties": {
     "arn": {
       "$ref": "./aws-arn.json"
