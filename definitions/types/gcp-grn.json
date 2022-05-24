@@ -5,9 +5,10 @@
   "description": "GCP Resource Name (GRN)",
   "examples": [
     "projects/<my-project>/locations/<location>/instances/<my-instance>",
-    "projects/<my-project>/locations/<location>/clusters/<my-cluster>"
+    "projects/<my-project>/locations/<location>/clusters/<my-cluster>",
+    "projects/<my-project>/zones/<zone>/instances/<node-pool-id>"
   ],
-  "pattern": "^projects\/[a-z0-9-]*\/locations\/[a-z0-9-]*\/[a-z0-9-]*\/.*$",
+  "pattern": "^projects\/[a-z0-9-]*\/[a-z]+\/[a-z0-9-]*\/[a-z0-9-]*\/.*$",
   "message": {
     "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
   }
