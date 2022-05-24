@@ -4,7 +4,11 @@
   "title": "GCP Resource Name (GRN)",
   "description": "GCP Resource Name (GRN)",
   "examples": [
-    "projects/my-project/locations/us-central1/instances/my-instance"
-  ]
+    "projects/<my-project>/locations/<location>/instances/<my-instance>",
+    "projects/<my-project>/locations/<location>/clusters/<my-cluster>"
+  ],
+  "pattern": "^projects\/[a-z0-9-]*\/locations\/[a-z0-9-]*\/[a-z0-9-]*\/.*$",
+  "message": {
+    "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
+  }
 }
-  
