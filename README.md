@@ -10,12 +10,12 @@ Any `cloud` type should be composed of an ID type for that cloud. This type is u
 
 E.g.: AWS VPC should be composed of an AWS ARN type.
 
-Never `$ref` a remote type, always include them in this repo so changes are explicit and reviewable via PR.
+Never `$ref` a remote type, always include them in this repo so changes are explicit and reviewable via PR. Futher `$ref`s are hydrated into the artifact definition and bundles when published as to not introduce side effects by remote refs being changed.
 
 * ./artifact - artifact definitions for Massdriver
 * ./specs - shared specifications for common capabilities provided by an artifact. E.g.: CloudSQL and RDS share the "RDBMS" spec.
   * Specs are also 'non-sensitive' information, thus can be used for filtering and searching in massdriver.
-* ./types - simpler common types that can be reused by many artifacts. Types themselves are _not_ artifacts.
+* ./types - simpler common types that can be reused by many artifacts. Types themselves are _not_ artifact definitions.
 
 ## Artifacts
 
@@ -112,7 +112,7 @@ When creating these artifacts in terraform a local block should be used to elimi
 Artifacts _may_ only forward fields from previous artifacts if the field was immutable. This _must_ only be used if **necessary.**
 
 * OK to forward example: AWS Massdriver Regional Cloud has a `region` field, bundles downstream from the MRC may forward the `region`
-* NOT OK to forward example: AWS Pub/Sub fanout creates an IAM Policy document `foo`, downstream bundles may use `foo` but _must not_ forward it, as the document _may_ change.
+* NOT OK to forward example: AWS Pub/Sub fanout creates an IAM Policy document `foo`, downstream bundles may use `foo` but _must not_ forward it, as the policy's ARN _may_ change if the bundle were to switch which Pub/Sub subscription it is connected to.
 
 ## types
 
