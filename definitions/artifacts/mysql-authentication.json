@@ -77,7 +77,7 @@
               "type": "string"
             },
             "port": {
-              "$ref": "./port.json"
+              "$ref": "../types/port.json"
             }
           }
         }
