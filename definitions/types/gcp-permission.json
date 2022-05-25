@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schemas.massdriver.cloud/definitions/types/gcp-permission.json",
+  "type": "string",
+  "title": "GCP Permission",
+  "description": "Google Cloud Platform permission",
+  "additionalProperties": false,
+  "pattern": "^permission\/.*$",
+  "message": {
+    "pattern": "GCP permissions always start with permission/"
+  }
+}
