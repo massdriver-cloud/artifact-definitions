@@ -22,12 +22,15 @@
           ],
           "properties": {
             "arn": {
+              "title": "Security Group ARN",
               "$ref": "./aws-arn.json"
             },
             "port": {
-              "type": "number"
+              "title": "Network Port",
+              "$ref": "./port.json"
             },
             "protocol": {
+              "title": "Network Protocol",
               "type": "string",
               "enum": [
                 "tcp",
