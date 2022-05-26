@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "Subdomain",
+  "description": "GCP Cloud DNS Subdomain",
+  "examples": [
+    "api",
+    "assets",
+    "another-valid-path",
+    "*"
+  ],
+  "minLength": 1,
+  "maxLength": 60,
+  "pattern": "^[a-z-*]+$",
+  "message": {
+    "pattern": "The provided subdomain does not match the pattern. Lowercase letters, dashes, and an astrix are allowed."
+  }
+}
