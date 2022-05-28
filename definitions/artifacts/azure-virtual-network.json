@@ -10,7 +10,7 @@
     }
   },
   "type": "object",
-  "title": "Massdriver Virtual Network (Azure)",
+  "title": "Azure Virtual Network",
   "description": "",
   "additionalProperties": false,
   "required": [
