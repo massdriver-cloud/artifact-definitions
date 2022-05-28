@@ -111,7 +111,9 @@ When creating these artifacts in terraform a local block should be used to elimi
 
 Artifacts _may_ only forward fields from previous artifacts if the field was immutable. This _must_ only be used if **necessary.**
 
-* OK to forward example: AWS VPC has a `region` field, bundles downstream from the MRC may forward the `region`
+
+* OK to forward example: AWS VPC has a `region` field, bundles downstream from the VPC may forward the `region`
+
 * NOT OK to forward example: AWS Pub/Sub fanout creates an IAM Policy document `foo`, downstream bundles may use `foo` but _must not_ forward it, as the policy's ARN _may_ change if the bundle were to switch which Pub/Sub subscription it is connected to.
 
 ## types
