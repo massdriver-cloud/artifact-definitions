@@ -42,7 +42,6 @@
           "required": [
             "vnet_id",
             "cidr",
-            "resource_group",
             "subnet_id"
           ],
           "type": "object",
@@ -52,9 +51,6 @@
             },
             "cidr": {
               "$ref": "../types/cidr.json"
-            },
-            "resource_group": {
-              "$ref": "../types/azure-resource-group.json"
             },
             "subnet_id": {
               "$ref": "../types/azure-resource-id.json"
