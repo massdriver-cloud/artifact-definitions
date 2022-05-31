@@ -17,8 +17,8 @@
       }
     },
     "scope": {
-      "title": "Network Port",
-      "$ref": "./port.json"
+      "title": "IAM Role Scope",
+      "type": "string"
     }
   }
 }
