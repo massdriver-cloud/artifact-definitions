@@ -18,6 +18,7 @@
       "type": "object",
       "required": [
         "infrastructure",
+        "authentication",
         "security"
       ],
       "properties": {
@@ -37,6 +38,19 @@
             },
             "secondary_dfs_endpoint": {
               "$ref": "../types/azure-dfs.json"
+            }
+          }
+        },
+        "authentication": {
+          "title": "Authentication credentials",
+          "type": "object",
+          "required": [
+            "primary_access_key"
+          ],
+          "properties": {
+            "primary_access_key": {
+              "title": "Primary Access Key",
+              "type": "string"
             }
           }
         },
