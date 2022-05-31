@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Azure Security IAM Information",
+  "description": "Informs downstream services of IAM roles required for operation",
+  "additionalProperties": false,
+  "required": [
+    "roles",
+    "scope"
+  ],
+  "properties": {
+    "roles": {
+      "title": "List of Azure IAM roles",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope": {
+      "title": "Network Port",
+      "$ref": "./port.json"
+    }
+  }
+}

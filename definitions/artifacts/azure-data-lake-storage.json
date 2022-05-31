@@ -17,17 +17,62 @@
       "title": "Artifact Data",
       "type": "object",
       "required": [
-        "ari"
+        "infrastructure",
+        "security"
       ],
       "properties": {
-        "ari": {
-          "$ref": "../types/azure-resource-id.json"
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "primary_dfs_endpoint",
+            "secondary_dfs_endpoint"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "primary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            },
+            "secondary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            }
+          }
         },
-        "primary_dfs_endpoint": {
-          "$ref": "../types/azure-dfs.json"
-        },
-        "secondary_dfs_endpoint": {
-          "$ref": "../types/azure-dfs.json"
+        "security": {
+          "title": "Security configuration",
+          "required": [
+            "iam"
+          ],
+          "type": "object",
+          "properties": {
+            "iam": {
+              "title": "IAM configurations",
+              "required": [
+                "read",
+                "write",
+                "read/write",
+                "admin"
+              ],
+              "type": "object",
+              "properties": {
+                "read": {
+                  "$ref": "../types/azure-security-iam.json"
+                },
+                "write": {
+                  "$ref": "../types/azure-security-iam.json"
+                },
+                "read/write": {
+                  "$ref": "../types/azure-security-iam.json"
+                },
+                "admin": {
+                  "$ref": "../types/azure-security-iam.json"
+                }
+              }
+            }
+          }
         }
       }
     },
