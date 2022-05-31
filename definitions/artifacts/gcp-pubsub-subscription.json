@@ -11,12 +11,18 @@
   "title": "GCP PubSub Subscription",
   "description": "GCP PubSub Subscription",
   "additionalProperties": false,
-  "required": ["data", "specs"],
+  "required": [
+    "data",
+    "specs"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
@@ -26,15 +32,8 @@
           "$ref": "../types/gcp-infrastructure-pubsub-subscription.json"
         },
         "security": {
-          "title": "Access roles",
-          "type": "object",
-          "properties": {
-            "roles": {
-              "title": "Access roles mapped to GCP roles",
-              "type": "object",
-              "$ref": "../types/gcp-roles.json"
-            }
-          }
+          "title": "GCP Security configuration",
+          "$ref": "../types/security.json"
         }
       }
     },

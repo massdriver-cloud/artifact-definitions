@@ -27,19 +27,7 @@
       "properties": {
         "security": {
           "title": "Security details",
-          "description": "TBD",
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            },
-            {
-              "$ref": "../types/azure-security.json"
-            },
-            {
-              "$ref": "../types/gcp-security.json"
-            }
-          ]
+          "$ref": "../types/security.json"
         },
         "infrastructure": {
           "title": "Cloud provider details",

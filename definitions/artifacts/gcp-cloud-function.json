@@ -32,15 +32,8 @@
           "$ref": "../types/gcp-infrastructure-cloud-function.json"
         },
         "security": {
-          "title": "Access roles",
-          "type": "object",
-          "properties": {
-            "roles": {
-              "title": "Access roles mapped to GCP roles",
-              "type": "object",
-              "$ref": "../types/gcp-roles.json"
-            }
-          }
+          "title": "GCP Security configuration",
+          "$ref": "../types/security.json"
         }
       }
     },
