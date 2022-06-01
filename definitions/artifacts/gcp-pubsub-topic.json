@@ -11,12 +11,18 @@
   "title": "GCP PubSub Topic",
   "description": "GCP PubSub Topic",
   "additionalProperties": false,
-  "required": ["data", "specs"],
+  "required": [
+    "data",
+    "specs"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
@@ -26,25 +32,17 @@
           "$ref": "../types/gcp-infrastructure-pubsub-topic.json"
         },
         "security": {
-          "title": "Access roles",
-          "type": "object",
-          "properties": {
-            "roles": {
-              "title": "Access roles mapped to GCP roles",
-              "type": "object",
-              "$ref": "../types/gcp-roles.json"
-            }
-          }
+          "$ref": "../types/gcp-security.json"
         }
       }
-    },
-    "specs": {
-      "title": "Artifact Specs",
-      "type": "object",
-      "properties": {
-        "topic": {
-          "$ref": "../specs/topic.json"
-        }
+    }
+  },
+  "specs": {
+    "title": "Artifact Specs",
+    "type": "object",
+    "properties": {
+      "topic": {
+        "$ref": "../specs/topic.json"
       }
     }
   }
