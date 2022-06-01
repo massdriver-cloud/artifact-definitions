@@ -14,10 +14,16 @@
         "role": {
           "title": "Role",
           "description": "GCP Role",
-          "pattern": "^roles\/.*$",
+          "pattern": "^roles\/[a-zA-Z\\.]+$",
           "message": {
             "pattern": "Must be a valid GCP Role, e.g. roles/..."
-          }
+          },
+          "examples": [
+            "roles/owner",
+            "roles/redis.editor",
+            "roles/storage.objectCreator",
+            "roles/storage.legacyObjectReader"
+          ]
         },
         "condition": {
           "title": "Condition",
