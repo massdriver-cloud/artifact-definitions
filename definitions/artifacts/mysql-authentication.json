@@ -29,7 +29,7 @@
           "title": "Security details",
           "description": "TBD",
           "type": "object",
-          "oneOf": [
+          "anyOf": [
             {
               "$ref": "../types/aws-security.json"
             },
