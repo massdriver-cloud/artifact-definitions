@@ -35,14 +35,14 @@
           "$ref": "../types/gcp-security.json"
         }
       }
-    }
-  },
-  "specs": {
-    "title": "Artifact Specs",
-    "type": "object",
-    "properties": {
-      "topic": {
-        "$ref": "../specs/topic.json"
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "topic": {
+          "$ref": "../specs/topic.json"
+        }
       }
     }
   }
