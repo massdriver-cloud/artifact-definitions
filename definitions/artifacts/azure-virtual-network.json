@@ -10,7 +10,7 @@
     }
   },
   "type": "object",
-  "title": "Massdriver Virtual Network (Azure)",
+  "title": "Azure Virtual Network",
   "description": "",
   "additionalProperties": false,
   "required": [
@@ -42,8 +42,8 @@
           "required": [
             "vnet_id",
             "cidr",
-            "resource_group",
-            "subnet_id"
+            "default_subnet_id",
+            "delegated_subnets"
           ],
           "type": "object",
           "properties": {
@@ -53,11 +53,32 @@
             "cidr": {
               "$ref": "../types/cidr.json"
             },
-            "resource_group": {
-              "$ref": "../types/azure-resource-group.json"
-            },
-            "subnet_id": {
+            "default_subnet_id": {
               "$ref": "../types/azure-resource-id.json"
+            },
+            "delegated_subnets": {
+              "type": "object",
+              "title": "Delegated subnets",
+              "description": "Map of subnet",
+              "propertyNames": {
+                "pattern": "^Microsoft\\.[a-zA-Z]*\/[a-zA-Z]*$"
+              },
+              "patternProperties": {
+                "^Microsoft\\.[a-zA-Z]*\/[a-zA-Z]*$": {
+                  "type": "object",
+                  "required": [
+                    "subnet_id"
+                  ],
+                  "properties": {
+                    "subnet_id": {
+                      "$ref": "../types/azure-resource-id.json"
+                    },
+                    "private_dns_zone_id": {
+                      "$ref": "../types/azure-resource-id.json"
+                    }
+                  }
+                }
+              }
             }
           }
         }
