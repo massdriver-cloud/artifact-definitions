@@ -32,19 +32,19 @@
           "$ref": "../types/gcp-infrastructure-pubsub-topic.json"
         },
         "security": {
-          "title": "GCP Security configuration",
-          "$ref": "../types/security.json"
-        }
-      }
-    },
-    "specs": {
-      "title": "Artifact Specs",
-      "type": "object",
-      "properties": {
-        "topic": {
-          "$ref": "../specs/topic.json"
+          "$ref": "../types/gcp-security.json"
         }
       }
     }
+  },
+  "specs": {
+    "title": "Artifact Specs",
+    "type": "object",
+    "properties": {
+      "topic": {
+        "$ref": "../specs/topic.json"
+      }
+    }
   }
+}
 }

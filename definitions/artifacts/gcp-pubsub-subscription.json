@@ -32,8 +32,7 @@
           "$ref": "../types/gcp-infrastructure-pubsub-subscription.json"
         },
         "security": {
-          "title": "GCP Security configuration",
-          "$ref": "../types/security.json"
+          "$ref": "../types/gcp-security.json"
         }
       }
     },
