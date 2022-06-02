@@ -1,4 +1,12 @@
 repos:
+- repo: local
+  hooks:
+    - id: fix non-ascii quotes
+      name: fix-non-ascii-quotes
+      language: python
+      entry: scripts/fix-non-ascii-quotes.py
+      types: [json]
+      pass_filenames: true
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.3.0
   hooks:
