@@ -38,7 +38,7 @@
         "external_id": {
           "type": "string",
           "title": "External ID",
-          "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role\u2019s trust policy, allowing the role to be assumed only when a certain value is present in the external ID."
+          "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role's trust policy, allowing the role to be assumed only when a certain value is present in the external ID."
         }
       }
     },

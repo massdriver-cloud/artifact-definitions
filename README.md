@@ -17,6 +17,12 @@ Never `$ref` a remote type, always include them in this repo so changes are expl
   * Specs are also 'non-sensitive' information, thus can be used for filtering and searching in massdriver.
 * ./types - simpler common types that can be reused by many artifacts. Types themselves are _not_ artifacts.
 
+## Development
+Install the pre-commit to ensure our json is pretty and our json schemas valid in tighter development cycles.
+```bash
+pre-commit install
+```
+
 ## Artifacts
 
 Artifacts define connectable pieces of infrastructure in Massdriver. Artifacts that strictly represent infrastructure
