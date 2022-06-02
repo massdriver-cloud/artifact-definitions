@@ -12,8 +12,9 @@ repos:
   hooks:
     - id: check-yaml
     - id: check-json
-    - id: pretty-format-json
-      args: ["--autofix", "--no-sort-keys"]
+    # TODO: re-enable this, for some reason this is causing issues in gh actions removing escape sequences in regex patterns see https://github.com/massdriver-cloud/artifact-definitions/runs/6714761323?check_suite_focus=true
+    #- id: pretty-format-json
+    #  args: ["--autofix", "--no-sort-keys"]
     - id: end-of-file-fixer
     - id: trailing-whitespace
 - repo: https://github.com/python-jsonschema/check-jsonschema
