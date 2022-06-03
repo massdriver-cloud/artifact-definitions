@@ -5,11 +5,12 @@
   "description": "",
   "additionalProperties": false,
   "required": [
-    "grn"
+    "name"
   ],
   "properties": {
-    "grn": {
-      "$ref": "./gcp-grn.json"
+    "name": {
+      "$ref": "./gcp-name.json",
+      "description": "Name of CloudSQL Instance"
     }
   }
 }

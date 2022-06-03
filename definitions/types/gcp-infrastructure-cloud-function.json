@@ -10,7 +10,7 @@
   "properties": {
     "name": {
       "$ref": "./gcp-name.json",
-      "description": "Name of CloudSQL Instance"
+      "description": "Name of Cloud Function"
     }
   }
 }
