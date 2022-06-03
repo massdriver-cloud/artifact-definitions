@@ -55,37 +55,7 @@
           }
         },
         "security": {
-          "title": "Security configuration",
-          "required": [
-            "iam"
-          ],
-          "type": "object",
-          "properties": {
-            "iam": {
-              "title": "IAM configurations",
-              "required": [
-                "read",
-                "write",
-                "read/write",
-                "admin"
-              ],
-              "type": "object",
-              "properties": {
-                "read": {
-                  "$ref": "../types/azure-security-iam.json"
-                },
-                "write": {
-                  "$ref": "../types/azure-security-iam.json"
-                },
-                "read/write": {
-                  "$ref": "../types/azure-security-iam.json"
-                },
-                "admin": {
-                  "$ref": "../types/azure-security-iam.json"
-                }
-              }
-            }
-          }
+          "$ref": "../types/azure-security.json"
         }
       }
     },
