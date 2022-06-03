@@ -7,7 +7,7 @@
   "required": [],
   "properties": {
     "iam": {
-      "$ref": "./gcp-security-iam.json"
+      "$ref": "./azure-security-iam.json"
     }
   }
 }
