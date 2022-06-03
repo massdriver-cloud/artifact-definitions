@@ -1,15 +1,23 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "GCP infrastructure config",
+  "title": "GCP Infrastructure Config CloudSQL",
   "description": "",
   "additionalProperties": false,
   "required": [
-    "grn"
+    "name"
   ],
   "properties": {
-    "grn": {
-      "$ref": "./gcp-grn.json"
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "Name of CloudSQL Instance",
+      "minLength": 1,
+      "maxLength": 63,
+      "pattern": "^[a-z]+[-a-z0-9]+[a-z0-9]+$",
+      "message": {
+        "pattern": "Name must be lowercase alphanumeric (a-z and 0-9) with dashes (-) between words. It must start with a letter and it must end with a letter or number."
+      }
     }
   }
 }
