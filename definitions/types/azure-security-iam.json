@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "title": "IAM",
-  "description": "IAM Roles And Conditions",
+  "description": "IAM Roles And Scopes",
   "additionalProperties": false,
   "patternProperties": {
     "^[a-z\/]+$": {
