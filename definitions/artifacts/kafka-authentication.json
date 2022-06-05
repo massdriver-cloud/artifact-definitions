@@ -21,7 +21,7 @@
       "type": "object",
       "required": [
         "infrastructure",
-        "authenication",
+        "authentication",
         "security"
       ],
       "additionalProperties": false,
@@ -36,8 +36,8 @@
             }
           ]
         },
-        "authenication": {
-          "$ref": "../types/kafka-authenication.json"
+        "authentication": {
+          "$ref": "../types/kafka-authentication.json"
         },
         "security": {
           "oneOf": [
