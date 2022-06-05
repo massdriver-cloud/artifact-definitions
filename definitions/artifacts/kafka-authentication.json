@@ -27,9 +27,6 @@
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
-          "title": "Infrastructure configuration",
-          "description": "Cloud specific kafka configuration data",
-          "type": "object",
           "oneOf": [
             {
               "$ref": "../types/aws-infrastructure-kafka.json"
