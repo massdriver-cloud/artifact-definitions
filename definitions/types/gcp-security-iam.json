@@ -8,7 +8,8 @@
     "^.*$": {
       "type": "object",
       "required": [
-        "role"
+        "role",
+        "description"
       ],
       "properties": {
         "role": {
@@ -29,6 +30,16 @@
           "title": "Condition",
           "description": "GCP IAM Condition",
           "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A short description of what the role allows you to do.",
+          "type": "string",
+          "examples": [
+            "Gives the ability to create objects in storage. Does not give permission to view, delete, or replace.",
+            "Gives the ability to only view objects in storage.",
+            "Read-only access to tables"
+          ]
         }
       }
     }
