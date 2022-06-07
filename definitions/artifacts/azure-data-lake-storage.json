@@ -17,17 +17,45 @@
       "title": "Artifact Data",
       "type": "object",
       "required": [
-        "ari"
+        "infrastructure",
+        "authentication",
+        "security"
       ],
       "properties": {
-        "ari": {
-          "$ref": "../types/azure-resource-id.json"
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "primary_dfs_endpoint"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "primary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            },
+            "secondary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            }
+          }
         },
-        "primary_dfs_endpoint": {
-          "$ref": "../types/azure-dfs.json"
+        "authentication": {
+          "title": "Authentication credentials",
+          "type": "object",
+          "required": [
+            "primary_access_key"
+          ],
+          "properties": {
+            "primary_access_key": {
+              "title": "Primary Access Key",
+              "type": "string"
+            }
+          }
         },
-        "secondary_dfs_endpoint": {
-          "$ref": "../types/azure-dfs.json"
+        "security": {
+          "$ref": "../types/azure-security.json"
         }
       }
     },

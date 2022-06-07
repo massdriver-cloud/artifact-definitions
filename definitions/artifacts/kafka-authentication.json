@@ -21,23 +21,20 @@
       "type": "object",
       "required": [
         "infrastructure",
-        "authenication",
+        "authentication",
         "security"
       ],
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
-          "title": "Infrastructure configuration",
-          "description": "Cloud specific kafka configuration data",
-          "type": "object",
           "oneOf": [
             {
               "$ref": "../types/aws-infrastructure-kafka.json"
             }
           ]
         },
-        "authenication": {
-          "$ref": "../types/kafka-authenication.json"
+        "authentication": {
+          "$ref": "../types/kafka-authentication.json"
         },
         "security": {
           "oneOf": [

@@ -4,40 +4,13 @@
   "title": "AWS Security information",
   "description": "Informs downstream services of ports to open for communication",
   "additionalProperties": false,
-  "required": [
-    "groups"
-  ],
+  "required": [],
   "properties": {
     "groups": {
-      "type": "object",
-      "title": "AWS Security Group information",
-      "description": "Informs downstream services of ports to open for communication",
-      "patternProperties": {
-        "^.*$": {
-          "type": "object",
-          "required": [
-            "arn",
-            "port",
-            "protocol"
-          ],
-          "properties": {
-            "arn": {
-              "$ref": "./aws-arn.json"
-            },
-            "port": {
-              "type": "number"
-            },
-            "protocol": {
-              "type": "string",
-              "enum": [
-                "tcp",
-                "udp"
-              ]
-            }
-          }
-        }
-      },
-      "additionalProperties": false
+      "$ref": "./aws-security-network.json"
+    },
+    "iam": {
+      "$ref": "./aws-security-iam.json"
     }
   }
 }

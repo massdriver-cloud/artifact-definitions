@@ -32,15 +32,7 @@
           "$ref": "../types/gcp-infrastructure-pubsub-subscription.json"
         },
         "security": {
-          "title": "Access roles",
-          "type": "object",
-          "properties": {
-            "roles": {
-              "title": "Access roles mapped to GCP roles",
-              "type": "object",
-              "$ref": "../types/gcp-roles.json"
-            }
-          }
+          "$ref": "../types/gcp-security.json"
         }
       }
     },

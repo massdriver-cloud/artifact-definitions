@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP HTTPS Bucket",
+  "description": "GCP HTTPS Fronted GCS Bucket",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "url"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "GCS Bucket ID",
+      "description": "The Globally Unique ID of the GCS Bucket",
+      "examples": [
+        "one",
+        "dash-bucket",
+        "snake_bucket",
+        "domain.type.bucket",
+        "1also-valid2"
+      ],
+      "pattern": "^[a-z0-9]+[a-z0-9-_.]{1,61}[a-z0-9]+$",
+      "message": {
+        "pattern": "The GCS Bucket ID must follow these guidelines: https://cloud.google.com/storage/docs/naming-buckets"
+      }
+    },
+    "url": {
+      "$ref": "./https-url.json",
+      "description": "HTTPS Load Balancer URL"
+    }
+  }
+}

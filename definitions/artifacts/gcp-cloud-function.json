@@ -26,21 +26,10 @@
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
-          "title": "Infrastructure configuration",
-          "description": "Cloud Function infrastructure configuration",
-          "type": "object",
           "$ref": "../types/gcp-infrastructure-cloud-function.json"
         },
         "security": {
-          "title": "Access roles",
-          "type": "object",
-          "properties": {
-            "roles": {
-              "title": "Access roles mapped to GCP roles",
-              "type": "object",
-              "$ref": "../types/gcp-roles.json"
-            }
-          }
+          "$ref": "../types/gcp-security.json"
         }
       }
     },

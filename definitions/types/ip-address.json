@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "IP Address",
+  "description": "IPV4 formatted IP Address",
+  "examples": [
+    "0.0.0.0",
+    "8.8.8.8",
+    "127.0.0.1"
+  ],
+  "format": "ipv4"
+}

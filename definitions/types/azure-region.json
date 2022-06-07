@@ -3,17 +3,26 @@
   "type": "string",
   "title": "Azure Region",
   "description": "Select the Azure region you'd like to provision your resources in.",
-  "examples": [
-    "Central US"
-  ],
-  "enum": [
-    "Central US",
-    "East US",
-    "East US 2",
-    "North Central US",
-    "South Central US",
-    "West US",
-    "West US 2",
-    "West US 3"
+  "oneOf": [
+    {
+      "title": "East US",
+      "const": "eastus"
+    },
+    {
+      "title": "North Central US",
+      "const": "northcentralus"
+    },
+    {
+      "title": "South Central US",
+      "const": "southcentralus"
+    },
+    {
+      "title": "West US",
+      "const": "westus"
+    },
+    {
+      "title": "West US 3",
+      "const": "westus3"
+    }
   ]
 }
