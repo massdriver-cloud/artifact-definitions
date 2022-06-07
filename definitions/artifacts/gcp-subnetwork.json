@@ -25,27 +25,6 @@
         "infrastructure"
       ],
       "properties": {
-        "observability": {
-          "title": "Observability configuration",
-          "required": [
-            "alarm_notification_channel_grn"
-          ],
-          "type": "object",
-          "properties": {
-            "alarm_notification_channel_grn": {
-              "type": "string",
-              "title": "Alarm Notification Channel GRN",
-              "description": "Alarm Notification Channel GRN",
-              "examples": [
-                "projects/my-project/notificationChannels/0009999999999999111"
-              ],
-              "pattern": "^projects\/[a-z0-9-]+\/notificationChannels\/[0-9]+$",
-              "message": {
-                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
-              }
-            }
-          }
-        },
         "infrastructure": {
           "title": "Infrastructure configuration",
           "required": [

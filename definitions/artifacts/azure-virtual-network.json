@@ -21,22 +21,9 @@
       "title": "Artifact Data",
       "type": "object",
       "required": [
-        "infrastructure",
-        "observability"
+        "infrastructure"
       ],
       "properties": {
-        "observability": {
-          "title": "Observability configuration",
-          "required": [
-            "alarm_monitor_action_group_ari"
-          ],
-          "type": "object",
-          "properties": {
-            "alarm_monitor_action_group_ari": {
-              "$ref": "../types/azure-resource-id.json"
-            }
-          }
-        },
         "infrastructure": {
           "title": "Infrastructure configuration",
           "required": [

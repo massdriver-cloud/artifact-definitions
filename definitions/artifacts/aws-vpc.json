@@ -24,18 +24,6 @@
         "infrastructure"
       ],
       "properties": {
-        "observability": {
-          "title": "Observability configuration",
-          "required": [
-            "alarm_sns_topic_arn"
-          ],
-          "type": "object",
-          "properties": {
-            "alarm_sns_topic_arn": {
-              "$ref": "../types/aws-arn.json"
-            }
-          }
-        },
         "infrastructure": {
           "title": "Infrastructure configuration",
           "required": [

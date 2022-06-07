@@ -55,10 +55,6 @@ _must_ have the format (omit fields if not applicable):
     "auditing": {
       // TBD:
     },
-    "observability": { // REQUIRED if applicable
-      // Observability configuration this bundle created.
-      "sqsAlertingToken": "foo"
-    }
   },
   "specs": {
     // SPECS HERE
@@ -101,10 +97,6 @@ When creating these artifacts in terraform a local block should be used to elimi
     "auditing": {
       // TBD:
     },
-    "observability": { // REQUIRED if applicable
-      // Observability configuration this bundle created.
-      "sqsAlertingToken": "foo"
-    }
     "authentication": { // REQUIRED if auth is created
       "token": "foo"
     }
