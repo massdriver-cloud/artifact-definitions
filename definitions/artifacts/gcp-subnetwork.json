@@ -27,9 +27,6 @@
       "properties": {
         "observability": {
           "title": "Observability configuration",
-          "required": [
-            "alarm_notification_channel_grn"
-          ],
           "type": "object",
           "properties": {
             "alarm_notification_channel_grn": {
