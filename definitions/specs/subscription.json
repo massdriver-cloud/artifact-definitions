@@ -4,7 +4,9 @@
   "title": "",
   "description": "",
   "additionalProperties": false,
-  "required": ["distribution"],
+  "required": [
+    "distribution"
+  ],
   "properties": {
     "distribution": {
       "type": "string",

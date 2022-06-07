@@ -1,16 +1,15 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "Azure AKS infrastructure config",
-    "description": "",
-    "additionalProperties": false,
-    "required": [
-      "ari"
-    ],
-    "properties": {
-      "ari": {
-        "$ref": "./azure-resource-id.json"
-      }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Azure AKS infrastructure config",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "ari"
+  ],
+  "properties": {
+    "ari": {
+      "$ref": "./azure-resource-id.json"
     }
   }
-  
+}
