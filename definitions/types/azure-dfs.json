@@ -5,6 +5,10 @@
   "title": "Azure DFS",
   "description": "Azure DFS",
   "examples": [
-    "https://example.dfs.core.windows.net/"
-  ]
+    "abfs://filesystem.accountname.dfs.core.windows.net/"
+  ],
+  "pattern": "^((abfs|abfss):\/\/)[a-zA-Z]+\\.[a-zA-Z]+\\.dfs+\\.core+\\.windows+\\.net+/$",
+  "message": {
+    "pattern": "Must be a valid Azure DFS Namespace"
+  }
 }
