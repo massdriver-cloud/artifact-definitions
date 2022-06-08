@@ -37,19 +37,35 @@
       "properties": {
         "tenant_id": {
           "type": "string",
-          "title": "Tenant ID"
+          "title": "Tenant ID",
+          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
+          "message": {
+            "pattern": "Must be a valid Azure Tenant ID"
+          }
         },
         "client_id": {
           "type": "string",
-          "title": "Client ID"
+          "title": "Client ID",
+          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
+          "message": {
+            "pattern": "Must be a valid Azure App Client ID"
+          }
         },
         "client_secret": {
           "type": "string",
-          "title": "Client Secret"
+          "title": "Client Secret",
+          "pattern": "^[a-zA-Z0-9~.-]{40}$",
+          "message": {
+            "pattern": "Must be a valid Azure App Client Secret"
+          }
         },
         "subscription_id": {
           "type": "string",
-          "title": "Subscription ID"
+          "title": "Subscription ID",
+          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
+          "message": {
+            "pattern": "Must be a valid Azure Subscription ID"
+          }
         }
       }
     },
