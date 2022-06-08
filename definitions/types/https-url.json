@@ -1,12 +1,11 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "string",
-    "title": "HTTPS URL",
-    "description": "An HTTPS endpoint URL",
-    "pattern": "^https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$",
-    "examples": [
-      "https://example.com/some/path",
-      "https://massdriver.cloud"
-    ]
-  }
-  
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "HTTPS URL",
+  "description": "An HTTPS endpoint URL",
+  "pattern": "^https:\\/\\/(www.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}.[a-z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)$",
+  "examples": [
+    "https://example.com/some/path",
+    "https://massdriver.cloud"
+  ]
+}
