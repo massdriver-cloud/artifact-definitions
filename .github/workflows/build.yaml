@@ -1,6 +1,8 @@
 name: Build artifacts
 # we dont support beta channel on artdefs yet...
 on:
+  pull_request:
+    types: [opened]
   push:
     branches:
       - develop
