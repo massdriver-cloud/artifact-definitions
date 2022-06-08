@@ -1,4 +1,4 @@
-name: Publish bundles to Massdriver
+name: Publish artifacts to Massdriver (stable)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish_to_massdriver:
-    name: Build and publish
+    name: Build and publish artifacts to Massdriver (stable)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,4 +24,4 @@ jobs:
       - name: Build and Publish
         run: tar -xzf mass-*.tar.gz && export PATH=$PWD:$PATH && cd definitions/artifacts && for artifact in *; do echo ${artifact}; mass schema dereference ${artifact} | mass definition publish -f -; done
         env:
-          MASSDRIVER_API_KEY: ${{ secrets.MASSDRIVER_API_KEY }}
+          MASSDRIVER_API_KEY: ${{ secrets.MASSDRIVER_STABLE_RELEASE_CHANNEL_API_KEY }}
