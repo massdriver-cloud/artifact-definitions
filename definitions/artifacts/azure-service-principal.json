@@ -11,10 +11,6 @@
     "diagram": {
       "isLinkable": false
     },
-    "containerRepositories": {
-      "label": "ACR",
-      "cloud": "Azure"
-    },
     "alarmChannels": {
       "label": "Azure",
       "cloud": "azure"
