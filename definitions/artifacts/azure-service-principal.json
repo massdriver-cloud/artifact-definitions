@@ -14,6 +14,10 @@
     "containerRepositories": {
       "label": "ACR",
       "cloud": "Azure"
+    },
+    "alarmChannels": {
+      "label": "Azure",
+      "cloud": "azure"
     }
   },
   "type": "object",
