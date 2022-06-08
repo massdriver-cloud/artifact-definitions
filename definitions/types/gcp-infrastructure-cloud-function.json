@@ -2,14 +2,19 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "title": "GCP infrastructure config",
-  "description": "",
+  "description": "Cloud Function infrastructure configuration",
   "additionalProperties": false,
   "required": [
-    "grn"
+    "name"
   ],
   "properties": {
-    "grn": {
-      "$ref": "./gcp-grn.json"
+    "name": {
+      "$ref": "./gcp-name.json",
+      "description": "Name of Cloud Function"
+    },
+    "function_url": {
+      "$ref": "./https-url.json",
+      "description": "URL of Cloud Function"
     }
   }
 }

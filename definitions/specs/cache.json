@@ -1,38 +1,38 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "Cache",
-    "description": "The root schema comprises the entire JSON document.",
-    "examples": [
-      {
-        "engine": "redis",
-        "version": "6.2"
-      }
-    ],
-    "required": [
-      "engine",
-      "version"
-    ],
-    "properties": {
-      "engine": {
-        "$id": "#/properties/engine",
-        "type": "string",
-        "title": "Engine",
-        "description": "The cache engine.",
-        "default": "",
-        "examples": [
-          "redis"
-        ]
-      },
-      "version": {
-        "$id": "#/properties/version",
-        "type": "string",
-        "title": "Version",
-        "description": "The version of the engine",
-        "default": "",
-        "examples": [
-          "6.2"
-        ]
-      }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Cache",
+  "description": "The root schema comprises the entire JSON document.",
+  "examples": [
+    {
+      "engine": "redis",
+      "version": "6.2"
+    }
+  ],
+  "required": [
+    "engine",
+    "version"
+  ],
+  "properties": {
+    "engine": {
+      "$id": "#/properties/engine",
+      "type": "string",
+      "title": "Engine",
+      "description": "The cache engine.",
+      "default": "",
+      "examples": [
+        "redis"
+      ]
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "string",
+      "title": "Version",
+      "description": "The version of the engine",
+      "default": "",
+      "examples": [
+        "6.2"
+      ]
     }
   }
+}

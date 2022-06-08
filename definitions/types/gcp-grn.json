@@ -4,12 +4,14 @@
   "title": "GCP Resource Name (GRN)",
   "description": "GCP Resource Name (GRN)",
   "examples": [
-    "projects/my-project/global/networks/my-network",
-    "projects/my-project/locations/us-west2/instances/my-instance",
-    "projects/my-project/locations/us-west2/clusters/my-cluster",
-    "projects/my-project/zones/us-west2-a/instances/node-pool-id"
+    "projects/my-project/global/networks/my-global-network",
+    "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
+    "projects/my-project/topics/my-pubsub-topic",
+    "projects/my-project/subscriptions/my-pubsub-subscription",
+    "projects/my-project/locations/us-west2/instances/my-redis-instance",
+    "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
   ],
-  "pattern": "^projects\/[a-z0-9-]+\/[a-z]+\/[a-z0-9-]+\/[a-z0-9-]+.*$",
+  "pattern": "^projects\/[a-z0-9-]+\/[a-z]+\/[a-z0-9-]+(?:\/[a-zA-Z0-9-_.]+){0,6}$",
   "message": {
     "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
   }

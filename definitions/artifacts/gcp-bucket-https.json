@@ -25,7 +25,7 @@
       ],
       "properties": {
         "infrastructure": {
-          "$ref": "../types/gcp-infrastructure-load-balancer.json"
+          "$ref": "../types/gcp-infrastructure-bucket-https.json"
         },
         "security": {
           "$ref": "../types/gcp-security.json"

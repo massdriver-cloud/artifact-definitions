@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS Security Group",
+  "description": "AWS security group rules to inform downstream services of ports to open for communication",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[a-z-]+$": {
+      "type": "object",
+      "required": [
+        "arn",
+        "port",
+        "protocol"
+      ],
+      "properties": {
+        "arn": {
+          "title": "Security Group ARN",
+          "$ref": "./aws-arn.json"
+        },
+        "port": {
+          "title": "Network Port",
+          "$ref": "./port.json"
+        },
+        "protocol": {
+          "title": "Network Protocol",
+          "type": "string",
+          "enum": [
+            "tcp",
+            "udp"
+          ]
+        }
+      }
+    }
+  }
+}

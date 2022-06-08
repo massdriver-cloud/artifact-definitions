@@ -26,9 +26,6 @@
       "additionalProperties": false,
       "properties": {
         "infrastructure": {
-          "title": "Infrastructure configuration",
-          "description": "Cloud Function infrastructure configuration",
-          "type": "object",
           "$ref": "../types/gcp-infrastructure-cloud-function.json"
         },
         "security": {

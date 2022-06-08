@@ -1,15 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "GCP infrastructure config",
-  "description": "",
+  "title": "GCP Firestore Infrastructure",
   "additionalProperties": false,
   "required": [
-    "grn"
+    "id"
   ],
   "properties": {
-    "grn": {
-      "$ref": "./gcp-grn.json"
+    "id": {
+      "title": "Firestore ID",
+      "description": "Firestore ID, GCP Project ID",
+      "$ref": "./gcp-project-id.json"
     }
   }
 }

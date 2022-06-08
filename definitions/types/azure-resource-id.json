@@ -1,10 +1,9 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "string",
-    "title": "Azure Resource ID",
-    "description": "Azure Resource ID",
-    "examples": [
-      "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
-    ]
-  }
-  
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "Azure Resource ID",
+  "description": "Azure Resource ID",
+  "examples": [
+    "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+  ]
+}
