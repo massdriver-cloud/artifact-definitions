@@ -6,8 +6,9 @@
   "examples": [
     "resource-group-name"
   ],
-  "pattern": "^(?![.])[a-zA-Z0-9_.()-]+$",
+  "pattern": "^[a-zA-Z0-9-_.()]+[a-zA-Z0-9-_()]+$",
   "message": {
     "pattern": "Must be a valid Azure Resource Group name (alphanumeric, underscore, parentheses, hyphen, and period (except at end)"
   }
 }
+  
