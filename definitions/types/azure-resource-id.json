@@ -6,7 +6,7 @@
   "examples": [
     "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
   ],
-  "pattern": "^\/subscriptions\/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\/resourceGroups\/[0-9A-Za-z-]+\/providers\/Microsoft[.][a-zA-Z]+\/[a-zA-Z]+\/[0-9A-Za-z-]+$",
+  "pattern": "^\/subscriptions\/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}\/resourceGroups\/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]\/providers\/Microsoft\\.[a-zA-Z]+\/[a-zA-Z]+\/[0-9A-Za-z-]+$",
   "message": {
     "pattern": "Must be a valid Azure Resource ID"
   }
