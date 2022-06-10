@@ -38,18 +38,12 @@
         "tenant_id": {
           "type": "string",
           "title": "Tenant ID",
-          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
-          "message": {
-            "pattern": "Must be a valid Azure Tenant ID"
-          }
+          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
         },
         "client_id": {
           "type": "string",
           "title": "Client ID",
-          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
-          "message": {
-            "pattern": "Must be a valid Azure App Client ID"
-          }
+          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
         },
         "client_secret": {
           "type": "string",
@@ -62,10 +56,7 @@
         "subscription_id": {
           "type": "string",
           "title": "Subscription ID",
-          "pattern": "^[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}$",
-          "message": {
-            "pattern": "Must be a valid Azure Subscription ID"
-          }
+          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
         }
       }
     },
