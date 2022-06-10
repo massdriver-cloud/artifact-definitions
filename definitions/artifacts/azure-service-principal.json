@@ -38,12 +38,12 @@
         "tenant_id": {
           "type": "string",
           "title": "Tenant ID",
-          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
+          "$ref": "../types/uuid.json"
         },
         "client_id": {
           "type": "string",
           "title": "Client ID",
-          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
+          "$ref": "../types/uuid.json"
         },
         "client_secret": {
           "type": "string",
@@ -56,7 +56,7 @@
         "subscription_id": {
           "type": "string",
           "title": "Subscription ID",
-          "$ref": "github.com/massdriver-cloud/artifact-definitions/types/uuid.json"
+          "$ref": "../types/uuid.json"
         }
       }
     },
