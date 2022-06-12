@@ -24,15 +24,6 @@
         "infrastructure"
       ],
       "properties": {
-        "observability": {
-          "title": "Observability configuration",
-          "type": "object",
-          "properties": {
-            "alarm_monitor_action_group_ari": {
-              "$ref": "../types/azure-resource-id.json"
-            }
-          }
-        },
         "infrastructure": {
           "title": "Infrastructure configuration",
           "required": [
