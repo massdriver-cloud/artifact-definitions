@@ -14,6 +14,10 @@
     "containerRepositories": {
       "label": "ECR",
       "cloud": "AWS"
+    },
+    "alarmChannels": {
+      "label": "AWS",
+      "cloud": "aws"
     }
   },
   "type": "object",
