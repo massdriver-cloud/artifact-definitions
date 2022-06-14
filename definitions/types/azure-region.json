@@ -19,10 +19,6 @@
     {
       "title": "West US",
       "const": "westus"
-    },
-    {
-      "title": "West US 3",
-      "const": "westus3"
     }
   ]
 }
