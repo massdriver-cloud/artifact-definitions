@@ -4,15 +4,7 @@
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kubernetes",
-    "importing": {
-      "fileUploadType": "yaml",
-      "group": "authentication",
-      "fileUploadArtifactDataPath": [
-        "data",
-        "authentication"
-      ]
-    }
+    "defaultTargetConnectionGroupLabel": "Kubernetes"
   },
   "type": "object",
   "title": "Kubernetes Cluster",
