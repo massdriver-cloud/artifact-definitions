@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Elasticsearch specs",
+  "description": "Common metadata for Elasticsearch clusters.",
+  "examples": [
+    {
+      "version": "7.17.1"
+    }
+  ],
+  "required": [
+    "version"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "title": "Version",
+      "description": "The Elasticsearch version.",
+      "default": "",
+      "examples": [
+        "7.17.1"
+      ]
+    }
+  }
+}
