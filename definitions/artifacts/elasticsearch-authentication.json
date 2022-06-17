@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/elastic-authentication.json",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/elasticsearch-authentication.json",
   "$md": {
     "access": "public"
   },
@@ -23,7 +23,15 @@
           "$ref": "../types/k8s-application-infrastructure.json"
         },
         "authentication": {
-          "$ref": "../types/elastic-authentication.json"
+          "$ref": "../types/elasticsearch-authentication.json"
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "properties": {
+        "elasticsearch": {
+          "$ref": "../specs/elasticsearch.json"
         }
       }
     }
