@@ -4,7 +4,15 @@
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kubernetes"
+    "defaultTargetConnectionGroupLabel": "Kubernetes",
+    "export": [
+      {
+        "downloadButtonText": "Kube Config",
+        "fileFormat": "yaml",
+        "template": "IyBMaXF1aWQgdGVtcGxhdGUgZm9yIGV4cG9ydGluZyBhbiBhcnRpZmFjdCB0byBrdWJlIGNvbmZpZyBZQU1MCmFwaVZlcnNpb246IHYxCmNsdXN0ZXJzOgogIC0gY2x1c3RlcjoKICAgICAgY2VydGlmaWNhdGUtYXV0aG9yaXR5LWRhdGE6CiAgICAgICAge3sgYXJ0aWZhY3QuZGF0YS5hdXRoZW50aWNhdGlvbi5jbHVzdGVyLmNlcnRpZmljYXRlLWF1dGhvcml0eS1kYXRhIH19CiAgICAgIHNlcnZlcjoge3sgYXJ0aWZhY3QuZGF0YS5hdXRoZW50aWNhdGlvbi5jbHVzdGVyLnNlcnZlciB9fQogICAgbmFtZToge3sgYXJ0aWZhY3QuaWQgfX0KY29udGV4dHM6CiAgLSBjb250ZXh0OgogICAgICBjbHVzdGVyOiB7eyBhcnRpZmFjdC5pZCB9fQogICAgICB1c2VyOiB7eyBhcnRpZmFjdC5pZCB9fQogICAgbmFtZToge3sgYXJ0aWZhY3QuaWQgfX0KY3VycmVudC1jb250ZXh0OiB7eyBhcnRpZmFjdC5pZCB9fQpraW5kOiBDb25maWcKcHJlZmVyZW5jZXM6IHt9CnVzZXJzOgogIC0gbmFtZToge3sgYXJ0aWZhY3QuaWQgfX0KICAgIHVzZXI6CiAgICAgIHRva2VuOiB7eyBhcnRpZmFjdC5kYXRhLmF1dGhlbnRpY2F0aW9uLnVzZXIudG9rZW4gfX0K",
+        "templateLang": "liquid"
+      }
+    ]
   },
   "type": "object",
   "title": "Kubernetes Cluster",
