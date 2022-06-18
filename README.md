@@ -165,3 +165,8 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 * importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication
 * importing.group - the group in onboarding and importing frontend that this artifact definition form should be grouped under.
 * importing.fileUploadArtifactDataPath - the json key path to store the deserialized file into. Should be `["data"]` if not present.
+* `export` - different file formats of the artifact that can be downloaded
+  * `downloadButtonText` - download button text
+  * `templateLang` - the template to render the artifact in
+  * `fileFormat` - the template format to use (currently only liquid is supported)
+  * `template` - the template
