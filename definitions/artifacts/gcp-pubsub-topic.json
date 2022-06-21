@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-pubsub-topic.json",
   "$md": {
     "access": "public",
     "importing": {
       "group": "data"
-    }
+    },
+    "name": "gcp-pubsub-topic"
   },
   "type": "object",
   "title": "GCP PubSub Topic",

@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/postgresql-authentication.json",
   "$md": {
     "access": "public",
     "importing": {
       "group": "data"
-    }
+    },
+    "name": "postgresql-authentication"
   },
   "type": "object",
   "title": "PostgreSQL Authentication",

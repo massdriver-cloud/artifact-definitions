@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-data-lake-storage.json",
   "$md": {
-    "access": "public"
+    "access": "public",
+    "name": "azure-data-lake-storage"
   },
   "type": "object",
   "title": "Azure Data Lake Storage",
