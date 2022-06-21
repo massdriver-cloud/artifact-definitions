@@ -18,7 +18,6 @@
       "type": "object",
       "required": [
         "infrastructure",
-        "authentication",
         "security"
       ],
       "properties": {
@@ -26,15 +25,50 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
-            "ari",
-            "primary_dfs_endpoint"
+            "storage_account_name",
+            "raw_container",
+            "scratch_container",
+            "enriched_container"
           ],
           "properties": {
-            "ari": {
-              "$ref": "../types/azure-resource-id.json"
+            "storage_account_name": {
+              "title": "Storage Account Name",
+              "type": "string",
+              "description": "The name of the storage account where the raw data will be stored."
             },
-            "workspace_url": {
-              "$ref": "../types/https-url.json"
+            "raw_container": {
+              "description": "The name of the container where the raw data will be stored.",
+              "$ref": "../types/azure-infrastructure-storage-container.json"
+            },
+            "scratch_container": {
+              "description": "The name of the container where intermediate data transformations or experimental analyst data will be stored.",
+              "$ref": "../types/azure-infrastructure-storage-container.json"
+            },
+            "enriched_container": {
+              "description": "The name of the container where curated data assets will be stored.",
+              "$ref": "../types/azure-infrastrucuture-storage-container.json"
+            }
+          }
+        },
+        "security": {
+          "title": "Security Configuration",
+          "type": "object",
+          "required": [
+            "raw_data_writer_service_principal",
+            "data_processing_service_principal"
+          ],
+          "properties": {
+            "raw_data_writer_service_principal": {
+              "description": "The service principal for the applications to use to write immutable raw data to the data lake",
+              "$ref": "../types/azure-security.json"
+            },
+            "data_processing_service_principal": {
+              "description": "The service principal for the data processing / analytics / machine learning jobs to use to access raw and enriched layers of the data lake",
+              "$ref": "../types/azure-security.json"
+            },
+            "data_asset_consumer_service_principal": {
+              "description": "The service principal for the data asset consumer applications to use to access curated data assets",
+              "$ref": "../types/azure-security.json"
             }
           }
         }
