@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/aws-iam-role.json",
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
@@ -17,8 +18,7 @@
     "alarmChannels": {
       "label": "AWS",
       "cloud": "aws"
-    },
-    "name": "aws-iam-role"
+    }
   },
   "type": "object",
   "title": "AWS IAM Role",

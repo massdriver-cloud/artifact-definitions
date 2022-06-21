@@ -1,1 +1,60 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","defaultTargetConnectionGroup":"networking","defaultTargetConnectionGroupLabel":"GCP","importing":{"group":"networking"},"name":"gcp-subnetwork"},"type":"object","title":"GCP Subnetwork","description":"A region-bound network for deploying GCP resources","additionalProperties":false,"required":["data","specs"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure"],"properties":{"infrastructure":{"title":"Infrastructure configuration","required":["grn","cidr","gcp_global_network_grn"],"type":"object","properties":{"grn":{"$ref":"../types/gcp-grn.json"},"cidr":{"$ref":"../types/cidr.json"},"gcp_global_network_grn":{"$ref":"../types/gcp-grn.json"}}}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"gcp":{"$ref":"../specs/gcp.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-subnetwork.json",
+  "$md": {
+    "access": "public",
+    "defaultTargetConnectionGroup": "networking",
+    "defaultTargetConnectionGroupLabel": "GCP",
+    "importing": {
+      "group": "networking"
+    }
+  },
+  "type": "object",
+  "title": "GCP Subnetwork",
+  "description": "A region-bound network for deploying GCP resources",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "required": [
+            "grn",
+            "cidr",
+            "gcp_global_network_grn"
+          ],
+          "type": "object",
+          "properties": {
+            "grn": {
+              "$ref": "../types/gcp-grn.json"
+            },
+            "cidr": {
+              "$ref": "../types/cidr.json"
+            },
+            "gcp_global_network_grn": {
+              "$ref": "../types/gcp-grn.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}

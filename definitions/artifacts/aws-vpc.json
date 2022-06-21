@@ -1,1 +1,76 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","defaultTargetConnectionGroup":"networking","defaultTargetConnectionGroupLabel":"AWS","importing":{"group":"networking"},"name":"aws-vpc"},"type":"object","title":"AWS Virtual Private Cloud","description":"","additionalProperties":false,"required":["data"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure"],"properties":{"infrastructure":{"title":"Infrastructure configuration","required":["arn","cidr","private_subnets","public_subnets","internal_subnets"],"type":"object","properties":{"arn":{"$ref":"../types/aws-arn.json"},"cidr":{"$ref":"../types/cidr.json"},"private_subnets":{"type":"array","items":{"$ref":"../types/aws-subnet.json"}},"public_subnets":{"type":"array","items":{"$ref":"../types/aws-subnet.json"}},"internal_subnets":{"type":"array","items":{"$ref":"../types/aws-subnet.json"}}}}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"aws":{"$ref":"../specs/aws.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/aws-vpc.json",
+  "$md": {
+    "access": "public",
+    "defaultTargetConnectionGroup": "networking",
+    "defaultTargetConnectionGroupLabel": "AWS",
+    "importing": {
+      "group": "networking"
+    }
+  },
+  "type": "object",
+  "title": "AWS Virtual Private Cloud",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "required": [
+            "arn",
+            "cidr",
+            "private_subnets",
+            "public_subnets",
+            "internal_subnets"
+          ],
+          "type": "object",
+          "properties": {
+            "arn": {
+              "$ref": "../types/aws-arn.json"
+            },
+            "cidr": {
+              "$ref": "../types/cidr.json"
+            },
+            "private_subnets": {
+              "type": "array",
+              "items": {
+                "$ref": "../types/aws-subnet.json"
+              }
+            },
+            "public_subnets": {
+              "type": "array",
+              "items": {
+                "$ref": "../types/aws-subnet.json"
+              }
+            },
+            "internal_subnets": {
+              "type": "array",
+              "items": {
+                "$ref": "../types/aws-subnet.json"
+              }
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        }
+      }
+    }
+  }
+}

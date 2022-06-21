@@ -1,1 +1,72 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","name":"azure-data-lake-storage"},"type":"object","title":"Azure Data Lake Storage","description":"","additionalProperties":false,"required":["data","specs"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure","authentication","security"],"properties":{"infrastructure":{"title":"Infrastructure configuration","type":"object","required":["ari","primary_dfs_endpoint"],"properties":{"ari":{"$ref":"../types/azure-resource-id.json"},"primary_dfs_endpoint":{"$ref":"../types/azure-dfs.json"},"secondary_dfs_endpoint":{"$ref":"../types/azure-dfs.json"}}},"authentication":{"title":"Authentication credentials","type":"object","required":["primary_access_key"],"properties":{"primary_access_key":{"title":"Primary Access Key","type":"string"}}},"security":{"$ref":"../types/azure-security.json"}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"azure":{"$ref":"../specs/azure.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-data-lake-storage.json",
+  "$md": {
+    "access": "public"
+  },
+  "type": "object",
+  "title": "Azure Data Lake Storage",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "primary_dfs_endpoint"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "primary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            },
+            "secondary_dfs_endpoint": {
+              "$ref": "../types/azure-dfs.json"
+            }
+          }
+        },
+        "authentication": {
+          "title": "Authentication credentials",
+          "type": "object",
+          "required": [
+            "primary_access_key"
+          ],
+          "properties": {
+            "primary_access_key": {
+              "title": "Primary Access Key",
+              "type": "string"
+            }
+          }
+        },
+        "security": {
+          "$ref": "../types/azure-security.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
+    }
+  }
+}

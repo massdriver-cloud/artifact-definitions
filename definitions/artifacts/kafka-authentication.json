@@ -1,1 +1,58 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","importing":{"group":"data"},"name":"kafka-authentication"},"type":"object","title":"AWS MSK Cluster","description":"Highly scalable event bus managed by AWS.","additionalProperties":false,"required":["data","specs"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure","authentication","security"],"additionalProperties":false,"properties":{"infrastructure":{"oneOf":[{"$ref":"../types/aws-infrastructure-kafka.json"}]},"authentication":{"$ref":"../types/kafka-authentication.json"},"security":{"oneOf":[{"$ref":"../types/aws-security.json"}]}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"kafka":{"$ref":"../specs/kafka.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/kafka-authentication.json",
+  "$md": {
+    "access": "public",
+    "importing": {
+      "group": "data"
+    }
+  },
+  "type": "object",
+  "title": "AWS MSK Cluster",
+  "description": "Highly scalable event bus managed by AWS.",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-kafka.json"
+            }
+          ]
+        },
+        "authentication": {
+          "$ref": "../types/kafka-authentication.json"
+        },
+        "security": {
+          "oneOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            }
+          ]
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "kafka": {
+          "$ref": "../specs/kafka.json"
+        }
+      }
+    }
+  }
+}
