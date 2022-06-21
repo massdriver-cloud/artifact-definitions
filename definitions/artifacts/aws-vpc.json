@@ -1,13 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/aws-vpc.json",
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "networking",
     "defaultTargetConnectionGroupLabel": "AWS",
     "importing": {
       "group": "networking"
-    }
+    },
+    "name": "aws-vpc"
   },
   "type": "object",
   "title": "AWS Virtual Private Cloud",

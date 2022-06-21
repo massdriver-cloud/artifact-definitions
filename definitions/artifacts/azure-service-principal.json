@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/azure-service-principal.json",
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
@@ -14,7 +13,8 @@
     "dnsZones": {
       "label": "Azure DNS",
       "cloud": "azure"
-    }
+    },
+    "name": "azure-service-principal"
   },
   "type": "object",
   "title": "Azure Service Principal",
@@ -63,7 +63,8 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {}
+      "properties": {
+      }
     }
   }
 }

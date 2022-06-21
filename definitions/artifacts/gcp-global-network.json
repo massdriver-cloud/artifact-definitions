@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-global-network.json",
   "$md": {
     "access": "public",
     "importing": {
       "group": "networking"
-    }
+    },
+    "name": "gcp-global-network"
   },
   "type": "object",
   "title": "GCP Global Network",

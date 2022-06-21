@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/aws-s3-bucket.json",
   "$md": {
-    "access": "public"
+    "access": "public",
+    "name": "aws-s3-bucket"
   },
   "type": "object",
   "title": "AWS S3 Bucket",

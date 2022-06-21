@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/draft-node.json",
   "$md": {
-    "access": "public"
+    "access": "public",
+    "name": "draft-node"
   },
   "type": "object",
   "title": "Draft Node",
@@ -36,8 +36,11 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [],
-      "properties": {}
+      "required": [
+
+      ],
+      "properties": {
+      }
     }
   }
 }

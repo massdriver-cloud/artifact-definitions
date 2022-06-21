@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/aws-dynamodb-table.json",
   "$md": {
-    "access": "public"
+    "access": "public",
+    "name": "aws-dynamodb-table"
   },
   "type": "object",
   "title": "AWS DynamoDB Table",

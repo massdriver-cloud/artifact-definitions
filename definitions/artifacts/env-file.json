@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/env-file.json",
   "$md": {
     "access": "public",
     "importing": {
       "group": "data"
-    }
+    },
+    "name": "env-file"
   },
   "type": "object",
   "title": "Environment Variables",
@@ -47,7 +47,8 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {}
+      "properties": {
+      }
     }
   }
 }

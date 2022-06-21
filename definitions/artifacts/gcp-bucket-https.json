@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://api.massdriver.cloud/artifact-definitions/massdriver/gcp-bucket-https.json",
   "$md": {
     "access": "public",
     "importing": {
       "group": "data"
-    }
+    },
+    "name": "gcp-bucket-https"
   },
   "type": "object",
   "title": "GCP HTTPS Bucket",
