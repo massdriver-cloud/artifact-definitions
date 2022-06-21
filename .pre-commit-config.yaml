@@ -1,28 +1,32 @@
 repos:
-- repo: local
-  hooks:
-    - id: fix non-ascii quotes
-      name: fix-non-ascii-quotes
-      language: python
-      entry: scripts/fix-non-ascii-quotes.py
-      types: [json]
-      pass_filenames: true
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
-  hooks:
-    - id: check-yaml
-    - id: check-json
-    # TODO: re-enable this, for some reason this is causing issues in gh actions removing escape sequences in regex patterns see https://github.com/massdriver-cloud/artifact-definitions/runs/6714761323?check_suite_focus=true
-    #- id: pretty-format-json
-    #  args: ["--autofix", "--no-sort-keys"]
-    - id: end-of-file-fixer
-    - id: trailing-whitespace
-- repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.15.0
-  hooks:
-    - id: check-github-workflows
-    - id: check-jsonschema
-      name: "Check Artifacts Valid JSON Schema"
-      files: ^definitions/
-      types: [json]
-      args: ["--check-metaschema"]
+  - repo: local
+    hooks:
+      - id: fix non-ascii quotes
+        name: fix-non-ascii-quotes
+        language: python
+        entry: scripts/fix-non-ascii-quotes.py
+        types: [json]
+        pass_filenames: true
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-merge-conflict
+      - id: detect-aws-credentials
+      - id: no-commit-to-branch
+        args: [-b, main]
+      - id: check-yaml
+      - id: check-json
+      # TODO: re-enable this, for some reason this is causing issues in gh actions removing escape sequences in regex patterns see https://github.com/massdriver-cloud/artifact-definitions/runs/6714761323?check_suite_focus=true
+      #- id: pretty-format-json
+      #  args: ["--autofix", "--no-sort-keys"]
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.15.0
+    hooks:
+      - id: check-github-workflows
+      - id: check-jsonschema
+        name: "Check Artifacts Valid JSON Schema"
+        files: ^definitions/
+        types: [json]
+        args: ["--check-metaschema"]
