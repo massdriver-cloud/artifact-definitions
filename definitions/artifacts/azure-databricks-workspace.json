@@ -46,7 +46,7 @@
             },
             "enriched_container": {
               "description": "The name of the container where curated data assets will be stored.",
-              "$ref": "../types/azure-infrastrucuture-storage-container.json"
+              "$ref": "../types/azure-infrastructure-storage-container.json"
             }
           }
         },
