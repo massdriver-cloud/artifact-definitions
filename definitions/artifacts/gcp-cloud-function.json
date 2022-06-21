@@ -1,1 +1,46 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","importing":{"group":"data"},"name":"gcp-cloud-function"},"type":"object","title":"GCP Cloud Function","description":"GCP Cloud Function","additionalProperties":false,"required":["data","specs"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure","security"],"additionalProperties":false,"properties":{"infrastructure":{"$ref":"../types/gcp-infrastructure-cloud-function.json"},"security":{"$ref":"../types/gcp-security.json"}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"gcp":{"$ref":"../specs/gcp.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "importing": {
+      "group": "data"
+    },
+    "name": "gcp-cloud-function"
+  },
+  "type": "object",
+  "title": "GCP Cloud Function",
+  "description": "GCP Cloud Function",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "security"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "$ref": "../types/gcp-infrastructure-cloud-function.json"
+        },
+        "security": {
+          "$ref": "../types/gcp-security.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,38 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","name":"aws-s3-bucket"},"type":"object","title":"AWS S3 Bucket","description":"","additionalProperties":false,"required":["data","specs"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["arn"],"properties":{"arn":{"$ref":"../types/aws-arn.json"}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"aws":{"$ref":"../specs/aws.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "aws-s3-bucket"
+  },
+  "type": "object",
+  "title": "AWS S3 Bucket",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "arn"
+      ],
+      "properties": {
+        "arn": {
+          "$ref": "../types/aws-arn.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        }
+      }
+    }
+  }
+}

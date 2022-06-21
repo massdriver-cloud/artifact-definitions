@@ -147,6 +147,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 ```json
 {
   "$md": {
+    "name": "the-artifact-name",
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "Kubernetes",
@@ -159,6 +160,7 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 }
 ```
 
+* name - the name of the artifact without the organizational scope. This should be a URL safe name consisting of letters, numbers, and hyphens. It must be unique to the org it is published under.
 * access - specifies the access level of the artifact definition. `public` is readable by any Massdriver account, `private` is readable only by the organization that publishes the artifact definition. Defaults to `private` if unspecified.
 * defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
 * defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts

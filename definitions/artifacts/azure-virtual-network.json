@@ -1,1 +1,59 @@
-{"$schema":"http://json-schema.org/draft-07/schema","$md":{"access":"public","defaultTargetConnectionGroup":"networking","defaultTargetConnectionGroupLabel":"Azure","importing":{"group":"networking"},"name":"azure-virtual-network"},"type":"object","title":"Azure Virtual Network","description":"","additionalProperties":false,"required":["data"],"properties":{"data":{"title":"Artifact Data","type":"object","required":["infrastructure"],"properties":{"infrastructure":{"title":"Infrastructure configuration","required":["id","cidr","default_subnet_id"],"type":"object","properties":{"id":{"$ref":"../types/azure-resource-id.json"},"cidr":{"$ref":"../types/cidr.json"},"default_subnet_id":{"$ref":"../types/azure-resource-id.json"}}}}},"specs":{"title":"Artifact Specs","type":"object","properties":{"azure":{"$ref":"../specs/azure.json"}}}}}
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "defaultTargetConnectionGroup": "networking",
+    "defaultTargetConnectionGroupLabel": "Azure",
+    "importing": {
+      "group": "networking"
+    },
+    "name": "azure-virtual-network"
+  },
+  "type": "object",
+  "title": "Azure Virtual Network",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "required": [
+            "id",
+            "cidr",
+            "default_subnet_id"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "cidr": {
+              "$ref": "../types/cidr.json"
+            },
+            "default_subnet_id": {
+              "$ref": "../types/azure-resource-id.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
+    }
+  }
+}
