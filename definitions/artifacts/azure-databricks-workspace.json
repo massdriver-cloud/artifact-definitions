@@ -37,6 +37,7 @@
               "$ref": "./azure-resource-id.json"
             },
             "url": {
+              "title": "Azure Databricks workspace URL",
               "$ref": "../types/https-url.json"
             },
             "storage_account_name": {
@@ -45,14 +46,17 @@
               "description": "The name of the storage account where the raw, scratch, and enriched data will be stored in separate containers."
             },
             "raw_container": {
+              "title": "Raw Container",
               "description": "The name of the container where the raw data will be stored.",
               "$ref": "../types/azure-infrastructure-storage-container.json"
             },
             "scratch_container": {
+              "title": "Scratch Container",
               "description": "The name of the container where intermediate data transformations or experimental analyst data will be stored.",
               "$ref": "../types/azure-infrastructure-storage-container.json"
             },
             "enriched_container": {
+              "title": "Enriched Container",
               "description": "The name of the container where curated data assets will be stored.",
               "$ref": "../types/azure-infrastructure-storage-container.json"
             }
