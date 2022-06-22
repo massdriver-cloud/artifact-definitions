@@ -48,7 +48,7 @@
         "client_secret": {
           "type": "string",
           "title": "Client Secret",
-          "pattern": "^[a-zA-Z0-9~.-]{40}$",
+          "pattern": "^[a-zA-Z0-9~._-]+$",
           "message": {
             "pattern": "Must be a valid Azure App Client Secret"
           }
