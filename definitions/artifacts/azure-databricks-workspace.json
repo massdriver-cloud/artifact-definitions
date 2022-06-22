@@ -34,7 +34,7 @@
             "storage_account_name": {
               "title": "Storage Account Name",
               "type": "string",
-              "description": "The name of the storage account where the raw data will be stored."
+              "description": "The name of the storage account where the raw, scratch, and enriched data will be stored in separate containers."
             },
             "raw_container": {
               "description": "The name of the container where the raw data will be stored.",
