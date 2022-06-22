@@ -34,7 +34,7 @@
           ],
           "properties": {
             "ari": {
-              "$ref": "./azure-resource-id.json"
+              "$ref": "../types/azure-resource-id.json"
             },
             "url": {
               "title": "Azure Databricks workspace URL",

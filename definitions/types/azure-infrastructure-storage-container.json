@@ -18,7 +18,7 @@
       ]
     },
     "ari": {
-      "$ref": "./azure-resource-id.json"
+      "$ref": "../types/azure-resource-id.json"
     }
   }
 }
