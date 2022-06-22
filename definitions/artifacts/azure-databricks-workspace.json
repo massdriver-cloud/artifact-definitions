@@ -25,6 +25,7 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
+            "ari",
             "url",
             "storage_account_name",
             "raw_container",
@@ -32,6 +33,9 @@
             "enriched_container"
           ],
           "properties": {
+            "ari": {
+              "$ref": "./azure-resource-id.json"
+            },
             "url": {
               "$ref": "../types/https-url.json"
             },
