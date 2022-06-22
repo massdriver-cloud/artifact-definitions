@@ -25,12 +25,16 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
+            "url",
             "storage_account_name",
             "raw_container",
             "scratch_container",
             "enriched_container"
           ],
           "properties": {
+            "url": {
+              "$ref": "../types/https-url.json"
+            },
             "storage_account_name": {
               "title": "Storage Account Name",
               "type": "string",
