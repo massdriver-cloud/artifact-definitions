@@ -70,17 +70,22 @@
             "data_processing_service_principal"
           ],
           "properties": {
-            "raw_data_writer_service_principal": {
-              "description": "The service principal for the applications to use to write immutable raw data to the data lake",
-              "$ref": "../types/azure-security.json"
-            },
-            "data_processing_service_principal": {
-              "description": "The service principal for the data processing / analytics / machine learning jobs to use to access raw and enriched layers of the data lake",
-              "$ref": "../types/azure-security.json"
-            },
-            "data_asset_consumer_service_principal": {
-              "description": "The service principal for the data asset consumer applications to use to access curated data assets",
-              "$ref": "../types/azure-security.json"
+            "iam": {
+              "title": "IAM Configuration",
+              "properties": {
+                "data-producer": {
+                  "$ref": "../types/azure-security-iam.json",
+                  "description": "The IAM role for the data producer service principal that can read/write to the raw layer of the data lake."
+                },
+                "data-processsing": {
+                  "$ref": "../types/azure-security-iam.json",
+                  "description": "The IAM role for the data processing service principal with read only access to the raw layer and read / write access to the scratch / enriched layers of the data lake."
+                },
+                "data-asset-consumer": {
+                  "$ref": "../types/azure-security.json",
+                  "description": "The IAM role for the enriched data asset consumer service principal read only acces to the enriched layer of the data lake."
+                }
+              }
             }
           }
         }
