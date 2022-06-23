@@ -1,110 +1,116 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
-  "$md": {
-    "access": "public"
-  },
-  "type": "object",
-  "title": "Azure Databricks Workspace",
-  "description": "",
-  "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
-  "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "title": "Infrastructure configuration",
-          "type": "object",
-          "required": [
-            "ari",
-            "url",
-            "storage_account_name",
-            "raw_container",
-            "scratch_container",
-            "enriched_container",
-            "application_id"
-          ],
-          "properties": {
-            "ari": {
-              "$ref": "../types/azure-resource-id.json"
-            },
-            "url": {
-              "title": "Azure Databricks workspace URL",
-              "$ref": "../types/https-url.json"
-            },
-            "storage_account_name": {
-              "title": "Storage Account Name",
-              "type": "string",
-              "description": "The name of the storage account where the raw, scratch, and enriched data will be stored in separate containers."
-            },
-            "raw_container": {
-              "title": "Raw Container",
-              "description": "The name of the container where the raw data will be stored.",
-              "$ref": "../types/azure-infrastructure-storage-container.json"
-            },
-            "scratch_container": {
-              "title": "Scratch Container",
-              "description": "The name of the container where intermediate data transformations or experimental analyst data will be stored.",
-              "$ref": "../types/azure-infrastructure-storage-container.json"
-            },
-            "enriched_container": {
-              "title": "Enriched Container",
-              "description": "The name of the container where curated data assets will be stored.",
-              "$ref": "../types/azure-infrastructure-storage-container.json"
-            },
-            "application_id": {
-              "title": "Azure Application ID",
-              "description": "The Azure Application ID for databricks jobs.",
-              "type": "string"
-            }
-          }
-        },
-        "security": {
-          "title": "Security Configuration",
-          "type": "object",
-          "required": [
-            "raw_data_writer_service_principal",
-            "data_processing_service_principal"
-          ],
-          "properties": {
-            "iam": {
-              "title": "IAM Configuration",
-              "properties": {
-                "data-producer": {
-                  "$ref": "../types/azure-security-iam.json",
-                  "description": "The IAM role for the data producer service principal that can read/write to the raw layer of the data lake."
-                },
-                "data-processsing": {
-                  "$ref": "../types/azure-security-iam.json",
-                  "description": "The IAM role for the data processing service principal with read only access to the raw layer and read / write access to the scratch / enriched layers of the data lake."
-                },
-                "data-asset-consumer": {
-                  "$ref": "../types/azure-security.json",
-                  "description": "The IAM role for the enriched data asset consumer service principal read only acces to the enriched layer of the data lake."
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "specs": {
-      "title": "Artifact Specs",
-      "type": "object",
-      "properties": {
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
-    }
-  }
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
+	"$md": {
+		"access": "public"
+	},
+	"type": "object",
+	"title": "Azure Databricks Workspace",
+	"description": "",
+	"additionalProperties": false,
+	"required": [
+		"data",
+		"specs"
+	],
+	"properties": {
+		"data": {
+			"title": "Artifact Data",
+			"type": "object",
+			"required": [
+				"infrastructure",
+				"security"
+			],
+			"properties": {
+				"infrastructure": {
+					"title": "Infrastructure configuration",
+					"type": "object",
+					"required": [
+						"ari",
+						"url",
+						"storage_account_name",
+						"raw_container",
+						"scratch_container",
+						"enriched_container",
+						"application_id"
+					],
+					"properties": {
+						"ari": {
+							"$ref": "../types/azure-resource-id.json"
+						},
+						"url": {
+							"title": "Azure Databricks workspace URL",
+							"$ref": "../types/https-url.json"
+						},
+						"storage_account_name": {
+							"title": "Storage Account Name",
+							"type": "string",
+							"description": "The name of the storage account where the raw, scratch, and enriched data will be stored in separate containers."
+						},
+						"raw_container": {
+							"title": "Raw Container",
+							"description": "The name of the container where the raw data will be stored.",
+							"$ref": "../types/azure-infrastructure-storage-container.json"
+						},
+						"scratch_container": {
+							"title": "Scratch Container",
+							"description": "The name of the container where intermediate data transformations or experimental analyst data will be stored.",
+							"$ref": "../types/azure-infrastructure-storage-container.json"
+						},
+						"enriched_container": {
+							"title": "Enriched Container",
+							"description": "The name of the container where curated data assets will be stored.",
+							"$ref": "../types/azure-infrastructure-storage-container.json"
+						},
+						"application_id": {
+							"title": "Azure Application ID",
+							"description": "The Azure Application ID for databricks jobs.",
+							"type": "string"
+						}
+					}
+				},
+				"security": {
+					"title": "Security Configuration",
+					"type": "object",
+					"required": [
+						"raw-read-write",
+						"raw-read-only",
+						"scratch-read-write",
+						"enriched-read-write",
+						"enriched-read-only"
+					],
+					"properties": {
+						"iam": {
+							"title": "IAM Configuration",
+							"properties": {
+								"raw-read-write": {
+									"$ref": "../types/azure-security-iam.json"
+								},
+								"raw-read-only": {
+									"$ref": "../types/azure-security-iam.json"
+								},
+								"scratch-read-write": {
+									"$ref": "../types/azure-security-iam.json"
+								},
+								"enriched-read-write": {
+									"$ref": "../types/azure-security-iam.json"
+								},
+								"enriched-read-only": {
+									"$ref": "../types/azure-security-iam.json"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"specs": {
+			"title": "Artifact Specs",
+			"type": "object",
+			"properties": {
+				"azure": {
+					"$ref": "../specs/azure.json"
+				}
+			}
+		}
+	}
 }
