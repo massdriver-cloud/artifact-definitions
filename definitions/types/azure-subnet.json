@@ -10,7 +10,7 @@
   ],
   "properties": {
     "id": {
-      "$ref": "./azure-resource-id.json"
+      "$ref": "./azure-subnet-id.json"
     },
     "cidr": {
       "$ref": "./cidr.json"

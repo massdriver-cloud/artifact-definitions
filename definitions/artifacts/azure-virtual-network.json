@@ -40,7 +40,7 @@
               "$ref": "../types/cidr.json"
             },
             "default_subnet_id": {
-              "$ref": "../types/azure-resource-id.json"
+              "$ref": "../types/azure-subnet-id.json"
             }
           }
         }
