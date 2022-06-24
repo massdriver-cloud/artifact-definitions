@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "string",
-  "title": "Azure Subnet Resource ID",
+  "title": "Azure Subnet ID",
   "description": "Azure Subnet Resource ID",
   "examples": [
     "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name/subnets/subnet-name"
