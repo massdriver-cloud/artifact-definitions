@@ -12,3 +12,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
     - uses: pre-commit/action@v2.0.3
+      env:
+        # this check prevents devs from commit to main.
+        # however, we don't want it to fail on commits to main in CI.
+        SKIP: no-commit-to-branch
