@@ -67,26 +67,9 @@
 						"enriched-read-only"
 					],
 					"properties": {
-						"iam": {
-							"title": "IAM Configuration",
-							"properties": {
-								"raw-read-write": {
-									"$ref": "../types/azure-security-iam.json"
-								},
-								"raw-read-only": {
-									"$ref": "../types/azure-security-iam.json"
-								},
-								"scratch-read-write": {
-									"$ref": "../types/azure-security-iam.json"
-								},
-								"enriched-read-write": {
-									"$ref": "../types/azure-security-iam.json"
-								},
-								"enriched-read-only": {
-									"$ref": "../types/azure-security-iam.json"
-								}
-							}
-						}
+					  "iam": {
+							 "$ref": "../types/azure-security-iam.json"
+					  }
 					}
 				}
 			}
