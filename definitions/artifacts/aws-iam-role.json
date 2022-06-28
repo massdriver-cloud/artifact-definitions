@@ -15,7 +15,7 @@
       "label": "ECR",
       "cloud": "AWS"
     },
-    "alarmChannels": {
+    "dnsZones": {
       "label": "AWS",
       "cloud": "aws"
     }
