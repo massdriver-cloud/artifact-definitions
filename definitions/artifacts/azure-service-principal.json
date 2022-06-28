@@ -11,7 +11,7 @@
     "diagram": {
       "isLinkable": false
     },
-    "alarmChannels": {
+    "dnsZones": {
       "label": "Azure",
       "cloud": "azure"
     }
