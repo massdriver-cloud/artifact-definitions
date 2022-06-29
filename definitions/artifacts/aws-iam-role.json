@@ -13,10 +13,10 @@
     },
     "containerRepositories": {
       "label": "ECR",
-      "cloud": "AWS"
+      "cloud": "aws"
     },
     "dnsZones": {
-      "label": "AWS",
+      "label": "AWS Route 53",
       "cloud": "aws"
     }
   },
