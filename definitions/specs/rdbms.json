@@ -21,7 +21,6 @@
   ],
   "properties": {
     "engine": {
-      "$id": "#/properties/engine",
       "type": "string",
       "title": "Engine",
       "description": "The type of database server.",
@@ -31,7 +30,6 @@
       ]
     },
     "engine_version": {
-      "$id": "#/properties/version",
       "type": "string",
       "title": "Engine Version",
       "description": "The cloud provider's database version.",
@@ -40,7 +38,6 @@
       ]
     },
     "version": {
-      "$id": "#/properties/version",
       "type": "string",
       "title": "Version",
       "description": "The database version.",
