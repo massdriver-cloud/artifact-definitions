@@ -12,7 +12,7 @@
       "isLinkable": false
     },
     "dnsZones": {
-      "label": "Azure",
+      "label": "Azure DNS",
       "cloud": "azure"
     }
   },
