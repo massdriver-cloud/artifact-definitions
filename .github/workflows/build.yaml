@@ -24,4 +24,4 @@ jobs:
           token: ${{ secrets.ORGANIZATION_GITHUB_TOKEN }}
 
       - name: Build
-        run: tar -xzf mass-*.tar.gz && export PATH=$PWD:$PATH && cd definitions/artifacts && for artifact in *.json; do echo ${artifact}; mass schema dereference ${artifact} >> /tmp/${artifact} && mass schema validate -d /tmp/${artifact} -s ../metaschema.json; done
+        run: tar -xzf mass-*.tar.gz && export PATH=$PWD:$PATH && cd definitions/artifacts && for artifact in *.json; do echo ${artifact}; mass schema dereference ${artifact} >> /tmp/${artifact} && mass schema validate -d /tmp/${artifact} -s ../../artifact-definition-metaschema.json; done
