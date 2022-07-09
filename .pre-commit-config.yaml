@@ -30,4 +30,4 @@ repos:
         name: "Check Artifacts Valid JSON Schema"
         files: ^definitions/
         types: [json]
-        args: ["--check-metaschema"]
+        args: ["--schemafile", "definitions/metaschema.json"]
