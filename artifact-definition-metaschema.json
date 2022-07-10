@@ -6,11 +6,17 @@
       ],
       "properties": {
         "$md": {
+          "additionalProperties": false,
           "type": "object",
           "required": [
             "name",
             "access"
           ],
+          "dependentRequired": {
+            "defaultTargetConnectionGroup": [
+              "defaultTargetConnectionGroupLabel"
+            ]
+          },
           "properties": {
             "defaultTargetConnectionGroup": {
               "description": "Enables the artifact type as defaultable for a Massdriver target connection group.",
@@ -24,11 +30,6 @@
                   "const": "networking",
                   "title": "Networking"
                 }
-              ]
-            },
-            "dependentRequired": {
-              "defaultTargetConnectionGroup": [
-                "defaultTargetConnectionGroupLabel"
               ]
             },
             "defaultTargetConnectionGroupLabel": {
