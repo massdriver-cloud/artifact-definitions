@@ -79,6 +79,7 @@
             },
             "export": {
               "type": "array",
+              "minItems": 0,
               "items": {
                 "additionalProperties": false,
                 "type": "object",
@@ -89,7 +90,7 @@
                   "downloadButtonText"
                 ],
                 "properties": {
-                  "downloadbuttonText": {
+                  "downloadButtonText": {
                     "type": "string",
                     "description": "The text on the download button in the Massdriver UI for this export format."
                   },
