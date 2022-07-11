@@ -134,7 +134,8 @@
                   "type": "string",
                   "enum": [
                     "authentication",
-                    "data"
+                    "data",
+                    "networking"
                   ],
                   "description": "The group to put this artifact type under in the artifact import wizard."
                 }
