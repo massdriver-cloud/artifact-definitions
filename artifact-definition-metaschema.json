@@ -15,10 +15,22 @@
           ],
           "properties": {
             "data": {
+              "description": "Secure artifact data. Not presented in UI. Row-level encrypted.",
               "type": "object",
+              "required": [
+                "properties"
+              ],
               "properties": {
-                "infrastructure": {
-                  "type": "object"
+                "properties": {
+                  "type": "object",
+                  "required": [
+                    "infrastructure"
+                  ],
+                  "properties": {
+                    "infrastructure": {
+                      "type": "object"
+                    }
+                  }
                 }
               }
             },
