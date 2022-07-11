@@ -16,26 +16,11 @@
           "properties": {
             "data": {
               "description": "Secure artifact data. Not presented in UI. Row-level encrypted.",
-              "type": "object",
-              "required": [
-                "properties"
-              ],
-              "properties": {
-                "properties": {
-                  "type": "object",
-                  "required": [
-                    "infrastructure"
-                  ],
-                  "properties": {
-                    "infrastructure": {
-                      "type": "object"
-                    }
-                  }
-                }
-              }
+              "type": "object"
             },
             "specs": {
               "description": "Attributes for this artifact type that are presentable and searchable in the Massdriver UI.",
+              "type": "object",
               "examples": [
                 {
                   "aws": {
@@ -50,8 +35,7 @@
                     "foo": "bar"
                   }
                 }
-              ],
-              "type": "object"
+              ]
             }
           }
         }
@@ -180,11 +164,6 @@
               "required": [
                 "group"
               ],
-              "dependentRequired": {
-                "fileUploadType": [
-                  "fileUploadArtifactDataPath"
-                ]
-              },
               "properties": {
                 "fileUploadType": {
                   "type": "string",
@@ -192,6 +171,9 @@
                 },
                 "fileUploadArtifactDataPath": {
                   "type": "array",
+                  "default": [
+                    "data"
+                  ],
                   "examples": [
                     [
                       "data",

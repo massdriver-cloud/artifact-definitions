@@ -27,7 +27,12 @@ repos:
     hooks:
       - id: check-github-workflows
       - id: check-jsonschema
-        name: "Check Artifacts Valid JSON Schema"
-        files: ^definitions/
+        name: "Check all definitions are valid JSON Schema"
+        files: ^definitions/artifacts
+        types: [json]
+        args: ["--check-metaschema"]
+      - id: check-jsonschema
+        name: "Check Artifact Definitions are valid"
+        files: ^definitions/artifacts
         types: [json]
         args: ["--schemafile", "artifact-definition-metaschema.json"]
