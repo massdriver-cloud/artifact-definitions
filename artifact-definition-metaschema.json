@@ -18,6 +18,62 @@
             ]
           },
           "properties": {
+            "containerRepositories": {
+              "description": "Enables container repository using this artifact type for authentication.",
+              "type": "object",
+              "required": [
+                "label",
+                "cloud"
+              ],
+              "properties": {
+                "label": {
+                  "description": "The label in the Massdriver UI.",
+                  "type": "string"
+                },
+                "cloud": {
+                  "description": "The cloud this artifact will act upon.",
+                  "type": "string",
+                  "enum": [
+                    "aws",
+                    "gcp",
+                    "azure"
+                  ]
+                }
+              }
+            },
+            "dnsZones": {
+              "description": "Enables DNS Zones using this artifact type for authentication.",
+              "type": "object",
+              "required": [
+                "label",
+                "cloud"
+              ],
+              "properties": {
+                "label": {
+                  "description": "The label in the Massdriver UI.",
+                  "type": "string"
+                },
+                "cloud": {
+                  "description": "The cloud this artifact will act upon.",
+                  "type": "string",
+                  "enum": [
+                    "aws",
+                    "gcp",
+                    "azure"
+                  ]
+                }
+              }
+            },
+            "diagram": {
+              "type": "object",
+              "properties": {
+                "isLinkable": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Controls if this artifact type is 'linkable' in the UI. Otherwise it can only be used as a target's default connection."
+                }
+              }
+            },
             "export": {
               "type": "object",
               "required": [],
