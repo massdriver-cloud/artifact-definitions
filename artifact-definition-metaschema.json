@@ -3,13 +3,45 @@
     {
       "$schema": "http://json-schema.org/draft-07/schema",
       "type": "object",
-      "required": [],
+      "required": [
+        "properties"
+      ],
       "properties": {
-        "data": {
-          "type": "object"
-        },
-        "specs": {
-          "type": "object"
+        "properties": {
+          "type": "object",
+          "required": [
+            "data",
+            "specs"
+          ],
+          "properties": {
+            "data": {
+              "type": "object",
+              "properties": {
+                "infrastructure": {
+                  "type": "object"
+                }
+              }
+            },
+            "specs": {
+              "description": "Attributes for this artifact type that are presentable and searchable in the Massdriver UI.",
+              "examples": [
+                {
+                  "aws": {
+                    "region": "us-west-1"
+                  },
+                  "kubernetes": {
+                    "gpus": true
+                  }
+                },
+                {
+                  "gcp": {
+                    "foo": "bar"
+                  }
+                }
+              ],
+              "type": "object"
+            }
+          }
         }
       }
     },
