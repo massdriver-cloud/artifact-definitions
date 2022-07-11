@@ -19,6 +19,7 @@
           },
           "properties": {
             "containerRepositories": {
+              "additionalProperties": false,
               "description": "Enables container repository using this artifact type for authentication.",
               "type": "object",
               "required": [
@@ -42,6 +43,7 @@
               }
             },
             "dnsZones": {
+              "additionalProperties": false,
               "description": "Enables DNS Zones using this artifact type for authentication.",
               "type": "object",
               "required": [
@@ -65,6 +67,7 @@
               }
             },
             "diagram": {
+              "additionalProperties": false,
               "type": "object",
               "properties": {
                 "isLinkable": {
@@ -77,12 +80,13 @@
             "export": {
               "type": "array",
               "items": {
+                "additionalProperties": false,
                 "type": "object",
                 "required": [
-                  "downloadbuttonText",
                   "templateLang",
                   "fileFormat",
-                  "template"
+                  "template",
+                  "downloadButtonText"
                 ],
                 "properties": {
                   "downloadbuttonText": {
@@ -111,6 +115,7 @@
               }
             },
             "importing": {
+              "additionalProperties": false,
               "type": "object",
               "required": [
                 "group"
