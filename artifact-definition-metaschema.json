@@ -75,30 +75,38 @@
               }
             },
             "export": {
-              "type": "object",
-              "required": [],
-              "properties": {
-                "downloadbuttonText": {
-                  "type": "string",
-                  "description": "The text on the download button in the Massdriver UI for this export format."
-                },
-                "templateLang": {
-                  "type": "string",
-                  "enum": [
-                    "liquid"
-                  ],
-                  "description": "The template language used to render the export file."
-                },
-                "fileFormat": {
-                  "description": "The file format to add to the export file.",
-                  "type": "string",
-                  "enum": [
-                    "yaml"
-                  ]
-                },
-                "template": {
-                  "type": "string",
-                  "description": "Base64 encoded version of the template for the export file."
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "downloadbuttonText",
+                  "templateLang",
+                  "fileFormat",
+                  "template"
+                ],
+                "properties": {
+                  "downloadbuttonText": {
+                    "type": "string",
+                    "description": "The text on the download button in the Massdriver UI for this export format."
+                  },
+                  "templateLang": {
+                    "type": "string",
+                    "enum": [
+                      "liquid"
+                    ],
+                    "description": "The template language used to render the export file."
+                  },
+                  "fileFormat": {
+                    "description": "The file format to add to the export file.",
+                    "type": "string",
+                    "enum": [
+                      "yaml"
+                    ]
+                  },
+                  "template": {
+                    "type": "string",
+                    "description": "Base64 encoded version of the template for the export file."
+                  }
                 }
               }
             },
