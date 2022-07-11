@@ -3,6 +3,7 @@
     {
       "$schema": "http://json-schema.org/draft-07/schema",
       "type": "object",
+      "description": "Required fields in artifact defintions.",
       "required": [
         "properties"
       ],
@@ -43,6 +44,7 @@
     },
     {
       "$schema": "http://json-schema.org/draft-07/schema",
+      "description": "Massdriver artifact definition configuration.",
       "type": "object",
       "required": [
         "$md"
