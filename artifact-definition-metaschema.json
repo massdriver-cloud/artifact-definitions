@@ -18,6 +18,72 @@
             ]
           },
           "properties": {
+            "export": {
+              "type": "object",
+              "required": [],
+              "properties": {
+                "downloadbuttonText": {
+                  "type": "string",
+                  "description": "The text on the download button in the Massdriver UI for this export format."
+                },
+                "templateLang": {
+                  "type": "string",
+                  "enum": [
+                    "liquid"
+                  ],
+                  "description": "The template language used to render the export file."
+                },
+                "fileFormat": {
+                  "description": "The file format to add to the export file.",
+                  "type": "string",
+                  "enum": [
+                    "yaml"
+                  ]
+                },
+                "template": {
+                  "type": "string",
+                  "description": "Base64 encoded version of the template for the export file."
+                }
+              }
+            },
+            "importing": {
+              "type": "object",
+              "required": [
+                "group"
+              ],
+              "dependentRequired": {
+                "fileUploadType": [
+                  "fileUploadArtifactDataPath"
+                ]
+              },
+              "properties": {
+                "fileUploadType": {
+                  "type": "string",
+                  "description": "The file type to accept on the artifact import screen."
+                },
+                "fileUploadArtifactDataPath": {
+                  "type": "array",
+                  "examples": [
+                    [
+                      "data",
+                      "authentication"
+                    ]
+                  ],
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "The key path to store the JSON form of this file under in the artifact"
+                },
+                "group": {
+                  "type": "string",
+                  "enum": [
+                    "authentication",
+                    "data"
+                  ],
+                  "description": "The group to put this artifact type under in the artifact import wizard."
+                }
+              }
+            },
             "defaultTargetConnectionGroup": {
               "description": "Enables the artifact type as defaultable for a Massdriver target connection group.",
               "type": "string",
