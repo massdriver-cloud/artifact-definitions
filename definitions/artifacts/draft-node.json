@@ -36,11 +36,8 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-
-      ],
-      "properties": {
-      }
+      "required": [],
+      "properties": {}
     }
   }
 }
