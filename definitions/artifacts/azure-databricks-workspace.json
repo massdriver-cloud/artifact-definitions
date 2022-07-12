@@ -30,7 +30,9 @@
 						"url",
 						"raw_container_ari",
 						"scratch_container_ari",
-						"enriched_container_ari"
+						"enriched_container_ari",
+            "default_driver_instance_pool_id",
+            "default_worker_instance_pool_id"
 					],
 					"properties": {
 						"ari": {
@@ -54,7 +56,17 @@
 							"title": "Enriched Container",
 							"description": "The resource ID of the container where curated data assets will be stored.",
 							"$ref": "../types/azure-resource-id.json"
-						}
+						},
+            "default_driver_instance_pool_id": {
+							"title": "Driver Instance Pool",
+							"description": "The driver instance pool ID.",
+              "type": "string"
+            },
+            "default_worker_instance_pool_id": {
+							"title": "Worker Instance Pool",
+							"description": "The worker instance pool ID.",
+              "type": "string"
+            }
 					}
 				},
 				"security": {
