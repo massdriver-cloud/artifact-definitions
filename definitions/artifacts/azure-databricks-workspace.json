@@ -38,7 +38,7 @@
 						},
 						"url": {
 							"title": "Azure Databricks workspace URL",
-							"$ref": "../types/https-url.json"
+							"type": "string"
 						},
 						"raw_container_ari": {
 							"title": "Raw Container",
