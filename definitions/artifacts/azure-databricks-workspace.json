@@ -60,15 +60,15 @@
 				"security": {
 					"title": "Security Configuration",
 					"type": "object",
-					"required": [
-						"raw-read-write",
-						"raw-read-only",
-						"scratch-read-write",
-						"enriched-read-write",
-						"enriched-read-only"
-					],
 					"properties": {
 						"iam": {
+							"required": [
+								"raw-read-write",
+								"raw-read-only",
+								"scratch-read-write",
+								"enriched-read-write",
+								"enriched-read-only"
+							],
 							"$ref": "../types/azure-security-iam.json"
 						}
 					}
