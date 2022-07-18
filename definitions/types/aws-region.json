@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "string",
-  "title": "AWS Region",
-  "description": "AWS regional data center to provision in.",
+  "title": "Region",
+  "description": "Regional data center to provision in.",
   "examples": [
     "us-west-2"
   ],
