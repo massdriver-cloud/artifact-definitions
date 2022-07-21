@@ -14,17 +14,26 @@
 	],
 	"properties": {
 		"data": {
-			"title": "Artifact Data",
-			"type": "object",
-			"required": [
-				"arn"
-			],
-			"properties": {
-				"arn": {
-					"$ref": "../types/aws-arn.json"
-				}
-			}
-		},
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure",
+          "required": [
+            "arn"
+          ],
+          "type": "object",
+          "properties": {
+            "arn": {
+              "$ref": "../types/aws-arn.json"
+            }
+          }
+        }
+      }
+    },
 		"specs": {
 			"title": "Artifact Specs",
 			"type": "object",
