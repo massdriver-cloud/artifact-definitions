@@ -29,7 +29,7 @@
           "title": "Infrastructure configuration",
           "description": "PubSub subscription configuration",
           "type": "object",
-          "$ref": "../types/gcp-infrastructure-pubsub-subscription.json"
+          "$ref": "../types/gcp-infrastructure-grn.json"
         },
         "security": {
           "$ref": "../types/gcp-security.json"

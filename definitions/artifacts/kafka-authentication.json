@@ -29,7 +29,7 @@
         "infrastructure": {
           "oneOf": [
             {
-              "$ref": "../types/aws-infrastructure-kafka.json"
+              "$ref": "../types/aws-infrastructure-arn.json"
             }
           ]
         },

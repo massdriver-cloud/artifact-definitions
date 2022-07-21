@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "GCP infrastructure config",
-  "description": "",
+  "title": "GCP Infrascture GRN",
+  "description": "Minimal GCP Infrastructure Config",
   "additionalProperties": false,
   "required": [
     "grn"

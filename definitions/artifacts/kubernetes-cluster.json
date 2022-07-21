@@ -37,10 +37,10 @@
               "$ref": "../types/aws-infrastructure-eks.json"
             },
             {
-              "$ref": "../types/azure-infrastructure-aks.json"
+              "$ref": "../types/azure-infrastructure-ari.json"
             },
             {
-              "$ref": "../types/gcp-infrastructure-gke.json"
+              "$ref": "../types/gcp-infrastructure-grn.json"
             }
           ]
         },

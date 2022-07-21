@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "GCP infrastructure config",
-  "description": "",
+  "title": "GCP Infrascture Name",
+  "description": "GCP Infrastructure Config For Resources With A Name Not A GRN",
   "additionalProperties": false,
   "required": [
     "name"
@@ -10,7 +10,7 @@
   "properties": {
     "name": {
       "$ref": "./gcp-name.json",
-      "description": "Name of CloudSQL Instance"
+      "description": "Name Of GCP Resource"
     }
   }
 }

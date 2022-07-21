@@ -26,10 +26,10 @@
           "type": "object",
           "oneOf": [
             {
-              "$ref": "../types/aws-infrastructure-elasticache-redis.json"
+              "$ref": "../types/aws-infrastructure-arn.json"
             },
             {
-              "$ref": "../types/gcp-infrastructure-memorystore.json"
+              "$ref": "../types/gcp-infrastructure-grn.json"
             },
             {
               "$ref": "../types/azure-cache-redis.json"
