@@ -5,7 +5,7 @@
   "description": "Minimal GCP Infrastructure Config",
   "additionalProperties": false,
   "required": [
-    "GRN"
+    "grn"
   ],
   "properties": {
     "grn": {

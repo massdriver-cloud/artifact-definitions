@@ -28,8 +28,7 @@
         "infrastructure": {
           "title": "Infrastructure configuration",
           "description": "PubSub topic configuration",
-          "type": "object",
-          "$ref": "../types/gcp-infrastructure-pubsub-topic.json"
+          "$ref": "../types/gcp-infrastructure-grn.json"
         },
         "security": {
           "$ref": "../types/gcp-security.json"
