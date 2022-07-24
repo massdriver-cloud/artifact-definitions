@@ -8,7 +8,8 @@
   "title": "AWS SNS Topic",
   "additionalProperties": false,
   "required": [
-    "data", "specs"
+    "data",
+    "specs"
   ],
   "properties": {
     "data": {
@@ -29,6 +30,9 @@
               "$ref": "../types/aws-arn.json"
             }
           }
+        },
+        "security": {
+          "$ref": "../types/aws-security.json"
         }
       }
     },
