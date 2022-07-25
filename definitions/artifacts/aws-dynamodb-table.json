@@ -17,11 +17,20 @@
       "title": "Artifact Data",
       "type": "object",
       "required": [
-        "arn"
+        "infrastructure"
       ],
       "properties": {
-        "arn": {
-          "$ref": "../types/aws-arn.json"
+        "infrastructure": {
+          "title": "Infrastructure",
+          "required": [
+            "arn"
+          ],
+          "type": "object",
+          "properties": {
+            "arn": {
+              "$ref": "../types/aws-arn.json"
+            }
+          }
         }
       }
     },
