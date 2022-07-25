@@ -16,7 +16,8 @@
 			"title": "Artifact Data",
 			"type": "object",
 			"required": [
-				"infrastructure"
+				"infrastructure",
+                "security"
 			],
 			"properties": {
 				"infrastructure": {
@@ -35,7 +36,10 @@
 							"type": "string"
 						}
 					}
-				}
+				},
+                "security": {
+                    "$ref": "../types/aws-security.json"
+                }
 			}
 		},
 		"specs": {

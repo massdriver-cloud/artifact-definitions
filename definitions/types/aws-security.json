@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": [],
   "properties": {
-    "groups": {
+    "network": {
       "$ref": "./aws-security-network.json"
     },
     "iam": {
