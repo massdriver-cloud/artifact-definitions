@@ -30,7 +30,10 @@
 							"$ref": "../types/aws-arn.json"
 						}
 					}
-				}
+				},
+                "security": {
+                    "$ref": "../types/aws-security.json"
+                }
 			}
 		},
 		"specs": {
