@@ -7,6 +7,12 @@ repos:
         entry: scripts/fix-non-ascii-quotes.py
         types: [json]
         pass_filenames: true
+      - id: check-no-additional-properties
+        name: check-no-additional-properties
+        language: script
+        entry: scripts/check-for-additional-properties
+        types: [json]
+        pass_filenames: true
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
     hooks:
