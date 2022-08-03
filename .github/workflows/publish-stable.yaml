@@ -22,6 +22,7 @@ jobs:
           token: ${{ secrets.ORGANIZATION_GITHUB_TOKEN }}
 
       - name: Build and Publish
-        run: tar -xzf mass-*.tar.gz && export PATH=$PWD:$PATH && cd definitions/artifacts && for artifact in *.json; do echo ${artifact}; mass schema dereference ${artifact} | mass definition publish -f -; done
+        run: tar -xzf mass-*.tar.gz && export PATH=$PWD:$PATH && cd definitions/artifacts && for artifact in *.json; do echo ${artifact}; mass schema dereference ${artifact} | sed '/additionalProperties/d' | mass definition publish -f -; done
+
         env:
           MASSDRIVER_API_KEY: ${{ secrets.MASSDRIVER_STABLE_RELEASE_CHANNEL_API_KEY }}
