@@ -1,58 +1,59 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "access": "public",
-        "defaultTargetConnectionGroup": "credentials",
-        "defaultTargetConnectionGroupLabel": "AWS",
-        "importing": {
-            "group": "authentication"
-        },
-        "diagram": {
-            "isLinkable": false
-        },
-        "containerRepositories": {
-            "label": "ECR",
-            "cloud": "aws"
-        },
-        "dnsZones": {
-            "label": "AWS Route 53",
-            "cloud": "aws"
-        },
-        "name": "aws-iam-role"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "defaultTargetConnectionGroup": "credentials",
+    "defaultTargetConnectionGroupLabel": "AWS",
+    "importing": {
+      "group": "authentication"
     },
-    "type": "object",
-    "title": "AWS IAM Role",
-    "description": "",
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "arn"
-            ],
-            "properties": {
-                "arn": {
-                    "$ref": "../types/aws-arn.json"
-                },
-                "external_id": {
-                    "type": "string",
-                    "title": "External ID",
-                    "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role's trust policy, allowing the role to be assumed only when a certain value is present in the external ID."
-                }
-            }
+    "diagram": {
+      "isLinkable": false
+    },
+    "containerRepositories": {
+      "label": "ECR",
+      "cloud": "aws"
+    },
+    "dnsZones": {
+      "label": "AWS Route 53",
+      "cloud": "aws"
+    },
+    "name": "aws-iam-role"
+  },
+  "type": "object",
+  "title": "AWS IAM Role",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "arn"
+      ],
+      "properties": {
+        "arn": {
+          "$ref": "../types/aws-arn.json"
         },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "aws": {
-                    "$ref": "../specs/aws.json"
-                }
-            }
+        "external_id": {
+          "type": "string",
+          "title": "External ID",
+          "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role's trust policy, allowing the role to be assumed only when a certain value is present in the external ID."
         }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        }
+      }
     }
+  }
 }

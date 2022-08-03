@@ -1,63 +1,64 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "access": "public",
-        "importing": {
-            "group": "networking"
-        },
-        "name": "gcp-global-network"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "importing": {
+      "group": "networking"
     },
-    "type": "object",
-    "title": "GCP Global Network",
-    "description": "",
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "grn",
-                "private_services_access",
-                "private_service_connect_ip"
-            ],
-            "properties": {
-                "grn": {
-                    "$ref": "../types/gcp-grn.json"
-                },
-                "private_services_access": {
-                    "title": "Private Services Access",
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "title": "Name",
-                            "description": "Name of the Private Services Access block"
-                        },
-                        "cidr": {
-                            "$ref": "../types/cidr.json",
-                            "title": "CIDR",
-                            "description": "CIDR range of the Private Services Access block"
-                        }
-                    }
-                },
-                "private_service_connect_ip": {
-                    "type": "string",
-                    "title": "Private Service Connect IP",
-                    "description": "IP address of the Private Service Connect endpoint"
-                }
-            }
+    "name": "gcp-global-network"
+  },
+  "type": "object",
+  "title": "GCP Global Network",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "grn",
+        "private_services_access",
+        "private_service_connect_ip"
+      ],
+      "properties": {
+        "grn": {
+          "$ref": "../types/gcp-grn.json"
         },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "gcp": {
-                    "$ref": "../specs/gcp.json"
-                }
+        "private_services_access": {
+          "title": "Private Services Access",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "description": "Name of the Private Services Access block"
+            },
+            "cidr": {
+              "$ref": "../types/cidr.json",
+              "title": "CIDR",
+              "description": "CIDR range of the Private Services Access block"
             }
+          }
+        },
+        "private_service_connect_ip": {
+          "type": "string",
+          "title": "Private Service Connect IP",
+          "description": "IP address of the Private Service Connect endpoint"
         }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
     }
+  }
 }

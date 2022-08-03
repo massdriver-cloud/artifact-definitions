@@ -1,18 +1,19 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "AWS EKS infrastructure config",
-    "description": "",
-    "required": [
-        "arn",
-        "oidc_issuer_url"
-    ],
-    "properties": {
-        "arn": {
-            "$ref": "./aws-arn.json"
-        },
-        "oidc_issuer_url": {
-            "$ref": "./https-url.json"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS EKS infrastructure config",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "arn",
+    "oidc_issuer_url"
+  ],
+  "properties": {
+    "arn": {
+      "$ref": "./aws-arn.json"
+    },
+    "oidc_issuer_url": {
+      "$ref": "./https-url.json"
     }
+  }
 }

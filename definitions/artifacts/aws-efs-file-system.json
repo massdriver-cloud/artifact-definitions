@@ -1,54 +1,55 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "access": "public",
-        "name": "aws-efs-file-system"
-    },
-    "type": "object",
-    "title": "AWS EFS File System",
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "infrastructure",
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$md": {
+		"access": "public",
+		"name": "aws-efs-file-system"
+	},
+	"type": "object",
+	"title": "AWS EFS File System",
+	"additionalProperties": false,
+	"required": [
+		"data",
+		"specs"
+	],
+	"properties": {
+		"data": {
+			"title": "Artifact Data",
+			"type": "object",
+			"required": [
+				"infrastructure",
                 "security"
-            ],
-            "properties": {
-                "infrastructure": {
-                    "title": "Infrastructure",
-                    "required": [
-                        "arn",
+			],
+			"properties": {
+				"infrastructure": {
+					"title": "Infrastructure",
+					"required": [
+						"arn",
                         "dns_name"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "arn": {
-                            "$ref": "../types/aws-arn.json"
-                        },
+					],
+					"type": "object",
+					"properties": {
+						"arn": {
+							"$ref": "../types/aws-arn.json"
+						},
                         "dns_name": {
                             "title": "DNS Name",
-                            "type": "string"
-                        }
-                    }
-                },
+							"type": "string"
+						}
+					}
+				},
                 "security": {
                     "$ref": "../types/aws-security.json"
                 }
-            }
-        },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "aws": {
-                    "$ref": "../specs/aws.json"
-                }
-            }
-        }
-    }
+			}
+		},
+		"specs": {
+			"title": "Artifact Specs",
+			"type": "object",
+			"properties": {
+				"aws": {
+					"$ref": "../specs/aws.json"
+				}
+			}
+		}
+	}
 }

@@ -1,15 +1,16 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "AWS Security information",
-    "description": "Informs downstream services of network and/or IAM policies",
-    "required": [],
-    "properties": {
-        "network": {
-            "$ref": "./aws-security-network.json"
-        },
-        "iam": {
-            "$ref": "./aws-security-iam.json"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS Security information",
+  "description": "Informs downstream services of network and/or IAM policies",
+  "additionalProperties": false,
+  "required": [],
+  "properties": {
+    "network": {
+      "$ref": "./aws-security-network.json"
+    },
+    "iam": {
+      "$ref": "./aws-security-iam.json"
     }
+  }
 }

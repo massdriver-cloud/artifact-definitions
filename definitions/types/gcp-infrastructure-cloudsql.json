@@ -1,15 +1,16 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "GCP infrastructure config",
-    "description": "",
-    "required": [
-        "name"
-    ],
-    "properties": {
-        "name": {
-            "$ref": "./gcp-name.json",
-            "description": "Name of CloudSQL Instance"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP infrastructure config",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "./gcp-name.json",
+      "description": "Name of CloudSQL Instance"
     }
+  }
 }

@@ -1,48 +1,49 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "access": "public",
-        "name": "mongo-authentication"
-    },
-    "type": "object",
-    "title": "mongo Cluster",
-    "description": "mongo cluster authentication and cloud-specific configuration.",
-    "required": [
-        "data"
-    ],
-    "properties": {
-        "data": {
-            "type": "object",
-            "required": [
-                "infrastructure",
-                "authentication"
-            ],
-            "properties": {
-                "infrastructure": {
-                    "title": "Mongo Cluster Infrastructure",
-                    "description": "Mongo cluster infrastructure configuration.",
-                    "type": "object",
-                    "oneOf": [
-                        {
-                            "$ref": "../types/k8s-application-infrastructure.json"
-                        },
-                        {
-                            "$ref": "../types/azure-infrastructure-database.json"
-                        }
-                    ]
-                },
-                "authentication": {
-                    "$ref": "../types/mongo-authentication.json"
-                }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "mongo-authentication"
+  },
+  "type": "object",
+  "title": "mongo Cluster",
+  "description": "mongo cluster authentication and cloud-specific configuration.",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Mongo Cluster Infrastructure",
+          "description": "Mongo cluster infrastructure configuration.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
+            },
+            {
+              "$ref": "../types/azure-infrastructure-database.json"
             }
+          ]
         },
-        "specs": {
-            "type": "object",
-            "properties": {
-                "mongo": {
-                    "$ref": "../specs/mongo.json"
-                }
-            }
+        "authentication": {
+          "$ref": "../types/mongo-authentication.json"
         }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "properties": {
+        "mongo": {
+          "$ref": "../specs/mongo.json"
+        }
+      }
     }
+  }
 }

@@ -1,35 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "IAM",
-    "description": "IAM Roles And Conditions",
-    "patternProperties": {
-        "^[a-z-\/]+$": {
-            "type": "object",
-            "required": [
-                "role"
-            ],
-            "properties": {
-                "role": {
-                    "title": "Role",
-                    "description": "GCP Role",
-                    "pattern": "^roles\/[a-zA-Z\\.]+$",
-                    "message": {
-                        "pattern": "Must be a valid GCP Role, e.g. roles/..."
-                    },
-                    "examples": [
-                        "roles/owner",
-                        "roles/redis.editor",
-                        "roles/storage.objectCreator",
-                        "roles/storage.legacyObjectReader"
-                    ]
-                },
-                "condition": {
-                    "title": "Condition",
-                    "description": "GCP IAM Condition",
-                    "type": "string"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "IAM",
+  "description": "IAM Roles And Conditions",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[a-z-\/]+$": {
+      "type": "object",
+      "required": [
+        "role"
+      ],
+      "properties": {
+        "role": {
+          "title": "Role",
+          "description": "GCP Role",
+          "pattern": "^roles\/[a-zA-Z\\.]+$",
+          "message": {
+            "pattern": "Must be a valid GCP Role, e.g. roles/..."
+          },
+          "examples": [
+            "roles/owner",
+            "roles/redis.editor",
+            "roles/storage.objectCreator",
+            "roles/storage.legacyObjectReader"
+          ]
+        },
+        "condition": {
+          "title": "Condition",
+          "description": "GCP IAM Condition",
+          "type": "string"
         }
+      }
     }
+  }
 }

@@ -1,19 +1,20 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "GCP infrastructure config",
-    "description": "Cloud Function infrastructure configuration",
-    "required": [
-        "name"
-    ],
-    "properties": {
-        "name": {
-            "$ref": "./gcp-name.json",
-            "description": "Name of Cloud Function"
-        },
-        "function_url": {
-            "$ref": "./https-url.json",
-            "description": "URL of Cloud Function"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP infrastructure config",
+  "description": "Cloud Function infrastructure configuration",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "name": {
+      "$ref": "./gcp-name.json",
+      "description": "Name of Cloud Function"
+    },
+    "function_url": {
+      "$ref": "./https-url.json",
+      "description": "URL of Cloud Function"
     }
+  }
 }

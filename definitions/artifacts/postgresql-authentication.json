@@ -1,96 +1,99 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "access": "public",
-        "importing": {
-            "group": "data"
-        },
-        "name": "postgresql-authentication"
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "importing": {
+      "group": "data"
     },
-    "type": "object",
-    "title": "PostgreSQL Authentication",
-    "description": "Authentication parameters for a PostgreSQL database",
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "type": "object",
-            "required": [
-                "infrastructure",
-                "authentication",
-                "security"
-            ],
-            "properties": {
-                "security": {
-                    "title": "Security details",
-                    "description": "TBD",
-                    "type": "object",
-                    "anyOf": [
-                        {
-                            "$ref": "../types/aws-security.json"
-                        },
-                        {
-                            "$ref": "../types/azure-security.json"
-                        },
-                        {
-                            "$ref": "../types/gcp-security.json"
-                        }
-                    ]
-                },
-                "infrastructure": {
-                    "title": "Cloud provider details",
-                    "description": "Cloud specific PostgreSQL configuration data.",
-                    "type": "object",
-                    "oneOf": [
-                        {
-                            "$ref": "../types/aws-infrastructure-rds.json"
-                        },
-                        {
-                            "$ref": "../types/gcp-infrastructure-cloudsql.json"
-                        },
-                        {
-                            "$ref": "../types/azure-infrastructure-database.json"
-                        }
-                    ]
-                },
-                "authentication": {
-                    "title": "Authentication details",
-                    "type": "object",
-                    "required": [
-                        "username",
-                        "password",
-                        "hostname",
-                        "port"
-                    ],
-                    "properties": {
-                        "username": {
-                            "type": "string"
-                        },
-                        "password": {
-                            "type": "string"
-                        },
-                        "hostname": {
-                            "type": "string"
-                        },
-                        "port": {
-                            "$ref": "../types/port.json"
-                        }
-                    }
-                }
+    "name": "postgresql-authentication"
+  },
+  "type": "object",
+  "title": "PostgreSQL Authentication",
+  "description": "Authentication parameters for a PostgreSQL database",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "properties": {
+        "security": {
+          "title": "Security details",
+          "description": "TBD",
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            },
+            {
+              "$ref": "../types/azure-security.json"
+            },
+            {
+              "$ref": "../types/gcp-security.json"
             }
+          ]
         },
-        "specs": {
-            "type": "object",
-            "required": [
-                "rdbms"
-            ],
-            "properties": {
-                "rdbms": {
-                    "$ref": "../specs/rdbms.json"
-                }
+        "infrastructure": {
+          "title": "Cloud provider details",
+          "description": "Cloud specific PostgreSQL configuration data.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-rds.json"
+            },
+            {
+              "$ref": "../types/gcp-infrastructure-cloudsql.json"
+            },
+            {
+              "$ref": "../types/azure-infrastructure-database.json"
             }
+          ]
+        },
+        "authentication": {
+          "title": "Authentication details",
+          "type": "object",
+          "required": [
+            "username",
+            "password",
+            "hostname",
+            "port"
+          ],
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "hostname": {
+              "type": "string"
+            },
+            "port": {
+              "$ref": "../types/port.json"
+            }
+          }
         }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rdbms"
+      ],
+      "properties": {
+        "rdbms": {
+          "$ref": "../specs/rdbms.json"
+        }
+      }
     }
+  }
 }

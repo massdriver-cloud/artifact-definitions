@@ -1,17 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "Kuberenetes infrastructure config",
-    "description": "",
-    "required": [
-        "kubernetes_namespace"
-    ],
-    "properties": {
-        "kubernetes_service": {
-            "type": "string"
-        },
-        "kubernetes_namespace": {
-            "type": "string"
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Kuberenetes infrastructure config",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "kubernetes_namespace"
+  ],
+  "properties": {
+    "kubernetes_service": {
+      "type": "string"
+    },
+    "kubernetes_namespace": {
+      "type": "string"
     }
+  }
 }

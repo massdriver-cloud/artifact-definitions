@@ -1,17 +1,18 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "",
-    "description": "",
-    "required": [
-        "distribution"
-    ],
-    "properties": {
-        "distribution": {
-            "type": "string",
-            "enum": [
-                "pubsub"
-            ]
-        }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "distribution"
+  ],
+  "properties": {
+    "distribution": {
+      "type": "string",
+      "enum": [
+        "pubsub"
+      ]
     }
+  }
 }

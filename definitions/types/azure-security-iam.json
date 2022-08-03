@@ -1,33 +1,34 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "object",
-    "title": "IAM",
-    "description": "IAM Roles And Scopes",
-    "patternProperties": {
-        "^[a-z\/-]+$": {
-            "type": "object",
-            "required": [
-                "role",
-                "scope"
-            ],
-            "properties": {
-                "role": {
-                    "title": "Role",
-                    "description": "Azure Role",
-                    "pattern": "^[a-zA-Z ]+$",
-                    "message": {
-                        "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
-                    },
-                    "examples": [
-                        "Storage Blob Data Reader"
-                    ]
-                },
-                "scope": {
-                    "title": "Scope",
-                    "description": "Azure IAM Scope",
-                    "type": "string"
-                }
-            }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "IAM",
+  "description": "IAM Roles And Scopes",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[a-z\/-]+$": {
+      "type": "object",
+      "required": [
+        "role",
+        "scope"
+      ],
+      "properties": {
+        "role": {
+          "title": "Role",
+          "description": "Azure Role",
+          "pattern": "^[a-zA-Z ]+$",
+          "message": {
+            "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+          },
+          "examples": [
+            "Storage Blob Data Reader"
+          ]
+        },
+        "scope": {
+          "title": "Scope",
+          "description": "Azure IAM Scope",
+          "type": "string"
         }
+      }
     }
+  }
 }
