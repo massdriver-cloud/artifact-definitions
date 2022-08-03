@@ -1,43 +1,41 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$md": {
-    "access": "public",
-    "name": "draft-node"
-  },
-  "type": "object",
-  "title": "Draft Node",
-  "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
-  "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
-  "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "name"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "name",
-          "description": "Name",
-          "examples": [
-            "Network",
-            "Cluster",
-            "Function",
-            "Queue"
-          ]
-        }
-      }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$md": {
+        "access": "public",
+        "name": "draft-node"
     },
-    "specs": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [],
-      "properties": {}
+    "type": "object",
+    "title": "Draft Node",
+    "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
+    "required": [
+        "data",
+        "specs"
+    ],
+    "properties": {
+        "data": {
+            "title": "Artifact Data",
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "title": "name",
+                    "description": "Name",
+                    "examples": [
+                        "Network",
+                        "Cluster",
+                        "Function",
+                        "Queue"
+                    ]
+                }
+            }
+        },
+        "specs": {
+            "type": "object",
+            "required": [],
+            "properties": {}
+        }
     }
-  }
 }

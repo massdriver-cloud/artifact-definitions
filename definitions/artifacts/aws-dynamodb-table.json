@@ -1,38 +1,37 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$md": {
-    "access": "public",
-    "name": "aws-dynamodb-table"
-  },
-  "type": "object",
-  "title": "AWS DynamoDB Table",
-  "description": "",
-  "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
-  "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "arn"
-      ],
-      "properties": {
-        "arn": {
-          "$ref": "../types/aws-arn.json"
-        }
-      }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$md": {
+        "access": "public",
+        "name": "aws-dynamodb-table"
     },
-    "specs": {
-      "title": "Artifact Specs",
-      "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
+    "type": "object",
+    "title": "AWS DynamoDB Table",
+    "description": "",
+    "required": [
+        "data",
+        "specs"
+    ],
+    "properties": {
+        "data": {
+            "title": "Artifact Data",
+            "type": "object",
+            "required": [
+                "arn"
+            ],
+            "properties": {
+                "arn": {
+                    "$ref": "../types/aws-arn.json"
+                }
+            }
+        },
+        "specs": {
+            "title": "Artifact Specs",
+            "type": "object",
+            "properties": {
+                "aws": {
+                    "$ref": "../specs/aws.json"
+                }
+            }
         }
-      }
     }
-  }
 }

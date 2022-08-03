@@ -1,90 +1,89 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "$md": {
-    "access": "public",
-    "name": "redis-authentication"
-  },
-  "type": "object",
-  "title": "Redis Cluster",
-  "description": "Redis cluster authentication and cloud-specific configuration.",
-  "additionalProperties": false,
-  "required": [
-    "data"
-  ],
-  "properties": {
-    "data": {
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "title": "Cloud provider configuration",
-          "description": "Cloud specific Redis configuration data.",
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-elasticache-redis.json"
-            },
-            {
-              "$ref": "../types/gcp-infrastructure-memorystore.json"
-            },
-            {
-              "$ref": "../types/azure-cache-redis.json"
-            }
-          ]
-        },
-        "authentication": {
-          "title": "Authentication configuration",
-          "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
-          "properties": {
-            "username": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string"
-            },
-            "hostname": {
-              "type": "string"
-            },
-            "port": {
-              "$ref": "../types/port.json"
-            }
-          }
-        },
-        "security": {
-          "title": "Security details",
-          "description": "TBD",
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            },
-            {
-              "$ref": "../types/gcp-security.json"
-            },
-            {
-              "$ref": "../types/azure-security.json"
-            }
-          ]
-        }
-      }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$md": {
+        "access": "public",
+        "name": "redis-authentication"
     },
-    "specs": {
-      "type": "object",
-      "properties": {
-        "cache": {
-          "$ref": "../specs/cache.json"
+    "type": "object",
+    "title": "Redis Cluster",
+    "description": "Redis cluster authentication and cloud-specific configuration.",
+    "required": [
+        "data"
+    ],
+    "properties": {
+        "data": {
+            "type": "object",
+            "required": [
+                "infrastructure",
+                "authentication",
+                "security"
+            ],
+            "properties": {
+                "infrastructure": {
+                    "title": "Cloud provider configuration",
+                    "description": "Cloud specific Redis configuration data.",
+                    "type": "object",
+                    "oneOf": [
+                        {
+                            "$ref": "../types/aws-infrastructure-elasticache-redis.json"
+                        },
+                        {
+                            "$ref": "../types/gcp-infrastructure-memorystore.json"
+                        },
+                        {
+                            "$ref": "../types/azure-cache-redis.json"
+                        }
+                    ]
+                },
+                "authentication": {
+                    "title": "Authentication configuration",
+                    "type": "object",
+                    "required": [
+                        "username",
+                        "password",
+                        "hostname",
+                        "port"
+                    ],
+                    "properties": {
+                        "username": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "type": "string"
+                        },
+                        "hostname": {
+                            "type": "string"
+                        },
+                        "port": {
+                            "$ref": "../types/port.json"
+                        }
+                    }
+                },
+                "security": {
+                    "title": "Security details",
+                    "description": "TBD",
+                    "type": "object",
+                    "anyOf": [
+                        {
+                            "$ref": "../types/aws-security.json"
+                        },
+                        {
+                            "$ref": "../types/gcp-security.json"
+                        },
+                        {
+                            "$ref": "../types/azure-security.json"
+                        }
+                    ]
+                }
+            }
+        },
+        "specs": {
+            "type": "object",
+            "properties": {
+                "cache": {
+                    "$ref": "../specs/cache.json"
+                }
+            }
         }
-      }
     }
-  }
 }

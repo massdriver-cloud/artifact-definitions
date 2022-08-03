@@ -1,14 +1,13 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "object",
-  "title": "Security",
-  "description": "GCP Security Configuration",
-  "additionalProperties": false,
-  "required": [],
-  "properties": {
-    "iam": {
-      "$ref": "./gcp-security-iam.json"
-    },
-    "additionalProperties": false
-  }
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Security",
+    "description": "GCP Security Configuration",
+    "required": [],
+    "properties": {
+        "iam": {
+            "$ref": "./gcp-security-iam.json"
+        },
+        "additionalProperties": false
+    }
 }

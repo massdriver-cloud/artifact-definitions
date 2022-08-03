@@ -1,15 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "object",
-  "title": "GCP GKE infrastructure config",
-  "description": "",
-  "additionalProperties": false,
-  "required": [
-    "grn"
-  ],
-  "properties": {
-    "grn": {
-      "$ref": "../types/gcp-grn.json"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "GCP GKE infrastructure config",
+    "description": "",
+    "required": [
+        "grn"
+    ],
+    "properties": {
+        "grn": {
+            "$ref": "../types/gcp-grn.json"
+        }
     }
-  }
 }

@@ -1,17 +1,16 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "object",
-  "title": "Mongo specific public information",
-  "description": "Informs downstream bundles of Mongo specific data",
-  "additionalProperties": false,
-  "required": [
-    "version"
-  ],
-  "properties": {
-    "version": {
-      "type": "string",
-      "title": "Version number of cluster",
-      "description": "Currently deployed Mongo version"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Mongo specific public information",
+    "description": "Informs downstream bundles of Mongo specific data",
+    "required": [
+        "version"
+    ],
+    "properties": {
+        "version": {
+            "type": "string",
+            "title": "Version number of cluster",
+            "description": "Currently deployed Mongo version"
+        }
     }
-  }
 }

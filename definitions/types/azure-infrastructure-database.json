@@ -1,15 +1,14 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "object",
-  "title": "Azure Database",
-  "description": "",
-  "additionalProperties": false,
-  "required": [
-    "ari"
-  ],
-  "properties": {
-    "ari": {
-      "$ref": "./azure-resource-id.json"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Azure Database",
+    "description": "",
+    "required": [
+        "ari"
+    ],
+    "properties": {
+        "ari": {
+            "$ref": "./azure-resource-id.json"
+        }
     }
-  }
 }

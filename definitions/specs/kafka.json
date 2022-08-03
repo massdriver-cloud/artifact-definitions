@@ -1,17 +1,16 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "type": "object",
-  "title": "Kafka specific pulic information",
-  "description": "Informs downstream bundles of Kafka specific data",
-  "additionalProperties": false,
-  "required": [
-    "version"
-  ],
-  "properties": {
-    "version": {
-      "type": "string",
-      "title": "Version number of cluster",
-      "description": "Currently deployed Kafka version"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Kafka specific pulic information",
+    "description": "Informs downstream bundles of Kafka specific data",
+    "required": [
+        "version"
+    ],
+    "properties": {
+        "version": {
+            "type": "string",
+            "title": "Version number of cluster",
+            "description": "Currently deployed Kafka version"
+        }
     }
-  }
 }
