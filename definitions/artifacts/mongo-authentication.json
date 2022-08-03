@@ -7,7 +7,6 @@
   "type": "object",
   "title": "mongo Cluster",
   "description": "mongo cluster authentication and cloud-specific configuration.",
-  "additionalProperties": false,
   "required": [
     "data"
   ],

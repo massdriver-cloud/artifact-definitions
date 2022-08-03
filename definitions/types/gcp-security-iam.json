@@ -3,7 +3,6 @@
   "type": "object",
   "title": "IAM",
   "description": "IAM Roles And Conditions",
-  "additionalProperties": false,
   "patternProperties": {
     "^[a-z-\/]+$": {
       "type": "object",

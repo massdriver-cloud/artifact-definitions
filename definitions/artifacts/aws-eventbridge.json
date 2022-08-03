@@ -7,7 +7,6 @@
 	"type": "object",
 	"title": "AWS EventBridge",
 	"description": "Connection details for EventBridge event bus",
-	"additionalProperties": false,
 	"required": [
 		"data",
 		"specs"

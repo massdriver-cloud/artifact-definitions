@@ -6,7 +6,6 @@
   },
   "type": "object",
   "title": "AWS SQS Queue",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"

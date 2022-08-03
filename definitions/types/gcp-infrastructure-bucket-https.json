@@ -3,7 +3,6 @@
   "type": "object",
   "title": "GCP HTTPS Bucket",
   "description": "GCP HTTPS Fronted GCS Bucket",
-  "additionalProperties": false,
   "required": [
     "id",
     "url"

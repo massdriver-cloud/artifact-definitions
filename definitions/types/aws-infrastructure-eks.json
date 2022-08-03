@@ -3,7 +3,6 @@
   "type": "object",
   "title": "AWS EKS infrastructure config",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "arn",
     "oidc_issuer_url"

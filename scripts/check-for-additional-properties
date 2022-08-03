@@ -1,0 +1,10 @@
+#!/bin/bash
+set -exuo pipefail
+
+if grep -q "additionalProperties" "${1}"; then
+  echo "additionalProperties is not allowed in ${1}, removing."
+  sed -i '' '/additionalProperties/d'
+  exit 1
+else
+  exit 0
+fi

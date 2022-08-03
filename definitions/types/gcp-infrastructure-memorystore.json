@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Infrastructure Config",
   "description": "GCP Cloud Memorystore infrastructure config",
-  "additionalProperties": false,
   "required": [
     "grn"
   ],

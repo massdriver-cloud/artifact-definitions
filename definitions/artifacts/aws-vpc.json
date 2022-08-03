@@ -12,7 +12,6 @@
   "type": "object",
   "title": "AWS Virtual Private Cloud",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "data"
   ],

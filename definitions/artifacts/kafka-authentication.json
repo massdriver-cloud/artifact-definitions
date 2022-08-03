@@ -10,7 +10,6 @@
   "type": "object",
   "title": "AWS MSK Cluster",
   "description": "Highly scalable event bus managed by AWS.",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"
@@ -24,7 +23,6 @@
         "authentication",
         "security"
       ],
-      "additionalProperties": false,
       "properties": {
         "infrastructure": {
           "oneOf": [

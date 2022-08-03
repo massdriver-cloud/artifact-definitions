@@ -3,7 +3,6 @@
   "type": "object",
   "title": "AWS RDS infrastructure config",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "arn"
   ],

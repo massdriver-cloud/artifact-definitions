@@ -12,7 +12,6 @@
   "type": "object",
   "title": "GCP Subnetwork",
   "description": "A region-bound network for deploying GCP resources",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"

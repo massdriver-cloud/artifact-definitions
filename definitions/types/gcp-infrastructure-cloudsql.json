@@ -3,7 +3,6 @@
   "type": "object",
   "title": "GCP infrastructure config",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "name"
   ],

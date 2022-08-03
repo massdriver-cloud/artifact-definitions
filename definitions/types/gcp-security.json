@@ -3,12 +3,10 @@
   "type": "object",
   "title": "Security",
   "description": "GCP Security Configuration",
-  "additionalProperties": false,
   "required": [],
   "properties": {
     "iam": {
       "$ref": "./gcp-security-iam.json"
-    },
-    "additionalProperties": false
+    }
   }
 }

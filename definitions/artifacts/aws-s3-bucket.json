@@ -6,7 +6,6 @@
 	},
 	"type": "object",
 	"title": "AWS S3 Bucket",
-	"additionalProperties": false,
 	"required": [
 		"data",
 		"specs"

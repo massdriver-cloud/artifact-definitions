@@ -12,7 +12,6 @@
   "type": "object",
   "title": "Azure Virtual Network",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "data"
   ],

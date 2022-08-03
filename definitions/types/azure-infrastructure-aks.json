@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Azure AKS infrastructure config",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "ari"
   ],

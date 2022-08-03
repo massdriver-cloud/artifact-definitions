@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Security",
   "description": "Azure Security Configuration",
-  "additionalProperties": false,
   "required": [],
   "properties": {
     "iam": {
