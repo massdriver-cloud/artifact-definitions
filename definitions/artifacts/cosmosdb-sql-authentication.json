@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "cosmosdb-sql-authentication"
+  },
+  "type": "object",
+  "title": "Cosmos DB SQL",
+  "description": "Cosmos DB SQL authentication and cloud-specific configuration.",
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Cosmos DB SQL Infrastructure",
+          "description": "Cosmos DB SQL infrastructure configuration.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/azure-resource-id.json"
+            }
+          ]
+        },
+        "authentication": {
+          "$ref": "../types/cosmosdb-sql-authentication.json"
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+}
