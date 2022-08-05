@@ -23,11 +23,7 @@
           "title": "Cosmos DB SQL Infrastructure",
           "description": "Cosmos DB SQL infrastructure configuration.",
           "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/azure-resource-id.json"
-            }
-          ]
+          "$ref": "../types/azure-infrastructure-ari.json"
         },
         "authentication": {
           "$ref": "../types/cosmosdb-sql-authentication.json"
@@ -36,7 +32,11 @@
     },
     "specs": {
       "type": "object",
-      "properties": {}
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
     }
   }
 }
