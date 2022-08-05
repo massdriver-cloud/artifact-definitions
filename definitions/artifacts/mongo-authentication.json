@@ -20,7 +20,17 @@
       ],
       "properties": {
         "infrastructure": {
-          "$ref": "../types/k8s-application-infrastructure.json"
+          "title": "Mongo Cluster Infrastructure",
+          "description": "Mongo cluster infrastructure configuration.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
+            },
+            {
+              "$ref": "../types/azure-infrastructure-database.json"
+            }
+          ]
         },
         "authentication": {
           "$ref": "../types/mongo-authentication.json"

@@ -2,10 +2,10 @@
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"$md": {
 		"access": "public",
-		"name": "aws-s3-bucket"
+		"name": "aws-efs-file-system"
 	},
 	"type": "object",
-	"title": "AWS S3 Bucket",
+	"title": "AWS EFS File System",
 	"additionalProperties": false,
 	"required": [
 		"data",
@@ -16,18 +16,24 @@
 			"title": "Artifact Data",
 			"type": "object",
 			"required": [
-				"infrastructure"
+				"infrastructure",
+                "security"
 			],
 			"properties": {
 				"infrastructure": {
 					"title": "Infrastructure",
 					"required": [
-						"arn"
+						"arn",
+                        "dns_name"
 					],
 					"type": "object",
 					"properties": {
 						"arn": {
 							"$ref": "../types/aws-arn.json"
+						},
+                        "dns_name": {
+                            "title": "DNS Name",
+							"type": "string"
 						}
 					}
 				},
