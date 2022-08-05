@@ -17,7 +17,7 @@
       "type": "string"
     },
     "hostname": {
-      "type": "string"
+      "$ref": "./https-url.json"
     },
     "port": {
       "$ref": "./port.json"
