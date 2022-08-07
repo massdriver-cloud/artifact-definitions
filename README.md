@@ -23,6 +23,11 @@ Install the pre-commit to ensure our json is pretty and our json schemas valid i
 pre-commit install
 ```
 
+### Local Server
+You can run `make local.server` to run a local nginx server which hosts the artifacts in a way that the [Massdriver CLI](https://github.com/massdriver-cloud/massdriver-cli) can access them. This is convenient for local development of bundles using local artifact definitions.
+
+As you make changes to artifacts or types, you can run `make local.update` to regenerate the definitions hosted by the local server. If you set the `MASSDRIVER_URL` environment variable to `http://localhost:8081` then the CLI will pull artifact definitions from this local server instead of the Massdriver API.
+
 ## Artifacts
 
 Artifacts define connectable pieces of infrastructure in Massdriver. Artifacts that strictly represent infrastructure
@@ -37,9 +42,7 @@ _must_ have the format (omit fields if not applicable):
     "security": { // REQUIRED if applicable
       "policies": { // IAM policies this bundle created
         "read": "my_policy_foo",
-        "write": "my_policy_foo2",
-        "manage": "my_policy_foo3",
-        "admin": "my_policy_foo4"
+        "write": "my_policy_foo2"
       },
       "groups": {
         // Security groups this bundle created, downstream bundles will attach and set up their own security group rules.
@@ -86,9 +89,7 @@ When creating these artifacts in terraform a local block should be used to elimi
     "security": { // REQUIRED if applicable
       "policies": { // IAM policies this bundle created
         "read": "my_policy_foo",
-        "write": "my_policy_foo2",
-        "manage": "my_policy_foo3",
-        "admin": "my_policy_foo4"
+        "write": "my_policy_foo2"
       },
       "groups": {
         // Security groups this bundle created
