@@ -26,7 +26,7 @@ pre-commit install
 ### Local Server
 You can run `make local.server` to run a local nginx server which hosts the artifacts in a way that the [Massdriver CLI](https://github.com/massdriver-cloud/massdriver-cli) can access them. This is convenient for local development of bundles using local artifact definitions.
 
-As you make changes to artifacts or types, you can run `make local.update` to regenerate the definitions hosted by the local server. If you set the `MASSDRIVER_URL` environment variable to `http://localhost:8081` then the CLI will pull artifact definitions from this local server instead of the Massdriver API.
+As you make changes to artifacts or types, you can run `make local.update` to regenerate the definitions hosted by the local server. If you set the `MASSDRIVER_URL` environment variable to `http://localhost:8081` then the CLI will pull artifact definitions from this local server instead of the Massdriver API. Run `make local.shutdown` when you are done to shutdown the development server.
 
 ## Artifacts
 
