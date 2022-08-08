@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "Azure Infrascture ARI",
-  "description": "Minimal azure Infrastructure Config",
+  "title": "Azure Infrastructure Resource ID",
+  "description": "Minimal Azure Infrastructure Config",
   "additionalProperties": false,
   "required": [
     "ari"
