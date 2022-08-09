@@ -21,7 +21,6 @@
       "properties": {
         "infrastructure": {
           "title": "Cloud provider configuration",
-          "description": "Cloud specific Redis configuration data.",
           "type": "object",
           "required": [
             "hostname"
