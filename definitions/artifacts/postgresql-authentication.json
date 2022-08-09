@@ -38,6 +38,9 @@
             },
             {
               "$ref": "../types/gcp-security.json"
+            },
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
             }
           ]
         },
