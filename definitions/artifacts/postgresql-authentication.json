@@ -38,9 +38,6 @@
             },
             {
               "$ref": "../types/gcp-security.json"
-            },
-            {
-              "$ref": "../types/k8s-application-infrastructure.json"
             }
           ]
         },
@@ -57,6 +54,9 @@
             },
             {
               "$ref": "../types/azure-infrastructure-ari.json"
+            },
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
             }
           ]
         },
