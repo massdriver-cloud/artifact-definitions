@@ -5,7 +5,7 @@ TAG=release-$(shell date +%s)
 local.update:
 	@if ! command -v mass  &> /dev/null; then echo "please install massdriver cli https://github.com/massdriver-cloud/massdriver-cli" && exit 1; fi
 	@mkdir -p .artifacts
-#	@rm .artifacts/*
+	@rm -f .artifacts/*
 	@$(foreach artifact,$(wildcard definitions/artifacts/*.json),mass schema dereference $(artifact) > .artifacts/$(notdir $(basename $(artifact)));)
 	@echo "Schemas dumped to .artifacts/ folder."
 
