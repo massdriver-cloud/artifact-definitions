@@ -11,7 +11,7 @@ local.update:
 
 local.server: local.update
 	@if [ "$(shell docker ps -aq -f name=development-artifacts)" ]; then echo "Development server already running!"; else \
-	docker run --rm -d --name development-artifacts -p 8081:80 -v $(shell pwd)/.artifacts:/usr/share/nginx/html/artifact-definitions nginx:1.23.1 &> /dev/null; \
+	docker run --rm -d --name development-artifacts -p 8081:80 -v $(shell pwd)/.artifacts:/usr/share/nginx/html/artifact-definitions/massdriver nginx:1.23.1 &> /dev/null; \
 	echo "Development server running! Set MASSDRIVER_URL=http://localhost:8081 to have the CLI pull artifact definitions from this server"; fi
 
 local.shutdown:

@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "SSH Authentication",
+  "description": "SHH public/private keypair",
+  "additionalProperties": false,
+  "required": [
+    "user",
+    "hostname",
+    "private_key",
+    "public_key"
+  ],
+  "properties": {
+    "user": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "private_key": {
+      "type": "string"
+    },
+    "public_key": {
+      "type": "string"
+    }
+  }
+}
