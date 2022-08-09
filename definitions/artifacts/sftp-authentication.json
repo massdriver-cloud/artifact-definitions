@@ -6,7 +6,7 @@
   },
   "type": "object",
   "title": "SFTP Authentication",
-  "description": "Authentication can connection details for an SFTP server",
+  "description": "Authentication and connection details for an SFTP server",
   "additionalProperties": false,
   "required": [
     "data"
