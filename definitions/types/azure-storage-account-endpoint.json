@@ -11,28 +11,28 @@
   "oneOf": [
     {
       "type": "string",
-      "pattern": "((http|https):\/\/)[a-zA-Z0-9]+\\.blob\\.core\\.windows\\.net\/$",
+      "pattern": "((http|https):\/\/)[a-z0-9]+\\.blob\\.core\\.windows\\.net\/$",
       "message": {
         "pattern": "Must be a valid Azure Storage Account blob endpoint"
       }
     },
     {
       "type": "string",
-      "pattern": "^((http|https):\/\/)[a-zA-Z0-9]+\\.queue\\.core\\.windows\\.net\/$",
+      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.queue\\.core\\.windows\\.net\/$",
       "message": {
         "pattern": "Must be a valid Azure Storage Account queue endpoint"
       }
     },
     {
       "type": "string",
-      "pattern": "^((http|https):\/\/)[a-zA-Z0-9]+\\.table\\.core\\.windows\\.net\/$",
+      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.table\\.core\\.windows\\.net\/$",
       "message": {
         "pattern": "Must be a valid Azure Storage Account table endpoint"
       }
     },
     {
       "type": "string",
-      "pattern": "^((http|https):\/\/)[a-zA-Z0-9]+\\.file\\.core\\.windows\\.net\/$",
+      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.file\\.core\\.windows\\.net\/$",
       "message": {
         "pattern": "Must be a valid Azure Storage Account file share endpoint"
       }
