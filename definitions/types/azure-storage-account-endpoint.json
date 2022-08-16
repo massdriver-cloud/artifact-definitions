@@ -5,44 +5,13 @@
   "additionalProperties": false,
   "examples": [
     "https://storageaccount.blob.core.windows.net/",
-    "http://storageaccount.file.core.windows.net/",
-    "abfs://filesystem.accountname.dfs.core.windows.net/"
+    "http://storageaccount.file.core.windows.net",
+    "abfs://filesystem.accountname.dfs.core.windows.net/",
+    "https://storageaccount.privatelink01.queue.core.windows.net/"
   ],
-  "oneOf": [
-    {
-      "type": "string",
-      "pattern": "((http|https):\/\/)[a-z0-9]+\\.blob\\.core\\.windows\\.net\/$",
-      "message": {
-        "pattern": "Must be a valid Azure Storage Account blob endpoint"
-      }
-    },
-    {
-      "type": "string",
-      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.queue\\.core\\.windows\\.net\/$",
-      "message": {
-        "pattern": "Must be a valid Azure Storage Account queue endpoint"
-      }
-    },
-    {
-      "type": "string",
-      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.table\\.core\\.windows\\.net\/$",
-      "message": {
-        "pattern": "Must be a valid Azure Storage Account table endpoint"
-      }
-    },
-    {
-      "type": "string",
-      "pattern": "^((http|https):\/\/)[a-z0-9]+\\.file\\.core\\.windows\\.net\/$",
-      "message": {
-        "pattern": "Must be a valid Azure Storage Account file share endpoint"
-      }
-    },
-    {
-      "type": "string",
-      "pattern": "^((abfs|abfss|http|https):\/\/)([a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)?)\\.dfs\\.core\\.windows\\.net\/$",
-      "message": {
-        "pattern": "Must be a valid Azure Storage Account DFS endpoint"
-      }
-    }
-  ]
+  "type": "string",
+  "pattern": "^((abfs|abfss|http|https):\/\/)([a-z0-9]+(\\.[a-zA-Z0-9]+)?)\\.[a-z]+\\.core\\.windows\\.net(\/)?$",
+  "message": {
+    "pattern": "Must be a valid Azure Storage Account endpoint"
+  }
 }
