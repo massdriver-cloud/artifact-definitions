@@ -8,7 +8,6 @@
   "properties": {
     "iam": {
       "$ref": "./gcp-security-iam.json"
-    },
-    "additionalProperties": false
+    }
   }
 }
