@@ -13,6 +13,7 @@
       "properties": {
         "role": {
           "title": "Role",
+          "type": "string",
           "description": "GCP Role",
           "pattern": "^roles\/[a-zA-Z\\.]+$",
           "message": {
