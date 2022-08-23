@@ -3,7 +3,7 @@
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Azure",
+    "defaultTargetConnectionGroupLabel": "Azure Service Principal",
     "importing": {
       "group": "authentication"
     },
