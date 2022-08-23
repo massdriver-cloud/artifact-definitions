@@ -11,17 +11,6 @@
     },
     "region": {
       "$ref": "../types/gcp-region.json"
-    },
-    "zone": {
-      "$ref": "../types/gcp-zone.json"
-    },
-    "resource": {
-      "type": "string",
-      "title": "GCP Resource Type"
-    },
-    "service": {
-      "type": "string",
-      "title": "GCP Service"
     }
   }
 }
