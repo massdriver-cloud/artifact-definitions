@@ -3,7 +3,7 @@
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kubernetes",
+    "defaultTargetConnectionGroupLabel": "Kube Config",
     "export": [
       {
         "downloadButtonText": "Kube Config",
