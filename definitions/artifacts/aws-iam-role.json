@@ -3,7 +3,7 @@
   "$md": {
     "access": "public",
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "AWS",
+    "defaultTargetConnectionGroupLabel": "AWS IAM Role",
     "importing": {
       "group": "authentication"
     },
