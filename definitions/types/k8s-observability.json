@@ -1,88 +1,86 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "observability": {
-    "description": "Configure logging and metrics collection and delivery for your entire cluster",
-    "properties": {
-      "logging": {
-        "dependencies": {
-          "destination": {
-            "oneOf": [
-              {
-                "properties": {
-                  "destination": {
-                    "const": "opensearch"
-                  },
-                  "opensearch": {
-                    "properties": {
-                      "persistence_size": {
-                        "default": 10,
-                        "description": "Size of the persistent volume to use for OpenSearch",
-                        "maximum": 1000,
-                        "minimum": 2,
-                        "title": "Persistence Size GiB",
-                        "type": "integer"
-                      },
-                      "retention_days": {
-                        "default": 7,
-                        "description": "Number of days to retain logs and metrics in an OpenSearch Index",
-                        "maximum": 365,
-                        "minimum": 1,
-                        "title": "Retention Days",
-                        "type": "integer"
-                      }
-                    },
-                    "required": [
-                      "persistence_size",
-                      "retention_days"
-                    ],
-                    "title": "OpenSearch",
-                    "type": "object"
-                  }
+  "description": "Configure logging and metrics collection and delivery for your entire cluster",
+  "properties": {
+    "logging": {
+      "dependencies": {
+        "destination": {
+          "oneOf": [
+            {
+              "properties": {
+                "destination": {
+                  "const": "opensearch"
                 },
-                "required": [
-                  "opensearch"
-                ]
+                "opensearch": {
+                  "properties": {
+                    "persistence_size": {
+                      "default": 10,
+                      "description": "Size of the persistent volume to use for OpenSearch",
+                      "maximum": 1000,
+                      "minimum": 2,
+                      "title": "Persistence Size GiB",
+                      "type": "integer"
+                    },
+                    "retention_days": {
+                      "default": 7,
+                      "description": "Number of days to retain logs and metrics in an OpenSearch Index",
+                      "maximum": 365,
+                      "minimum": 1,
+                      "title": "Retention Days",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "persistence_size",
+                    "retention_days"
+                  ],
+                  "title": "OpenSearch",
+                  "type": "object"
+                }
               },
-              {
-                "properties": {
-                  "destination": {
-                    "const": "disabled"
-                  }
+              "required": [
+                "opensearch"
+              ]
+            },
+            {
+              "properties": {
+                "destination": {
+                  "const": "disabled"
                 }
               }
-            ]
-          }
-        },
-        "description": "Configure logging for your cluster",
-        "properties": {
-          "destination": {
-            "default": "disabled",
-            "description": "Where to send logs",
-            "oneOf": [
-              {
-                "const": "opensearch",
-                "title": "OpenSearch (in cluster)"
-              },
-              {
-                "const": "disabled",
-                "title": "Disabled"
-              }
-            ],
-            "title": "Destination",
-            "type": "string"
-          }
-        },
-        "required": [
-          "destination"
-        ],
-        "title": "Logging",
-        "type": "object"
-      }
-    },
-    "required": [
-      "logging"
-    ],
-    "title": "Observability",
-    "type": "object"
-  }
+            }
+          ]
+        }
+      },
+      "description": "Configure logging for your cluster",
+      "properties": {
+        "destination": {
+          "default": "disabled",
+          "description": "Where to send logs",
+          "oneOf": [
+            {
+              "const": "opensearch",
+              "title": "OpenSearch (in cluster)"
+            },
+            {
+              "const": "disabled",
+              "title": "Disabled"
+            }
+          ],
+          "title": "Destination",
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination"
+      ],
+      "title": "Logging",
+      "type": "object"
+    }
+  },
+  "required": [
+    "logging"
+  ],
+  "title": "Observability",
+  "type": "object"
 }
