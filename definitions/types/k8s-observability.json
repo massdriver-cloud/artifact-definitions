@@ -55,22 +55,6 @@
         },
         "description": "Configure logging for your cluster",
         "properties": {
-          "collection": {
-            "default": "disabled",
-            "description": "Stack for collecting logs",
-            "oneOf": [
-              {
-                "const": "fluentbit",
-                "title": "fluentbit"
-              },
-              {
-                "const": "disabled",
-                "title": "Disabled"
-              }
-            ],
-            "title": "Log Collection",
-            "type": "string"
-          },
           "destination": {
             "default": "disabled",
             "description": "Where to send logs",
@@ -89,7 +73,6 @@
           }
         },
         "required": [
-          "collection",
           "destination"
         ],
         "title": "Logging",
