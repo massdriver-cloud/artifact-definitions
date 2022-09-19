@@ -47,13 +47,9 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        }
-      }
+      "properties": {},
+      "default": {}
     }
   }
 }
