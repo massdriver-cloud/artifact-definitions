@@ -9,7 +9,7 @@ contexts:
       cluster: {{ artifact.id | default: "md-k8s-cluster" }}
       user: {{ artifact.id | default: "md-k8s-user" }}
     name: {{ artifact.id | default: "md-k8s" }}
-current-context: {{ artifact.id }}
+current-context: {{ artifact.id | default: "md-k8s" }}
 kind: Config
 preferences: {}
 users:
