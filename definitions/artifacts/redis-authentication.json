@@ -57,6 +57,9 @@
             },
             "port": {
               "$ref": "../types/port.json"
+            },
+            "certificate": {
+              "$ref": "../types/ca-certificate.json"
             }
           }
         },

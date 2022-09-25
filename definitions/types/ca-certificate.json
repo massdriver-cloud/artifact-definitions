@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "cert",
+    "create_time",
+    "expiration_time",
+    "sha1_fingerprint"
+  ],
+  "properties": {
+    "cert": {
+      "type": "string",
+      "title": "Certificate",
+      "description": "Certificate for TLS connection to Redis in PEM format"
+    },
+    "create_time": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Create Time",
+      "description": "Creation time of the CA Cert",
+      "examples": [
+        "2022-09-25T20:04:15.521636Z"
+      ]
+    },
+    "expiration_time": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Expiration Time",
+      "description": "Expiration time of the CA Cert",
+      "examples": [
+        "2032-09-22T20:04:15.161Z"
+      ]
+    },
+    "sha1_fingerprint": {
+      "type": "string",
+      "title": "SHA1 Fingerprint",
+      "description": "SHA Fingerprint of the CA Cert"
+    }
+  }
+}
