@@ -11,7 +11,7 @@
     "cert": {
       "type": "string",
       "title": "Certificate",
-      "description": "Certificate for TLS connection to Redis in PEM format"
+      "description": "Certificate for TLS connection in PEM format"
     },
     "create_time": {
       "type": "string",
