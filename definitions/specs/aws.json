@@ -7,17 +7,6 @@
   "properties": {
     "region": {
       "$ref": "../types/aws-region.json"
-    },
-    "zone": {
-      "$ref": "../types/aws-zone.json"
-    },
-    "resource": {
-      "type": "string",
-      "title": "AWS Resource Type"
-    },
-    "service": {
-      "type": "string",
-      "title": "AWS Service"
     }
   }
 }
