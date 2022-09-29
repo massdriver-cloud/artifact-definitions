@@ -2,11 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "access": "public",
-    "name": "aws-eventbridge"
+    "name": "aws-dynamodb-stream"
   },
   "type": "object",
-  "title": "AWS EventBridge",
-  "description": "Connection details for EventBridge event bus",
+  "title": "AWS DynamoDB Stream",
+  "description": "",
   "additionalProperties": false,
   "required": ["data", "specs"],
   "properties": {
