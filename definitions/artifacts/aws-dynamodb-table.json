@@ -8,23 +8,16 @@
   "title": "AWS DynamoDB Table",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure"
-      ],
+      "required": ["infrastructure"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
-          "required": [
-            "arn"
-          ],
+          "required": ["arn"],
           "type": "object",
           "properties": {
             "arn": {
