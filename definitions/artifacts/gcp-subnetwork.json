@@ -30,7 +30,8 @@
           "required": [
             "grn",
             "cidr",
-            "gcp_global_network_grn"
+            "gcp_global_network_grn",
+            "vpc_access_connector"
           ],
           "type": "object",
           "properties": {
@@ -41,6 +42,9 @@
               "$ref": "../types/cidr.json"
             },
             "gcp_global_network_grn": {
+              "$ref": "../types/gcp-grn.json"
+            },
+            "vpc_access_connector": {
               "$ref": "../types/gcp-grn.json"
             }
           }
