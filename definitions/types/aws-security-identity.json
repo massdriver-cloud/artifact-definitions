@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Identity",
+  "description": "AWS IAM Role",
+  "additionalProperties": false,
+  "properties": {
+    "role_arn": {
+      "title": "AWS Role ARN",
+      "description": "ARN for workload identity",
+      "$ref": "./aws-arn.json"
+    }
+  }
+}
