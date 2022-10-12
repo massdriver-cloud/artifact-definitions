@@ -11,6 +11,9 @@
     },
     "iam": {
       "$ref": "./aws-security-iam.json"
+    },
+    "identity": {
+      "$ref": "./aws-security-identity.json"
     }
   }
 }
