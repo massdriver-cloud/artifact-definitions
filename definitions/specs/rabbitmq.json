@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Specs",
+  "description": "RabbitMQ specific public information",
+  "required": [
+    "version"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "title": "Version of cluster",
+      "description": "Currently deployed RabbitMQ version"
+    }
+  }
+}
