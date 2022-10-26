@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "rabbitmq-authentication"
+  },
+  "type": "object",
+  "title": "RabbitMQ Cluster",
+  "description": "RabbitMQ cluster authentication.",
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "RabbitMQ cluster infrastructure configuration.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
+            }
+          ]
+        },
+        "authentication": {
+          "$ref": "../types/rabbitmq-authentication.json"
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "properties": {
+        "rabbitmq": {
+          "$ref": "../specs/rabbitmq.json"
+        }
+      }
+    }
+  }
+}
