@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "api"
+  },
+  "type": "object",
+  "title": "API / Web Service",
+  "description": "An arbitrary API.",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "api"
+      ],
+      "properties": {
+        "api": {
+          "required": ["hostname", "port"],
+          "type": "object",
+          "properties": {
+            "hostname": {
+              "type": "object",
+              "minProperties": 1,
+              "properties": {
+                "external": {
+                  "type": "string"
+                },
+                "internal": {
+                  "type": "string"
+                }
+              }
+            },
+            "port": {
+              "$ref": "../types/port.json"
+            },
+            "protocol": {
+              "type": "string",
+              "description": "API protocol"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "api"
+      ],
+      "properties": {
+        "api": {
+          "version": {
+            "type": "string",
+            "description": "API Version"
+          }
+        }
+      }
+    }
+  }
+}
