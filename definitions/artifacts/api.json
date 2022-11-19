@@ -24,16 +24,8 @@
           "type": "object",
           "properties": {
             "hostname": {
-              "type": "object",
-              "minProperties": 1,
-              "properties": {
-                "external": {
-                  "type": "string"
-                },
-                "internal": {
-                  "type": "string"
-                }
-              }
+              "type": "string",
+              "description": "Service host name. If a second host name is needed for internal vs external access, a second artifact is recommended."
             },
             "port": {
               "$ref": "../types/port.json"
