@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP Threshold Alarm",
+  "required": [
+    "metric_type",
+    "resource_type",
+    "threshold",
+    "alignment_period_s",
+    "duration_s"
+  ],
+  "properties": {
+    "metric_type": {
+      "type": "string",
+      "title": "Metric Type",
+      "examples": [
+        "redis.googleapis.com/stats/memory/usage_ratio"
+      ]
+    },
+    "resource_type": {
+      "type": "string",
+      "title": "Resource Type",
+      "description": "The GCP Monitoring [Resource Type](https://cloud.google.com/monitoring/api/resources).",
+      "examples": [
+        "redis_instance"
+      ]
+    },
+    "threshold": {
+      "type": "number",
+      "title": "Threshold",
+      "description": "The threshold value for the alarm, between 0 and 1.",
+      "examples": [
+        0.9
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "alignment_period_s": {
+      "type": "integer",
+      "title": "Period",
+      "description": "The alignment period for per-time series alignment",
+      "minimum": 60,
+      "maximum": 600
+    },
+    "duration_s": {
+      "type": "integer",
+      "title": "Duration",
+      "description": "The amount of time that a time series must fail to report new data to be considered failing (in seconds). Only multiples of full minutes are supported.",
+      "enum": [
+        60,
+        120,
+        180,
+        240,
+        300,
+        360,
+        420
+      ]
+    }
+  }
+}
