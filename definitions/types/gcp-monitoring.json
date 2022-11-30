@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "GCP Monitoring",
+  "required": [
+    "mode"
+  ],
+  "properties": {
+    "mode": {
+      "title": "Alarm Mode",
+      "description": "Enable and customize Function App metric alarms.",
+      "type": "string",
+      "default": "AUTOMATED",
+      "oneOf": [
+        {
+          "const": "AUTOMATED",
+          "title": "Automated"
+        },
+        {
+          "const": "CUSTOM",
+          "title": "Custom"
+        },
+        {
+          "const": "DISABLED",
+          "title": "Disabled"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "mode": {
+      "oneOf": [
+        {
+          "properties": {
+            "mode": {
+              "const": "AUTOMATED"
+            }
+          }
+        },
+        {
+          "properties": {
+            "mode": {
+              "const": "DISABLED"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

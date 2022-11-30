@@ -7,7 +7,8 @@
     "resource_type",
     "threshold",
     "alignment_period_s",
-    "duration_s"
+    "duration_s",
+    "value_type"
   ],
   "properties": {
     "metric_type": {
@@ -39,6 +40,7 @@
       "type": "integer",
       "title": "Period",
       "description": "The alignment period for per-time series alignment",
+      "default": 60,
       "minimum": 60,
       "maximum": 600
     },
@@ -46,6 +48,7 @@
       "type": "integer",
       "title": "Duration",
       "description": "The amount of time that a time series must fail to report new data to be considered failing (in seconds). Only multiples of full minutes are supported.",
+      "default": 60,
       "enum": [
         60,
         120,
@@ -54,6 +57,18 @@
         300,
         360,
         420
+      ]
+    },
+    "value_type": {
+      "type": "string",
+      "title": "Value Type",
+      "description": "GCP Metric [Value Type](https://cloud.google.com/monitoring/api/v3/kinds-and-types).",
+      "default": "DOUBLE",
+      "enum": [
+        "BOOL",
+        "INT64",
+        "DOUBLE",
+        "STRING"
       ]
     }
   }
