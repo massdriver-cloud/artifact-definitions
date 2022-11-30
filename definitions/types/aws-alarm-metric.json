@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "AWS Alarm Metric",
+  "required": [
+    "threshold",
+    "period"
+  ],
+  "properties": {
+    "threshold": {
+      "type": "integer",
+      "title": "Threshold",
+      "description": "The percentage threshold for the metric to trigger an alarm. For RU consumption, the threshold is the percentage of the current RU consumption. For server latency, the threshold is latency in milliseconds.",
+      "minimum": 0
+    },
+    "period": {
+      "type": "integer",
+      "title": "Period",
+      "description": "The length of time associated with this statistic",
+      "default": 300,
+      "minimum": 1,
+      "maximum": 86400
+    }
+  }
+}

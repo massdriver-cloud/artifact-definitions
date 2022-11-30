@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
-  "title": "GCP Threshold Alarm",
+  "title": "GCP Alarm Metric",
   "required": [
     "metric_type",
     "resource_type",
