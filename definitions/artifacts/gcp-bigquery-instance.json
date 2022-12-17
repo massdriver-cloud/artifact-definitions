@@ -9,7 +9,7 @@
   },
   "type": "object",
   "title": "BigQuery",
-  "description": "GCP BigQuery Instance",
+  "description": "GCP BigQuery instance",
   "required": [
     "data",
     "specs"
@@ -24,7 +24,7 @@
       ],
       "properties": {
         "infrastructure": {
-          "title": "Infrastructure configuration",
+          "title": "Infrastructure Configuration",
           "description": "BigQuery configuration",
           "$ref": "../types/gcp-infrastructure-grn.json"
         },
