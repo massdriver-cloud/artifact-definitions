@@ -19,6 +19,11 @@
         "api"
       ],
       "properties": {
+        "etc": {
+          "additionalProperties": true,
+          "type": "object",
+          "description": "This field can be used to store arbitrary data to pass to downstream services."
+        },
         "api": {
           "required": ["hostname", "port"],
           "type": "object",
