@@ -38,15 +38,11 @@
           "title": "Authentication credentials",
           "type": "object",
           "required": [
-            "endpoint",
-            "connection_string"
+            "endpoint"
           ],
           "properties": {
             "endpoint": {
               "$ref": "../types/azure-storage-account-endpoint.json"
-            },
-            "connection_string": {
-              "$ref": "../types/azure-storage-account-connection-string.json"
             }
           }
         },
