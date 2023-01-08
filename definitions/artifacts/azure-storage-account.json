@@ -47,7 +47,7 @@
             },
             "connection_string": {
               "$ref": "../types/azure-storage-account-connection-string.json",
-              "_comment": "This field is deprecated, please define policies in app.policies to have the correct roles assigned to your identity."
+              "$comment": "This field is deprecated, please define policies in app.policies to have the correct roles assigned to your identity."
             }
           }
         },
