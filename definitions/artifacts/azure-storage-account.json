@@ -38,11 +38,16 @@
           "title": "Authentication credentials",
           "type": "object",
           "required": [
-            "endpoint"
+            "endpoint",
+            "connection_string"
           ],
           "properties": {
             "endpoint": {
               "$ref": "../types/azure-storage-account-endpoint.json"
+            },
+            "connection_string": {
+              "$ref": "../types/azure-storage-account-connection-string.json",
+              "_comment": "This field is deprecated, please define policies in app.policies to have the correct roles assigned to your identity."
             }
           }
         },
