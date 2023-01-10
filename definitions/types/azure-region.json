@@ -5,8 +5,20 @@
   "description": "Select the Azure region you'd like to provision your resources in.",
   "oneOf": [
     {
+      "title": "Central US",
+      "const": "centralus"
+    },
+    {
       "title": "East US",
       "const": "eastus"
+    },
+    {
+      "title": "East US 2",
+      "const": "eastus2"
+    },
+    {
+      "title": "East US 3",
+      "const": "eastus3"
     },
     {
       "title": "North Central US",
@@ -19,6 +31,18 @@
     {
       "title": "West US",
       "const": "westus"
+    },
+    {
+      "title": "West US 2",
+      "const": "westus2"
+    },
+    {
+      "title": "West US 3",
+      "const": "westus3"
+    },
+    {
+      "title": "West Central US",
+      "const": "westcentralus"
     }
   ]
 }
