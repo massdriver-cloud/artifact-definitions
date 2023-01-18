@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "endpoint"
+  },
+  "type": "object",
+  "title": "Endpoint",
+  "description": "Resource endpoint URL for a given service.",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Cloud provider details",
+          "description": "Cloud specific resource IDs.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-arn.json"
+            },
+            {
+              "$ref": "../types/azure-infrastructure-ari.json"
+            },
+            {
+              "$ref": "../types/gcp-infrastructure-name.json"
+            }
+          ]
+        },
+        "authentication": {
+          "$ref": "../types/https-url.json"
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_location"
+      ],
+      "properties": {
+        "data_location": {
+          "version": {
+            "type": "string",
+            "description": "Data location"
+          }
+        }
+      }
+    }
+  }
+}

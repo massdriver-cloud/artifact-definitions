@@ -20,7 +20,7 @@
       ],
       "properties": {
         "infrastructure": {
-           "$ref": "../types/k8s-application-infrastructure.json"
+          "$ref": "../types/k8s-application-infrastructure.json"
         },
         "authentication": {
           "$ref": "../types/rabbitmq-authentication.json"
