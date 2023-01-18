@@ -45,18 +45,39 @@
     },
     "specs": {
       "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "api"
-      ],
-      "properties": {
-        "api": {
-          "version": {
-            "type": "string",
-            "description": "API Version"
+      "oneOf": [
+        {
+          "properties": {
+            "aws": {
+              "$ref": "../specs/aws.json"
+            }
+          }
+        },
+        {
+          "properties": {
+            "azure": {
+              "$ref": "../specs/azure.json"
+            }
+          }
+        },
+        {
+          "properties": {
+            "gcp": {
+              "$ref": "../specs/gcp.json"
+            }
+          }
+        },
+        {
+          "properties": {
+            "api": {
+              "version": {
+                "type": "string",
+                "description": "API Version"
+              }
+            }
           }
         }
-      }
+      ]
     }
   }
 }
