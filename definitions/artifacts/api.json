@@ -45,39 +45,27 @@
     },
     "specs": {
       "type": "object",
-      "oneOf": [
-        {
-          "properties": {
-            "aws": {
-              "$ref": "../specs/aws.json"
-            }
+      "additionalProperties": false,
+      "required": [
+        "api"
+      ],
+      "properties": {
+        "api": {
+          "version": {
+            "type": "string",
+            "description": "API Version"
           }
         },
-        {
-          "properties": {
-            "azure": {
-              "$ref": "../specs/azure.json"
-            }
-          }
+        "aws": {
+          "$ref": "../specs/aws.json"
         },
-        {
-          "properties": {
-            "gcp": {
-              "$ref": "../specs/gcp.json"
-            }
-          }
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         },
-        {
-          "properties": {
-            "api": {
-              "version": {
-                "type": "string",
-                "description": "API Version"
-              }
-            }
-          }
+        "azure": {
+          "$ref": "../specs/azure.json"
         }
-      ]
+      }
     }
   }
 }
