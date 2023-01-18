@@ -43,16 +43,19 @@
     },
     "specs": {
       "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "data_location"
-      ],
       "properties": {
-        "data_location": {
-          "version": {
-            "type": "string",
-            "description": "Data location"
-          }
+        "cloud": {
+          "oneOf": [
+            {
+              "$ref": "../types/aws-specs.json"
+            },
+            {
+              "$ref": "../types/azure-specs.json"
+            },
+            {
+              "$ref": "../types/gcp-specs.json"
+            }
+          ]
         }
       }
     }
