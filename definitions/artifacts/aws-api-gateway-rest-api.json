@@ -29,10 +29,10 @@
                     "type": "object",
                     "properties": {
                         "arn": {
-                            "$ref": "../types/aws-arn.json"
+                            "$ref": "../types/aws-api-gateway-arn.json"
                         },
                         "stage_arn": {
-                            "$ref": "../types/aws-arn.json"
+                            "$ref": "../types/aws-api-gateway-arn.json"
                         }
                     }
                 }
