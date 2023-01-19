@@ -24,7 +24,8 @@
                     "title": "Infrastructure",
                     "required": [
                         "arn",
-                        "stage_arn"
+                        "stage_arn",
+                        "root_resource_id"
                     ],
                     "type": "object",
                     "properties": {
@@ -33,6 +34,11 @@
                         },
                         "stage_arn": {
                             "$ref": "../types/aws-api-gateway-arn.json"
+                        },
+                        "root_resource_id": {
+                            "type": "string",
+                            "title": "Root Resource Id",
+                            "description": "Id of the API Gateway resource at the '/' route"
                         }
                     }
                 }
