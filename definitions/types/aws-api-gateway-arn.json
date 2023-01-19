@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "string",
+  "title": "AWS API Gateway ARN",
+  "description": "Amazon Resource Name format for API Gateway and related resources",
+  "examples": [
+    "arn:partition:apigateway:region::/restapis/api-id",
+    "arn:partition:apigateway:region::/restapis/api-id/stages/stage-id"
+  ],
+  "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[/a-zA-Z0-9._-]+(?:[/:][a-zA-Z0-9/._-]+)?(?:/[0-9-T:.]+)?$",
+  "message": {
+    "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/apigateway/latest/developerguide/arn-format-reference.html"
+  }
+}
