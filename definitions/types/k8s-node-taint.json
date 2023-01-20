@@ -27,7 +27,7 @@
             "type": "string",
             "title": "Effect",
             "default": "NO_SCHEDULE",
-            "enum": [
+            "oneOf": [
                 {
                     "const": "PREFER_NO_SCHEDULE",
                     "title": "Prefer No Schedule"
