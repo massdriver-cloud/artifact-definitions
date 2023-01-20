@@ -12,11 +12,20 @@
         "effect": {
             "type": "string",
             "title": "Effect",
-            "default": "NoSchedule",
+            "default": "NO_SCHEDULE",
             "enum": [
-                "PreferNoSchedule",
-                "NoSchedule",
-                "NoExecute"
+                {
+                    "const": "PREFER_NO_SCHEDULE",
+                    "title": "Prefer No Schedule"
+                },
+                {
+                    "const": "NO_SCHEDULE",
+                    "title": "No Schedule"
+                },
+                {
+                    "const": "NO_EXECUTE",
+                    "title": "No Execute"
+                }
             ]
         },
         "taint_key": {
