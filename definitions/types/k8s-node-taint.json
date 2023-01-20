@@ -9,6 +9,20 @@
         "effect"
     ],
     "properties": {
+        "taint_key": {
+            "$ref": "../types/k8s-resource-name.json",
+            "title": "Key",
+            "examples": [
+                "workloads"
+            ]
+        },
+        "taint_value": {
+            "$ref": "../types/k8s-resource-name.json",
+            "title": "Value",
+            "examples": [
+                "gpu"
+            ]
+        },
         "effect": {
             "type": "string",
             "title": "Effect",
@@ -26,20 +40,6 @@
                     "const": "NO_EXECUTE",
                     "title": "No Execute"
                 }
-            ]
-        },
-        "taint_key": {
-            "$ref": "../types/k8s-resource-name.json",
-            "title": "Key",
-            "examples": [
-                "workloads"
-            ]
-        },
-        "taint_value": {
-            "$ref": "../types/k8s-resource-name.json",
-            "title": "Value",
-            "examples": [
-                "gpu"
             ]
         }
     }
