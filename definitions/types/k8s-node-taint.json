@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Taint",
+    "description": "A taint to apply to Kubernetes nodes",
+    "required": [
+        "taint_key",
+        "taint_value",
+        "effect"
+    ],
+    "properties": {
+        "effect": {
+            "type": "string",
+            "title": "Effect",
+            "default": "NoSchedule",
+            "enum": [
+                "PreferNoSchedule",
+                "NoSchedule",
+                "NoExecute"
+            ]
+        },
+        "taint_key": {
+            "$ref": "../types/k8s-resource-name.json",
+            "title": "Key",
+            "examples": [
+                "workloads"
+            ]
+        },
+        "taint_value": {
+            "$ref": "../types/k8s-resource-name.json",
+            "title": "Value",
+            "examples": [
+                "gpu"
+            ]
+        }
+    }
+}
