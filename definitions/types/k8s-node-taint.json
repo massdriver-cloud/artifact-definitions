@@ -10,7 +10,7 @@
     ],
     "properties": {
         "taint_key": {
-            "$ref": "../types/k8s-resource-name.json",
+            "$ref": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json",
             "title": "Key",
             "description": "Taint Key",
             "examples": [
@@ -18,7 +18,7 @@
             ]
         },
         "taint_value": {
-            "$ref": "../types/k8s-resource-name.json",
+            "$ref": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json",
             "title": "Value",
             "description": "Taint Value",
             "examples": [
