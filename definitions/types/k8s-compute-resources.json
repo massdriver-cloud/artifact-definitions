@@ -1,6 +1,6 @@
 {
-  "title": "Resources",
-  "description": "Compute Resources required by this container.",
+  "title": "Compute Resource",
+  "description": "Compute resources required by this container.",
   "type": "object",
   "required": [
     "cpu",
