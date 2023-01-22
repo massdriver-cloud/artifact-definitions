@@ -1,0 +1,22 @@
+{
+  "title": "Resources",
+  "description": "Compute Resources required by this container.",
+  "type": "object",
+  "required": [
+    "cpu",
+    "memory"
+  ],
+  "properties": {
+    "cpu": {
+      "title": "CPU Cores",
+      "description": "The expected CPU cores required for this application. Fractional numbers are allowed (0.5 is one half of a CPU core).",
+      "type": "number",
+      "minimum": 0.001
+    },
+    "memory": {
+      "title": "Memory",
+      "description": "The expected Memory resources required for this application.",
+      "type": "integer"
+    }
+  }
+}
