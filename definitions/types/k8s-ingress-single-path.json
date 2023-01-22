@@ -2,9 +2,6 @@
   "title": "Kubernetes Ingress Rule",
   "description": "Kubernetes ingress rule exposing a single path.",
   "properties": {
-    "enabled": {
-      "const": true
-    },
     "host": {
       "title": "HTTP Hostname",
       "description": "The hostname which this application should be accessable on, such as www.example.com. You must own this domain and have it associated with this kubernetes cluster if you would like automatic DNS record and SSL certificate management. Learn about DNS configuration [here](https://docs.massdriver.cloud/platform/dns-zones).",
