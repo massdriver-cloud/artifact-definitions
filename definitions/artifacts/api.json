@@ -40,6 +40,21 @@
               "description": "API protocol"
             }
           }
+        },
+        "security": {
+          "title": "Security",
+          "type": "object",
+          "anyOf": [
+            {
+              "ref": "../types/aws-security.json"
+            },
+            {
+              "ref": "../types/gcp-security.json"
+            },
+            {
+              "ref": "../types/azure-security.json"
+            }
+          ]
         }
       }
     },
