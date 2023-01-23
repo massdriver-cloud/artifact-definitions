@@ -10,17 +10,25 @@
     ],
     "properties": {
         "taint_key": {
-            "$ref": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json",
+            "type": "string",
             "title": "Key",
             "description": "Taint Key",
+            "pattern": "^(?:[a-z0-9]|[a-z0-9][a-z0-9-]{0,61}[a-z0-9])$",
+            "message": {
+                "pattern": "Name must follow RFC 1123: at most 63 characters, only lowercase alphanumeric characters or '-', and start and end with an alphanumeric character."
+            },
             "examples": [
                 "workloads"
             ]
         },
         "taint_value": {
-            "$ref": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/main/definitions/types/k8s-resource-name.json",
+            "type": "string",
             "title": "Value",
             "description": "Taint Value",
+            "pattern": "^(?:[a-z0-9]|[a-z0-9][a-z0-9-]{0,61}[a-z0-9])$",
+            "message": {
+                "pattern": "Name must follow RFC 1123: at most 63 characters, only lowercase alphanumeric characters or '-', and start and end with an alphanumeric character."
+            },
             "examples": [
                 "gpu"
             ]
