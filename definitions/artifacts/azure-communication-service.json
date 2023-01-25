@@ -42,7 +42,7 @@
           ],
           "properties": {
             "endpoint": {
-              "$ref": "../types/azure-communication-service-endpoint.json"
+              "$ref": "../types/https-url.json"
             }
           }
         },
