@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "importing": {
+      "group": "data"
+    },
+    "name": "opensearch-authentication"
+  },
+  "type": "object",
+  "title": "OpenSearch Authentication",
+  "description": "Authentication for OpenSearch",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "properties": {
+        "security": {
+          "title": "Security",
+          "description": "IAM Security Policies",
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            }
+          ]
+        },
+        "infrastructure": {
+          "title": "infrastructure",
+          "description": "Cloud specific infrastructure details.",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-arn.json"
+            }
+          ]
+        },
+        "authentication": {
+          "title": "Authentication details",
+          "description": "Master Username & Password Authentication",
+          "type": "object",
+          "required": [
+            "username",
+            "password",
+            "hostname",
+            "port"
+          ],
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "hostname": {
+              "type": "string"
+            },
+            "port": {
+              "$ref": "../types/port.json"
+            }
+          }
+        }
+      }
+    },
+    "specs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "opensearch",
+        "aws"
+      ],
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "opensearch": {
+          "type": "object",
+          "title": "OpenSearch Cluster Specs",
+          "required": [
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "type": "string",
+              "title": "Version",
+              "default": "",
+              "examples": [
+                "1.3",
+                "2.0"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
