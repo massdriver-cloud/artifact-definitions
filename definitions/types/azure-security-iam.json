@@ -5,7 +5,7 @@
   "description": "IAM Roles And Scopes",
   "additionalProperties": false,
   "patternProperties": {
-    "^[a-z_]+$": {
+    "^[a-z]+[a-z_]*[a-z]$": {
       "type": "object",
       "required": [
         "role",
