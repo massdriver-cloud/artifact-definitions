@@ -11,6 +11,7 @@
       "isLinkable": false
     },
     "cloud": {
+      "id": "aws",
       "regions": [
         {
           "code": "us-east-2",
