@@ -70,6 +70,7 @@
                 "regions"
               ],
               "properties": {
+                "id": {"type": "string", "title": "ID", "description": "Identifier for cloud"},
                 "regions": {
                   "description": "List of regions",
                   "type": "array",
