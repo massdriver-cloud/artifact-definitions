@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "access": "public",
-    "name": "azure-cognitive-services"
+    "name": "azure-cognitive-service-language"
   },
   "type": "object",
   "title": "Azure Cognitive Services",
