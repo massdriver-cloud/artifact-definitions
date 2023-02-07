@@ -5,7 +5,7 @@
     "name": "azure-cognitive-service-language"
   },
   "type": "object",
-  "title": "Azure Cognitive Services",
+  "title": "Azure Cognitive Services :: Language",
   "description": "",
   "additionalProperties": false,
   "required": [
