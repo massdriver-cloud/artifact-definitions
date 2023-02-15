@@ -67,10 +67,16 @@
               "type": "object",
               "description": "Properties of the cloud supported by Massdriver. Only valid for 'credential' artifact definitions.",
               "required": [
+                "id",
                 "regions"
               ],
               "properties": {
-                "id": {"type": "string", "title": "ID", "description": "Identifier for cloud"},
+                "id": {
+                  "type": "string",
+                  "title": "ID",
+                  "description": "Identifier used in queries to refer to this cloud",
+                  "pattern": "^[a-z0-9-]{2,}$"
+                },
                 "regions": {
                   "description": "List of regions",
                   "type": "array",
@@ -89,6 +95,46 @@
                       },
                       "restrictions": {
                         "type": "string"
+                      }
+                    }
+                  }
+                },
+                "defeaultInstanceTypes": {
+                  "type": "object",
+                  "patternProperties": {
+                    "^[a-zA-Z]": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "size",
+                          "memoryGB",
+                          "vCpus",
+                          "iops"
+                        ],
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "The instance name used by the provisioner to reference the instance type."
+                          },
+                          "size": {
+                            "type": "string",
+                            "description": "Display name for the instance if different"
+                          },
+                          "memoryGB": {
+                            "type": "integer",
+                            "description": "Memory in Gigabytes"
+                          },
+                          "vCpus": {
+                            "type": "integer",
+                            "description": "Number of available VCPUs"
+                          },
+                          "iops": {
+                            "type": "integer",
+                            "description": "Baseline I/O per second"
+                          }
+                        }
                       }
                     }
                   }

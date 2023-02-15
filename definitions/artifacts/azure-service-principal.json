@@ -14,7 +14,414 @@
       "label": "Azure DNS",
       "cloud": "azure"
     },
-    "name": "azure-service-principal"
+    "name": "azure-service-principal",
+    "cloud": {
+      "id": "azure",
+      "regions": [
+        {
+          "code": "eastus",
+          "name": "East US"
+        },
+        {
+          "code": "eastus2",
+          "name": "East US 2"
+        },
+        {
+          "code": "eastus3",
+          "name": "East US 3"
+        },
+        {
+          "code": "centralus",
+          "name": "Central US"
+        },
+        {
+          "code": "northcentralus",
+          "name": "North Central US (Single Zone)"
+        },
+        {
+          "code": "southcentralus",
+          "name": "South Central US"
+        },
+        {
+          "code": "westcentralus",
+          "name": "West Central US (Single Zone)"
+        },
+        {
+          "code": "westus",
+          "name": "West US (Single Zone)"
+        },
+        {
+          "code": "westus2",
+          "name": "West US 2"
+        },
+        {
+          "code": "westus3",
+          "name": "West US 3"
+        },
+        {
+          "code": "australiaeast",
+          "name": "Australia East"
+        },
+        {
+          "code": "brazilsouth",
+          "name": "Brazil South"
+        },
+        {
+          "code": "canadacentral",
+          "name": "Canada Central"
+        },
+        {
+          "code": "centralindia",
+          "name": "Central India"
+        },
+        {
+          "code": "eastasia",
+          "name": "East Asia"
+        },
+        {
+          "code": "francecentral",
+          "name": "France Central"
+        },
+        {
+          "code": "germanywestcentral",
+          "name": "Germany West Central"
+        },
+        {
+          "code": "japaneast",
+          "name": "Japan East"
+        },
+        {
+          "code": "koreacentral",
+          "name": "Korea Central"
+        },
+        {
+          "code": "northeurope",
+          "name": "North Europe"
+        },
+        {
+          "code": "norwayeast",
+          "name": "Norway East"
+        },
+        {
+          "code": "southafricanorth",
+          "name": "South Africa North"
+        },
+        {
+          "code": "southeastasia",
+          "name": "South East Asia"
+        },
+        {
+          "code": "uksouth",
+          "name": "UK South"
+        },
+        {
+          "code": "westeurope",
+          "name": "West Europe"
+        }
+      ],
+      "defaultInstanceTypes": {
+        "Microsoft.DBforMySQL": [
+          {
+            "name": "GP_Standard_D2ds_v4",
+            "size": "D2ds",
+            "memoryGB": 8,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "GP_Standard_D4ds_v4",
+            "size": "D4ds",
+            "memoryGB": 16,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "GP_Standard_D8ds_v4",
+            "size": "D8ds",
+            "memoryGB": 32,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "GP_Standard_D16ds_v4",
+            "size": "D16ds",
+            "memoryGB": 64,
+            "vCpus": 16,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D32ds_v4",
+            "size": "D32ds",
+            "memoryGB": 128,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D48ds_v4",
+            "size": "D48ds",
+            "memoryGB": 192,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D64ds_v4",
+            "size": "D64ds",
+            "memoryGB": 256,
+            "vCpus": 64,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E2ds_v4",
+            "size": "E2ds",
+            "memoryGB": 16,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "MO_Standard_E4ds_v4",
+            "size": "E4ds",
+            "memoryGB": 32,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "MO_Standard_E8ds_v4",
+            "size": "E8ds",
+            "memoryGB": 64,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "MO_Standard_E16ds_v4",
+            "size": "E16ds",
+            "memoryGB": 128,
+            "vCpus": 16,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E32ds_v4",
+            "size": "E32ds",
+            "memoryGB": 256,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E48ds_v4",
+            "size": "E48ds",
+            "memoryGB": 384,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E64ds_v4",
+            "size": "E64ds",
+            "memoryGB": 432,
+            "vCpus": 64,
+            "iops": 18000
+          }
+        ],
+        "Microsoft.DBforPostgreSQL": [
+          {
+            "name": "GP_Standard_D2ds_v3",
+            "size": "D2s",
+            "memoryGB": 8,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "GP_Standard_D4s_v3",
+            "size": "D4s",
+            "memoryGB": 16,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "GP_Standard_D8s_v3",
+            "size": "D8s",
+            "memoryGB": 32,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "GP_Standard_D16s_v3",
+            "size": "D16s",
+            "memoryGB": 64,
+            "vCpus": 16,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D32s_v3",
+            "size": "D32s",
+            "memoryGB": 128,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D48s_v3",
+            "size": "D48s",
+            "memoryGB": 192,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D64s_v3",
+            "size": "D64s",
+            "memoryGB": 256,
+            "vCpus": 64,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E2s_v3",
+            "size": "E2s",
+            "memoryGB": 16,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "MO_Standard_E4s_v3",
+            "size": "E4s",
+            "memoryGB": 32,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "MO_Standard_E8s_v3",
+            "size": "E8s",
+            "memoryGB": 64,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "MO_Standard_E16s_v3",
+            "size": "E16s",
+            "memoryGB": 128,
+            "vCpus": 16,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E32s_v3",
+            "size": "E32s",
+            "memoryGB": 256,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E48s_v3",
+            "size": "E48s",
+            "memoryGB": 384,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E64s_v3",
+            "size": "E64s",
+            "memoryGB": 432,
+            "vCpus": 64,
+            "iops": 18000
+          }
+        ],
+        "Microsoft.Compute": [
+          {
+            "name": "GP_Standard_D2ds_v4",
+            "size": "d2ds",
+            "memoryGB": 8,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "GP_Standard_D4ds_v4",
+            "size": "D4ds",
+            "memoryGB": 16,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "GP_Standard_D8ds_v4",
+            "size": "D8ds",
+            "memoryGB": 32,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "GP_Standard_D16ds_v4",
+            "size": "D16ds",
+            "memoryGB": 64,
+            "vCpus": 16,
+            "iops": 1800
+          },
+          {
+            "name": "GP_Standard_D32ds_v4",
+            "size": "D32ds",
+            "memoryGB": 128,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D48ds_v4",
+            "size": "D48ds",
+            "memoryGB": 192,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "GP_Standard_D64ds_v4",
+            "size": "D64ds",
+            "memoryGB": 256,
+            "vCpus": 64,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E2ds_v4",
+            "size": "E2ds",
+            "memoryGB": 16,
+            "vCpus": 2,
+            "iops": 3200
+          },
+          {
+            "name": "MO_Standard_E4ds_v4",
+            "size": "E4ds",
+            "memoryGB": 32,
+            "vCpus": 4,
+            "iops": 6400
+          },
+          {
+            "name": "MO_Standard_E8ds_v4",
+            "size": "E8ds",
+            "memoryGB": 64,
+            "vCpus": 8,
+            "iops": 12800
+          },
+          {
+            "name": "MO_Standard_E16ds_v4",
+            "size": "E16ds",
+            "memoryGB": 128,
+            "vCpus": 16,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E32ds_v4",
+            "size": "E32ds",
+            "memoryGB": 256,
+            "vCpus": 32,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E48ds_v4",
+            "size": "E48ds",
+            "memoryGB": 384,
+            "vCpus": 48,
+            "iops": 18000
+          },
+          {
+            "name": "MO_Standard_E64ds_v4",
+            "size": "E64ds",
+            "memoryGB": 432,
+            "vCpus": 64,
+            "iops": 18000
+          }
+        ]
+      }
+    }
   },
   "type": "object",
   "title": "Azure Service Principal",
@@ -63,8 +470,7 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-      }
+      "properties": {}
     }
   }
 }
