@@ -16,11 +16,75 @@
             "title": "Artifact Data",
             "type": "object",
             "required": [
-                "infrastructure"
+                "infrastructure",
+                "capabilities",
+                "security"
             ],
             "properties": {
                 "capabilities": {
-
+                    "title": "Artifact Capabilities",
+                    "type": "object",
+                    "required": [
+                        "ingress"
+                    ],
+                    "properties": {
+                        "ingress": {
+                            "title": "Ingress",
+                            "type": "array",
+                            "default": [],
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "load-balancer-arn",
+                                    "security-group-arn",
+                                    "listeners"
+                                ],
+                                "properties": {
+                                    "load-balancer-arn": {
+                                        "$ref": "../types/aws-arn.json"
+                                    },
+                                    "security-group-arn": {
+                                        "$ref": "../types/aws-arn.json"
+                                    },
+                                    "listeners": {
+                                        "type": "array",
+                                        "title": "Listeners",
+                                        "items": {
+                                            "type": "object",
+                                            "required": [
+                                                "arn",
+                                                "port",
+                                                "protocol"
+                                            ],
+                                            "properties": {
+                                                "arn": {
+                                                    "$ref": "../types/aws-arn.json"
+                                                },
+                                                "port": {
+                                                    "$ref": "../types/port.json"
+                                                },
+                                                "protocol": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "http",
+                                                        "https"
+                                                    ]
+                                                },
+                                                "domains": {
+                                                    "type": "array",
+                                                    "default": [],
+                                                    "items": {
+                                                        "type": "string",
+                                                        "pattern": "^(([a-z0-9]+\\.)+[a-z]+)$"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 },
                 "infrastructure": {
                     "title": "Infrastructure",
@@ -40,62 +104,6 @@
                 },
                 "security": {
                     "$ref": "../types/aws-security.json"
-                }
-            }
-        },
-        "capabilities": {
-            "title": "Artifact Capabilities",
-            "type": "object",
-            "properties": {
-                "ingress": {
-                    "title": "Ingress",
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "required": [
-                            "load-balancer-arn",
-                            "listeners"
-                        ],
-                        "properties": {
-                            "load-balancer-arn": {
-                                "$ref": "../types/aws-arn.json"
-                            },
-                            "listeners": {
-                                "type": "array",
-                                "title": "Listeners",
-                                "items": {
-                                    "type": "object",
-                                    "required": [
-                                        "arn",
-                                        "port",
-                                        "protocol"
-                                    ],
-                                    "properties": {
-                                        "arn": {
-                                            "$ref": "../types/aws-arn.json"
-                                        },
-                                        "port": {
-                                            "$ref": "../types/port.json"
-                                        },
-                                        "protocol": {
-                                            "type": "string",
-                                            "enum": [
-                                                "http",
-                                                "https"
-                                            ]
-                                        },
-                                        "domains": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "pattern": "^(([a-z0-9]+\\.)+[a-z]+)$"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
