@@ -35,15 +35,15 @@
                             "items": {
                                 "type": "object",
                                 "required": [
-                                    "load-balancer-arn",
-                                    "security-group-arn",
+                                    "load_balancer_arn",
+                                    "security_group_arn",
                                     "listeners"
                                 ],
                                 "properties": {
-                                    "load-balancer-arn": {
+                                    "load_balancer_arn": {
                                         "$ref": "../types/aws-arn.json"
                                     },
-                                    "security-group-arn": {
+                                    "security_group_arn": {
                                         "$ref": "../types/aws-arn.json"
                                     },
                                     "listeners": {
