@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "defaultTargetConnectionGroup": "credentials",
+    "defaultTargetConnectionGroupLabel": "Config.json",
+    "export": [
+      {
+        "downloadButtonText": "Config.json",
+        "fileFormat": "json",
+        "template": "ewogICAgInN1YnNjcmlwdGlvbl9pZCI6ICJ7eyBhcnRpZmFjdC5kYXRhLmluZnJhc3RydWN0dXJlLnN1YnNjcmlwdGlvbl9pZCB9fSIsCiAgICAicmVzb3VyY2VfZ3JvdXAiOiAie3sgYXJ0aWZhY3QuZGF0YS5pbmZyYXN0cnVjdHVyZS5yZXNvdXJjZV9ncm91cCB9fSIsCiAgICAid29ya3NwYWNlX25hbWUiOiAie3sgYXJ0aWZhY3QuZGF0YS5pbmZyYXN0cnVjdHVyZS5yZXNvdXJjZV9uYW1lIH19Igp9",
+        "templateLang": "liquid"
+      }
+    ],
+    "name": "machine-learning-workspace"
+  },
+  "type": "object",
+  "title": "Azure Machine Learning Workspace",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "resource_group",
+            "subscription_id",
+            "resource_name"
+          ],
+          "properties": {
+            "resource_group": {
+              "$ref": "../types/azure-resource-group-name.json"
+            },
+            "subscription_id": {
+              "$ref": "../types/uuid.json"
+            },
+            "resource_name": {
+              "$ref": "../types/azure-resource-name.json"
+            }
+          }
+        },
+        "authentication": {
+          "title": "Authentication credentials",
+          "type": "object",
+          "required": [
+            "discovery_url"
+          ],
+          "properties": {
+            "discovery_url": {
+              "$ref": "../types/https-url.json"
+            }
+          }
+        },
+        "security": {
+          "$ref": "../types/azure-security.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
+    }
+  }
+}
