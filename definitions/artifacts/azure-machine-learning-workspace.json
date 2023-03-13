@@ -18,7 +18,6 @@
       "type": "object",
       "required": [
         "infrastructure",
-        "authentication",
         "security"
       ],
       "properties": {
@@ -26,37 +25,13 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
-            "ml_ari",
-            "kv_ari",
-            "resource_group",
-            "subscription_id",
-            "resource_name"
-          ],
-          "properties": {
-            "ml_ari": {
-              "$ref": "../types/azure-resource-id.json"
-            },
-            "kv_ari": {
-              "$ref": "../types/azure-resource-id.json"
-            },
-            "resource_group": {
-              "$ref": "../types/azure-resource-group-name.json"
-            },
-            "subscription_id": {
-              "$ref": "../types/uuid.json"
-            },
-            "resource_name": {
-              "$ref": "../types/azure-resource-name.json"
-            }
-          }
-        },
-        "authentication": {
-          "title": "Authentication credentials",
-          "type": "object",
-          "required": [
+            "ari",
             "discovery_url"
           ],
           "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
             "discovery_url": {
               "$ref": "../types/https-url.json"
             }
