@@ -2,16 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "access": "public",
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Config.json",
-    "export": [
-      {
-        "downloadButtonText": "Config.json",
-        "fileFormat": "json",
-        "template": "ewogICAgInN1YnNjcmlwdGlvbl9pZCI6ICJ7eyBhcnRpZmFjdC5kYXRhLmluZnJhc3RydWN0dXJlLnN1YnNjcmlwdGlvbl9pZCB9fSIsCiAgICAicmVzb3VyY2VfZ3JvdXAiOiAie3sgYXJ0aWZhY3QuZGF0YS5pbmZyYXN0cnVjdHVyZS5yZXNvdXJjZV9ncm91cCB9fSIsCiAgICAid29ya3NwYWNlX25hbWUiOiAie3sgYXJ0aWZhY3QuZGF0YS5pbmZyYXN0cnVjdHVyZS5yZXNvdXJjZV9uYW1lIH19Igp9",
-        "templateLang": "liquid"
-      }
-    ],
     "name": "machine-learning-workspace"
   },
   "type": "object",
