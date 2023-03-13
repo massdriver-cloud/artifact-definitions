@@ -26,11 +26,15 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
+            "ari",
             "resource_group",
             "subscription_id",
             "resource_name"
           ],
           "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
             "resource_group": {
               "$ref": "../types/azure-resource-group-name.json"
             },
