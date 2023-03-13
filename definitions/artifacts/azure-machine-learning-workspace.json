@@ -26,13 +26,17 @@
           "title": "Infrastructure configuration",
           "type": "object",
           "required": [
-            "ari",
+            "ml_ari",
+            "kv_ari",
             "resource_group",
             "subscription_id",
             "resource_name"
           ],
           "properties": {
-            "ari": {
+            "ml_ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "kv_ari": {
               "$ref": "../types/azure-resource-id.json"
             },
             "resource_group": {
