@@ -182,7 +182,8 @@
                     "description": "The file format to add to the export file.",
                     "type": "string",
                     "enum": [
-                      "yaml"
+                      "yaml",
+                      "json"
                     ]
                   },
                   "template": {
