@@ -51,9 +51,14 @@
       ],
       "properties": {
         "api": {
-          "version": {
-            "type": "string",
-            "description": "API Version"
+          "type": "object",
+          "description": "API specifications",
+          "required": ["version"],
+          "properties": {
+            "version": {
+              "type": "string",
+              "description": "API Version"
+            }
           }
         },
         "aws": {
