@@ -26,17 +26,13 @@
           "type": "object",
           "required": [
             "ari",
-            "primary_endpoint",
-            "secondary_endpoint"
+            "endpoint"
           ],
           "properties": {
             "ari": {
               "$ref": "../types/azure-resource-id.json"
             },
-            "primary_endpoint": {
-              "$ref": "../types/azure-storage-account-endpoint.json"
-            },
-            "secondary_endpoint": {
+            "endpoint": {
               "$ref": "../types/azure-storage-account-endpoint.json"
             }
           }
