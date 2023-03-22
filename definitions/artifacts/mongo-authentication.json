@@ -29,6 +29,9 @@
             },
             {
               "$ref": "../types/azure-infrastructure-ari.json"
+            },
+            {
+              "$ref": "../types/mongodbatlas-infrastructure.json"
             }
           ]
         },

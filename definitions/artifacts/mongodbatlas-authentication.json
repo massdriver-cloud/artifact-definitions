@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$md": {
+      "access": "public",
+      "defaultTargetConnectionGroup": "credentials",
+      "defaultTargetConnectionGroupLabel": "MongoDB Atlas Credentials",
+      "importing": {
+        "group": "authentication"
+      },
+      "diagram": {
+        "isLinkable": false
+      },
+      "name": "mongodbatlas-credentials"
+    },
+    "type": "object",
+    "title": "MongoDB Atlas Credentials",
+    "description": "",
+    "additionalProperties": false,
+    "required": [
+      "data",
+      "specs"
+    ],
+    "properties": {
+      "data": {
+        "title": "Artifact Data",
+        "type": "object",
+        "required": [
+          "organization_id",
+          "public_key",
+          "private_key"
+        ],
+        "properties": {
+          "organization_id": {
+            "type": "string",
+            "title": "Organization ID"
+          },
+          "public_key": {
+            "type": "string",
+            "title": "Public Key"
+          },
+          "private_key": {
+            "type": "string",
+            "title": "Private Key"
+          }
+        }
+      },
+      "specs": {
+        "title": "Artifact Specs",
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
