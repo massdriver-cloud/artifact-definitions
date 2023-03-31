@@ -5,7 +5,7 @@
   "description": "IAM Policies",
   "additionalProperties": false,
   "patternProperties": {
-    "^[a-z-\/]+$": {
+    "^[a-z_]+$": {
       "type": "object",
       "required": [
         "policy_arn"
