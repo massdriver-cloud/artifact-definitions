@@ -16,7 +16,8 @@
       "type": "object",
       "required": [
         "infrastructure",
-        "authentication"
+        "authentication",
+        "security"
       ],
       "properties": {
         "infrastructure": {
@@ -24,6 +25,9 @@
         },
         "authentication": {
           "$ref": "../types/azure-fhir-authentication.json"
+        },
+        "security": {
+          "$ref": "../types/azure-security.json"
         }
       }
     },
