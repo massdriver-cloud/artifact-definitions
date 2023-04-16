@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$md": {
+        "access": "public",
+        "name": "aws-api-gateway-path"
+    },
+    "type": "object",
+    "title": "AWS API Gateway REST Path",
+    "description": "Path for nested resources in an api gateway",
+    "additionalProperties": false,
+    "required": [
+        "data",
+        "specs"
+    ],
+    "properties": {
+        "data": {
+            "title": "Artifact Data",
+            "type": "object",
+            "required": [
+                "infrastructure"
+            ],
+            "properties": {
+                "infrastructure": {
+                    "title": "Infrastructure",
+                    "required": [
+                        "arn"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "arn": {
+                            "$ref": "../types/aws-api-gateway-arn.json"
+                        }
+                    }
+                }
+            }
+        },
+        "specs": {
+            "title": "Artifact Specs",
+            "type": "object",
+            "properties": {
+                "aws": {
+                    "$ref": "../specs/aws.json"
+                }
+            }
+        }
+    }
+}
