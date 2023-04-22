@@ -8,7 +8,7 @@
     "name": "gcp-healthcare-dataset"
   },
   "type": "object",
-  "title": "GCS Bucket",
+  "title": "GCP Healthcare Dataset",
   "description": "GCP Healthcare Dataset",
   "required": [
     "data",
