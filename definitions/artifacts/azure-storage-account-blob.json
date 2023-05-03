@@ -38,7 +38,41 @@
           }
         },
         "security": {
-          "$ref": "../types/azure-security.json"
+          "iam": {
+            "type": "object",
+            "required": [
+              "role",
+              "scope"
+            ],
+            "properties": {
+              "role": {
+                "title": "Role",
+                "description": "Azure Role",
+                "pattern": "^[a-zA-Z ]+$",
+                "message": {
+                  "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+                },
+                "examples": [
+                  "Storage Blob Data Reader"
+                ]
+              },
+              "scope": {
+                "title": "Scope",
+                "description": "Azure IAM Scope",
+                "type": "string"
+              }
+            }
+          },
+          "sas": {
+            "type": "object",
+            "properties": {
+              "token": {
+                "title": "SAS Token",
+                "description": "Azure SAS Token",
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },
