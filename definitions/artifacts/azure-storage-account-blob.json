@@ -8,26 +8,17 @@
   "title": "Azure Blob Storage Account",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
+      "required": ["infrastructure", "security"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
           "type": "object",
-          "required": [
-            "ari",
-            "endpoint"
-          ],
+          "required": ["ari", "endpoint"],
           "properties": {
             "ari": {
               "$ref": "../types/azure-resource-id.json"
@@ -38,38 +29,40 @@
           }
         },
         "security": {
-          "iam": {
-            "type": "object",
-            "required": [
-              "role",
-              "scope"
-            ],
-            "properties": {
-              "role": {
-                "title": "Role",
-                "description": "Azure Role",
-                "pattern": "^[a-zA-Z ]+$",
-                "message": {
-                  "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+          "type": "object",
+          "title": "Security",
+          "description": "Azure Security Configuration",
+          "additionalProperties": false,
+          "required": ["iam"],
+          "properties": {
+            "iam": {
+              "type": "object",
+              "required": ["role", "scope"],
+              "properties": {
+                "role": {
+                  "title": "Role",
+                  "description": "Azure Role",
+                  "pattern": "^[a-zA-Z ]+$",
+                  "message": {
+                    "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+                  },
+                  "examples": ["Storage Blob Data Reader"]
                 },
-                "examples": [
-                  "Storage Blob Data Reader"
-                ]
-              },
-              "scope": {
-                "title": "Scope",
-                "description": "Azure IAM Scope",
-                "type": "string"
+                "scope": {
+                  "title": "Scope",
+                  "description": "Azure IAM Scope",
+                  "type": "string"
+                }
               }
-            }
-          },
-          "sas": {
-            "type": "object",
-            "properties": {
-              "token": {
-                "title": "SAS Token",
-                "description": "Azure SAS Token",
-                "type": "string"
+            },
+            "sas": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "title": "SAS Token",
+                  "description": "Azure SAS Token",
+                  "type": "string"
+                }
               }
             }
           }
