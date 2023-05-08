@@ -33,7 +33,21 @@
           "title": "Security",
           "description": "Azure Security Configuration",
           "additionalProperties": false,
-          "required": ["iam"],
+          "dependencies": {
+            "required": {
+              "oneOf": [
+                {
+                  "required": ["iam"]
+                },
+                {
+                  "required": ["sas"]
+                },
+                {
+                  "required": ["iam", "sas"]
+                }
+              ]
+            }
+          },
           "properties": {
             "iam": {
               "type": "object",
