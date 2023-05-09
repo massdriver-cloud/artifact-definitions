@@ -33,21 +33,6 @@
           "title": "Security",
           "description": "Azure Security Configuration",
           "additionalProperties": false,
-          "dependencies": {
-            "required": {
-              "oneOf": [
-                {
-                  "required": ["iam"]
-                },
-                {
-                  "required": ["sas"]
-                },
-                {
-                  "required": ["iam", "sas"]
-                }
-              ]
-            }
-          },
           "properties": {
             "iam": {
               "type": "object",
@@ -57,6 +42,7 @@
                   "title": "Role",
                   "description": "Azure Role",
                   "pattern": "^[a-zA-Z ]+$",
+                  "type": "string",
                   "message": {
                     "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
                   },
@@ -79,7 +65,15 @@
                 }
               }
             }
-          }
+          },
+          "anyOf": [
+            {
+              "required": ["iam"]
+            },
+            {
+              "required": ["sas"]
+            }
+          ]
         }
       }
     },
