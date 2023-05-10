@@ -40,6 +40,9 @@
         "authentication": {
           "title": "Authentication configuration",
           "type": "object",
+          "required": [
+            "sas_token"
+          ],
           "properties": {
             "sas_token": {
               "title": "SAS Token",
