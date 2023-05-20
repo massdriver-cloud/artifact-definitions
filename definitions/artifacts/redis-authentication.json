@@ -83,6 +83,15 @@
       "properties": {
         "cache": {
           "$ref": "../specs/cache.json"
+        },
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "azure": {
+          "$ref": "../specs/azure.json"
+        },
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         }
       }
     }

@@ -76,13 +76,9 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "opensearch",
-        "aws"
+        "opensearch"
       ],
       "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
         "opensearch": {
           "type": "object",
           "title": "OpenSearch Cluster Specs",
@@ -101,6 +97,15 @@
             }
           }
         }
+      },
+      "aws": {
+        "$ref": "../specs/aws.json"
+      },
+      "azure": {
+        "$ref": "../specs/azure.json"
+      },
+      "gcp": {
+        "$ref": "../specs/gcp.json"
       }
     }
   }

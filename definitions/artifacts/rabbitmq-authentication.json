@@ -48,9 +48,21 @@
     },
     "specs": {
       "type": "object",
+      "required": [
+        "rabbitmq"
+      ],
       "properties": {
         "rabbitmq": {
           "$ref": "../specs/rabbitmq.json"
+        },
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "azure": {
+          "$ref": "../specs/azure.json"
+        },
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         }
       }
     }

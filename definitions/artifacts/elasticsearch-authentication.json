@@ -30,9 +30,21 @@
     },
     "specs": {
       "type": "object",
+      "required": [
+        "elasticsearch"
+      ],
       "properties": {
         "elasticsearch": {
           "$ref": "../specs/elasticsearch.json"
+        },
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "azure": {
+          "$ref": "../specs/azure.json"
+        },
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         }
       }
     }
