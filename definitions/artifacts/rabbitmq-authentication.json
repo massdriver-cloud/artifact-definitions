@@ -20,10 +20,29 @@
       ],
       "properties": {
         "infrastructure": {
-          "$ref": "../types/k8s-application-infrastructure.json"
+          "title": "Infrastructure",
+          "description": "Cloud specific RabbitMQ infrastructure configuration",
+          "type": "object",
+          "oneOf": [
+            {
+              "$ref": "../types/aws-infrastructure-arn.json"
+            },
+            {
+              "$ref": "../types/k8s-application-infrastructure.json"
+            }
+          ]
         },
         "authentication": {
           "$ref": "../types/rabbitmq-authentication.json"
+        },
+        "security": {
+          "title": "Security",
+          "type": "object",
+          "anyOf": [
+            {
+              "$ref": "../types/aws-security.json"
+            }
+          ]
         }
       }
     },
