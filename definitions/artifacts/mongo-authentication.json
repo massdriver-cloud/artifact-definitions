@@ -42,9 +42,21 @@
     },
     "specs": {
       "type": "object",
+      "required": [
+        "mongo"
+      ],
       "properties": {
         "mongo": {
           "$ref": "../specs/mongo.json"
+        },
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "azure": {
+          "$ref": "../specs/azure.json"
+        },
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         }
       }
     }

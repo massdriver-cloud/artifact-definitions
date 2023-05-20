@@ -95,6 +95,15 @@
       "properties": {
         "rdbms": {
           "$ref": "../specs/rdbms.json"
+        },
+        "aws": {
+          "$ref": "../specs/aws.json"
+        },
+        "azure": {
+          "$ref": "../specs/azure.json"
+        },
+        "gcp": {
+          "$ref": "../specs/gcp.json"
         }
       }
     }
