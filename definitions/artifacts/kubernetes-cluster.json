@@ -83,6 +83,9 @@
     },
     "specs": {
       "type": "object",
+      "required": [
+        "kubernetes"
+      ],
       "properties": {
         "kubernetes": {
           "$ref": "../specs/kubernetes.json"
