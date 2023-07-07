@@ -114,140 +114,12 @@
           "name": "Brazil South"
         },
         {
-          "code": "centraluseuap",
-          "name": "Central US EUAP"
-        },
-        {
-          "code": "eastus2euap",
-          "name": "East US 2 EUAP"
-        },
-        {
           "code": "qatarcentral",
           "name": "Qatar Central"
         },
         {
-          "code": "centralusstage",
-          "name": "Central US (Stage)"
-        },
-        {
-          "code": "eastusstage",
-          "name": "East US (Stage)"
-        },
-        {
-          "code": "eastus2stage",
-          "name": "East US 2 (Stage)"
-        },
-        {
-          "code": "northcentralusstage",
-          "name": "North Central US (Stage)"
-        },
-        {
-          "code": "southcentralusstage",
-          "name": "South Central US (Stage)"
-        },
-        {
-          "code": "westusstage",
-          "name": "West US (Stage)"
-        },
-        {
-          "code": "westus2stage",
-          "name": "West US 2 (Stage)"
-        },
-        {
-          "code": "asia",
-          "name": "Asia"
-        },
-        {
           "code": "asiapacific",
           "name": "Asia Pacific"
-        },
-        {
-          "code": "australia",
-          "name": "Australia"
-        },
-        {
-          "code": "brazil",
-          "name": "Brazil"
-        },
-        {
-          "code": "canada",
-          "name": "Canada"
-        },
-        {
-          "code": "europe",
-          "name": "Europe"
-        },
-        {
-          "code": "france",
-          "name": "France"
-        },
-        {
-          "code": "germany",
-          "name": "Germany"
-        },
-        {
-          "code": "global",
-          "name": "Global"
-        },
-        {
-          "code": "india",
-          "name": "India"
-        },
-        {
-          "code": "japan",
-          "name": "Japan"
-        },
-        {
-          "code": "korea",
-          "name": "Korea"
-        },
-        {
-          "code": "norway",
-          "name": "Norway"
-        },
-        {
-          "code": "singapore",
-          "name": "Singapore"
-        },
-        {
-          "code": "southafrica",
-          "name": "South Africa"
-        },
-        {
-          "code": "switzerland",
-          "name": "Switzerland"
-        },
-        {
-          "code": "uae",
-          "name": "United Arab Emirates"
-        },
-        {
-          "code": "uk",
-          "name": "United Kingdom"
-        },
-        {
-          "code": "unitedstates",
-          "name": "United States"
-        },
-        {
-          "code": "unitedstateseuap",
-          "name": "United States EUAP"
-        },
-        {
-          "code": "eastasiastage",
-          "name": "East Asia (Stage)"
-        },
-        {
-          "code": "southeastasiastage",
-          "name": "Southeast Asia (Stage)"
-        },
-        {
-          "code": "brazilus",
-          "name": "Brazil US"
-        },
-        {
-          "code": "eastusstg",
-          "name": "East US STG"
         },
         {
           "code": "northcentralus",
@@ -260,10 +132,6 @@
         {
           "code": "jioindiawest",
           "name": "Jio India West"
-        },
-        {
-          "code": "southcentralusstg",
-          "name": "South Central US STG"
         },
         {
           "code": "westcentralus",
