@@ -245,9 +245,9 @@
         "client_secret": {
           "type": "string",
           "title": "Client Secret",
-          "pattern": "^[a-zA-Z0-9~._-]+$",
+          "pattern": "^((?![0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}).)*$",
           "message": {
-            "pattern": "Must be a valid Azure App Client Secret"
+            "pattern": "Not a valid Client Secret. You have likely added the client secret key instead of the client secret value."
           }
         },
         "subscription_id": {
@@ -260,8 +260,7 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-      }
+      "properties": {}
     }
   }
 }
