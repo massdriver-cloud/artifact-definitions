@@ -245,7 +245,7 @@
         "client_secret": {
           "type": "string",
           "title": "Client Secret",
-          "pattern": "^((?![0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}).)*$",
+          "pattern": "^((?![0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}).)*$",
           "message": {
             "pattern": "Not a valid Client Secret. You have likely added the client secret ID instead of the client secret value."
           }
