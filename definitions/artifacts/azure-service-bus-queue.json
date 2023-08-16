@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "access": "public",
+    "name": "azure-service-bus-queue"
+  },
+  "type": "object",
+  "title": "Azure Service Bus Queue",
+  "description": "",
+  "additionalProperties": false,
+  "required": [
+    "data",
+    "specs"
+  ],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": [
+        "infrastructure",
+        "security"
+      ],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "endpoint"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "endpoint": {
+              "$ref": "../types/azure-service-bus-endpoint.json"
+            }
+          }
+        },
+        "security": {
+          "$ref": "../types/azure-security.json"
+        }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
+    }
+  }
+}
