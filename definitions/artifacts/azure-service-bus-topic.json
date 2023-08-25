@@ -26,8 +26,7 @@
           "type": "object",
           "required": [
             "ari",
-            "endpoint",
-            "topic"
+            "endpoint"
           ],
           "properties": {
             "ari": {
@@ -35,14 +34,6 @@
             },
             "endpoint": {
               "$ref": "../types/azure-service-bus-endpoint.json"
-            },
-            "topic": {
-              "type": "string",
-              "title": "Topic Name",
-              "description": "The name of the Azure Service Bus Topic.",
-              "examples": [
-                "local-dev-topic-0001"
-              ]
             }
           }
         },
