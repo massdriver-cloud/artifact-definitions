@@ -141,7 +141,179 @@
           "name": "AWS GovCloud (US-West)",
           "restrictions": "by-request"
         }
-      ]
+      ],
+      "defaultInstanceTypes": {
+        "AWS.EC2": [
+          {
+            "name": "c5.large",
+            "size": "C5",
+            "memoryGB": 4,
+            "vCpus": 2,
+            "iops": 650
+          },
+          {
+            "name": "c5.xlarge",
+            "size": "C5",
+            "memoryGB": 8,
+            "vCpus": 4,
+            "iops": 1150
+          },
+          {
+            "name": "c5.2xlarge",
+            "size": "C5",
+            "memoryGB": 16,
+            "vCpus": 8,
+            "iops": 2300
+          },
+          {
+            "name": "c5.4xlarge",
+            "size": "C5",
+            "memoryGB": 16,
+            "vCpus": 32,
+            "iops": 4750
+          },
+          {
+            "name": "c5.9xlarge",
+            "size": "C5",
+            "memoryGB": 72,
+            "vCpus": 36,
+            "iops": 9500
+          },
+          {
+            "name": "c5.12xlarge",
+            "size": "C5",
+            "memoryGB": 96,
+            "vCpus": 48,
+            "iops": 9500
+          },
+          {
+            "name": "c5.18xlarge",
+            "size": "C5",
+            "memoryGB": 144,
+            "vCpus": 48,
+            "iops": 19000
+          },
+          {
+            "name": "c5.24xlarge",
+            "size": "C5",
+            "memoryGB": 192,
+            "vCpus": 96,
+            "iops": 19000
+          },
+          {
+            "name": "m5.large",
+            "size": "M5",
+            "memoryGB": 8,
+            "vCpus": 2,
+            "iops": 650
+          },
+          {
+            "name": "m5.xlarge",
+            "size": "M5",
+            "memoryGB": 16,
+            "vCpus": 4,
+            "iops": 1150
+          },
+          {
+            "name": "m5.2xlarge",
+            "size": "M5",
+            "memoryGB": 32,
+            "vCpus": 8,
+            "iops": 2300
+          },
+          {
+            "name": "m5.4xlarge",
+            "size": "M5",
+            "memoryGB": 64,
+            "vCpus": 16,
+            "iops": 4750
+          },
+          {
+            "name": "m5.8xlarge",
+            "size": "M5",
+            "memoryGB": 128,
+            "vCpus": 32,
+            "iops": 6800
+          },
+          {
+            "name": "m5.12xlarge",
+            "size": "M5",
+            "memoryGB": 192,
+            "vCpus": 48,
+            "iops": 9500
+          },
+          {
+            "name": "m5.16xlarge",
+            "size": "M5",
+            "memoryGB": 256,
+            "vCpus": 64,
+            "iops": 13600
+          },
+          {
+            "name": "m5.24xlarge",
+            "size": "M5",
+            "memoryGB": 384,
+            "vCpus": 96,
+            "iops": 19000
+          },
+          {
+            "name": "t3.small",
+            "size": "T3",
+            "memoryGB": 2,
+            "vCpus": 2,
+            "iops": 174
+          },
+          {
+            "name": "t3.medium",
+            "size": "T3",
+            "memoryGB": 4,
+            "vCpus": 2,
+            "iops": 347
+          },
+          {
+            "name": "t3.large",
+            "size": "T3",
+            "memoryGB": 8,
+            "vCpus": 2,
+            "iops": 695
+          },
+          {
+            "name": "t3.xlarge",
+            "size": "T3",
+            "memoryGB": 16,
+            "vCpus": 4,
+            "iops": 695
+          },
+          {
+            "name": "t3.2xlarge",
+            "size": "T3",
+            "memoryGB": 32,
+            "vCpus": 8,
+            "iops": 695
+          },
+          {
+            "name": "p2.xlarge",
+            "size": "P2",
+            "memoryGB": 61,
+            "vCpus": 4,
+            "iops": 750
+          },
+          {
+            "name": "p2.8xlarge",
+            "size": "P2",
+            "memoryGB": 488,
+            "vCpus": 32,
+            "iops": 5000
+          },
+          {
+            "name": "p2.16xlarge",
+            "size": "P2",
+            "memoryGB": 732,
+            "vCpus": 64,
+            "iops": 10000
+          }
+        ]
+      }
     },
     "containerRepositories": {
       "label": "ECR",
