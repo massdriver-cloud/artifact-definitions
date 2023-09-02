@@ -8,7 +8,8 @@
     "^[a-z]+[a-z_]*[a-z]$": {
       "type": "object",
       "required": [
-        "role"
+        "role",
+        "condition"
       ],
       "properties": {
         "role": {
