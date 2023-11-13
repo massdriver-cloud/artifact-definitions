@@ -141,6 +141,404 @@
           "name": "AWS GovCloud (US-West)",
           "restrictions": "by-request"
         }
+      ],
+      "services": [
+        {
+          "code": "acm",
+          "name": "acm"
+        },
+        {
+          "code": "amplify",
+          "name": "amplify"
+        },
+        {
+          "code": "apigateway",
+          "name": "apigateway"
+        },
+        {
+          "code": "appconfig",
+          "name": "appconfig"
+        },
+        {
+          "code": "appflow",
+          "name": "appflow"
+        },
+        {
+          "code": "appmesh",
+          "name": "appmesh"
+        },
+        {
+          "code": "apprunner",
+          "name": "apprunner"
+        },
+        {
+          "code": "appstream",
+          "name": "appstream"
+        },
+        {
+          "code": "appsync",
+          "name": "appsync"
+        },
+        {
+          "code": "aps",
+          "name": "aps"
+        },
+        {
+          "code": "athena",
+          "name": "athena"
+        },
+        {
+          "code": "auditmanager",
+          "name": "auditmanager"
+        },
+        {
+          "code": "autoscaling",
+          "name": "autoscaling"
+        },
+        {
+          "code": "backup",
+          "name": "backup"
+        },
+        {
+          "code": "batch",
+          "name": "batch"
+        },
+        {
+          "code": "budgets",
+          "name": "budgets"
+        },
+        {
+          "code": "cassandra",
+          "name": "cassandra"
+        },
+        {
+          "code": "cloud9",
+          "name": "cloud9"
+        },
+        {
+          "code": "cloudformation",
+          "name": "cloudformation"
+        },
+        {
+          "code": "cloudfront",
+          "name": "cloudfront"
+        },
+        {
+          "code": "cloudtrail",
+          "name": "cloudtrail"
+        },
+        {
+          "code": "cloudwatch",
+          "name": "cloudwatch"
+        },
+        {
+          "code": "codeartifact",
+          "name": "codeartifact"
+        },
+        {
+          "code": "codebuild",
+          "name": "codebuild"
+        },
+        {
+          "code": "codedeploy",
+          "name": "codedeploy"
+        },
+        {
+          "code": "codepipeline",
+          "name": "codepipeline"
+        },
+        {
+          "code": "config",
+          "name": "config"
+        },
+        {
+          "code": "connect",
+          "name": "connect"
+        },
+        {
+          "code": "datasync",
+          "name": "datasync"
+        },
+        {
+          "code": "detective",
+          "name": "detective"
+        },
+        {
+          "code": "devicefarm",
+          "name": "devicefarm"
+        },
+        {
+          "code": "dms",
+          "name": "dms"
+        },
+        {
+          "code": "dynamodb",
+          "name": "dynamodb"
+        },
+        {
+          "code": "ec2",
+          "name": "ec2"
+        },
+        {
+          "code": "ecr",
+          "name": "ecr"
+        },
+        {
+          "code": "ecs",
+          "name": "ecs"
+        },
+        {
+          "code": "eks",
+          "name": "eks"
+        },
+        {
+          "code": "elasticbeanstalk",
+          "name": "elasticbeanstalk"
+        },
+        {
+          "code": "elasticloadbalancing",
+          "name": "elasticloadbalancing"
+        },
+        {
+          "code": "events",
+          "name": "events"
+        },
+        {
+          "code": "evidently",
+          "name": "evidently"
+        },
+        {
+          "code": "fis",
+          "name": "fis"
+        },
+        {
+          "code": "forecast",
+          "name": "forecast"
+        },
+        {
+          "code": "frauddetector",
+          "name": "frauddetector"
+        },
+        {
+          "code": "globalaccelerator",
+          "name": "globalaccelerator"
+        },
+        {
+          "code": "glue",
+          "name": "glue"
+        },
+        {
+          "code": "groundstation",
+          "name": "groundstation"
+        },
+        {
+          "code": "guardduty",
+          "name": "guardduty"
+        },
+        {
+          "code": "healthlake",
+          "name": "healthlake"
+        },
+        {
+          "code": "iam",
+          "name": "iam"
+        },
+        {
+          "code": "imagebuilder",
+          "name": "imagebuilder"
+        },
+        {
+          "code": "iot",
+          "name": "iot"
+        },
+        {
+          "code": "iotanalytics",
+          "name": "iotanalytics"
+        },
+        {
+          "code": "iotevents",
+          "name": "iotevents"
+        },
+        {
+          "code": "iotsitewise",
+          "name": "iotsitewise"
+        },
+        {
+          "code": "iottwinmaker",
+          "name": "iottwinmaker"
+        },
+        {
+          "code": "iotwireless",
+          "name": "iotwireless"
+        },
+        {
+          "code": "ivs",
+          "name": "ivs"
+        },
+        {
+          "code": "kafkaconnect",
+          "name": "kafkaconnect"
+        },
+        {
+          "code": "kendra",
+          "name": "kendra"
+        },
+        {
+          "code": "kinesis",
+          "name": "kinesis"
+        },
+        {
+          "code": "kinesisvideo",
+          "name": "kinesisvideo"
+        },
+        {
+          "code": "kms",
+          "name": "kms"
+        },
+        {
+          "code": "lambda",
+          "name": "lambda"
+        },
+        {
+          "code": "lex",
+          "name": "lex"
+        },
+        {
+          "code": "lightsail",
+          "name": "lightsail"
+        },
+        {
+          "code": "logs",
+          "name": "logs"
+        },
+        {
+          "code": "lookoutmetrics",
+          "name": "lookoutmetrics"
+        },
+        {
+          "code": "lookoutvision",
+          "name": "lookoutvision"
+        },
+        {
+          "code": "mediaconnect",
+          "name": "mediaconnect"
+        },
+        {
+          "code": "mediapackage",
+          "name": "mediapackage"
+        },
+        {
+          "code": "mediatailor",
+          "name": "mediatailor"
+        },
+        {
+          "code": "networkmanager",
+          "name": "networkmanager"
+        },
+        {
+          "code": "panorama",
+          "name": "panorama"
+        },
+        {
+          "code": "personalize",
+          "name": "personalize"
+        },
+        {
+          "code": "qldb",
+          "name": "qldb"
+        },
+        {
+          "code": "rds",
+          "name": "rds"
+        },
+        {
+          "code": "redshift",
+          "name": "redshift"
+        },
+        {
+          "code": "resiliencehub",
+          "name": "resiliencehub"
+        },
+        {
+          "code": "robomaker",
+          "name": "robomaker"
+        },
+        {
+          "code": "route53",
+          "name": "route53"
+        },
+        {
+          "code": "route53resolver",
+          "name": "route53resolver"
+        },
+        {
+          "code": "rum",
+          "name": "rum"
+        },
+        {
+          "code": "s3",
+          "name": "s3"
+        },
+        {
+          "code": "sagemaker",
+          "name": "sagemaker"
+        },
+        {
+          "code": "secretsmanager",
+          "name": "secretsmanager"
+        },
+        {
+          "code": "servicecatalog",
+          "name": "servicecatalog"
+        },
+        {
+          "code": "servicediscovery",
+          "name": "servicediscovery"
+        },
+        {
+          "code": "ses",
+          "name": "ses"
+        },
+        {
+          "code": "shield",
+          "name": "shield"
+        },
+        {
+          "code": "signer",
+          "name": "signer"
+        },
+        {
+          "code": "sns",
+          "name": "sns"
+        },
+        {
+          "code": "sqs",
+          "name": "sqs"
+        },
+        {
+          "code": "ssm",
+          "name": "ssm"
+        },
+        {
+          "code": "transfer",
+          "name": "transfer"
+        },
+        {
+          "code": "waf",
+          "name": "waf"
+        },
+        {
+          "code": "wafv2",
+          "name": "wafv2"
+        },
+        {
+          "code": "workspaces",
+          "name": "workspaces"
+        },
+        {
+          "code": "xray",
+          "name": "xray"
+        }
       ]
     },
     "containerRepositories": {
