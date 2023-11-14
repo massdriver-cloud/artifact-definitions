@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Qdrant Authentication",
+  "description": "Qdrant connection string",
+  "additionalProperties": false,
+  "required": [
+    "hostname",
+    "api_key",
+    "port"
+  ],
+  "properties": {
+    "api_key": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "port": {
+      "$ref": "./port.json"
+    }
+  }
+}
