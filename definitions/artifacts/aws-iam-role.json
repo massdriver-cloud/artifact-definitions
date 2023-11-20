@@ -14,12 +14,12 @@
       "id": "aws",
       "regions": [
         {
-          "code": "us-east-2",
-          "name": "US East (Ohio)"
-        },
-        {
           "code": "us-east-1",
           "name": "US East (N. Virginia)"
+        },
+        {
+          "code": "us-east-2",
+          "name": "US East (Ohio)"
         },
         {
           "code": "us-west-1",
