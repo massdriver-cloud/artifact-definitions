@@ -8,6 +8,10 @@
     "type": "object",
     "title": "Imported Package Placeholder",
     "description": "A place holder for imported resources for the purposes of linking multiple imported resources.",
+    "required": [
+        "data",
+        "specs"
+    ],
     "properties": {
         "data": {
             "type": "object"
