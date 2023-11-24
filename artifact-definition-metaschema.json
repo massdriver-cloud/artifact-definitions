@@ -70,7 +70,11 @@
                 "regions"
               ],
               "properties": {
-                "id": {"type": "string", "title": "ID", "description": "Identifier for cloud"},
+                "id": {
+                  "type": "string",
+                  "title": "ID",
+                  "description": "Identifier for cloud"
+                },
                 "regions": {
                   "description": "List of regions",
                   "type": "array",
@@ -267,6 +271,10 @@
               "description": "The type name of the artifact definition. This should be unique to your organization and will be prefixed with your organizations slug",
               "type": "string",
               "pattern": "^[a-z0-9-]{3,100}$"
+            },
+            "hidden": {
+              "description": "Hides artifact definition from all list queries",
+              "type": "boolean"
             }
           }
         }
