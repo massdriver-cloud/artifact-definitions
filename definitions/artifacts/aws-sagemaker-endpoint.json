@@ -22,12 +22,17 @@
         "infrastructure": {
           "title": "Infrastructure",
           "required": [
-            "arn"
+            "arn",
+            "endpoint_name"
           ],
           "type": "object",
           "properties": {
             "arn": {
               "$ref": "../types/aws-arn.json"
+            },
+            "endpoint_name": {
+              "title": "Endpoint Name",
+              "type": "string"
             }
           }
         },
