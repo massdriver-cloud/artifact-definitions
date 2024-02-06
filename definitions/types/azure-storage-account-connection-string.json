@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Azure Storage Account Endpoint",
+  "description": "Azure Storage Account endpoint authentication",
+  "additionalProperties": false,
+  "examples": [
+    "DefaultEndpointsProtocol=https;AccountName=massdriverbicepstorage1;AccountKey=MWgcwjOCsKfQJ/5NHQGteVmNq2rQSCQrzvE4Cr0Zt6XBbHzWpmbswsMOU22LFKVDOHUY+jEqIDSw+AStP/nlLA==;EndpointSuffix=core.windows.net"
+  ],
+  "type": "string",
+  "pattern": "^.*$",
+  "message": {
+    "pattern": "Must be a valid Azure Storage Account connection string"
+  }
+}
