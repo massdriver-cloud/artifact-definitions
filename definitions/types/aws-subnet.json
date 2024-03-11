@@ -5,9 +5,7 @@
   "description": "AWS VCP Subnet",
   "examples": [],
   "required": [
-    "arn",
-    "cidr",
-    "aws_zone"
+    "arn"
   ],
   "properties": {
     "arn": {
