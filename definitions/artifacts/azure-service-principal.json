@@ -211,6 +211,9 @@
       "label": "Azure DNS",
       "cloud": "azure"
     },
+    "extensions": {
+      "costReporting": true
+    },
     "name": "azure-service-principal"
   },
   "type": "object",
