@@ -282,7 +282,7 @@
               "properties": {
                 "costReporting": {
                   "type": "boolean",
-                  "descriptiong": "Setting this field to true will enable cost reporting with this artifact"
+                  "description": "Setting this field to true will enable cost reporting with this artifact"
                 }
               }
             }
