@@ -549,6 +549,9 @@
       "label": "AWS Route 53",
       "cloud": "aws"
     },
+    "extensions": {
+      "costReporting": true
+    },
     "name": "aws-iam-role"
   },
   "type": "object",

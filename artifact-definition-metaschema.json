@@ -275,6 +275,16 @@
             "hidden": {
               "description": "Hides artifact definition from all list queries",
               "type": "boolean"
+            },
+            "extensions": {
+              "type": "object",
+              "description": "Entries to this object will unlock capabilities in Massdriver like cost reporting and monitoring",
+              "properties": {
+                "costReporting": {
+                  "type": "boolean",
+                  "description": "Setting this field to true will enable cost reporting with this artifact"
+                }
+              }
             }
           }
         }
