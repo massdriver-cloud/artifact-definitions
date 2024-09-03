@@ -10,12 +10,6 @@
   "properties": {
     "arn": {
       "$ref": "./aws-arn.json"
-    },
-    "cidr": {
-      "$ref": "./cidr.json"
-    },
-    "aws_zone": {
-      "$ref": "./aws-zone.json"
     }
   }
 }
