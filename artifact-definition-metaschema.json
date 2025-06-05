@@ -63,6 +63,27 @@
             ]
           },
           "properties": {
+            "icon": {
+              "type": "string",
+              "description": "Path to an icon file for this artifact type. Must be a valid URL."
+            },
+            "instructions": {
+              "type": "array",
+              "description": "Onboarding instructions for this artifact type. Only valid for 'credentials' artifact definitions.",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "description": "The label for the instruction."
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "The content of the instruction."
+                  }
+                }
+              }
+            },
             "cloud": {
               "type": "object",
               "description": "Properties of the cloud supported by Massdriver. Only valid for 'credential' artifact definitions.",
