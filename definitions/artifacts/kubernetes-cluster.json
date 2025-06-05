@@ -2,8 +2,11 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "access": "public",
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kube Config",
+    "label": "Kubernetes Cluster",
+    "ui": {
+      "environmentDefaultGroup": "credentials",
+      "connectionOrientation": "link"
+    },
     "export": [
       {
         "downloadButtonText": "Kube Config",
@@ -12,11 +15,7 @@
         "templateLang": "liquid"
       }
     ],
-    "name": "kubernetes-cluster",
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/kubernetes-cluster/icon.png",
-    "instructions": [
-
-    ]
+    "name": "kubernetes-cluster"
   },
   "type": "object",
   "title": "Kubernetes Cluster",

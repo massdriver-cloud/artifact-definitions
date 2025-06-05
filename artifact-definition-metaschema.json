@@ -63,23 +63,45 @@
             ]
           },
           "properties": {
+            "label": {
+              "type": "string",
+              "description": "A friendly name for this artifact type."
+            },
             "icon": {
               "type": "string",
               "description": "Path to an icon file for this artifact type. Must be a valid URL."
             },
-            "instructions": {
-              "type": "array",
-              "description": "Onboarding instructions for this artifact type. Only valid for 'credentials' artifact definitions.",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "label": {
-                    "type": "string",
-                    "description": "The label for the instruction."
-                  },
-                  "content": {
-                    "type": "string",
-                    "description": "The content of the instruction."
+            "ui": {
+              "type": "object",
+              "properties": {
+                "environmentDefaultGroup": {
+                  "type": "string",
+                  "description": "Adds this artifact definition type to the 'environment default' overlay under this group in the UI."
+                },
+                "connectionOrientation": {
+                  "type": "string",
+                  "description": "How to orient the artifact's connection to a bundle in the UI. `link` will be line based, `environmentDefault` will make it the default for a given type in the entire environment.",
+                  "enum": [
+                    "link",
+                    "environmentDefault"
+                  ],
+                  "default": "link"
+                },
+                "instructions": {
+                  "type": "array",
+                  "description": "Onboarding instructions for this artifact type. Only valid for 'credentials' artifact definitions.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "description": "The label for the instruction."
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "The content of the instruction."
+                      }
+                    }
                   }
                 }
               }
@@ -152,7 +174,7 @@
                 "isLinkable": {
                   "type": "boolean",
                   "default": true,
-                  "description": "Controls if this artifact type is 'linkable' in the UI. Otherwise it can only be used as a target's default connection."
+                  "description": "Deprecated. Use `$md.ui.connectionOrientation` instead."
                 }
               }
             },
@@ -233,7 +255,7 @@
               }
             },
             "defaultTargetConnectionGroup": {
-              "description": "Enables the artifact type as defaultable for a Massdriver target connection group.",
+              "description": "Deprecated. Use `$md.ui.environmentDefaultGroup` instead.",
               "type": "string",
               "oneOf": [
                 {
@@ -247,7 +269,7 @@
               ]
             },
             "defaultTargetConnectionGroupLabel": {
-              "description": "Label to show in connection group for this artifact type.",
+              "description": "Deprecated. Use `$md.label` instead.",
               "type": "string"
             },
             "access": {

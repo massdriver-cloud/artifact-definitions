@@ -12,6 +12,7 @@ def process_artifact(json_path)
 
   json = JSON.parse(File.read(json_path))
   json['$md'] ||= {}
+  json['$md']['ui'] ||= {}
 
   # Process icon
   if File.exist?(File.join(dir_path, 'icon.png'))
@@ -20,12 +21,12 @@ def process_artifact(json_path)
   end
 
   # Process markdown files
-  json['$md']['instructions'] = []
+  json['$md']['ui']['instructions'] = []
   Dir.glob(File.join(dir_path, '*.md')).each do |md_file|
     label = File.basename(md_file, '.md')
     content = Base64.strict_encode64(File.read(md_file))
 
-    json['$md']['instructions'] << {
+    json['$md']['ui']['instructions'] << {
       'label' => label,
       'content' => content
     }
