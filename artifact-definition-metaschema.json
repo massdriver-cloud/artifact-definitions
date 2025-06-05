@@ -106,36 +106,12 @@
             "cloud": {
               "type": "object",
               "description": "Properties of the cloud supported by Massdriver. Only valid for 'credential' artifact definitions.",
-              "required": [
-                "regions"
-              ],
+              "required": [],
               "properties": {
                 "id": {
                   "type": "string",
                   "title": "ID",
                   "description": "Identifier for cloud"
-                },
-                "regions": {
-                  "description": "List of regions",
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "code",
-                      "name"
-                    ],
-                    "properties": {
-                      "code": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "restrictions": {
-                        "type": "string"
-                      }
-                    }
-                  }
                 }
               }
             },
