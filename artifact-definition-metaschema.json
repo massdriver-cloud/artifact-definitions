@@ -167,17 +167,6 @@
                 }
               }
             },
-            "diagram": {
-              "additionalProperties": false,
-              "type": "object",
-              "properties": {
-                "isLinkable": {
-                  "type": "boolean",
-                  "default": true,
-                  "description": "Deprecated. Use `$md.ui.connectionOrientation` instead."
-                }
-              }
-            },
             "export": {
               "type": "array",
               "minItems": 0,
