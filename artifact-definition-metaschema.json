@@ -63,6 +63,46 @@
             ]
           },
           "properties": {
+            "icon": {
+              "type": "string",
+              "description": "Path to an icon file for this artifact type. Must be a valid URL."
+            },
+            "ui": {
+              "type": "object",
+              "properties": {
+                "environmentDefaultGroup": {
+                  "type": "string",
+                  "description": "Adds this artifact definition type to the 'environment default' overlay under this group in the UI."
+                },
+                "connectionOrientation": {
+                  "type": "string",
+                  "description": "How to orient the artifact's connection to a bundle in the UI. `link` will be line based, `environmentDefault` will make it the default for a given type in the entire environment.",
+                  "enum": [
+                    "link",
+                    "environmentDefault"
+                  ],
+                  "default": "link"
+                },
+                "instructions": {
+                  "type": "array",
+                  "description": "Onboarding instructions for this artifact type. Only valid for 'credentials' artifact definitions.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "description": "The label for the instruction."
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "The content of the instruction."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+
             "cloud": {
               "type": "object",
               "description": "Properties of the cloud supported by Massdriver. Only valid for 'credential' artifact definitions.",
@@ -271,10 +311,6 @@
               "description": "The type name of the artifact definition. This should be unique to your organization and will be prefixed with your organizations slug",
               "type": "string",
               "pattern": "^[a-z0-9-]{3,100}$"
-            },
-            "hidden": {
-              "description": "Hides artifact definition from all list queries",
-              "type": "boolean"
             },
             "extensions": {
               "type": "object",
