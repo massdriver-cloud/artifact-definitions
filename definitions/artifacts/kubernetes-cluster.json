@@ -12,7 +12,11 @@
         "templateLang": "liquid"
       }
     ],
-    "name": "kubernetes-cluster"
+    "name": "kubernetes-cluster",
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/kubernetes-cluster/icon.png",
+    "instructions": [
+
+    ]
   },
   "type": "object",
   "title": "Kubernetes Cluster",
