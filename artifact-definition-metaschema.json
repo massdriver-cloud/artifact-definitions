@@ -63,6 +63,10 @@
             ]
           },
           "properties": {
+            "label": {
+              "type": "string",
+              "description": "The label in the Massdriver UI."
+            },
             "icon": {
               "type": "string",
               "description": "Path to an icon file for this artifact type. Must be a valid URL."
