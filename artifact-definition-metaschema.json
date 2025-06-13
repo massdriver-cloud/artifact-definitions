@@ -54,8 +54,7 @@
           "additionalProperties": false,
           "type": "object",
           "required": [
-            "name",
-            "access"
+            "name"
           ],
           "dependentRequired": {
             "defaultTargetConnectionGroup": [
@@ -273,19 +272,8 @@
               "type": "string"
             },
             "access": {
-              "description": "Controls whether the definition will be publicly accessible or private to your organization.",
-              "type": "string",
-              "default": "private",
-              "oneOf": [
-                {
-                  "const": "private",
-                  "title": "Private"
-                },
-                {
-                  "const": "public",
-                  "title": "Public"
-                }
-              ]
+              "description": "Deprecated, all artifact definitions (besides the `massdriver` core artifact types https://github.com/massdriver-cloud/artifact-definitions) are private only now.",
+              "type": "string"
             },
             "name": {
               "description": "The type name of the artifact definition. This should be unique to your organization and will be prefixed with your organizations slug",
