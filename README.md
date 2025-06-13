@@ -1,4 +1,6 @@
-# Artifacts
+# Massdriver Core Artifact Definitions
+
+This repo contains [Massdriver's](https://massdriver.cloud) core artifact definitions for emitting state between IaC tools. All of these types are available in platform, or for forking / cloning and customizing under your org. Learn more about [artifact definitions here](https://docs.massdriver.cloud/concepts/artifact-definitions).
 
 Each bundle author is responsible for creating a artifact JSON Schema if their output artifacts are of a new type.
 
@@ -23,15 +25,17 @@ Install the pre-commit to ensure our json is pretty and our json schemas valid i
 pre-commit install
 ```
 
-### Local Server
-You can run `make local.server` to run a local nginx server which hosts the artifacts in a way that the [Massdriver CLI](https://github.com/massdriver-cloud/massdriver-cli) can access them. This is convenient for local development of bundles using local artifact definitions.
-
-As you make changes to artifacts or types, you can run `make local.update` to regenerate the definitions hosted by the local server. If you set the `MASSDRIVER_URL` environment variable to `http://localhost:8081` then the CLI will pull artifact definitions from this local server instead of the Massdriver API. Run `make local.shutdown` when you are done to shutdown the development server.
-
 ## Artifacts
 
 Artifacts define connectable pieces of infrastructure in Massdriver. Artifacts that strictly represent infrastructure
-_must_ have the format (omit fields if not applicable):
+_must_ have the format top-level `data` and `specs` keys, underneath you can define any schema that makes sense for standardizing
+connectivity between IaC modules.
+
+`data` attributes in massdriver are considered secret and are stored encrypted-at-rest and in flight. `specs` are visible attributes about the resource that can be displayed in the UI.
+
+All attributes are accessible by downstream IaC modules 'connected' to the output of an upstream IaC module.
+
+Our JSON Schema metaschema for artifact definitions can be found [here](./artifact-definition-metaschema.json).
 
 ```js
 {
@@ -133,7 +137,6 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 ```json
 {
   "$md": {
-    "access": "private",
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "GCP Service Account",
     "importing": {
@@ -149,7 +152,6 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 {
   "$md": {
     "name": "the-artifact-name",
-    "access": "public",
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "Kubernetes",
     "importing": {
@@ -162,7 +164,6 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 ```
 
 * name - the name of the artifact without the organizational scope. This should be a URL safe name consisting of letters, numbers, and hyphens. It must be unique to the org it is published under.
-* access - specifies the access level of the artifact definition. `public` is readable by any Massdriver account, `private` is readable only by the organization that publishes the artifact definition. Defaults to `private` if unspecified.
 * defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
 * defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts
 * importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication

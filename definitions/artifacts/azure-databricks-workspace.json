@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
     "$md": {
-        "access": "public",
+
         "name": "azure-databricks-workspace"
     },
     "type": "object",

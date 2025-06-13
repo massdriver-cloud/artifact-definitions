@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$md": {
-        "access": "public",
+
         "name": "aws-s3-bucket"
     },
     "type": "object",
