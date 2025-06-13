@@ -69,66 +69,10 @@ Our JSON Schema metaschema for artifact definitions can be found [here](./artifa
 }
 ```
 
-Additionally, bundles that cross into the application plane and generate a credential _must_ include an `authentication` object. In this case an additional artifact _should_ be emitted in a cloud-agnostic manner if applicable.
-
-Example:
-
-AWS EKS generates a cluster admin credential for Kubernetes. Applications deploy to kubernetes, not EKS.
-
-The AWS EKS bundle should emit _two_ artifacts:
-
-* `aws-eks-cluster` - This is used to connect infrastructure that _does not_ need k8s credentials
-* `k8s-cluster` - This is used to connect applications that _do_ need credentials
-
-The `k8s-cluster`'s data block should be _identical_ to the EKS's `data` block with the additional of an `authentication` field.
-
-When creating these artifacts in terraform a local block should be used to eliminate typos between the two artifacts.
-
-```js
-{
-  "data": {
-    "infrastructure": { // REQUIRED
-      "$ref": "../types/aws-infrastructure-eks.json"
-    },
-    "security": { // REQUIRED if applicable
-      "policies": { // IAM policies this bundle created
-        "read": "my_policy_foo",
-        "write": "my_policy_foo2"
-      },
-      "groups": {
-        // Security groups this bundle created
-      },
-    },
-    "auditing": {
-      // TBD:
-    }
-    "authentication": { // REQUIRED if auth is created
-      "token": "foo"
-    }
-  },
-  "specs": {
-    // SPECS HERE
-  }
-}
-```
-
-Artifacts _may_ only forward fields from previous artifacts if the field was immutable. This _must_ only be used if **necessary.**
-
-
-* OK to forward example: AWS VPC has a `region` field, bundles downstream from the VPC may forward the `region`
-
-* NOT OK to forward example: AWS Pub/Sub fanout creates an IAM Policy document `foo`, downstream bundles may use `foo` but _must not_ forward it, as the policy's ARN _may_ change if the bundle were to switch which Pub/Sub subscription it is connected to.
 
 ## types
 
-Types are a way to create composable infrastructure that is consistent across bundles.
-
-* Types _must_ be scoped by their 'cloud' if cloud specific. e.g.: `aws-`, `gcp-`, `k8s-`
-* Types that are not cloud specific, must _not_ be scoped. e.g.: `cidr`
-* Types _may_ be scalar definitions designed for reuse of descriptions, validations, etc. e.g.: `cidr.json` defines CIDR ranges
-* Types _must_ be sub-scoped if the represent a reusable `object` in artifacts.
-  * e.g.: `aws-infrastructure-` should be used for configurations placed under `data.infrastructure` in AWS artifacts
-  * e.g.: `gcp-security-` should be used for configurations placed under `data.security` in GCP artifacts
+`./types` are shared internal to this repo JSON Schemas used for common concepts. They are not a Massdriver concept, so much as a means of making configuration of the core-types more DRY.
 
 ## $md config
 
@@ -164,13 +108,17 @@ There is an top level `$md` field on some artifact definitions. These allow us t
 ```
 
 * name - the name of the artifact without the organizational scope. This should be a URL safe name consisting of letters, numbers, and hyphens. It must be unique to the org it is published under.
-* defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
-* defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts
-* importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication
-* importing.group - the group in onboarding and importing frontend that this artifact definition form should be grouped under.
-* importing.fileUploadArtifactDataPath - the json key path to store the deserialized file into. Should be `["data"]` if not present.
+* _deprecated_: defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
+* _deprecated_: defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts
+* _deprecated_: importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication
+* _deprecated_: importing.group - the group in onboarding and importing frontend that this artifact definition form should be grouped under.
+* _deprecated_: importing.fileUploadArtifactDataPath - the json key path to store the deserialized file into. Should be `["data"]` if not present.
 * `export` - different file formats of the artifact that can be downloaded
   * `downloadButtonText` - download button text
-  * `templateLang` - the template to render the artifact in
-  * `fileFormat` - the template format to use (currently only liquid is supported)
+  * `templateLang` - the template to render the artifact in (currently only liquid is supported)
+  * `fileFormat` - the file extension to use when rendering
   * `template` - the template
+* `ui.instructions` - onboarding instructions for this artifact type, only valid for 'credentials' artifact definitions.
+* `ui.environmentDefaultGroup` - adds this artifact definition type to the 'environment default' overlay under this group in the UI.
+* `ui.connectionOrientation` - how to orient the artifact's connection to a bundle in the UI. `link` will be line based, `environmentDefault` will make it the default for a given type in the entire environment.
+* `extensions.costReporting` - setting this field to true will enable cost reporting with this artifact (currently not supported in self-hosted).
