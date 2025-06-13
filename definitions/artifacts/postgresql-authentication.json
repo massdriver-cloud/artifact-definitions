@@ -5,7 +5,8 @@
     "importing": {
       "group": "data"
     },
-    "name": "postgresql-authentication"
+    "name": "postgresql-authentication",
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/oss/postgresql.svg"
   },
   "type": "object",
   "title": "PostgreSQL Authentication",
