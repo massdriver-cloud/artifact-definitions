@@ -1,14 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "defaultTargetConnectionGroup": "credentials",
     "defaultTargetConnectionGroupLabel": "AWS IAM Role",
     "importing": {
       "group": "authentication"
-    },
-    "diagram": {
-      "isLinkable": false
     },
     "containerRepositories": {
       "label": "ECR",
@@ -19,6 +15,7 @@
     },
     "name": "aws-iam-role",
     "ui": {
+      "connectionOrientation": "environmentDefault",
       "instructions": [
         {
           "label": "AWS CLI",
