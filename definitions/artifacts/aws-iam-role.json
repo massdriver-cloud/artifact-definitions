@@ -17,10 +17,6 @@
       "label": "ECR",
       "cloud": "aws"
     },
-    "dnsZones": {
-      "label": "AWS Route 53",
-      "cloud": "aws"
-    },
     "extensions": {
       "costReporting": true
     },

@@ -13,10 +13,6 @@
     "cloud": {
       "id": "azure"
     },
-    "dnsZones": {
-      "label": "Azure DNS",
-      "cloud": "azure"
-    },
     "extensions": {
       "costReporting": true
     },
