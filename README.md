@@ -35,7 +35,7 @@ connectivity between IaC modules.
 
 All attributes are accessible by downstream IaC modules 'connected' to the output of an upstream IaC module.
 
-Our JSON Schema metaschema for artifact definitions can be found [here](./artifact-definition-metaschema.json).
+Our JSON Schema metaschema for artifact definitions can be found [here](https://api.massdriver.cloud/json-schemas/artifact-definition.json).
 
 ```js
 {
