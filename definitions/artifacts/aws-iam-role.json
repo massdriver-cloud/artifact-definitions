@@ -10,9 +10,6 @@
     "diagram": {
       "isLinkable": false
     },
-    "cloud": {
-      "id": "aws"
-    },
     "containerRepositories": {
       "label": "ECR",
       "cloud": "aws"

@@ -10,9 +10,6 @@
     "diagram": {
       "isLinkable": false
     },
-    "cloud": {
-      "id": "azure"
-    },
     "extensions": {
       "costReporting": true
     },
