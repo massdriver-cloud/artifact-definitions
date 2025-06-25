@@ -1,13 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "defaultTargetConnectionGroup": "networking",
-    "defaultTargetConnectionGroupLabel": "AWS",
+    "name": "aws-vpc",
+    "label": "AWS VPC",
     "importing": {
       "group": "networking"
-    },
-    "name": "aws-vpc"
+    }
   },
   "type": "object",
   "title": "AWS Virtual Private Cloud",

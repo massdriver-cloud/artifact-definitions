@@ -1,9 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "defaultTargetConnectionGroup": "networking",
-    "defaultTargetConnectionGroupLabel": "Azure",
+    "label": "Azure VNet",
     "importing": {
       "group": "networking"
     },

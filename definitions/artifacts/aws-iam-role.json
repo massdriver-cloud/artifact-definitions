@@ -2,7 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "AWS IAM Role",
+    "name": "aws-iam-role",
+    "label": "AWS IAM Role",
     "importing": {
       "group": "authentication"
     },
@@ -13,7 +14,6 @@
     "extensions": {
       "costReporting": true
     },
-    "name": "aws-iam-role",
     "ui": {
       "connectionOrientation": "environmentDefault",
       "instructions": [
