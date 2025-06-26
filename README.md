@@ -76,49 +76,70 @@ Our JSON Schema metaschema for artifact definitions can be found [here](https://
 
 ## $md config
 
+**Note:** We will be moving our artifact definitions to our OCI registry in the near future which will alleviate the need for 'packing' markdown and icons into the artifact definition JSON.
+
+Our JSON Schema metaschema for artifact definitions can be found [here](https://api.massdriver.cloud/json-schemas/artifact-definition.json).
+
 There is an top level `$md` field on some artifact definitions. These allow us to control how the front end treats them.
 
-```json
-{
-  "$md": {
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "GCP Service Account",
-    "importing": {
-      "fileUploadType": "json",
-      "fileUploadArtifactDataPath": ["data"],
-      "group": "authentication"
-    }
-  }
-}
-```
+Based on the JSON schema, here's a markdown document describing the `$md` configuration options:
+
+### $md Configuration Options
+
+The `$md` object contains configuration metadata for Massdriver artifact definitions. All artifact definitions must include this section.
+
+
+- **`name`** (string): The type name of the artifact definition. Must be unique to your organization and will be prefixed with your organization's slug. Must match pattern `^[a-z0-9-]{3,100}$`. This will be used by your bundles to refer to the types that they depend on or emit.
+
+- **`label`** (string): The display label shown in the Massdriver UI.
+
+- **`icon`** (string): Path to an icon file for this artifact type. Must be a valid URL.
+
+- **`ui`** (object): UI-specific configuration options.
+  - **`environmentDefaultGroup`** (string): Adds this artifact definition type to the 'environment default' overlay under this group in the UI.
+  - **`connectionOrientation`** (string): How to orient the artifact's connection to a bundle in the UI. Options:
+    - `"link"` (default): Line-based connections
+    - `"environmentDefault"`: Makes it the default for a given type in the entire environment
+  - **`instructions`** (array): Onboarding instructions for this artifact type. Only valid for 'credentials' artifact definitions. Each instruction object contains:
+    - `label` (string): The instruction label
+    - `content` (string): The instruction content
+
+- **`export`** (array): Export format configurations for downloading artifact data.
+  - **`templateLang`** (string, required): Template language. Currently only supports `"liquid"`
+  - **`fileFormat`** (string, required): File format. Currently only supports `"yaml"`
+  - **`template`** (string, required): Base64 encoded template for the export file
+  - **`downloadButtonText`** (string, required): Text displayed on the download button in the UI
+
+**Example:*
 
 ```json
 {
   "$md": {
-    "name": "the-artifact-name",
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kubernetes",
-    "importing": {
-      "fileUploadType": "yaml",
-      "fileUploadArtifactDataPath": ["data", "authentication"],
-      "group": "authentication"
-    }
+    "name": "aws-iam-role",
+    "label": "AWS IAM Role",
+    "icon": "https://example.com/icons/iamn.svg",
+    "ui": {
+      "environmentDefaultGroup": "credentials",
+      "connectionOrientation": "environmentDefault",
+      "instructions": [
+        {
+          "label": "Creating a role with the CLI",
+          "content": "BASE64_MARKDOWN_HERE"
+        },
+        {
+          "label": "Creating a role in the AWS Web Console",
+          "content": "BASE64_MARKDOWN_HERE"
+        }
+      ]
+    },
+    "export": [
+      {
+        "templateLang": "liquid",
+        "fileFormat": "yaml",
+        "template": "base64EncodedTemplateHere",
+        "downloadButtonText": "Title for downloadable version of artifact here"
+      }
+    ]
   }
 }
 ```
-
-* name - the name of the artifact without the organizational scope. This should be a URL safe name consisting of letters, numbers, and hyphens. It must be unique to the org it is published under.
-* _deprecated_: defaultTargetConnectionGroup - allows the artifacts of this type to be set as defaults for a Target, by omitting, it disables this artifact type as defaultable.
-* _deprecated_: defaultTargetConnectionGroupLabel - is the label to put on the section header for listing these types of artifacts
-* _deprecated_: importing.fileUploadType - allows files to be uploaded when importing an artifact. This requires that the artifact has the same structure as the file type. Generally only applicable to authentication
-* _deprecated_: importing.group - the group in onboarding and importing frontend that this artifact definition form should be grouped under.
-* _deprecated_: importing.fileUploadArtifactDataPath - the json key path to store the deserialized file into. Should be `["data"]` if not present.
-* `export` - different file formats of the artifact that can be downloaded
-  * `downloadButtonText` - download button text
-  * `templateLang` - the template to render the artifact in (currently only liquid is supported)
-  * `fileFormat` - the file extension to use when rendering
-  * `template` - the template
-* `ui.instructions` - onboarding instructions for this artifact type, only valid for 'credentials' artifact definitions.
-* `ui.environmentDefaultGroup` - adds this artifact definition type to the 'environment default' overlay under this group in the UI.
-* `ui.connectionOrientation` - how to orient the artifact's connection to a bundle in the UI. `link` will be line based, `environmentDefault` will make it the default for a given type in the entire environment.
-* `extensions.costReporting` - setting this field to true will enable cost reporting with this artifact (currently not supported in self-hosted).

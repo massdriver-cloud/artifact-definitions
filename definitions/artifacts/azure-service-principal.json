@@ -1,8 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Azure Service Principal",
+    "label": "Azure Service Principal",
     "importing": {
       "group": "authentication"
     },
@@ -10,7 +9,9 @@
       "costReporting": true
     },
     "name": "azure-service-principal",
+    "defaultTargetConnectionGroup": "credentials",
     "ui": {
+      "environmentDefaultGroup": "credentials",
       "connectionOrientation": "environmentDefault",
       "instructions": [
         {

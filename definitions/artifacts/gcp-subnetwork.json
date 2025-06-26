@@ -1,9 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "defaultTargetConnectionGroup": "networking",
-    "defaultTargetConnectionGroupLabel": "GCP",
+    "ui": {
+      "environmentDefaultGroup": "networking"
+    },
+    "label": "GCP Subnetwork",
     "importing": {
       "group": "networking"
     },

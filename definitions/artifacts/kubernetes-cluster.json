@@ -1,9 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
-    "defaultTargetConnectionGroup": "credentials",
-    "defaultTargetConnectionGroupLabel": "Kubernetes Cluster",
+    "label": "Kubernetes Cluster",
     "export": [
       {
         "downloadButtonText": "Kube Config",
@@ -13,7 +11,9 @@
       }
     ],
     "name": "kubernetes-cluster",
+    "defaultTargetConnectionGroup": "credentials",
     "ui": {
+      "environmentDefaultGroup": "credentials",
       "instructions": [
         {
           "label": "kubectl CLI",
