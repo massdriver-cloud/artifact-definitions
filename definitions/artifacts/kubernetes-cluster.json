@@ -11,6 +11,7 @@
       }
     ],
     "name": "kubernetes-cluster",
+    "defaultTargetConnectionGroup": "credentials",
     "ui": {
       "environmentDefaultGroup": "credentials",
       "instructions": [
