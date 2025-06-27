@@ -13,7 +13,6 @@
     "extensions": {
       "costReporting": true
     },
-    "defaultTargetConnectionGroup": "credentials",
     "ui": {
       "environmentDefaultGroup": "credentials",
       "connectionOrientation": "environmentDefault",

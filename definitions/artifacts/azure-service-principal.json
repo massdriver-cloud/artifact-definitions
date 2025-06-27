@@ -9,7 +9,6 @@
       "costReporting": true
     },
     "name": "azure-service-principal",
-    "defaultTargetConnectionGroup": "credentials",
     "ui": {
       "environmentDefaultGroup": "credentials",
       "connectionOrientation": "environmentDefault",
