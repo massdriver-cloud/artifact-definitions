@@ -1,6 +1,12 @@
 repos:
   - repo: local
     hooks:
+      - id: build-dist
+        name: build-dist
+        language: system
+        entry: make dist
+        pass_filenames: false
+        always_run: true
       - id: fix non-ascii quotes
         name: fix-non-ascii-quotes
         language: python
@@ -28,11 +34,11 @@ repos:
       - id: check-github-workflows
       - id: check-jsonschema
         name: "Check all definitions are valid JSON Schema"
-        files: ^definitions/artifacts
+        files: ^dist/
         types: [json]
         args: ["--check-metaschema"]
       - id: check-jsonschema
         name: "Check Artifact Definitions are valid"
-        files: ^definitions/artifacts
+        files: ^dist/
         types: [json]
         args: ["--schemafile", "https://api.massdriver.cloud/json-schemas/artifact-definition.json"]
