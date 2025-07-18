@@ -1,136 +1,136 @@
 {
-    "$md": {
-        "name": "azure-cognitive-service-language"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "",
-    "properties": {
-        "data": {
-            "properties": {
-                "authentication": {
-                    "properties": {
-                        "endpoint": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "An HTTPS endpoint URL",
-                            "examples": [
-                                "https://example.com/some/path",
-                                "https://massdriver.cloud"
-                            ],
-                            "pattern": "^https://.*$",
-                            "title": "HTTPS URL",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "endpoint"
-                    ],
-                    "title": "Authentication credentials",
-                    "type": "object"
-                },
-                "infrastructure": {
-                    "properties": {
-                        "ari": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Azure Resource ID",
-                            "examples": [
-                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
-                            ],
-                            "message": {
-                                "pattern": "Must be a valid Azure Resource ID"
-                            },
-                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
-                            "title": "Azure Resource ID",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "ari"
-                    ],
-                    "title": "Infrastructure configuration",
-                    "type": "object"
-                },
-                "security": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "Azure Security Configuration",
-                    "properties": {
-                        "iam": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
-                            "description": "IAM Roles And Scopes",
-                            "patternProperties": {
-                                "^[a-z]+[a-z_]*[a-z]$": {
-                                    "properties": {
-                                        "role": {
-                                            "description": "Azure Role",
-                                            "examples": [
-                                                "Storage Blob Data Reader"
-                                            ],
-                                            "message": {
-                                                "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
-                                            },
-                                            "pattern": "^[a-zA-Z ]+$",
-                                            "title": "Role"
-                                        },
-                                        "scope": {
-                                            "description": "Azure IAM Scope",
-                                            "title": "Scope",
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "role",
-                                        "scope"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "title": "IAM",
-                            "type": "object"
-                        }
-                    },
-                    "required": [],
-                    "title": "Security",
-                    "type": "object"
-                }
-            },
-            "required": [
-                "infrastructure",
-                "authentication",
-                "security"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
+  "$md": {
+    "name": "azure-cognitive-service-language"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "",
+  "properties": {
+    "data": {
+      "properties": {
+        "authentication": {
+          "properties": {
+            "endpoint": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "An HTTPS endpoint URL",
+              "examples": [
+                "https://example.com/some/path",
+                "https://massdriver.cloud"
+              ],
+              "pattern": "^https://.*$",
+              "title": "HTTPS URL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "endpoint"
+          ],
+          "title": "Authentication credentials",
+          "type": "object"
         },
-        "specs": {
-            "properties": {
-                "azure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Select the Azure region you'd like to provision your resources in.",
-                            "title": "Azure Region",
-                            "type": "string"
-                        }
+        "infrastructure": {
+          "properties": {
+            "ari": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Azure Resource ID",
+              "examples": [
+                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+              ],
+              "message": {
+                "pattern": "Must be a valid Azure Resource ID"
+              },
+              "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+              "title": "Azure Resource ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "ari"
+          ],
+          "title": "Infrastructure configuration",
+          "type": "object"
+        },
+        "security": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "Azure Security Configuration",
+          "properties": {
+            "iam": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "additionalProperties": false,
+              "description": "IAM Roles And Scopes",
+              "patternProperties": {
+                "^[a-z]+[a-z_]*[a-z]$": {
+                  "properties": {
+                    "role": {
+                      "description": "Azure Role",
+                      "examples": [
+                        "Storage Blob Data Reader"
+                      ],
+                      "message": {
+                        "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+                      },
+                      "pattern": "^[a-zA-Z ]+$",
+                      "title": "Role"
                     },
-                    "required": [
-                        "region"
-                    ],
-                    "title": "Azure Artifact Specs",
-                    "type": "object"
+                    "scope": {
+                      "description": "Azure IAM Scope",
+                      "title": "Scope",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "role",
+                    "scope"
+                  ],
+                  "type": "object"
                 }
-            },
-            "title": "Artifact Specs",
-            "type": "object"
+              },
+              "title": "IAM",
+              "type": "object"
+            }
+          },
+          "required": [],
+          "title": "Security",
+          "type": "object"
         }
+      },
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "Azure Cognitive Services :: Language",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "azure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Select the Azure region you'd like to provision your resources in.",
+              "title": "Azure Region",
+              "type": "string"
+            }
+          },
+          "required": [
+            "region"
+          ],
+          "title": "Azure Artifact Specs",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data",
+    "specs"
+  ],
+  "title": "Azure Cognitive Services :: Language",
+  "type": "object"
 }

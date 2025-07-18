@@ -1,117 +1,117 @@
 {
-    "$md": {
-        "name": "sftp-authentication"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "Authentication and connection details for an SFTP server",
-    "properties": {
-        "data": {
-            "properties": {
-                "authentication": {
-                    "oneOf": [
-                        {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
-                            "description": "SHH public/private keypair with contextual user and hostname",
-                            "properties": {
-                                "hostname": {
-                                    "type": "string"
-                                },
-                                "private_key": {
-                                    "type": "string"
-                                },
-                                "public_key": {
-                                    "type": "string"
-                                },
-                                "user": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "user",
-                                "hostname",
-                                "private_key",
-                                "public_key"
-                            ],
-                            "title": "SSH Authentication"
-                        }
-                    ]
+  "$md": {
+    "name": "sftp-authentication"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "Authentication and connection details for an SFTP server",
+  "properties": {
+    "data": {
+      "properties": {
+        "authentication": {
+          "oneOf": [
+            {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "additionalProperties": false,
+              "description": "SHH public/private keypair with contextual user and hostname",
+              "properties": {
+                "hostname": {
+                  "type": "string"
                 },
-                "infrastructure": {
-                    "properties": {
-                        "arn": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Amazon Resource Name",
-                            "examples": [
-                                "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                                "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                            ],
-                            "message": {
-                                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                            },
-                            "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                            "title": "AWS ARN",
-                            "type": "string"
-                        }
-                    },
-                    "title": "Cloud provider configuration",
-                    "type": "object"
+                "private_key": {
+                  "type": "string"
+                },
+                "public_key": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
                 }
-            },
-            "required": [
-                "infrastructure",
-                "authentication"
-            ],
-            "type": "object"
+              },
+              "required": [
+                "user",
+                "hostname",
+                "private_key",
+                "public_key"
+              ],
+              "title": "SSH Authentication"
+            }
+          ]
         },
-        "specs": {
-            "properties": {
-                "aws": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "AWS Region to provision in.",
-                            "examples": [
-                                "us-west-2"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                },
-                "cryptography": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "algorithm": {
-                            "enum": [
-                                "RSA"
-                            ],
-                            "title": "Algorithm",
-                            "type": "string"
-                        },
-                        "key_size": {
-                            "title": "Key Size",
-                            "type": "integer"
-                        }
-                    },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                }
-            },
-            "type": "object"
+        "infrastructure": {
+          "properties": {
+            "arn": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Amazon Resource Name",
+              "examples": [
+                "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+              ],
+              "message": {
+                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+              },
+              "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+              "title": "AWS ARN",
+              "type": "string"
+            }
+          },
+          "title": "Cloud provider configuration",
+          "type": "object"
         }
+      },
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
+      "type": "object"
     },
-    "required": [
-        "data"
-    ],
-    "title": "SFTP Authentication",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": [
+                "us-west-2"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        },
+        "cryptography": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "algorithm": {
+              "enum": [
+                "RSA"
+              ],
+              "title": "Algorithm",
+              "type": "string"
+            },
+            "key_size": {
+              "title": "Key Size",
+              "type": "integer"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "title": "SFTP Authentication",
+  "type": "object"
 }
