@@ -1,182 +1,182 @@
 {
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/virtual-private-cloud.svg",
-        "importing": {
-            "group": "networking"
-        },
-        "label": "AWS VPC",
-        "name": "aws-vpc",
-        "ui": {
-            "environmentDefaultGroup": "networking"
-        }
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/virtual-private-cloud.svg",
+    "importing": {
+      "group": "networking"
     },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "",
-    "properties": {
-        "data": {
-            "properties": {
-                "infrastructure": {
-                    "properties": {
-                        "arn": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Amazon Resource Name",
-                            "examples": [
-                                "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                                "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                            ],
-                            "message": {
-                                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                            },
-                            "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                            "title": "AWS ARN",
-                            "type": "string"
-                        },
-                        "cidr": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "examples": [
-                                "10.100.0.0/16",
-                                "192.24.12.0/22"
-                            ],
-                            "message": {
-                                "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
-                            },
-                            "pattern": "^(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\\.(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}(?:/(?:[0-9]|1[0-9]|2[0-9]|3[0-2]))$",
-                            "type": "string"
-                        },
-                        "internal_subnets": {
-                            "items": {
-                                "$schema": "http://json-schema.org/draft-07/schema",
-                                "description": "AWS VCP Subnet",
-                                "examples": [],
-                                "properties": {
-                                    "arn": {
-                                        "$schema": "http://json-schema.org/draft-07/schema",
-                                        "description": "Amazon Resource Name",
-                                        "examples": [
-                                            "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                                            "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                                        ],
-                                        "message": {
-                                            "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                                        },
-                                        "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                                        "title": "AWS ARN",
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "arn"
-                                ],
-                                "title": "AWS Subnet",
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "private_subnets": {
-                            "items": {
-                                "$schema": "http://json-schema.org/draft-07/schema",
-                                "description": "AWS VCP Subnet",
-                                "examples": [],
-                                "properties": {
-                                    "arn": {
-                                        "$schema": "http://json-schema.org/draft-07/schema",
-                                        "description": "Amazon Resource Name",
-                                        "examples": [
-                                            "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                                            "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                                        ],
-                                        "message": {
-                                            "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                                        },
-                                        "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                                        "title": "AWS ARN",
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "arn"
-                                ],
-                                "title": "AWS Subnet",
-                                "type": "object"
-                            },
-                            "type": "array"
-                        },
-                        "public_subnets": {
-                            "items": {
-                                "$schema": "http://json-schema.org/draft-07/schema",
-                                "description": "AWS VCP Subnet",
-                                "examples": [],
-                                "properties": {
-                                    "arn": {
-                                        "$schema": "http://json-schema.org/draft-07/schema",
-                                        "description": "Amazon Resource Name",
-                                        "examples": [
-                                            "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                                            "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                                        ],
-                                        "message": {
-                                            "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                                        },
-                                        "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                                        "title": "AWS ARN",
-                                        "type": "string"
-                                    }
-                                },
-                                "required": [
-                                    "arn"
-                                ],
-                                "title": "AWS Subnet",
-                                "type": "object"
-                            },
-                            "type": "array"
-                        }
-                    },
-                    "required": [
-                        "arn",
-                        "cidr",
-                        "private_subnets",
-                        "public_subnets",
-                        "internal_subnets"
-                    ],
-                    "title": "Infrastructure configuration",
-                    "type": "object"
-                }
+    "label": "AWS VPC",
+    "name": "aws-vpc",
+    "ui": {
+      "environmentDefaultGroup": "networking"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "",
+  "properties": {
+    "data": {
+      "properties": {
+        "infrastructure": {
+          "properties": {
+            "arn": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Amazon Resource Name",
+              "examples": [
+                "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+              ],
+              "message": {
+                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+              },
+              "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+              "title": "AWS ARN",
+              "type": "string"
             },
-            "required": [
-                "infrastructure"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
-        },
-        "specs": {
-            "properties": {
-                "aws": {
+            "cidr": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "examples": [
+                "10.100.0.0/16",
+                "192.24.12.0/22"
+              ],
+              "message": {
+                "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
+              },
+              "pattern": "^(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\\.(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}(?:/(?:[0-9]|1[0-9]|2[0-9]|3[0-2]))$",
+              "type": "string"
+            },
+            "internal_subnets": {
+              "items": {
+                "$schema": "http://json-schema.org/draft-07/schema",
+                "description": "AWS VCP Subnet",
+                "examples": [],
+                "properties": {
+                  "arn": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "AWS Region to provision in.",
-                            "examples": [
-                                "us-west-2"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
+                    "description": "Amazon Resource Name",
+                    "examples": [
+                      "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                      "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                    ],
+                    "message": {
+                      "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
                     },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                }
+                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                    "title": "AWS ARN",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "arn"
+                ],
+                "title": "AWS Subnet",
+                "type": "object"
+              },
+              "type": "array"
             },
-            "title": "Artifact Specs",
-            "type": "object"
+            "private_subnets": {
+              "items": {
+                "$schema": "http://json-schema.org/draft-07/schema",
+                "description": "AWS VCP Subnet",
+                "examples": [],
+                "properties": {
+                  "arn": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "Amazon Resource Name",
+                    "examples": [
+                      "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                      "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                    ],
+                    "message": {
+                      "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                    },
+                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                    "title": "AWS ARN",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "arn"
+                ],
+                "title": "AWS Subnet",
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "public_subnets": {
+              "items": {
+                "$schema": "http://json-schema.org/draft-07/schema",
+                "description": "AWS VCP Subnet",
+                "examples": [],
+                "properties": {
+                  "arn": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "Amazon Resource Name",
+                    "examples": [
+                      "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                      "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                    ],
+                    "message": {
+                      "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                    },
+                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                    "title": "AWS ARN",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "arn"
+                ],
+                "title": "AWS Subnet",
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "arn",
+            "cidr",
+            "private_subnets",
+            "public_subnets",
+            "internal_subnets"
+          ],
+          "title": "Infrastructure configuration",
+          "type": "object"
         }
+      },
+      "required": [
+        "infrastructure"
+      ],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data"
-    ],
-    "title": "AWS Virtual Private Cloud",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": [
+                "us-west-2"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "title": "AWS Virtual Private Cloud",
+  "type": "object"
 }

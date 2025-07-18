@@ -1,131 +1,131 @@
 {
-    "$md": {
-        "importing": {
-            "group": "data"
-        },
-        "name": "gcp-pubsub-topic"
+  "$md": {
+    "importing": {
+      "group": "data"
     },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "GCP PubSub Topic",
-    "properties": {
-        "data": {
-            "additionalProperties": false,
-            "properties": {
-                "infrastructure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "PubSub topic configuration",
-                    "properties": {
-                        "grn": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "GCP Resource Name (GRN)",
-                            "examples": [
-                                "projects/my-project/global/networks/my-global-network",
-                                "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
-                                "projects/my-project/topics/my-pubsub-topic",
-                                "projects/my-project/subscriptions/my-pubsub-subscription",
-                                "projects/my-project/locations/us-west2/instances/my-redis-instance",
-                                "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
-                            ],
-                            "message": {
-                                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
-                            },
-                            "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
-                            "title": "GCP Resource Name (GRN)",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "grn"
-                    ],
-                    "title": "Infrastructure configuration",
-                    "type": "object"
-                },
-                "security": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "GCP Security Configuration",
-                    "properties": {
-                        "iam": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
-                            "description": "IAM Roles And Conditions",
-                            "patternProperties": {
-                                "^[a-z]+[a-z_]*[a-z]$": {
-                                    "properties": {
-                                        "condition": {
-                                            "description": "GCP IAM Condition",
-                                            "title": "Condition",
-                                            "type": "string"
-                                        },
-                                        "role": {
-                                            "description": "GCP Role",
-                                            "examples": [
-                                                "roles/owner",
-                                                "roles/redis.editor",
-                                                "roles/storage.objectCreator",
-                                                "roles/storage.legacyObjectReader"
-                                            ],
-                                            "message": {
-                                                "pattern": "Must be a valid GCP Role, e.g. roles/..."
-                                            },
-                                            "pattern": "^roles/[a-zA-Z0-9\\.]+$",
-                                            "title": "Role"
-                                        }
-                                    },
-                                    "required": [
-                                        "role",
-                                        "condition"
-                                    ],
-                                    "type": "object"
-                                }
-                            },
-                            "title": "IAM",
-                            "type": "object"
-                        }
-                    },
-                    "required": [],
-                    "title": "Security",
-                    "type": "object"
-                }
-            },
-            "required": [
-                "infrastructure",
-                "security"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
+    "name": "gcp-pubsub-topic"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "GCP PubSub Topic",
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "properties": {
+        "infrastructure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "PubSub topic configuration",
+          "properties": {
+            "grn": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "GCP Resource Name (GRN)",
+              "examples": [
+                "projects/my-project/global/networks/my-global-network",
+                "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
+                "projects/my-project/topics/my-pubsub-topic",
+                "projects/my-project/subscriptions/my-pubsub-subscription",
+                "projects/my-project/locations/us-west2/instances/my-redis-instance",
+                "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
+              ],
+              "message": {
+                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
+              },
+              "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
+              "title": "GCP Resource Name (GRN)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "grn"
+          ],
+          "title": "Infrastructure configuration",
+          "type": "object"
         },
-        "specs": {
-            "properties": {
-                "topic": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "",
-                    "properties": {
-                        "distribution": {
-                            "enum": [
-                                "pubsub"
-                            ],
-                            "type": "string"
-                        }
+        "security": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "GCP Security Configuration",
+          "properties": {
+            "iam": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "additionalProperties": false,
+              "description": "IAM Roles And Conditions",
+              "patternProperties": {
+                "^[a-z]+[a-z_]*[a-z]$": {
+                  "properties": {
+                    "condition": {
+                      "description": "GCP IAM Condition",
+                      "title": "Condition",
+                      "type": "string"
                     },
-                    "required": [
-                        "distribution"
-                    ],
-                    "title": "",
-                    "type": "object"
+                    "role": {
+                      "description": "GCP Role",
+                      "examples": [
+                        "roles/owner",
+                        "roles/redis.editor",
+                        "roles/storage.objectCreator",
+                        "roles/storage.legacyObjectReader"
+                      ],
+                      "message": {
+                        "pattern": "Must be a valid GCP Role, e.g. roles/..."
+                      },
+                      "pattern": "^roles/[a-zA-Z0-9\\.]+$",
+                      "title": "Role"
+                    }
+                  },
+                  "required": [
+                    "role",
+                    "condition"
+                  ],
+                  "type": "object"
                 }
-            },
-            "title": "Artifact Specs",
-            "type": "object"
+              },
+              "title": "IAM",
+              "type": "object"
+            }
+          },
+          "required": [],
+          "title": "Security",
+          "type": "object"
         }
+      },
+      "required": [
+        "infrastructure",
+        "security"
+      ],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "GCP PubSub Topic",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "topic": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "",
+          "properties": {
+            "distribution": {
+              "enum": [
+                "pubsub"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "distribution"
+          ],
+          "title": "",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data",
+    "specs"
+  ],
+  "title": "GCP PubSub Topic",
+  "type": "object"
 }

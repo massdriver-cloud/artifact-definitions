@@ -1,42 +1,42 @@
 {
-    "$md": {
-        "name": "draft-node"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
-    "properties": {
-        "data": {
-            "properties": {
-                "name": {
-                    "description": "Name",
-                    "examples": [
-                        "Network",
-                        "Cluster",
-                        "Function",
-                        "Queue"
-                    ],
-                    "title": "name",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "name"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
-        },
-        "specs": {
-            "additionalProperties": false,
-            "properties": {},
-            "required": [],
-            "type": "object"
+  "$md": {
+    "name": "draft-node"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
+  "properties": {
+    "data": {
+      "properties": {
+        "name": {
+          "description": "Name",
+          "examples": [
+            "Network",
+            "Cluster",
+            "Function",
+            "Queue"
+          ],
+          "title": "name",
+          "type": "string"
         }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "Draft Node",
-    "type": "object"
+    "specs": {
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object"
+    }
+  },
+  "required": [
+    "data",
+    "specs"
+  ],
+  "title": "Draft Node",
+  "type": "object"
 }
