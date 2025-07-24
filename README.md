@@ -4,6 +4,12 @@ This repository contains the schema definitions that power Massdriver's Infrastr
 
 ## Directory Structure
 
+> ⚠️ **Important:** Use the compiled schemas in `dist/`, **not** the raw definitions in `definitions/`.
+>
+> The `definitions/` directory contains uncompiled source files used during schema development. These may include unresolved references and incomplete validations.
+> For all SDKs, platform usage, IaC connections, and external integrations, **use the fully compiled schemas in the `dist/` directory**.
+
+
 ### `definitions/artifacts/`
 **Complete, deployable resource definitions** that represent the outputs from IaC runs.
 

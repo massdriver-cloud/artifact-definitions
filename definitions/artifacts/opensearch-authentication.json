@@ -47,7 +47,7 @@
         },
         "authentication": {
           "title": "Authentication details",
-          "description": "Master Username & Password Authentication",
+          "description": "Master Username / Password Authentication",
           "type": "object",
           "required": [
             "username",

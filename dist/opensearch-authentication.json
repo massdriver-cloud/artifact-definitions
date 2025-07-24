@@ -13,7 +13,7 @@
       "additionalProperties": false,
       "properties": {
         "authentication": {
-          "description": "Master Username & Password Authentication",
+          "description": "Master Username / Password Authentication",
           "properties": {
             "hostname": {
               "type": "string"
