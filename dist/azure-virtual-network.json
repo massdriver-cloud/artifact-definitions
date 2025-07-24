@@ -1,103 +1,103 @@
 {
-    "$md": {
-        "importing": {
-            "group": "networking"
-        },
-        "label": "Azure VNet",
-        "name": "azure-virtual-network",
-        "ui": {
-            "environmentDefaultGroup": "networking"
-        }
+  "$md": {
+    "importing": {
+      "group": "networking"
     },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "",
-    "properties": {
-        "data": {
-            "properties": {
-                "infrastructure": {
-                    "properties": {
-                        "cidr": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "examples": [
-                                "10.100.0.0/16",
-                                "192.24.12.0/22"
-                            ],
-                            "message": {
-                                "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
-                            },
-                            "pattern": "^(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\\.(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}(?:/(?:[0-9]|1[0-9]|2[0-9]|3[0-2]))$",
-                            "type": "string"
-                        },
-                        "default_subnet_id": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Azure Resource ID",
-                            "examples": [
-                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
-                            ],
-                            "message": {
-                                "pattern": "Must be a valid Azure Resource ID"
-                            },
-                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
-                            "title": "Azure Resource ID",
-                            "type": "string"
-                        },
-                        "id": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Azure Resource ID",
-                            "examples": [
-                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
-                            ],
-                            "message": {
-                                "pattern": "Must be a valid Azure Resource ID"
-                            },
-                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
-                            "title": "Azure Resource ID",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "id",
-                        "cidr",
-                        "default_subnet_id"
-                    ],
-                    "title": "Infrastructure configuration",
-                    "type": "object"
-                }
+    "label": "Azure VNet",
+    "name": "azure-virtual-network",
+    "ui": {
+      "environmentDefaultGroup": "networking"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "",
+  "properties": {
+    "data": {
+      "properties": {
+        "infrastructure": {
+          "properties": {
+            "cidr": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "examples": [
+                "10.100.0.0/16",
+                "192.24.12.0/22"
+              ],
+              "message": {
+                "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
+              },
+              "pattern": "^(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\\.(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}(?:/(?:[0-9]|1[0-9]|2[0-9]|3[0-2]))$",
+              "type": "string"
             },
-            "required": [
-                "infrastructure"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
-        },
-        "specs": {
-            "properties": {
-                "azure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Select the Azure region you'd like to provision your resources in.",
-                            "title": "Azure Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "region"
-                    ],
-                    "title": "Azure Artifact Specs",
-                    "type": "object"
-                }
+            "default_subnet_id": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Azure Resource ID",
+              "examples": [
+                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+              ],
+              "message": {
+                "pattern": "Must be a valid Azure Resource ID"
+              },
+              "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+              "title": "Azure Resource ID",
+              "type": "string"
             },
-            "title": "Artifact Specs",
-            "type": "object"
+            "id": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Azure Resource ID",
+              "examples": [
+                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+              ],
+              "message": {
+                "pattern": "Must be a valid Azure Resource ID"
+              },
+              "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+              "title": "Azure Resource ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cidr",
+            "default_subnet_id"
+          ],
+          "title": "Infrastructure configuration",
+          "type": "object"
         }
+      },
+      "required": [
+        "infrastructure"
+      ],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data"
-    ],
-    "title": "Azure Virtual Network",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "azure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Select the Azure region you'd like to provision your resources in.",
+              "title": "Azure Region",
+              "type": "string"
+            }
+          },
+          "required": [
+            "region"
+          ],
+          "title": "Azure Artifact Specs",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "title": "Azure Virtual Network",
+  "type": "object"
 }
