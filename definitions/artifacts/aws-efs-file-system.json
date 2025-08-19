@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema",
 	"$md": {
-
+		"icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-efs.svg",
 		"name": "aws-efs-file-system"
 	},
 	"type": "object",

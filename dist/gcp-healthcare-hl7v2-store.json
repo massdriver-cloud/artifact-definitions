@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-healthcare-api.svg",
         "importing": {
             "group": "data"
         },

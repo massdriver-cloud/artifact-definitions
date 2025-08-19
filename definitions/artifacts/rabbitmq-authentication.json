@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "name": "rabbitmq-authentication"
   },
   "type": "object",

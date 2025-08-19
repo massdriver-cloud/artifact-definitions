@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/virtual-networks.svg",
         "importing": {
             "group": "networking"
         },

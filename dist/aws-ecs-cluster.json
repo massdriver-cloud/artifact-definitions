@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-elastic-container-service.svg",
         "name": "aws-ecs-cluster"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
@@ -128,7 +129,7 @@
                         },
                         "vpc": {
                             "$md": {
-                                "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/virtual-private-cloud.svg",
+                                "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-virtual-private-cloud.svg",
                                 "importing": {
                                     "group": "networking"
                                 },

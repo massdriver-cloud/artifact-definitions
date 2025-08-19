@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-simple-notification-service.svg",
         "name": "aws-sns-topic"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

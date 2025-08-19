@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "label": "Kubernetes Cluster",
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/kubernetes-cluster/icon.png",
     "export": [
       {
         "downloadButtonText": "Kube Config",
@@ -19,8 +20,7 @@
           "content": "IyBDb25uZWN0IFlvdXIgS3ViZXJuZXRlcyBDbHVzdGVyIHRvIE1hc3Nkcml2ZXIKClRvIGNvbm5lY3QgeW91ciBjbHVzdGVyLCBmaWxsIG91dCB0aGUgKipLdWJlIENvbmZpZyoqIGZvcm0gaW4gTWFzc2RyaXZlci4gWW914oCZbGwgbmVlZCB0aHJlZSB2YWx1ZXMgZnJvbSB5b3VyIGt1YmVjb25maWcgb3IgY2x1c3RlcjoKCi0tLQoKIyMjIPCflJAgKipBdXRoZW50aWNhdGlvbiDihpIgQ2x1c3RlciDihpIgU2VydmVyKioKClJ1bjoKCmBgYGJhc2gKa3ViZWN0bCBjb25maWcgdmlldyAtLXJhdyAtbyBqc29ucGF0aD0iey5jbHVzdGVyc1swXS5jbHVzdGVyLnNlcnZlcn0iCmBgYAoKUGFzdGUgdGhlIFVSTCAoc3RhcnRzIHdpdGggYGh0dHBzOi8vLi4uYCkgaW50byB0aGUgKipTZXJ2ZXIqKiBmaWVsZC4KCi0tLQoKIyMjIPCflJAgKipBdXRoZW50aWNhdGlvbiDihpIgQ2x1c3RlciDihpIgQ2VydGlmaWNhdGUgQXV0aG9yaXR5IERhdGEqKgoKUnVuOgoKYGBgYmFzaAprdWJlY3RsIGNvbmZpZyB2aWV3IC0tcmF3IC1vIGpzb25wYXRoPSJ7LmNsdXN0ZXJzWzBdLmNsdXN0ZXIuY2VydGlmaWNhdGUtYXV0aG9yaXR5LWRhdGF9IgpgYGAKClBhc3RlIHRoZSBmdWxsIGJhc2U2NC1lbmNvZGVkIHN0cmluZyBpbnRvIHRoZSAqKkNlcnRpZmljYXRlIEF1dGhvcml0eSBEYXRhKiogZmllbGQuCgotLS0KCiMjIyDwn5SQICoqQXV0aGVudGljYXRpb24g4oaSIFVzZXIg4oaSIFRva2VuKioKCklmIHlvdXIga3ViZWNvbmZpZyBhbHJlYWR5IGluY2x1ZGVzIGEgdG9rZW46CgpgYGBiYXNoCmt1YmVjdGwgY29uZmlnIHZpZXcgLS1yYXcgLW8ganNvbnBhdGg9InsudXNlcnNbMF0udXNlci50b2tlbn0iCmBgYAoKSWYgaXQgZG9lc27igJl0LCBjcmVhdGUgb25lOgoKYGBgYmFzaAprdWJlY3RsIGNyZWF0ZSBzZXJ2aWNlYWNjb3VudCBtYXNzZHJpdmVyCmt1YmVjdGwgY3JlYXRlIGNsdXN0ZXJyb2xlYmluZGluZyBtYXNzZHJpdmVyLWJpbmRpbmcgLS1jbHVzdGVycm9sZT1jbHVzdGVyLWFkbWluIC0tc2VydmljZWFjY291bnQ9ZGVmYXVsdDptYXNzZHJpdmVyCmt1YmVjdGwgZ2V0IHNlY3JldCAkKGt1YmVjdGwgZ2V0IHNhIG1hc3Nkcml2ZXIgLW8ganNvbnBhdGg9Insuc2VjcmV0c1swXS5uYW1lfSIpIC1vIGpzb25wYXRoPSJ7LmRhdGEudG9rZW59IiB8IGJhc2U2NCAtZApgYGAKClBhc3RlIHRoZSB0b2tlbiBpbnRvIHRoZSAqKlRva2VuKiogZmllbGQgdW5kZXIgKipVc2VyKiouCg=="
         }
       ]
-    },
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/kubernetes-cluster/icon.png"
+    }
   },
   "type": "object",
   "title": "Kubernetes Cluster",
