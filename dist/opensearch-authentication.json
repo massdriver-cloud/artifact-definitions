@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-opensearch-service.svg",
         "importing": {
             "group": "data"
         },

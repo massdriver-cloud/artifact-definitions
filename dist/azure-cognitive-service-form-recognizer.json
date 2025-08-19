@@ -1,5 +1,6 @@
 {
     "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/cognitive-services.svg",
         "name": "azure-cognitive-service-form-recognizer"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

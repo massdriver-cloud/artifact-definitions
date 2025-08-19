@@ -4,7 +4,7 @@
     "ui":{
       "environmentDefaultGroup": "networking"
     },
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/virtual-private-cloud.svg",
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-virtual-private-cloud.svg",
     "name": "aws-vpc",
     "label": "AWS VPC",
     "importing": {

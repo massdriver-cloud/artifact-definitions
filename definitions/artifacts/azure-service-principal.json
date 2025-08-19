@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "label": "Azure Service Principal",
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/azure-service-principal/icon.png",
     "importing": {
       "group": "authentication"
     },
@@ -23,7 +24,6 @@
         }
       ]
     },
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/azure-service-principal/icon.png",
     "export": [
 
     ]
