@@ -1,0 +1,86 @@
+{
+  "$md": {
+    "export": [],
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/snowflake-private-key/icon.png",
+    "label": "Snowflake Private Key",
+    "name": "snowflake-private-key",
+    "ui": {
+      "connectionOrientation": "environmentDefault",
+      "environmentDefaultGroup": "credentials",
+      "instructions": [
+        {
+          "content": "IyBDcmVhdGluZyBhIFNub3dmbGFrZSB1c2VyIHdpdGggcHJpdmF0ZSBrZXkgZm9yIE1hc3Nkcml2ZXIKCiMjIEhvdyBNYXNzZHJpdmVyIHVzZXMgeW91ciBTbm93Zmxha2UgY3JlZGVudGlhbHMKClRvIGtlZXAgeW91ciBlbnZpcm9ubWVudCBzZWN1cmUsIE1hc3Nkcml2ZXIgdXNlcyBhIGRlZGljYXRlZCB1c2VyIGFjY291bnQgd2l0aCBwcml2YXRlIGtleSBhdXRoZW50aWNhdGlvbiB0byBhY2Nlc3MgeW91ciBTbm93Zmxha2UgaW5zdGFuY2UgZm9yIHByb3Zpc2lvbmluZyBhbmQgbW9uaXRvcmluZyBvZiB5b3VyIGluZnJhc3RydWN0dXJlLiBUaGlzIHVzZXIgc2hvdWxkIGhhdmUgYWRtaW5pc3RyYXRpdmUgcHJpdmlsZWdlcyB0byBtYW5hZ2UgZGF0YWJhc2VzLCB3YXJlaG91c2VzLCBhbmQgb3RoZXIgcmVzb3VyY2VzLgoKIyMgU3RlcCAxCgojIyMgR2VuZXJhdGUgYSBTZWN1cmUgU2hlbGwgKFNTSCkga2V5IHBhaXIKCk9wZW4geW91ciB0ZXJtaW5hbCBhbmQgZ2VuZXJhdGUgYW4gU1NIIGtleSBwYWlyOgoKYGBgYmFzaAojIEdlbmVyYXRlIGEgcHJpdmF0ZSBrZXkKc3NoLWtleWdlbiAtdCByc2EgLWIgMjA0OCAtZiBzbm93Zmxha2VfbWFzc2RyaXZlcl9rZXkKCiMgR2VuZXJhdGUgdGhlIHB1YmxpYyBrZXkKc3NoLWtleWdlbiAteSAtZiBzbm93Zmxha2VfbWFzc2RyaXZlcl9rZXkgPiBzbm93Zmxha2VfbWFzc2RyaXZlcl9rZXkucHViCmBgYAoKJm5ic3A7CgojIyBTdGVwIDIKCiMjIyBMb2cgaW4gdG8gU25vd2ZsYWtlIFdlYiBJbnRlcmZhY2UKCk9wZW4geW91ciBicm93c2VyIGFuZCBuYXZpZ2F0ZSB0byB5b3VyIFNub3dmbGFrZSBhY2NvdW50IGF0IGh0dHBzOi8vQUNDT1VOVF9OQU1FLnNub3dmbGFrZS5jb20uCgombmJzcDsKCiMjIFN0ZXAgMwoKIyMjIE5hdmlnYXRlIHRvIFVzZXJzICYgUm9sZXMgbWVudQoKRnJvbSB0aGUgbGVmdCBuYXZpZ2F0aW9uIG1lbnUsIGNsaWNrIG9uICoqVXNlcnMgJiBSb2xlcyoqIHRvIGV4cGFuZCB0aGUgc2VjdGlvbiwgdGhlbiBjbGljayBvbiAqKlVzZXJzKiouCgombmJzcDsKCiMjIFN0ZXAgNAoKIyMjIENyZWF0ZSBhIG5ldyB1c2VyCgpDbGljayB0aGUgKipDcmVhdGUgVXNlcioqIGJ1dHRvbiBpbiB0aGUgdG9wIHJpZ2h0IGNvcm5lciBvZiB0aGUgVXNlcnMgcGFnZS4KCiZuYnNwOwoKIyMgU3RlcCA1CgojIyMgRmlsbCBpbiB0aGUgdXNlciBkZXRhaWxzCgpJbiB0aGUgKipDcmVhdGUgVXNlcioqIGRpYWxvZywgZmlsbCBpbiB0aGUgZm9sbG93aW5nIGRldGFpbHM6CgotICoqVXNlciBOYW1lKio6IGBzbm93Zmxha2VfbWFzc2RyaXZlcl91c2VyYAotICoqQXV0aGVudGljYXRpb24gTWV0aG9kKio6IFNlbGVjdCAqKlNTSCBQdWJsaWMgS2V5KioKLSAqKlB1YmxpYyBLZXkqKjogQ29weSB0aGUgY29udGVudHMgb2YgdGhlIGBzbm93Zmxha2VfbWFzc2RyaXZlcl9rZXkucHViYCBmaWxlCi0gWyBdIFsgXSAqKk11c3QgQ2hhbmdlIFBhc3N3b3JkIG9uIE5leHQgTG9naW4qKgoKJm5ic3A7CgojIyBTdGVwIDYKCiMjIyBBc3NpZ24gcm9sZXMgdG8gdGhlIHVzZXIKCkluIHRoZSAqKlJvbGVzKiogc2VjdGlvbiBvZiB0aGUgZGlhbG9nOgoKLSBDbGljayB0aGUgKipBZGQgUm9sZXMqKiBidXR0b24KLSBTZWxlY3QgKipBQ0NPVU5UQURNSU4qKiBmcm9tIHRoZSByb2xlIGxpc3QKLSBDbGljayAqKk9LKioKCiZuYnNwOwoKIyMgU3RlcCA3CgojIyMgQ29uZmlndXJlIHdhcmVob3VzZSBhY2Nlc3MKCkluIHRoZSAqKldhcmVob3VzZXMqKiBzZWN0aW9uOgoKLSBDbGljayB0aGUgKipBZGQgV2FyZWhvdXNlcyoqIGJ1dHRvbgotIFNlbGVjdCAqKkNVUlJFTlQqKiBmcm9tIHRoZSB3YXJlaG91c2UgbGlzdAotIENsaWNrICoqT0sqKgoKJm5ic3A7CgojIyBTdGVwIDgKCiMjIyBDb25maWd1cmUgZGF0YWJhc2UgYWNjZXNzCgpJbiB0aGUgKipEYXRhYmFzZXMqKiBzZWN0aW9uOgoKLSBDbGljayB0aGUgKipBZGQgRGF0YWJhc2VzKiogYnV0dG9uCi0gU2VsZWN0ICoqQ1VSUkVOVCoqIGZyb20gdGhlIGRhdGFiYXNlIGxpc3QKLSBDbGljayAqKk9LKioKCiZuYnNwOwoKIyMgU3RlcCA5CgojIyMgQ3JlYXRlIHRoZSB1c2VyCgpDbGljayB0aGUgKipDcmVhdGUgVXNlcioqIGJ1dHRvbiB0byBjb21wbGV0ZSB0aGUgdXNlciBjcmVhdGlvbi4KCiZuYnNwOwoKIyMgU3RlcCAxMAoKIyMjIEdldCB0aGUgYWNjb3VudCBpbmZvcm1hdGlvbgoKVG8gZ2V0IHRoZSBhY2NvdW50IGluZm9ybWF0aW9uIG5lZWRlZCBmb3IgTWFzc2RyaXZlcjoKCjEuIEdvIHRvIHRoZSAqKkFkbWluaXN0cmF0aW9uKiogcGFnZSBmcm9tIHRoZSBsZWZ0IG5hdmlnYXRpb24KMi4gQ2xpY2sgb24gKipBY2NvdW50cyoqCjMuIENvcHkgdGhlICoqQWNjb3VudCBMb2NhdG9yKiogdmFsdWUgKHRoaXMgaXMgeW91ciBhY2NvdW50IG5hbWUpCjQuIENvcHkgdGhlICoqUmVnaW9uKiogdmFsdWUgKHRoaXMgaXMgeW91ciByZWdpb24pCgombmJzcDsKCiMjIFN0ZXAgMTEKCiMjIyBJbXBvcnQgY3JlZGVudGlhbHMgdG8gTWFzc2RyaXZlcgoKSW4gTWFzc2RyaXZlciwgZmlsbCBpbiB0aGUgZm9sbG93aW5nIGZpZWxkczoKCi0gKipBY2NvdW50KiogKEFjY291bnQgTG9jYXRvciBmcm9tIFN0ZXAgMTApCi0gKipVc2VybmFtZSoqIChzbm93Zmxha2VfbWFzc2RyaXZlcl91c2VyKQotICoqUHJpdmF0ZSBLZXkqKiAodGhlIGNvbnRlbnRzIG9mIHRoZSBgc25vd2ZsYWtlX21hc3Nkcml2ZXJfa2V5YCBmaWxlKQotICoqUmVnaW9uKiogKFJlZ2lvbiBmcm9tIFN0ZXAgMTApCgpDbGljayAqKkNyZWF0ZSoqIGFuZCBoZWFkIHRvIHRoZSBbcHJvamVjdHMgcGFnZV0oL3Byb2plY3RzKSB0byBzdGFydCBidWlsZGluZyB5b3VyIGluZnJhc3RydWN0dXJlLiAK",
+          "label": "Snowflake Console"
+        }
+      ]
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "Snowflake database authentication credentials using private key authentication",
+  "properties": {
+    "data": {
+      "properties": {
+        "account": {
+          "description": "The Snowflake account identifier (e.g., 'xy12345.us-east-1')",
+          "title": "Account",
+          "type": "string"
+        },
+        "database": {
+          "description": "The default database to use (optional)",
+          "title": "Database",
+          "type": "string"
+        },
+        "private_key": {
+          "description": "The private key for SSH authentication (PEM format). If your Terraform/OpenTofu module expects base64-encoded content, encode the entire PEM file content including headers and newlines.",
+          "title": "Private Key",
+          "type": "string"
+        },
+        "region": {
+          "description": "The Snowflake region (e.g., 'us-east-1', 'eu-west-1')",
+          "title": "Region",
+          "type": "string"
+        },
+        "role": {
+          "description": "The default role to use (optional)",
+          "title": "Role",
+          "type": "string"
+        },
+        "schema": {
+          "description": "The default schema to use (optional)",
+          "title": "Schema",
+          "type": "string"
+        },
+        "username": {
+          "description": "The Snowflake username for authentication",
+          "title": "Username",
+          "type": "string"
+        },
+        "warehouse": {
+          "description": "The default warehouse to use for queries (optional)",
+          "title": "Warehouse",
+          "type": "string"
+        }
+      },
+      "required": [
+        "account",
+        "username",
+        "private_key",
+        "region"
+      ],
+      "title": "Private Key Authentication",
+      "type": "object"
+    },
+    "specs": {
+      "properties": {},
+      "title": "Details",
+      "type": "object"
+    }
+  },
+  "required": [
+    "data",
+    "specs"
+  ],
+  "title": "Snowflake Private Key Authentication",
+  "type": "object"
+}
