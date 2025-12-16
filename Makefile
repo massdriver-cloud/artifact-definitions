@@ -1,16 +1,7 @@
 SHELL:=/bin/bash
 TAG=release-$(shell date +%s)
-MASS_BIN:=massdriver-legacy-cli
 
 .PHONY: local.server local.shutdown
-
-dist:
-	@if ! command -v $(MASS_BIN)  &> /dev/null; then echo "please install massdriver cli https://github.com/massdriver-cloud/massdriver-cli" && exit 1; fi
-	./hack/pack.rb
-	@mkdir -p dist
-	@rm -f .artifacts/*
-	@$(foreach artifact,$(wildcard definitions/artifacts/*.json),$(MASS_BIN) schema dereference $(artifact) > dist/$(notdir $(basename $(artifact))).json;)
-	@echo "Building dereferenced schemas to dist/"
 
 local.server: local.update
 	@if [ "$(shell docker ps -aq -f name=development-artifacts)" ]; then echo "Development server already running!"; else \

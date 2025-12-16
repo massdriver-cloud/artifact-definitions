@@ -1,12 +1,6 @@
 repos:
   - repo: local
     hooks:
-      - id: build-dist
-        name: build-dist
-        language: system
-        entry: make dist
-        pass_filenames: false
-        always_run: true
       - id: fix non-ascii quotes
         name: fix-non-ascii-quotes
         language: python
