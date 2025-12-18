@@ -1,0 +1,145 @@
+{
+    "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-network.svg",
+        "importing": {
+            "group": "networking"
+        },
+        "label": "GCP Subnetwork",
+        "name": "gcp-subnetwork",
+        "ui": {
+            "environmentDefaultGroup": "networking"
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "description": "A region-bound network for deploying GCP resources",
+    "properties": {
+        "data": {
+            "properties": {
+                "infrastructure": {
+                    "properties": {
+                        "cidr": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "examples": [
+                                "10.100.0.0/16",
+                                "192.24.12.0/22"
+                            ],
+                            "message": {
+                                "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
+                            },
+                            "pattern": "^(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(?:\\.(?:[0-9]|[0-9]{2}|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}(?:/(?:[0-9]|1[0-9]|2[0-9]|3[0-2]))$",
+                            "type": "string"
+                        },
+                        "gcp_global_network_grn": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "GCP Resource Name (GRN)",
+                            "examples": [
+                                "projects/my-project/global/networks/my-global-network",
+                                "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
+                                "projects/my-project/topics/my-pubsub-topic",
+                                "projects/my-project/subscriptions/my-pubsub-subscription",
+                                "projects/my-project/locations/us-west2/instances/my-redis-instance",
+                                "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
+                            ],
+                            "message": {
+                                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
+                            },
+                            "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
+                            "title": "GCP Resource Name (GRN)",
+                            "type": "string"
+                        },
+                        "grn": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "GCP Resource Name (GRN)",
+                            "examples": [
+                                "projects/my-project/global/networks/my-global-network",
+                                "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
+                                "projects/my-project/topics/my-pubsub-topic",
+                                "projects/my-project/subscriptions/my-pubsub-subscription",
+                                "projects/my-project/locations/us-west2/instances/my-redis-instance",
+                                "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
+                            ],
+                            "message": {
+                                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
+                            },
+                            "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
+                            "title": "GCP Resource Name (GRN)",
+                            "type": "string"
+                        },
+                        "vpc_access_connector": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "GCP Resource Name (GRN)",
+                            "examples": [
+                                "projects/my-project/global/networks/my-global-network",
+                                "projects/my-project/regions/us-west2/subnetworks/my-subnetwork",
+                                "projects/my-project/topics/my-pubsub-topic",
+                                "projects/my-project/subscriptions/my-pubsub-subscription",
+                                "projects/my-project/locations/us-west2/instances/my-redis-instance",
+                                "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
+                            ],
+                            "message": {
+                                "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
+                            },
+                            "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
+                            "title": "GCP Resource Name (GRN)",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "grn",
+                        "cidr",
+                        "gcp_global_network_grn",
+                        "vpc_access_connector"
+                    ],
+                    "title": "Infrastructure configuration",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "infrastructure"
+            ],
+            "title": "Artifact Data",
+            "type": "object"
+        },
+        "specs": {
+            "properties": {
+                "gcp": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "",
+                    "properties": {
+                        "project": {
+                            "title": "GCP Project",
+                            "type": "string"
+                        },
+                        "region": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "The GCP region to provision resources in.",
+                            "examples": [
+                                "us-east1",
+                                "us-east4",
+                                "us-west1",
+                                "us-west2",
+                                "us-west3",
+                                "us-west4",
+                                "us-central1"
+                            ],
+                            "title": "Region",
+                            "type": "string"
+                        }
+                    },
+                    "required": [],
+                    "title": "GCP Artifact Specs",
+                    "type": "object"
+                }
+            },
+            "title": "Artifact Specs",
+            "type": "object"
+        }
+    },
+    "required": [
+        "data",
+        "specs"
+    ],
+    "title": "GCP Subnetwork",
+    "type": "object"
+}
