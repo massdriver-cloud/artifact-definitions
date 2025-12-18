@@ -1,0 +1,179 @@
+{
+    "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
+    "$md": {
+        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/azure-databricks.svg",
+        "name": "azure-databricks-workspace"
+    },
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "description": "",
+    "properties": {
+        "data": {
+            "properties": {
+                "infrastructure": {
+                    "properties": {
+                        "ari": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "Azure Resource ID",
+                            "examples": [
+                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+                            ],
+                            "message": {
+                                "pattern": "Must be a valid Azure Resource ID"
+                            },
+                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+                            "title": "Azure Resource ID",
+                            "type": "string"
+                        },
+                        "default_driver_instance_pool_id": {
+                            "description": "The driver instance pool ID.",
+                            "title": "Driver Instance Pool",
+                            "type": "string"
+                        },
+                        "default_worker_instance_pool_id": {
+                            "description": "The worker instance pool ID.",
+                            "title": "Worker Instance Pool",
+                            "type": "string"
+                        },
+                        "enriched_container_ari": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "The resource ID of the container where curated data assets will be stored.",
+                            "examples": [
+                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+                            ],
+                            "message": {
+                                "pattern": "Must be a valid Azure Resource ID"
+                            },
+                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+                            "title": "Enriched Container",
+                            "type": "string"
+                        },
+                        "raw_container_ari": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "The resource ID of the container where the raw data will be stored.",
+                            "examples": [
+                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+                            ],
+                            "message": {
+                                "pattern": "Must be a valid Azure Resource ID"
+                            },
+                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+                            "title": "Raw Container",
+                            "type": "string"
+                        },
+                        "scratch_container_ari": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "The resource ID of the container where intermediate data transformations or experimental analyst data will be stored.",
+                            "examples": [
+                                "/subscriptions/12345678-1234-1234-abcd-1234567890ab/resourceGroups/resource-group-name/providers/Microsoft.Network/virtualNetworks/network-name"
+                            ],
+                            "message": {
+                                "pattern": "Must be a valid Azure Resource ID"
+                            },
+                            "pattern": "^/subscriptions/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/resource(g|G)roups/[a-zA-Z0-9-_.()]{0,89}[a-zA-Z0-9-_()]/providers/Microsoft\\.[a-zA-Z]+/[a-zA-Z]+(?:/[a-zA-Z0-9-_.()]+)+$",
+                            "title": "Scratch Container",
+                            "type": "string"
+                        },
+                        "url": {
+                            "title": "Azure Databricks workspace URL",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "ari",
+                        "url",
+                        "raw_container_ari",
+                        "scratch_container_ari",
+                        "enriched_container_ari",
+                        "default_driver_instance_pool_id",
+                        "default_worker_instance_pool_id"
+                    ],
+                    "title": "Infrastructure configuration",
+                    "type": "object"
+                },
+                "security": {
+                    "properties": {
+                        "iam": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "additionalProperties": false,
+                            "description": "IAM Roles And Scopes",
+                            "patternProperties": {
+                                "^[a-z]+[a-z_]*[a-z]$": {
+                                    "properties": {
+                                        "role": {
+                                            "description": "Azure Role",
+                                            "examples": [
+                                                "Storage Blob Data Reader"
+                                            ],
+                                            "message": {
+                                                "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
+                                            },
+                                            "pattern": "^[a-zA-Z ]+$",
+                                            "title": "Role"
+                                        },
+                                        "scope": {
+                                            "description": "Azure IAM Scope",
+                                            "title": "Scope",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "role",
+                                        "scope"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "raw-read-write",
+                                "raw-read-only",
+                                "scratch-read-write",
+                                "enriched-read-write",
+                                "enriched-read-only"
+                            ],
+                            "title": "IAM",
+                            "type": "object"
+                        }
+                    },
+                    "title": "Security Configuration",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "infrastructure",
+                "security"
+            ],
+            "title": "Artifact Data",
+            "type": "object"
+        },
+        "specs": {
+            "properties": {
+                "azure": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "",
+                    "properties": {
+                        "region": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "Select the Azure region you'd like to provision your resources in.",
+                            "title": "Azure Region",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "region"
+                    ],
+                    "title": "Azure Artifact Specs",
+                    "type": "object"
+                }
+            },
+            "title": "Artifact Specs",
+            "type": "object"
+        }
+    },
+    "required": [
+        "data",
+        "specs"
+    ],
+    "title": "Azure Databricks Workspace",
+    "type": "object"
+}
