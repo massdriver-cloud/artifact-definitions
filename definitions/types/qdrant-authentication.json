@@ -10,7 +10,8 @@
   ],
   "properties": {
     "api_key": {
-      "type": "string"
+      "type": "string",
+      "$md.sensitive": true
     },
     "hostname": {
       "type": "string"

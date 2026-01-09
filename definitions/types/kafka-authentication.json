@@ -10,10 +10,12 @@
   ],
   "properties": {
     "zookeeper_connection_string": {
-      "type": "string"
+      "type": "string",
+      "$md.sensitive": true
     },
     "brokers_connection_string": {
-      "type": "string"
+      "type": "string",
+      "$md.sensitive": true
     }
   }
 }
