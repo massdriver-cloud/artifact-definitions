@@ -17,7 +17,8 @@
       "type": "string"
     },
     "private_key": {
-      "type": "string"
+      "type": "string",
+      "$md.sensitive": true
     },
     "public_key": {
       "type": "string"
