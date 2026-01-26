@@ -3,13 +3,11 @@
   "type": "object",
   "title": "IAM",
   "description": "IAM Policies",
-  "additionalProperties": false,
+
   "patternProperties": {
     "^[a-z]+[a-z_]*[a-z]+$": {
       "type": "object",
-      "required": [
-        "policy_arn"
-      ],
+      "required": ["policy_arn"],
       "properties": {
         "policy_arn": {
           "title": "Policy ARN",

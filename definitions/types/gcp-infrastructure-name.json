@@ -3,10 +3,8 @@
   "type": "object",
   "title": "GCP Infrastructure Name",
   "description": "GCP Infrastructure Config For Resources With A Name Not A GRN",
-  "additionalProperties": false,
-  "required": [
-    "name"
-  ],
+
+  "required": ["name"],
   "properties": {
     "name": {
       "$ref": "./gcp-name.json",

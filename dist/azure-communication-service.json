@@ -4,7 +4,7 @@
     "name": "azure-communication-service"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-  "additionalProperties": false,
+
   "description": "",
   "properties": {
     "data": {
@@ -49,12 +49,12 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-          "additionalProperties": false,
+
           "description": "Azure Security Configuration",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "IAM Roles And Scopes",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]$": {

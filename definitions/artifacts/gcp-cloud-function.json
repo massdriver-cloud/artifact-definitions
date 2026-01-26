@@ -10,20 +10,14 @@
   "type": "object",
   "title": "GCP Cloud Function",
   "description": "GCP Cloud Function",
-  "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
-      "additionalProperties": false,
+      "required": ["infrastructure", "security"],
+
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-cloud-function.json"

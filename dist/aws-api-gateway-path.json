@@ -1,73 +1,64 @@
 {
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-api-gateway.svg",
-        "name": "aws-api-gateway-path"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "Path for nested resources in an api gateway",
-    "properties": {
-        "data": {
-            "properties": {
-                "infrastructure": {
-                    "properties": {
-                        "arn": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Amazon Resource Name format for API Gateway and related resources",
-                            "examples": [
-                                "arn:partition:apigateway:region::/restapis/api-id",
-                                "arn:partition:apigateway:region::/restapis/api-id/stages/stage-id"
-                            ],
-                            "message": {
-                                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/apigateway/latest/developerguide/arn-format-reference.html"
-                            },
-                            "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[/a-zA-Z0-9._-]+(?:[/:][a-zA-Z0-9/._-]+)?(?:/[0-9-T:.]+)?$",
-                            "title": "AWS API Gateway ARN",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "arn"
-                    ],
-                    "title": "Infrastructure",
-                    "type": "object"
-                }
-            },
-            "required": [
-                "infrastructure"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
-        },
-        "specs": {
-            "properties": {
-                "aws": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "AWS Region to provision in.",
-                            "examples": [
-                                "us-west-2"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                }
-            },
-            "title": "Artifact Specs",
-            "type": "object"
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-api-gateway.svg",
+    "name": "aws-api-gateway-path"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "description": "Path for nested resources in an api gateway",
+  "properties": {
+    "data": {
+      "properties": {
+        "infrastructure": {
+          "properties": {
+            "arn": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Amazon Resource Name format for API Gateway and related resources",
+              "examples": [
+                "arn:partition:apigateway:region::/restapis/api-id",
+                "arn:partition:apigateway:region::/restapis/api-id/stages/stage-id"
+              ],
+              "message": {
+                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/apigateway/latest/developerguide/arn-format-reference.html"
+              },
+              "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[/a-zA-Z0-9._-]+(?:[/:][a-zA-Z0-9/._-]+)?(?:/[0-9-T:.]+)?$",
+              "title": "AWS API Gateway ARN",
+              "type": "string"
+            }
+          },
+          "required": ["arn"],
+          "title": "Infrastructure",
+          "type": "object"
         }
+      },
+      "required": ["infrastructure"],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "AWS API Gateway REST Path",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": ["us-west-2"],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": ["data", "specs"],
+  "title": "AWS API Gateway REST Path",
+  "type": "object"
 }

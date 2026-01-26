@@ -7,17 +7,12 @@
   "type": "object",
   "title": "mongo Cluster",
   "description": "mongo cluster authentication and cloud-specific configuration.",
-  "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
+      "required": ["infrastructure", "authentication"],
       "properties": {
         "infrastructure": {
           "title": "Mongo Cluster Infrastructure",
@@ -42,9 +37,7 @@
     },
     "specs": {
       "type": "object",
-      "required": [
-        "mongo"
-      ],
+      "required": ["mongo"],
       "properties": {
         "mongo": {
           "$ref": "../specs/mongo.json"

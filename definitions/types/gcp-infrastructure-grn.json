@@ -3,10 +3,8 @@
   "type": "object",
   "title": "GCP Infrastructure GRN",
   "description": "Minimal GCP Infrastructure Config",
-  "additionalProperties": false,
-  "required": [
-    "grn"
-  ],
+
+  "required": ["grn"],
   "properties": {
     "grn": {
       "$ref": "./gcp-grn.json"

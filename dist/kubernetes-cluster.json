@@ -22,7 +22,7 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-  "additionalProperties": false,
+
   "description": "Kubernetes cluster authentication and cloud-specific configuration.",
   "properties": {
     "data": {
@@ -72,7 +72,7 @@
           "oneOf": [
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "",
               "properties": {
                 "arn": {
@@ -107,7 +107,7 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Azure AKS Infrastructure Configuration",
               "properties": {
                 "ari": {
@@ -133,7 +133,7 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Minimal GCP Infrastructure Config",
               "properties": {
                 "grn": {

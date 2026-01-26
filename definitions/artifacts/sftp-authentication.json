@@ -6,17 +6,12 @@
   "type": "object",
   "title": "SFTP Authentication",
   "description": "Authentication and connection details for an SFTP server",
-  "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
+      "required": ["infrastructure", "authentication"],
       "properties": {
         "infrastructure": {
           "title": "Cloud provider configuration",

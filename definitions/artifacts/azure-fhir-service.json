@@ -7,18 +7,12 @@
   "type": "object",
   "title": "Azure FHIR Service",
   "description": "Azure FHIR Service authentication APIs.",
-  "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
+      "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "infrastructure": {
           "$ref": "../types/azure-infrastructure-ari.json"

@@ -14,25 +14,17 @@
   "type": "object",
   "title": "Azure Virtual Network",
   "description": "",
-  "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure"
-      ],
+      "required": ["infrastructure"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
-          "required": [
-            "id",
-            "cidr",
-            "default_subnet_id"
-          ],
+          "required": ["id", "cidr", "default_subnet_id"],
           "type": "object",
           "properties": {
             "id": {

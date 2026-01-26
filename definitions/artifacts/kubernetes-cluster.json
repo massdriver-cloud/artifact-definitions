@@ -25,7 +25,7 @@
   "type": "object",
   "title": "Kubernetes Cluster",
   "description": "Kubernetes cluster authentication and cloud-specific configuration.",
-  "additionalProperties": false,
+
   "required": ["data"],
   "properties": {
     "data": {

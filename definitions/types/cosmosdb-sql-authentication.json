@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "CosmosDB SQL Authentication",
   "description": "CosmosDB SQL connection string",
-  "additionalProperties": false,
+
   "required": ["username", "password", "hostname", "port"],
   "properties": {
     "username": {

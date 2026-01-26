@@ -3,16 +3,12 @@
   "type": "object",
   "title": "",
   "description": "",
-  "additionalProperties": false,
-  "required": [
-    "distribution"
-  ],
+
+  "required": ["distribution"],
   "properties": {
     "distribution": {
       "type": "string",
-      "enum": [
-        "pubsub"
-      ]
+      "enum": ["pubsub"]
     }
   }
 }

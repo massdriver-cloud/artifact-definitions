@@ -3,10 +3,8 @@
   "type": "object",
   "title": "GCP Cloud DNS Managed Zone",
   "description": "",
-  "additionalProperties": false,
-  "required": [
-    "name"
-  ],
+
+  "required": ["name"],
   "properties": {
     "name": {
       "type": "string",

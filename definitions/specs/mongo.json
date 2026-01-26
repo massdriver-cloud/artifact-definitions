@@ -3,10 +3,8 @@
   "type": "object",
   "title": "Mongo specific public information",
   "description": "Informs downstream bundles of Mongo specific data",
-  "additionalProperties": false,
-  "required": [
-    "version"
-  ],
+
+  "required": ["version"],
   "properties": {
     "version": {
       "type": "string",

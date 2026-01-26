@@ -3,7 +3,7 @@
   "type": "object",
   "title": "Cloud Function Configuration",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "runtime",
     "entrypoint",
@@ -48,14 +48,7 @@
       "default": 128,
       "items": {
         "type": "integer",
-        "enum": [
-          128,
-          256,
-          512,
-          1028,
-          2048,
-          4096
-        ]
+        "enum": [128, 256, 512, 1028, 2048, 4096]
       }
     },
     "minimum_instances": {

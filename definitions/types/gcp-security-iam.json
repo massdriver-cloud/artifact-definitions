@@ -3,14 +3,11 @@
   "type": "object",
   "title": "IAM",
   "description": "IAM Roles And Conditions",
-  "additionalProperties": false,
+
   "patternProperties": {
     "^[a-z]+[a-z_]*[a-z]$": {
       "type": "object",
-      "required": [
-        "role",
-        "condition"
-      ],
+      "required": ["role", "condition"],
       "properties": {
         "role": {
           "title": "Role",

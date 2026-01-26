@@ -4,14 +4,14 @@
     "name": "cosmosdb-sql-authentication"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-  "additionalProperties": false,
+
   "description": "Cosmos DB SQL authentication and cloud-specific configuration.",
   "properties": {
     "data": {
       "properties": {
         "authentication": {
           "$schema": "http://json-schema.org/draft-07/schema",
-          "additionalProperties": false,
+
           "description": "CosmosDB SQL connection string",
           "properties": {
             "hostname": {
@@ -45,7 +45,7 @@
         },
         "infrastructure": {
           "$schema": "http://json-schema.org/draft-07/schema",
-          "additionalProperties": false,
+
           "description": "Cosmos DB SQL infrastructure configuration.",
           "properties": {
             "ari": {

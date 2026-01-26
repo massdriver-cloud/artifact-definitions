@@ -7,27 +7,18 @@
   "type": "object",
   "title": "Azure Service Bus Topic",
   "description": "",
-  "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
+      "required": ["infrastructure", "security"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
           "type": "object",
-          "required": [
-            "ari",
-            "endpoint"
-          ],
+          "required": ["ari", "endpoint"],
           "properties": {
             "ari": {
               "$ref": "../types/azure-resource-id.json"

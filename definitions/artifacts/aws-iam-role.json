@@ -30,7 +30,7 @@
   "type": "object",
   "title": "AWS IAM Role",
   "description": "",
-  "additionalProperties": false,
+
   "required": ["data"],
   "properties": {
     "data": {

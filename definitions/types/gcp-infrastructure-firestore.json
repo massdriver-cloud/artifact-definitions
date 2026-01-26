@@ -2,10 +2,8 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "title": "GCP Firestore Infrastructure",
-  "additionalProperties": false,
-  "required": [
-    "id"
-  ],
+
+  "required": ["id"],
   "properties": {
     "id": {
       "title": "Firestore ID",

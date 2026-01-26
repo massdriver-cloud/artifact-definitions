@@ -3,10 +3,8 @@
   "type": "object",
   "title": "GCP infrastructure config",
   "description": "Cloud Function infrastructure configuration",
-  "additionalProperties": false,
-  "required": [
-    "name"
-  ],
+
+  "required": ["name"],
   "properties": {
     "name": {
       "$ref": "./gcp-name.json",

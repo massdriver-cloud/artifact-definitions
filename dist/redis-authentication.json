@@ -4,7 +4,7 @@
     "name": "redis-authentication"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-  "additionalProperties": false,
+
   "description": "Redis cluster authentication and cloud-specific configuration.",
   "properties": {
     "data": {
@@ -38,7 +38,7 @@
           "oneOf": [
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Minimal AWS Infrastructure Config",
               "properties": {
                 "arn": {
@@ -62,7 +62,7 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Minimal GCP Infrastructure Config",
               "properties": {
                 "grn": {
@@ -90,7 +90,7 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "",
               "properties": {
                 "ari": {
@@ -119,12 +119,12 @@
           "anyOf": [
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Informs downstream services of network and/or IAM policies",
               "properties": {
                 "iam": {
                   "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
+
                   "description": "IAM Policies",
                   "patternProperties": {
                     "^[a-z]+[a-z_]*[a-z]+$": {
@@ -153,7 +153,7 @@
                 },
                 "identity": {
                   "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
+
                   "description": "For instances where IAM policies must be attached to a role attached to an AWS resource, for instance AWS Eventbridge to Firehose, this attribute should be used to allow the downstream to attach it's policies (Firehose) directly to the IAM role created by the upstream (Eventbridge). It is important to remember that connections in massdriver are one way, this scheme perserves the dependency relationship while allowing bundles to control the lifecycles of resources under it's management",
                   "properties": {
                     "role_arn": {
@@ -176,7 +176,7 @@
                 },
                 "network": {
                   "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
+
                   "description": "AWS security group rules to inform downstream services of ports to open for communication",
                   "patternProperties": {
                     "^[a-z-]+$": {
@@ -223,12 +223,12 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "GCP Security Configuration",
               "properties": {
                 "iam": {
                   "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
+
                   "description": "IAM Roles And Conditions",
                   "patternProperties": {
                     "^[a-z]+[a-z_]*[a-z]$": {
@@ -267,12 +267,12 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
+
               "description": "Azure Security Configuration",
               "properties": {
                 "iam": {
                   "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
+
                   "description": "IAM Roles And Scopes",
                   "patternProperties": {
                     "^[a-z]+[a-z_]*[a-z]$": {

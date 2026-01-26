@@ -10,12 +10,12 @@
   "type": "object",
   "title": "OpenSearch Authentication",
   "description": "Authentication for OpenSearch",
-  "additionalProperties": false,
+
   "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
-      "additionalProperties": false,
+
       "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "security": {
@@ -63,7 +63,7 @@
     },
     "specs": {
       "type": "object",
-      "additionalProperties": false,
+
       "required": ["opensearch"],
       "properties": {
         "aws": {
