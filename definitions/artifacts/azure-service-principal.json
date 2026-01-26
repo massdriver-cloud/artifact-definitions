@@ -55,7 +55,8 @@
           "pattern": "[-_.~a-zA-Z0-9]{1,40}",
           "message": {
             "pattern": "Not a valid Client Secret."
-          }
+          },
+          "$md.sensitive": true
         },
         "subscription_id": {
           "type": "string",

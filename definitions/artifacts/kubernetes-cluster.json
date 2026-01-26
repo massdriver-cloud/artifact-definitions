@@ -83,7 +83,8 @@
                 "token": {
                   "type": "string",
                   "title": "Token",
-                  "description": "Bearer token used for authenticating the user with the Kubernetes API server."
+                  "description": "Bearer token used for authenticating the user with the Kubernetes API server.",
+                  "$md.sensitive": true
                 }
               }
             }

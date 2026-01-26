@@ -43,7 +43,8 @@
               "properties": {
                 "apiKey": {
                   "type": "string",
-                  "title": "API KEY"
+                  "title": "API KEY",
+                  "$md.sensitive": true
                 },
                 "appId": {
                   "type": "string",

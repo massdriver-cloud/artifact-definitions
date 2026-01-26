@@ -9,7 +9,8 @@
       "type": "string"
     },
     "password": {
-      "type": "string"
+      "type": "string",
+      "$md.sensitive": true
     },
     "hostname": {
       "$ref": "./https-url.json"
