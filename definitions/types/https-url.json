@@ -3,9 +3,6 @@
   "type": "string",
   "title": "HTTPS URL",
   "description": "An HTTPS endpoint URL",
-  "pattern": "^https:\/\/.*$",
-  "examples": [
-    "https://example.com/some/path",
-    "https://massdriver.cloud"
-  ]
+  "pattern": "^https://.*$",
+  "examples": ["https://example.com/some/path", "https://massdriver.cloud"]
 }

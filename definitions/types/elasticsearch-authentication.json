@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Elasticsearch Authentication",
   "description": "Elasticsearch connection string",
-
   "required": ["username", "password", "hostname", "port"],
   "properties": {
     "username": {

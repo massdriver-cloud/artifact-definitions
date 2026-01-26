@@ -3,7 +3,6 @@
   "type": "object",
   "title": "IAM",
   "description": "IAM Policies",
-
   "patternProperties": {
     "^[a-z]+[a-z_]*[a-z]+$": {
       "type": "object",

@@ -3,14 +3,12 @@
     "name": "elasticsearch-authentication"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "Elasticsearch cluster authentication and cloud-specific configuration.",
   "properties": {
     "data": {
       "properties": {
         "authentication": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Elasticsearch connection string",
           "properties": {
             "hostname": {
@@ -36,7 +34,6 @@
         },
         "infrastructure": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "",
           "properties": {
             "kubernetes_namespace": {

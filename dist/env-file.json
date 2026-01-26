@@ -1,52 +1,44 @@
 {
-    "$md": {
-        "importing": {
-            "group": "data"
-        },
-        "name": "env-file"
+  "$md": {
+    "importing": {
+      "group": "data"
     },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "description": "A JSONified list of environment variables.",
-    "properties": {
-        "data": {
+    "name": "env-file"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "A JSONified list of environment variables.",
+  "properties": {
+    "data": {
+      "properties": {
+        "vars": {
+          "items": {
             "properties": {
-                "vars": {
-                    "items": {
-                        "properties": {
-                            "key": {
-                                "pattern": "^[a-zA-Z_]{1,}[a-zA-Z0-9_]{0,}$",
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": "string"
-                            }
-                        },
-                        "required": [
-                            "key",
-                            "value"
-                        ],
-                        "type": "object"
-                    },
-                    "minItems": 1,
-                    "type": "array"
-                }
+              "key": {
+                "pattern": "^[a-zA-Z_]{1,}[a-zA-Z0-9_]{0,}$",
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
             },
-            "required": [
-                "vars"
-            ],
-            "title": "Artifact Data",
+            "required": ["key", "value"],
             "type": "object"
-        },
-        "specs": {
-            "properties": {},
-            "title": "Artifact Specs",
-            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
         }
+      },
+      "required": ["vars"],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "Environment Variables",
-    "type": "object"
+    "specs": {
+      "properties": {},
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": ["data", "specs"],
+  "title": "Environment Variables",
+  "type": "object"
 }

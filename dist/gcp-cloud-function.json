@@ -7,14 +7,12 @@
     "name": "gcp-cloud-function"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "GCP Cloud Function",
   "properties": {
     "data": {
       "properties": {
         "infrastructure": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Cloud Function infrastructure configuration",
           "properties": {
             "function_url": {
@@ -48,12 +46,10 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "GCP Security Configuration",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "IAM Roles And Conditions",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]$": {

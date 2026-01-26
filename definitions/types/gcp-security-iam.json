@@ -3,7 +3,6 @@
   "type": "object",
   "title": "IAM",
   "description": "IAM Roles And Conditions",
-
   "patternProperties": {
     "^[a-z]+[a-z_]*[a-z]$": {
       "type": "object",
@@ -12,7 +11,7 @@
         "role": {
           "title": "Role",
           "description": "GCP Role",
-          "pattern": "^roles\/[a-zA-Z0-9\\.]+$",
+          "pattern": "^roles/[a-zA-Z0-9\\.]+$",
           "message": {
             "pattern": "Must be a valid GCP Role, e.g. roles/..."
           },

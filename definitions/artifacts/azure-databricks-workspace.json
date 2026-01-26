@@ -8,7 +8,6 @@
   "type": "object",
   "title": "Azure Databricks Workspace",
   "description": "",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {

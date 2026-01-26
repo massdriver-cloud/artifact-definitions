@@ -4,7 +4,6 @@
     "name": "azure-cognitive-service-language"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "",
   "properties": {
     "data": {
@@ -49,12 +48,10 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Azure Security Configuration",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "IAM Roles And Scopes",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]$": {

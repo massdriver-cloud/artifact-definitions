@@ -1,8 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "type": "integer",
-    "title": "Port",
-    "description": "Port number",
-    "minimum": 0,
-    "maximum": 65535
-  }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "integer",
+  "title": "Port",
+  "description": "Port number",
+  "minimum": 0,
+  "maximum": 65535
+}

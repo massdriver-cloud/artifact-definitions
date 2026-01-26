@@ -6,7 +6,6 @@
   },
   "type": "object",
   "title": "AWS EFS File System",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {

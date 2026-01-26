@@ -4,7 +4,6 @@
     "name": "aws-s3-bucket"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "properties": {
     "data": {
       "properties": {
@@ -31,12 +30,10 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Informs downstream services of network and/or IAM policies",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "IAM Policies",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]+$": {
@@ -65,7 +62,6 @@
             },
             "identity": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "For instances where IAM policies must be attached to a role attached to an AWS resource, for instance AWS Eventbridge to Firehose, this attribute should be used to allow the downstream to attach it's policies (Firehose) directly to the IAM role created by the upstream (Eventbridge). It is important to remember that connections in massdriver are one way, this scheme perserves the dependency relationship while allowing bundles to control the lifecycles of resources under it's management",
               "properties": {
                 "role_arn": {
@@ -88,7 +84,6 @@
             },
             "network": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "AWS security group rules to inform downstream services of ports to open for communication",
               "patternProperties": {
                 "^[a-z-]+$": {

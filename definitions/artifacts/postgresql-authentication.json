@@ -10,12 +10,10 @@
   "type": "object",
   "title": "PostgreSQL Authentication",
   "description": "Authentication parameters for a PostgreSQL database",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
-
       "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "security": {
@@ -77,7 +75,6 @@
     },
     "specs": {
       "type": "object",
-
       "required": ["rdbms"],
       "properties": {
         "rdbms": {

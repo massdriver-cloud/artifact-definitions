@@ -6,7 +6,6 @@
   },
   "type": "object",
   "title": "AWS SageMaker Endpoint",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {

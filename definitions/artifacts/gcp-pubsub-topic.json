@@ -10,14 +10,12 @@
   "type": "object",
   "title": "GCP PubSub Topic",
   "description": "GCP PubSub Topic",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
       "required": ["infrastructure", "security"],
-
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",

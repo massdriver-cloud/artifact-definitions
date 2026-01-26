@@ -11,7 +11,7 @@
     "projects/my-project/locations/us-west2/instances/my-redis-instance",
     "projects/my-project/locations/us-west2/clusters/my-gke-cluster"
   ],
-  "pattern": "^projects\/[a-z0-9-]+\/[a-z]+\/[a-z0-9-]+(?:\/[a-zA-Z0-9-_.]+){0,6}$",
+  "pattern": "^projects/[a-z0-9-]+/[a-z]+/[a-z0-9-]+(?:/[a-zA-Z0-9-_.]+){0,6}$",
   "message": {
     "pattern": "The provided GRN does not follow the expected pattern. See the examples for valid GRNs."
   }

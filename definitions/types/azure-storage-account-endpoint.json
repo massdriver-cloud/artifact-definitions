@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Azure Storage Account Endpoint",
   "description": "Azure Storage Account endpoint authentication",
-
   "examples": [
     "https://storageaccount.blob.core.windows.net/",
     "http://storageaccount.file.core.windows.net",
@@ -10,7 +9,7 @@
     "https://storageaccount.privatelink01.queue.core.windows.net/"
   ],
   "type": "string",
-  "pattern": "^((abfs|abfss|http|https):\/\/)([a-z0-9]+(\\.[a-zA-Z0-9]+)?)\\.[a-z]+\\.core\\.windows\\.net(\/)?$",
+  "pattern": "^((abfs|abfss|http|https)://)([a-z0-9]+(\\.[a-zA-Z0-9]+)?)\\.[a-z]+\\.core\\.windows\\.net(/)?$",
   "message": {
     "pattern": "Must be a valid Azure Storage Account endpoint"
   }

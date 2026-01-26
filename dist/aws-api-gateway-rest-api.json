@@ -4,7 +4,6 @@
     "name": "aws-api-gateway-rest-api"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "AWS API Gateway and it's Default Stage",
   "properties": {
     "data": {

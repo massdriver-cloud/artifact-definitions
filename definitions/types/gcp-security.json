@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Security",
   "description": "GCP Security Configuration",
-
   "required": [],
   "properties": {
     "iam": {

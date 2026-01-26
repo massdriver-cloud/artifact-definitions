@@ -7,14 +7,12 @@
     "name": "gcp-pubsub-topic"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "GCP PubSub Topic",
   "properties": {
     "data": {
       "properties": {
         "infrastructure": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "PubSub topic configuration",
           "properties": {
             "grn": {
@@ -42,12 +40,10 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "GCP Security Configuration",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "IAM Roles And Conditions",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]$": {
@@ -93,7 +89,6 @@
       "properties": {
         "topic": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "",
           "properties": {
             "distribution": {

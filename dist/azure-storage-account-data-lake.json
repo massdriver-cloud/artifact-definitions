@@ -4,7 +4,6 @@
     "name": "azure-storage-account-data-lake"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "",
   "properties": {
     "data": {
@@ -26,7 +25,6 @@
             },
             "endpoint": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "Azure Storage Account endpoint authentication",
               "examples": [
                 "https://storageaccount.blob.core.windows.net/",
@@ -48,12 +46,10 @@
         },
         "security": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Azure Security Configuration",
           "properties": {
             "iam": {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "IAM Roles And Scopes",
               "patternProperties": {
                 "^[a-z]+[a-z_]*[a-z]$": {

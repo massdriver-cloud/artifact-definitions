@@ -24,6 +24,7 @@ repos:
       - id: check-yaml
       - id: check-json
       # TODO: re-enable this, for some reason this is causing issues in gh actions removing escape sequences in regex patterns see https://github.com/massdriver-cloud/artifact-definitions/runs/6714761323?check_suite_focus=true
+      # Disabled: keeps modifying files and blocking commits
       #- id: pretty-format-json
       #  args: ["--autofix", "--no-sort-keys"]
       - id: end-of-file-fixer
@@ -41,4 +42,8 @@ repos:
         name: "Check Artifact Definitions are valid"
         files: ^dist/
         types: [json]
-        args: ["--schemafile", "https://api.massdriver.cloud/json-schemas/artifact-definition.json"]
+        args:
+          [
+            "--schemafile",
+            "https://api.massdriver.cloud/json-schemas/artifact-definition.json",
+          ]

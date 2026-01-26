@@ -3,7 +3,6 @@
   "type": "object",
   "title": "",
   "description": "",
-
   "required": ["distribution"],
   "properties": {
     "distribution": {

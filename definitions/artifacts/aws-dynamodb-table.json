@@ -7,7 +7,6 @@
   "type": "object",
   "title": "AWS DynamoDB Table",
   "description": "",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {

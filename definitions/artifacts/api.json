@@ -6,7 +6,6 @@
   "type": "object",
   "title": "API / Web Service",
   "description": "An arbitrary API.",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {
@@ -39,7 +38,6 @@
     },
     "specs": {
       "type": "object",
-
       "required": ["api"],
       "properties": {
         "api": {

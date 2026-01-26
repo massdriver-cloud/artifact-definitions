@@ -4,14 +4,12 @@
     "name": "mongo-authentication"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "mongo cluster authentication and cloud-specific configuration.",
   "properties": {
     "data": {
       "properties": {
         "authentication": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Mongo connection string",
           "properties": {
             "hostname": {
@@ -40,7 +38,6 @@
           "oneOf": [
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "",
               "properties": {
                 "kubernetes_namespace": {
@@ -56,7 +53,6 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "Minimal Azure Infrastructure Config",
               "properties": {
                 "ari": {
@@ -79,7 +75,6 @@
             },
             {
               "$schema": "http://json-schema.org/draft-07/schema",
-
               "description": "Minimal MongoDB Atlas cluster infrastructure config",
               "properties": {
                 "cluster_id": {
@@ -164,7 +159,6 @@
         },
         "mongo": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "description": "Informs downstream bundles of Mongo specific data",
           "properties": {
             "version": {

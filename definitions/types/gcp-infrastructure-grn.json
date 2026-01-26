@@ -3,7 +3,6 @@
   "type": "object",
   "title": "GCP Infrastructure GRN",
   "description": "Minimal GCP Infrastructure Config",
-
   "required": ["grn"],
   "properties": {
     "grn": {

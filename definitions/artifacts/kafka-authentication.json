@@ -10,14 +10,12 @@
   "type": "object",
   "title": "AWS MSK Cluster",
   "description": "Highly scalable event bus managed by AWS.",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
       "required": ["infrastructure", "authentication", "security"],
-
       "properties": {
         "infrastructure": {
           "oneOf": [

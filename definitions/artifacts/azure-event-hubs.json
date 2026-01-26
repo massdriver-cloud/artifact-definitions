@@ -7,7 +7,6 @@
   "type": "object",
   "title": "Azure Event Hubs",
   "description": "",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {

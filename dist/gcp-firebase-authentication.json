@@ -7,7 +7,6 @@
     "name": "gcp-firebase-authentication"
   },
   "$schema": "http://json-schema.org/draft-07/schema",
-
   "description": "Configuration for authenticating with your Firestore databse",
   "properties": {
     "data": {
@@ -70,7 +69,6 @@
         },
         "infrastructure": {
           "$schema": "http://json-schema.org/draft-07/schema",
-
           "properties": {
             "id": {
               "$schema": "http://json-schema.org/draft-07/schema",

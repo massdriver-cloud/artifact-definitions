@@ -6,7 +6,6 @@
   "type": "object",
   "title": "Qdrant Vector Database",
   "description": "Qdrant database authentication.",
-
   "required": ["data", "specs"],
   "properties": {
     "data": {
