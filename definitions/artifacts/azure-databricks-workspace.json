@@ -1,100 +1,94 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/azure-databricks.svg",
-        "name": "azure-databricks-workspace"
-    },
-    "type": "object",
-    "title": "Azure Databricks Workspace",
-    "description": "",
-    "additionalProperties": false,
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "infrastructure",
-                "security"
-            ],
-            "properties": {
-                "infrastructure": {
-                    "title": "Infrastructure configuration",
-                    "type": "object",
-                    "required": [
-                        "ari",
-                        "url",
-                        "raw_container_ari",
-                        "scratch_container_ari",
-                        "enriched_container_ari",
-                        "default_driver_instance_pool_id",
-                        "default_worker_instance_pool_id"
-                    ],
-                    "properties": {
-                        "ari": {
-                            "$ref": "../types/azure-resource-id.json"
-                        },
-                        "url": {
-                            "title": "Azure Databricks workspace URL",
-                            "type": "string"
-                        },
-                        "raw_container_ari": {
-                            "title": "Raw Container",
-                            "description": "The resource ID of the container where the raw data will be stored.",
-                            "$ref": "../types/azure-resource-id.json"
-                        },
-                        "scratch_container_ari": {
-                            "title": "Scratch Container",
-                            "description": "The resource ID of the container where intermediate data transformations or experimental analyst data will be stored.",
-                            "$ref": "../types/azure-resource-id.json"
-                        },
-                        "enriched_container_ari": {
-                            "title": "Enriched Container",
-                            "description": "The resource ID of the container where curated data assets will be stored.",
-                            "$ref": "../types/azure-resource-id.json"
-                        },
-                        "default_driver_instance_pool_id": {
-                            "title": "Driver Instance Pool",
-                            "description": "The driver instance pool ID.",
-                            "type": "string"
-                        },
-                        "default_worker_instance_pool_id": {
-                            "title": "Worker Instance Pool",
-                            "description": "The worker instance pool ID.",
-                            "type": "string"
-                        }
-                    }
-                },
-                "security": {
-                    "title": "Security Configuration",
-                    "type": "object",
-                    "properties": {
-                        "iam": {
-                            "required": [
-                                "raw-read-write",
-                                "raw-read-only",
-                                "scratch-read-write",
-                                "enriched-read-write",
-                                "enriched-read-only"
-                            ],
-                            "$ref": "../types/azure-security-iam.json"
-                        }
-                    }
-                }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://schemas.massdriver.cloud/definitions/artifacts/azure-databricks-workspace.json",
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/azure-databricks.svg",
+    "name": "azure-databricks-workspace"
+  },
+  "type": "object",
+  "title": "Azure Databricks Workspace",
+  "description": "",
+  "additionalProperties": false,
+  "required": ["data", "specs"],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": ["infrastructure", "security"],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure configuration",
+          "type": "object",
+          "required": [
+            "ari",
+            "url",
+            "raw_container_ari",
+            "scratch_container_ari",
+            "enriched_container_ari",
+            "default_driver_instance_pool_id",
+            "default_worker_instance_pool_id"
+          ],
+          "properties": {
+            "ari": {
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "url": {
+              "title": "Azure Databricks workspace URL",
+              "type": "string"
+            },
+            "raw_container_ari": {
+              "title": "Raw Container",
+              "description": "The resource ID of the container where the raw data will be stored.",
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "scratch_container_ari": {
+              "title": "Scratch Container",
+              "description": "The resource ID of the container where intermediate data transformations or experimental analyst data will be stored.",
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "enriched_container_ari": {
+              "title": "Enriched Container",
+              "description": "The resource ID of the container where curated data assets will be stored.",
+              "$ref": "../types/azure-resource-id.json"
+            },
+            "default_driver_instance_pool_id": {
+              "title": "Driver Instance Pool",
+              "description": "The driver instance pool ID.",
+              "type": "string"
+            },
+            "default_worker_instance_pool_id": {
+              "title": "Worker Instance Pool",
+              "description": "The worker instance pool ID.",
+              "type": "string"
             }
+          }
         },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "azure": {
-                    "$ref": "../specs/azure.json"
-                }
+        "security": {
+          "title": "Security Configuration",
+          "type": "object",
+          "properties": {
+            "iam": {
+              "required": [
+                "raw-read-write",
+                "raw-read-only",
+                "scratch-read-write",
+                "enriched-read-write",
+                "enriched-read-only"
+              ],
+              "$ref": "../types/azure-security-iam.json"
             }
+          }
         }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "azure": {
+          "$ref": "../specs/azure.json"
+        }
+      }
     }
+  }
 }

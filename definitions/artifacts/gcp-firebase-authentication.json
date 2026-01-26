@@ -11,18 +11,12 @@
   "title": "GCP Firebase Configuration",
   "description": "Configuration for authenticating with your Firestore databse",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
+      "required": ["infrastructure", "authentication"],
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-firestore.json"
@@ -30,9 +24,7 @@
         "authentication": {
           "title": "Authentication",
           "type": "object",
-          "required": [
-            "firebase_config"
-          ],
+          "required": ["firebase_config"],
           "properties": {
             "firebase_config": {
               "type": "object",

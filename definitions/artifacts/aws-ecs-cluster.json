@@ -1,120 +1,101 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-elastic-container-service.svg",
-        "name": "aws-ecs-cluster"
-    },
-    "type": "object",
-    "title": "AWS ECS Cluster",
-    "additionalProperties": false,
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "infrastructure",
-                "capabilities",
-                "security"
-            ],
-            "properties": {
-                "capabilities": {
-                    "title": "Artifact Capabilities",
-                    "type": "object",
-                    "required": [
-                        "ingress"
-                    ],
-                    "properties": {
-                        "ingress": {
-                            "title": "Ingress",
-                            "type": "array",
-                            "default": [],
-                            "items": {
-                                "type": "object",
-                                "required": [
-                                    "load_balancer_arn",
-                                    "security_group_arn",
-                                    "listeners"
-                                ],
-                                "properties": {
-                                    "load_balancer_arn": {
-                                        "$ref": "../types/aws-arn.json"
-                                    },
-                                    "security_group_arn": {
-                                        "$ref": "../types/aws-arn.json"
-                                    },
-                                    "listeners": {
-                                        "type": "array",
-                                        "title": "Listeners",
-                                        "items": {
-                                            "type": "object",
-                                            "required": [
-                                                "arn",
-                                                "port",
-                                                "protocol"
-                                            ],
-                                            "properties": {
-                                                "arn": {
-                                                    "$ref": "../types/aws-arn.json"
-                                                },
-                                                "port": {
-                                                    "$ref": "../types/port.json"
-                                                },
-                                                "protocol": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "http",
-                                                        "https"
-                                                    ]
-                                                },
-                                                "domains": {
-                                                    "type": "array",
-                                                    "default": [],
-                                                    "items": {
-                                                        "type": "string",
-                                                        "pattern": "^(([a-z0-9]+\\.)+[a-z]+)$"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "infrastructure": {
-                    "title": "Infrastructure",
-                    "type": "object",
-                    "required": [
-                        "arn",
-                        "vpc"
-                    ],
-                    "properties": {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-elastic-container-service.svg",
+    "name": "aws-ecs-cluster"
+  },
+  "type": "object",
+  "title": "AWS ECS Cluster",
+  "additionalProperties": false,
+  "required": ["data", "specs"],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": ["infrastructure", "capabilities", "security"],
+      "properties": {
+        "capabilities": {
+          "title": "Artifact Capabilities",
+          "type": "object",
+          "required": ["ingress"],
+          "properties": {
+            "ingress": {
+              "title": "Ingress",
+              "type": "array",
+              "default": [],
+              "items": {
+                "type": "object",
+                "required": [
+                  "load_balancer_arn",
+                  "security_group_arn",
+                  "listeners"
+                ],
+                "properties": {
+                  "load_balancer_arn": {
+                    "$ref": "../types/aws-arn.json"
+                  },
+                  "security_group_arn": {
+                    "$ref": "../types/aws-arn.json"
+                  },
+                  "listeners": {
+                    "type": "array",
+                    "title": "Listeners",
+                    "items": {
+                      "type": "object",
+                      "required": ["arn", "port", "protocol"],
+                      "properties": {
                         "arn": {
-                            "$ref": "../types/aws-arn.json"
+                          "$ref": "../types/aws-arn.json"
                         },
-                        "vpc": {
-                            "$ref": "./aws-vpc.json"
+                        "port": {
+                          "$ref": "../types/port.json"
+                        },
+                        "protocol": {
+                          "type": "string",
+                          "enum": ["http", "https"]
+                        },
+                        "domains": {
+                          "type": "array",
+                          "default": [],
+                          "items": {
+                            "type": "string",
+                            "pattern": "^(([a-z0-9]+\\.)+[a-z]+)$"
+                          }
                         }
+                      }
                     }
-                },
-                "security": {
-                    "$ref": "../types/aws-security.json"
+                  }
                 }
+              }
             }
+          }
         },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "aws": {
-                    "$ref": "../specs/aws.json"
-                }
+        "infrastructure": {
+          "title": "Infrastructure",
+          "type": "object",
+          "required": ["arn", "vpc"],
+          "properties": {
+            "arn": {
+              "$ref": "../types/aws-arn.json"
+            },
+            "vpc": {
+              "$ref": "./aws-vpc.json"
             }
+          }
+        },
+        "security": {
+          "$ref": "../types/aws-security.json"
         }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        }
+      }
     }
+  }
 }

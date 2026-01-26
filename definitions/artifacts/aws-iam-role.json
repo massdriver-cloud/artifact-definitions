@@ -3,15 +3,9 @@
   "$md": {
     "name": "aws-iam-role",
     "label": "AWS IAM Role",
-    "importing": {
-      "group": "authentication"
-    },
     "containerRepositories": {
       "label": "ECR",
       "cloud": "aws"
-    },
-    "extensions": {
-      "costReporting": true
     },
     "ui": {
       "environmentDefaultGroup": "credentials",
@@ -31,29 +25,24 @@
         }
       ]
     },
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png",
-    "export": [
-
-    ]
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png"
   },
   "type": "object",
   "title": "AWS IAM Role",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
-      "title": "Artifact Data",
+      "title": "IAM Role Configuration",
+      "description": "AWS IAM role details for Massdriver to assume when provisioning and monitoring your infrastructure.",
       "type": "object",
-      "required": [
-        "arn"
-      ],
+      "required": ["arn"],
       "properties": {
         "arn": {
-          "$ref": "../types/aws-arn.json"
+          "$ref": "../types/aws-arn.json",
+          "title": "AWS ARN",
+          "description": "The Amazon Resource Name (ARN) of the IAM role for Massdriver to assume. Format: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/ROLE_NAME"
         },
         "external_id": {
           "type": "string",
@@ -63,13 +52,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

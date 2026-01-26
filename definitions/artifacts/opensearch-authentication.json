@@ -11,19 +11,12 @@
   "title": "OpenSearch Authentication",
   "description": "Authentication for OpenSearch",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
+      "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "security": {
           "title": "Security",
@@ -49,12 +42,7 @@
           "title": "Authentication details",
           "description": "Master Username & Password Authentication",
           "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
+          "required": ["username", "password", "hostname", "port"],
           "properties": {
             "username": {
               "type": "string"
@@ -75,9 +63,7 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "opensearch"
-      ],
+      "required": ["opensearch"],
       "properties": {
         "aws": {
           "$ref": "../specs/aws.json"
@@ -91,18 +77,13 @@
         "opensearch": {
           "type": "object",
           "title": "OpenSearch Cluster Specs",
-          "required": [
-            "version"
-          ],
+          "required": ["version"],
           "properties": {
             "version": {
               "type": "string",
               "title": "Version",
               "default": "",
-              "examples": [
-                "1.3",
-                "2.0"
-              ]
+              "examples": ["1.3", "2.0"]
             }
           }
         }

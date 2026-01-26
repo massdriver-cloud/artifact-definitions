@@ -9,27 +9,19 @@
   "type": "object",
   "title": "Environment Variables",
   "description": "A JSONified list of environment variables.",
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "vars"
-      ],
+      "required": ["vars"],
       "properties": {
         "vars": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [
-              "key",
-              "value"
-            ],
+            "required": ["key", "value"],
             "properties": {
               "key": {
                 "type": "string",
@@ -46,8 +38,7 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-      }
+      "properties": {}
     }
   }
 }

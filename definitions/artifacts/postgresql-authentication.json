@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "importing": {
       "group": "data"
     },
@@ -12,19 +11,12 @@
   "title": "PostgreSQL Authentication",
   "description": "Authentication parameters for a PostgreSQL database",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
+      "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "security": {
           "title": "Security details",
@@ -64,12 +56,7 @@
         "authentication": {
           "title": "Authentication details",
           "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
+          "required": ["username", "password", "hostname", "port"],
           "properties": {
             "username": {
               "type": "string"
@@ -90,9 +77,7 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "rdbms"
-      ],
+      "required": ["rdbms"],
       "properties": {
         "rdbms": {
           "$ref": "../specs/rdbms.json"

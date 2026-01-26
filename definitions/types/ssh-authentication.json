@@ -3,12 +3,7 @@
   "title": "SSH Authentication",
   "description": "SHH public/private keypair with contextual user and hostname",
   "additionalProperties": false,
-  "required": [
-    "user",
-    "hostname",
-    "private_key",
-    "public_key"
-  ],
+  "required": ["user", "hostname", "private_key", "public_key"],
   "properties": {
     "user": {
       "type": "string"

@@ -8,17 +8,11 @@
   "title": "Redis Cluster",
   "description": "Redis cluster authentication and cloud-specific configuration.",
   "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
+      "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "infrastructure": {
           "title": "Cloud provider configuration",
@@ -39,12 +33,7 @@
         "authentication": {
           "title": "Authentication configuration",
           "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
+          "required": ["username", "password", "hostname", "port"],
           "properties": {
             "username": {
               "type": "string"

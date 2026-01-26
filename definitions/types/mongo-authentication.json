@@ -3,12 +3,7 @@
   "title": "Mongo Authentication",
   "description": "Mongo connection string",
   "additionalProperties": false,
-  "required": [
-    "username",
-    "password",
-    "hostname",
-    "port"
-  ],
+  "required": ["username", "password", "hostname", "port"],
   "properties": {
     "username": {
       "type": "string"

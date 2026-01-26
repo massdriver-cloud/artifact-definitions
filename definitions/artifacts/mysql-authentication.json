@@ -11,19 +11,12 @@
   "title": "MySQL Authentication",
   "description": "Authentication parameters for a MySQL database",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
+      "required": ["infrastructure", "authentication", "security"],
       "properties": {
         "security": {
           "title": "Security details",
@@ -60,12 +53,7 @@
         "authentication": {
           "title": "Authentication details",
           "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
+          "required": ["username", "password", "hostname", "port"],
           "properties": {
             "username": {
               "type": "string"
@@ -86,9 +74,7 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "rdbms"
-      ],
+      "required": ["rdbms"],
       "properties": {
         "rdbms": {
           "$ref": "../specs/rdbms.json"

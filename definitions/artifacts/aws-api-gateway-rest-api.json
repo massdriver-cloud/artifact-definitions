@@ -1,57 +1,48 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-api-gateway.svg",
-        "name": "aws-api-gateway-rest-api"
-    },
-    "type": "object",
-    "title": "AWS API Gateway REST API",
-    "description": "AWS API Gateway and it's Default Stage",
-    "additionalProperties": false,
-    "required": [
-        "data",
-        "specs"
-    ],
-    "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
-            "required": [
-                "infrastructure"
-            ],
-            "properties": {
-                "infrastructure": {
-                    "title": "Infrastructure",
-                    "required": [
-                        "arn",
-                        "stage_arn",
-                        "root_resource_id"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "arn": {
-                            "$ref": "../types/aws-api-gateway-arn.json"
-                        },
-                        "stage_arn": {
-                            "$ref": "../types/aws-api-gateway-arn.json"
-                        },
-                        "root_resource_id": {
-                            "type": "string",
-                            "title": "Root Resource Id",
-                            "description": "Id of the API Gateway resource at the '/' route"
-                        }
-                    }
-                }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-api-gateway.svg",
+    "name": "aws-api-gateway-rest-api"
+  },
+  "type": "object",
+  "title": "AWS API Gateway REST API",
+  "description": "AWS API Gateway and it's Default Stage",
+  "additionalProperties": false,
+  "required": ["data", "specs"],
+  "properties": {
+    "data": {
+      "title": "Artifact Data",
+      "type": "object",
+      "required": ["infrastructure"],
+      "properties": {
+        "infrastructure": {
+          "title": "Infrastructure",
+          "required": ["arn", "stage_arn", "root_resource_id"],
+          "type": "object",
+          "properties": {
+            "arn": {
+              "$ref": "../types/aws-api-gateway-arn.json"
+            },
+            "stage_arn": {
+              "$ref": "../types/aws-api-gateway-arn.json"
+            },
+            "root_resource_id": {
+              "type": "string",
+              "title": "Root Resource Id",
+              "description": "Id of the API Gateway resource at the '/' route"
             }
-        },
-        "specs": {
-            "title": "Artifact Specs",
-            "type": "object",
-            "properties": {
-                "aws": {
-                    "$ref": "../specs/aws.json"
-                }
-            }
+          }
         }
+      }
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "aws": {
+          "$ref": "../specs/aws.json"
+        }
+      }
     }
+  }
 }

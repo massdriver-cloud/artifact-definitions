@@ -26,15 +26,13 @@
   "title": "Kubernetes Cluster",
   "description": "Kubernetes cluster authentication and cloud-specific configuration.",
   "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
+      "title": "Cluster Configuration",
+      "description": "Kubernetes cluster connection details including authentication credentials and optional cloud provider configuration.",
       "type": "object",
-      "required": [
-        "authentication"
-      ],
+      "required": ["authentication"],
       "properties": {
         "infrastructure": {
           "title": "Cloud provider configuration",
@@ -56,19 +54,13 @@
           "type": "object",
           "title": "Authentication",
           "description": "Authentication details required to access the Kubernetes cluster.",
-          "required": [
-            "cluster",
-            "user"
-          ],
+          "required": ["cluster", "user"],
           "properties": {
             "cluster": {
               "type": "object",
               "title": "Cluster",
               "description": "Information about the Kubernetes cluster you wish to connect to.",
-              "required": [
-                "server",
-                "certificate-authority-data"
-              ],
+              "required": ["server", "certificate-authority-data"],
               "properties": {
                 "server": {
                   "type": "string",
@@ -86,9 +78,7 @@
               "type": "object",
               "title": "User",
               "description": "User credentials for authenticating with the Kubernetes cluster.",
-              "required": [
-                "token"
-              ],
+              "required": ["token"],
               "properties": {
                 "token": {
                   "type": "string",
@@ -103,23 +93,7 @@
     },
     "specs": {
       "type": "object",
-      "required": [
-        "kubernetes"
-      ],
-      "properties": {
-        "kubernetes": {
-          "$ref": "../specs/kubernetes.json"
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

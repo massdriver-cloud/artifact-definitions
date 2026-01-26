@@ -7,16 +7,11 @@
   "title": "API / Web Service",
   "description": "An arbitrary API.",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "api"
-      ],
+      "required": ["api"],
       "properties": {
         "etc": {
           "additionalProperties": true,
@@ -45,9 +40,7 @@
     "specs": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "api"
-      ],
+      "required": ["api"],
       "properties": {
         "api": {
           "type": "object",

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-    "ui":{
+    "ui": {
       "environmentDefaultGroup": "networking"
     },
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-virtual-private-cloud.svg",
@@ -15,16 +15,12 @@
   "title": "AWS Virtual Private Cloud",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure"
-      ],
+      "required": ["infrastructure"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
