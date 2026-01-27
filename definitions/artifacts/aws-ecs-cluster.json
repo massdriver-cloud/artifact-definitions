@@ -6,7 +6,7 @@
   },
   "type": "object",
   "title": "AWS ECS Cluster",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -88,13 +88,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

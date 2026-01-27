@@ -14,7 +14,7 @@
   "type": "object",
   "title": "GCP Subnetwork",
   "description": "A region-bound network for deploying GCP resources",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -48,13 +48,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

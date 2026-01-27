@@ -10,7 +10,7 @@
   "type": "object",
   "title": "MySQL Authentication",
   "description": "Authentication parameters for a MySQL database",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
@@ -72,21 +72,7 @@
     },
     "specs": {
       "type": "object",
-      "required": ["rdbms"],
-      "properties": {
-        "rdbms": {
-          "$ref": "../specs/rdbms.json"
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

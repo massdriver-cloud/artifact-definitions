@@ -6,17 +6,11 @@
   "type": "object",
   "title": "RabbitMQ Cluster",
   "description": "RabbitMQ cluster authentication.",
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
+      "required": ["infrastructure", "authentication"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
@@ -47,23 +41,7 @@
     },
     "specs": {
       "type": "object",
-      "required": [
-        "rabbitmq"
-      ],
-      "properties": {
-        "rabbitmq": {
-          "$ref": "../specs/rabbitmq.json"
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

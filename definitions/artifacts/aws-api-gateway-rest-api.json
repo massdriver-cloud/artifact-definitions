@@ -7,7 +7,7 @@
   "type": "object",
   "title": "AWS API Gateway REST API",
   "description": "AWS API Gateway and it's Default Stage",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -35,13 +35,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

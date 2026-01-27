@@ -6,7 +6,7 @@
   "type": "object",
   "title": "API / Web Service",
   "description": "An arbitrary API.",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
@@ -38,29 +38,7 @@
     },
     "specs": {
       "type": "object",
-      "required": ["api"],
-      "properties": {
-        "api": {
-          "type": "object",
-          "description": "API specifications",
-          "required": ["version"],
-          "properties": {
-            "version": {
-              "type": "string",
-              "description": "API Version"
-            }
-          }
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

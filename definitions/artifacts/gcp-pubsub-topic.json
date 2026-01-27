@@ -10,7 +10,7 @@
   "type": "object",
   "title": "GCP PubSub Topic",
   "description": "GCP PubSub Topic",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -28,13 +28,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "topic": {
-          "$ref": "../specs/topic.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

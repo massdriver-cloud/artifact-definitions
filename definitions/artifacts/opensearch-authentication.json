@@ -10,7 +10,7 @@
   "type": "object",
   "title": "OpenSearch Authentication",
   "description": "Authentication for OpenSearch",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
@@ -61,31 +61,7 @@
     },
     "specs": {
       "type": "object",
-      "required": ["opensearch"],
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        },
-        "opensearch": {
-          "type": "object",
-          "title": "OpenSearch Cluster Specs",
-          "required": ["version"],
-          "properties": {
-            "version": {
-              "type": "string",
-              "title": "Version",
-              "default": "",
-              "examples": ["1.3", "2.0"]
-            }
-          }
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

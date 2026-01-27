@@ -6,7 +6,7 @@
   "type": "object",
   "title": "Qdrant Vector Database",
   "description": "Qdrant database authentication.",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "type": "object",
@@ -22,21 +22,7 @@
     },
     "specs": {
       "type": "object",
-      "required": ["qdrant"],
-      "properties": {
-        "qdrant": {
-          "$ref": "../specs/qdrant.json"
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

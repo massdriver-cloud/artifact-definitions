@@ -8,7 +8,7 @@
   "type": "object",
   "title": "Azure Databricks Workspace",
   "description": "",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -81,13 +81,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

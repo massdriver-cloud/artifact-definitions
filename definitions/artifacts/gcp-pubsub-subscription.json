@@ -10,7 +10,7 @@
   "type": "object",
   "title": "GCP PubSub Subscription",
   "description": "GCP PubSub Subscription",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -29,13 +29,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "subscription": {
-          "$ref": "../specs/subscription.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

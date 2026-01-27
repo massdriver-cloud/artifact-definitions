@@ -26,11 +26,7 @@
     },
     "specs": {
       "type": "object",
-      "properties": {
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

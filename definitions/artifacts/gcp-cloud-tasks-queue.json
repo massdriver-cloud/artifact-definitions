@@ -10,18 +10,12 @@
   "type": "object",
   "title": "Tasks Queue",
   "description": "GCP Cloud Tasks Queue",
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
+      "required": ["infrastructure", "security"],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
@@ -34,13 +28,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

@@ -10,7 +10,7 @@
   "type": "object",
   "title": "AWS MSK Cluster",
   "description": "Highly scalable event bus managed by AWS.",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -37,23 +37,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "required": ["kafka"],
-      "properties": {
-        "kafka": {
-          "$ref": "../specs/kafka.json"
-        },
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

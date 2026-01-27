@@ -25,13 +25,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

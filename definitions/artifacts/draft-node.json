@@ -6,7 +6,7 @@
   "type": "object",
   "title": "Draft Node",
   "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -23,8 +23,7 @@
     },
     "specs": {
       "type": "object",
-      "required": [],
-      "properties": {}
+      "additionalProperties": true
     }
   }
 }

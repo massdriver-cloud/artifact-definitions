@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Azure Cognitive Services :: Form Recognizer",
   "description": "",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -33,13 +33,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "azure": {
-          "$ref": "../specs/azure.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

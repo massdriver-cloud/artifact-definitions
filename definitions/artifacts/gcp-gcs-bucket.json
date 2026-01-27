@@ -10,18 +10,12 @@
   "type": "object",
   "title": "GCS Bucket",
   "description": "GCP Google Cloud Storage Bucket",
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
+      "required": ["infrastructure", "security"],
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-bucket.json"
@@ -32,13 +26,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "gcp": {
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

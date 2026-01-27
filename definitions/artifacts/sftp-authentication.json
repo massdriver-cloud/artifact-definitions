@@ -32,14 +32,7 @@
     },
     "specs": {
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        },
-        "cryptography": {
-          "$ref": "../specs/cryptography.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

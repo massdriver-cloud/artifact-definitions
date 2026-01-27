@@ -7,7 +7,7 @@
   "type": "object",
   "title": "AWS API Gateway REST Path",
   "description": "Path for nested resources in an api gateway",
-  "required": ["data", "specs"],
+  "required": ["data"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -27,13 +27,8 @@
       }
     },
     "specs": {
-      "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-        "aws": {
-          "$ref": "../specs/aws.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }
