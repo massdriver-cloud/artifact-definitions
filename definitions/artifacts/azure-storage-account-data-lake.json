@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Azure Data Lake Storage Account",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"

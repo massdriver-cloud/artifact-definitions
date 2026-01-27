@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Azure Cognitive Services :: Open AI",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"

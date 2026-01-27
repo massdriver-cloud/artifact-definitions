@@ -6,7 +6,7 @@
   "type": "object",
   "title": "Draft Node",
   "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"
@@ -34,7 +34,7 @@
     },
     "specs": {
       "type": "object",
-      "additionalProperties": false,
+
       "required": [],
       "properties": {}
     }

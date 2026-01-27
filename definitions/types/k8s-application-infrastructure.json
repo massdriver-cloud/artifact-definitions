@@ -3,7 +3,7 @@
   "type": "object",
   "title": "Kuberenetes infrastructure config",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "kubernetes_namespace"
   ],

@@ -3,14 +3,12 @@
         "name": "qdrant-authentication"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
     "description": "Qdrant database authentication.",
     "properties": {
         "data": {
             "properties": {
                 "authentication": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "Qdrant connection string",
                     "properties": {
                         "api_key": {
@@ -38,7 +36,6 @@
                 },
                 "infrastructure": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "",
                     "properties": {
                         "kubernetes_namespace": {

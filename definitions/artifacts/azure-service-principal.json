@@ -31,7 +31,6 @@
   "type": "object",
   "title": "Azure Service Principal",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"

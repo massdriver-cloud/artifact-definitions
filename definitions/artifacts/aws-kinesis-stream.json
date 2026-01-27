@@ -7,7 +7,7 @@
     "type": "object",
     "title": "AWS Kinesis Stream",
     "description": "",
-    "additionalProperties": false,
+
     "required": [
         "data",
         "specs"

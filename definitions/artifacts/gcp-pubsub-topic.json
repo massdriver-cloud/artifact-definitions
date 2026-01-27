@@ -10,7 +10,7 @@
   "type": "object",
   "title": "GCP PubSub Topic",
   "description": "GCP PubSub Topic",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"
@@ -23,7 +23,7 @@
         "infrastructure",
         "security"
       ],
-      "additionalProperties": false,
+
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",

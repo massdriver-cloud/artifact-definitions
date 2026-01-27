@@ -7,15 +7,12 @@
         "name": "gcp-pubsub-subscription"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
     "description": "GCP PubSub Subscription",
     "properties": {
         "data": {
-            "additionalProperties": false,
             "properties": {
                 "infrastructure": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "PubSub subscription configuration",
                     "properties": {
                         "grn": {
@@ -45,12 +42,10 @@
                 },
                 "security": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "GCP Security Configuration",
                     "properties": {
                         "iam": {
                             "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
                             "description": "IAM Roles And Conditions",
                             "patternProperties": {
                                 "^[a-z]+[a-z_]*[a-z]$": {
@@ -102,7 +97,6 @@
             "properties": {
                 "subscription": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "",
                     "properties": {
                         "distribution": {

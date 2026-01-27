@@ -7,7 +7,7 @@
     "type": "object",
     "title": "AWS Eventbridge Rule",
     "description": "Connection details for an Eventbridge rule. Used to create targets to consume events from the producer",
-    "additionalProperties": false,
+
     "required": [
         "data",
         "specs"

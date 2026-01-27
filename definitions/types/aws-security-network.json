@@ -3,7 +3,7 @@
   "type": "object",
   "title": "AWS Security Group",
   "description": "AWS security group rules to inform downstream services of ports to open for communication",
-  "additionalProperties": false,
+
   "patternProperties": {
     "^[a-z-]+$": {
       "type": "object",

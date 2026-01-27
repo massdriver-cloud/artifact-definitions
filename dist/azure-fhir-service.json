@@ -4,14 +4,12 @@
         "name": "azure-fhir-service"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
     "description": "Azure FHIR Service authentication APIs.",
     "properties": {
         "data": {
             "properties": {
                 "authentication": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "FHIR authentication for API",
                     "properties": {
                         "audience": {
@@ -45,7 +43,6 @@
                 },
                 "infrastructure": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "Minimal Azure Infrastructure Config",
                     "properties": {
                         "ari": {
@@ -70,12 +67,10 @@
                 },
                 "security": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "Azure Security Configuration",
                     "properties": {
                         "iam": {
                             "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
                             "description": "IAM Roles And Scopes",
                             "patternProperties": {
                                 "^[a-z]+[a-z_]*[a-z]$": {

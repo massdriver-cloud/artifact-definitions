@@ -3,7 +3,6 @@
         "name": "api"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
     "description": "An arbitrary API.",
     "properties": {
         "data": {
@@ -45,7 +44,6 @@
             "type": "object"
         },
         "specs": {
-            "additionalProperties": false,
             "properties": {
                 "api": {
                     "description": "API specifications",

@@ -6,7 +6,7 @@
   },
   "type": "object",
   "title": "AWS SNS Topic",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"

@@ -3,7 +3,7 @@
   "type": "object",
   "title": "AWS Security information",
   "description": "Informs downstream services of network and/or IAM policies",
-  "additionalProperties": false,
+
   "required": [],
   "properties": {
     "network": {

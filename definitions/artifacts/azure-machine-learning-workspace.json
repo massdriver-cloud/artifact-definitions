@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Azure Machine Learning Workspace",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"

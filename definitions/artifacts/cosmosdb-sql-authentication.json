@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Cosmos DB SQL",
   "description": "Cosmos DB SQL authentication and cloud-specific configuration.",
-  "additionalProperties": false,
+
   "required": [
     "data"
   ],

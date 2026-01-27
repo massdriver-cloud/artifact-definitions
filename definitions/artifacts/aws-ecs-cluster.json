@@ -6,7 +6,7 @@
     },
     "type": "object",
     "title": "AWS ECS Cluster",
-    "additionalProperties": false,
+
     "required": [
         "data",
         "specs"

@@ -7,7 +7,7 @@
   "type": "object",
   "title": "Azure Blob Storage Account",
   "description": "",
-  "additionalProperties": false,
+
   "required": [
     "data",
     "specs"
