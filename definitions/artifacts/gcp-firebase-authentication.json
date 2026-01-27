@@ -10,7 +10,6 @@
   "type": "object",
   "title": "GCP Firebase Configuration",
   "description": "Configuration for authenticating with your Firestore databse",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"

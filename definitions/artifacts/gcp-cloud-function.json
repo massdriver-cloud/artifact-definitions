@@ -10,7 +10,6 @@
   "type": "object",
   "title": "GCP Cloud Function",
   "description": "GCP Cloud Function",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"
@@ -23,7 +22,6 @@
         "infrastructure",
         "security"
       ],
-      "additionalProperties": false,
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-cloud-function.json"

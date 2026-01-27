@@ -3,7 +3,6 @@
   "type": "object",
   "title": "GCP Bucket",
   "description": "Google Cloud Storage Bucket",
-  "additionalProperties": false,
   "required": [
     "id"
   ],

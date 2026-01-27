@@ -3,7 +3,6 @@
     "type": "object",
     "title": "MongoDB Atlas Cluster Infrastructure",
     "description": "Minimal MongoDB Atlas cluster infrastructure config",
-    "additionalProperties": false,
     "required": [
       "project_id",
       "cluster_id"

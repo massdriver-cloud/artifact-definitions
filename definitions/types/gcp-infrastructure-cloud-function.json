@@ -3,7 +3,6 @@
   "type": "object",
   "title": "GCP infrastructure config",
   "description": "Cloud Function infrastructure configuration",
-  "additionalProperties": false,
   "required": [
     "name"
   ],

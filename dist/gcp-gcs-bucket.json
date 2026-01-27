@@ -13,7 +13,6 @@
             "properties": {
                 "infrastructure": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "Google Cloud Storage Bucket",
                     "properties": {
                         "id": {
@@ -41,12 +40,10 @@
                 },
                 "security": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "GCP Security Configuration",
                     "properties": {
                         "iam": {
                             "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
                             "description": "IAM Roles And Conditions",
                             "patternProperties": {
                                 "^[a-z]+[a-z_]*[a-z]$": {

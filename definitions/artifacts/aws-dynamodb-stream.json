@@ -7,7 +7,6 @@
   "type": "object",
   "title": "AWS DynamoDB Stream",
   "description": "",
-  "additionalProperties": false,
   "required": ["data", "specs"],
   "properties": {
     "data": {

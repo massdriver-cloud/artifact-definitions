@@ -10,7 +10,6 @@
   "type": "object",
   "title": "MSSQL Authentication",
   "description": "Authentication parameters for a MSSQL database",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"
@@ -18,7 +17,6 @@
   "properties": {
     "data": {
       "type": "object",
-      "additionalProperties": false,
       "required": [
         "infrastructure",
         "authentication",
@@ -86,7 +84,6 @@
     },
     "specs": {
       "type": "object",
-      "additionalProperties": false,
       "required": [
         "rdbms"
       ],

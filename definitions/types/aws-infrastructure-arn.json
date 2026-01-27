@@ -3,7 +3,6 @@
   "type": "object",
   "title": "AWS Infrastructure ARN",
   "description": "Minimal AWS Infrastructure Config",
-  "additionalProperties": false,
   "required": [
     "arn"
   ],

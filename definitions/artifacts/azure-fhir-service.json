@@ -7,7 +7,6 @@
   "type": "object",
   "title": "Azure FHIR Service",
   "description": "Azure FHIR Service authentication APIs.",
-  "additionalProperties": false,
   "required": [
     "data"
   ],

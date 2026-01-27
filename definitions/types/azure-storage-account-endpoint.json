@@ -2,7 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Azure Storage Account Endpoint",
   "description": "Azure Storage Account endpoint authentication",
-  "additionalProperties": false,
   "examples": [
     "https://storageaccount.blob.core.windows.net/",
     "http://storageaccount.file.core.windows.net",

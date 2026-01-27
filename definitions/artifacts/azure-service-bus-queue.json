@@ -7,7 +7,6 @@
   "type": "object",
   "title": "Azure Service Bus Queue",
   "description": "",
-  "additionalProperties": false,
   "required": [
     "data",
     "specs"

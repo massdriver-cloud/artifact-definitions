@@ -4,7 +4,6 @@
         "name": "azure-service-bus-queue"
     },
     "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
     "description": "",
     "properties": {
         "data": {
@@ -26,7 +25,6 @@
                         },
                         "endpoint": {
                             "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
                             "description": "Azure Service Bus endpoint and port",
                             "examples": [
                                 "https://local-dev-queues-0001.servicebus.windows.net:443/",
@@ -49,12 +47,10 @@
                 },
                 "security": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
                     "description": "Azure Security Configuration",
                     "properties": {
                         "iam": {
                             "$schema": "http://json-schema.org/draft-07/schema",
-                            "additionalProperties": false,
                             "description": "IAM Roles And Scopes",
                             "patternProperties": {
                                 "^[a-z]+[a-z_]*[a-z]$": {

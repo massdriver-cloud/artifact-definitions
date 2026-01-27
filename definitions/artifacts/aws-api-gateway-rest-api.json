@@ -7,7 +7,6 @@
     "type": "object",
     "title": "AWS API Gateway REST API",
     "description": "AWS API Gateway and it's Default Stage",
-    "additionalProperties": false,
     "required": [
         "data",
         "specs"
