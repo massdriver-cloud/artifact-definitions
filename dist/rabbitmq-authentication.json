@@ -1,280 +1,312 @@
 {
-  "$md": {
-    "name": "rabbitmq-authentication"
-  },
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "description": "RabbitMQ cluster authentication.",
-  "properties": {
-    "data": {
-      "properties": {
-        "authentication": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "RabbitMQ Authentication",
-          "properties": {
-            "hostname": {
-              "type": "string"
-            },
-            "password": {
-              "$md.sensitive": true,
-              "type": "string"
-            },
-            "port": {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "description": "Port number",
-              "maximum": 65535,
-              "minimum": 0,
-              "title": "Port",
-              "type": "integer"
-            },
-            "username": {
-              "type": "string"
-            }
-          },
-          "required": ["username", "password", "hostname", "port"],
-          "title": "Authentication"
-        },
-        "infrastructure": {
-          "description": "Cloud specific RabbitMQ infrastructure configuration",
-          "oneOf": [
-            {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
-              "description": "Minimal AWS Infrastructure Config",
-              "properties": {
-                "arn": {
-                  "$schema": "http://json-schema.org/draft-07/schema",
-                  "description": "Amazon Resource Name",
-                  "examples": [
-                    "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                    "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                  ],
-                  "message": {
-                    "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                  },
-                  "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                  "title": "AWS ARN",
-                  "type": "string"
-                }
-              },
-              "required": ["arn"],
-              "title": "AWS Infrastructure ARN",
-              "type": "object"
-            },
-            {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
-              "description": "",
-              "properties": {
-                "kubernetes_namespace": {
-                  "type": "string"
-                },
-                "kubernetes_service": {
-                  "type": "string"
-                }
-              },
-              "required": ["kubernetes_namespace"],
-              "title": "Kuberenetes infrastructure config",
-              "type": "object"
-            }
-          ],
-          "title": "Infrastructure",
-          "type": "object"
-        },
-        "security": {
-          "anyOf": [
-            {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "additionalProperties": false,
-              "description": "Informs downstream services of network and/or IAM policies",
-              "properties": {
-                "iam": {
-                  "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
-                  "description": "IAM Policies",
-                  "patternProperties": {
-                    "^[a-z]+[a-z_]*[a-z]+$": {
-                      "properties": {
-                        "policy_arn": {
-                          "$schema": "http://json-schema.org/draft-07/schema",
-                          "description": "AWS IAM policy ARN",
-                          "examples": [
-                            "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                            "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                          ],
-                          "message": {
-                            "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                          },
-                          "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                          "title": "Policy ARN",
-                          "type": "string"
-                        }
-                      },
-                      "required": ["policy_arn"],
-                      "type": "object"
-                    }
-                  },
-                  "title": "IAM",
-                  "type": "object"
-                },
-                "identity": {
-                  "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
-                  "description": "For instances where IAM policies must be attached to a role attached to an AWS resource, for instance AWS Eventbridge to Firehose, this attribute should be used to allow the downstream to attach it's policies (Firehose) directly to the IAM role created by the upstream (Eventbridge). It is important to remember that connections in massdriver are one way, this scheme perserves the dependency relationship while allowing bundles to control the lifecycles of resources under it's management",
-                  "properties": {
-                    "role_arn": {
-                      "$schema": "http://json-schema.org/draft-07/schema",
-                      "description": "ARN for this resources IAM Role",
-                      "examples": [
-                        "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                        "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                      ],
-                      "message": {
-                        "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                      },
-                      "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                      "title": "Role ARN",
-                      "type": "string"
-                    }
-                  },
-                  "title": "Resource Identity",
-                  "type": "object"
-                },
-                "network": {
-                  "$schema": "http://json-schema.org/draft-07/schema",
-                  "additionalProperties": false,
-                  "description": "AWS security group rules to inform downstream services of ports to open for communication",
-                  "patternProperties": {
-                    "^[a-z-]+$": {
-                      "properties": {
-                        "arn": {
-                          "$schema": "http://json-schema.org/draft-07/schema",
-                          "description": "Amazon Resource Name",
-                          "examples": [
-                            "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
-                            "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
-                          ],
-                          "message": {
-                            "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-                          },
-                          "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                          "title": "Security Group ARN",
-                          "type": "string"
+    "$md": {
+        "name": "rabbitmq-authentication"
+    },
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "RabbitMQ cluster authentication.",
+    "properties": {
+        "data": {
+            "properties": {
+                "authentication": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "RabbitMQ Authentication",
+                    "properties": {
+                        "hostname": {
+                            "type": "string"
+                        },
+                        "password": {
+                            "$md.sensitive": true,
+                            "type": "string"
                         },
                         "port": {
-                          "$schema": "http://json-schema.org/draft-07/schema",
-                          "description": "Port number",
-                          "maximum": 65535,
-                          "minimum": 0,
-                          "title": "Network Port",
-                          "type": "integer"
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "Port number",
+                            "maximum": 65535,
+                            "minimum": 0,
+                            "title": "Port",
+                            "type": "integer"
                         },
-                        "protocol": {
-                          "enum": ["tcp", "udp"],
-                          "title": "Network Protocol",
-                          "type": "string"
+                        "username": {
+                            "type": "string"
                         }
-                      },
-                      "required": ["arn", "port", "protocol"],
-                      "type": "object"
-                    }
-                  },
-                  "title": "AWS Security Group",
-                  "type": "object"
+                    },
+                    "required": [
+                        "username",
+                        "password",
+                        "hostname",
+                        "port"
+                    ],
+                    "title": "Authentication"
+                },
+                "infrastructure": {
+                    "description": "Cloud specific RabbitMQ infrastructure configuration",
+                    "oneOf": [
+                        {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "additionalProperties": false,
+                            "description": "Minimal AWS Infrastructure Config",
+                            "properties": {
+                                "arn": {
+                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                    "description": "Amazon Resource Name",
+                                    "examples": [
+                                        "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                                        "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                                    ],
+                                    "message": {
+                                        "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                                    },
+                                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                                    "title": "AWS ARN",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "arn"
+                            ],
+                            "title": "AWS Infrastructure ARN",
+                            "type": "object"
+                        },
+                        {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "additionalProperties": false,
+                            "description": "",
+                            "properties": {
+                                "kubernetes_namespace": {
+                                    "type": "string"
+                                },
+                                "kubernetes_service": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "kubernetes_namespace"
+                            ],
+                            "title": "Kuberenetes infrastructure config",
+                            "type": "object"
+                        }
+                    ],
+                    "title": "Infrastructure",
+                    "type": "object"
+                },
+                "security": {
+                    "anyOf": [
+                        {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "additionalProperties": false,
+                            "description": "Informs downstream services of network and/or IAM policies",
+                            "properties": {
+                                "iam": {
+                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                    "additionalProperties": false,
+                                    "description": "IAM Policies",
+                                    "patternProperties": {
+                                        "^[a-z]+[a-z_]*[a-z]+$": {
+                                            "properties": {
+                                                "policy_arn": {
+                                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                                    "description": "AWS IAM policy ARN",
+                                                    "examples": [
+                                                        "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                                                        "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                                                    ],
+                                                    "message": {
+                                                        "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                                                    },
+                                                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                                                    "title": "Policy ARN",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "policy_arn"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "title": "IAM",
+                                    "type": "object"
+                                },
+                                "identity": {
+                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                    "additionalProperties": false,
+                                    "description": "For instances where IAM policies must be attached to a role attached to an AWS resource, for instance AWS Eventbridge to Firehose, this attribute should be used to allow the downstream to attach it's policies (Firehose) directly to the IAM role created by the upstream (Eventbridge). It is important to remember that connections in massdriver are one way, this scheme perserves the dependency relationship while allowing bundles to control the lifecycles of resources under it's management",
+                                    "properties": {
+                                        "role_arn": {
+                                            "$schema": "http://json-schema.org/draft-07/schema",
+                                            "description": "ARN for this resources IAM Role",
+                                            "examples": [
+                                                "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                                                "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                                            ],
+                                            "message": {
+                                                "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                                            },
+                                            "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                                            "title": "Role ARN",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "title": "Resource Identity",
+                                    "type": "object"
+                                },
+                                "network": {
+                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                    "additionalProperties": false,
+                                    "description": "AWS security group rules to inform downstream services of ports to open for communication",
+                                    "patternProperties": {
+                                        "^[a-z-]+$": {
+                                            "properties": {
+                                                "arn": {
+                                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                                    "description": "Amazon Resource Name",
+                                                    "examples": [
+                                                        "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
+                                                        "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
+                                                    ],
+                                                    "message": {
+                                                        "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+                                                    },
+                                                    "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
+                                                    "title": "Security Group ARN",
+                                                    "type": "string"
+                                                },
+                                                "port": {
+                                                    "$schema": "http://json-schema.org/draft-07/schema",
+                                                    "description": "Port number",
+                                                    "maximum": 65535,
+                                                    "minimum": 0,
+                                                    "title": "Network Port",
+                                                    "type": "integer"
+                                                },
+                                                "protocol": {
+                                                    "enum": [
+                                                        "tcp",
+                                                        "udp"
+                                                    ],
+                                                    "title": "Network Protocol",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "arn",
+                                                "port",
+                                                "protocol"
+                                            ],
+                                            "type": "object"
+                                        }
+                                    },
+                                    "title": "AWS Security Group",
+                                    "type": "object"
+                                }
+                            },
+                            "required": [],
+                            "title": "AWS Security information",
+                            "type": "object"
+                        }
+                    ],
+                    "title": "Security",
+                    "type": "object"
                 }
-              },
-              "required": [],
-              "title": "AWS Security information",
-              "type": "object"
-            }
-          ],
-          "title": "Security",
-          "type": "object"
-        }
-      },
-      "required": ["infrastructure", "authentication"],
-      "type": "object"
-    },
-    "specs": {
-      "properties": {
-        "aws": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "",
-          "properties": {
-            "region": {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "description": "AWS Region to provision in.",
-              "examples": ["us-west-2"],
-              "title": "Region",
-              "type": "string"
-            }
-          },
-          "required": [],
-          "title": "AWS Artifact Specs",
-          "type": "object"
-        },
-        "azure": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "",
-          "properties": {
-            "region": {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "description": "Select the Azure region you'd like to provision your resources in.",
-              "title": "Azure Region",
-              "type": "string"
-            }
-          },
-          "required": ["region"],
-          "title": "Azure Artifact Specs",
-          "type": "object"
-        },
-        "gcp": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "",
-          "properties": {
-            "project": {
-              "title": "GCP Project",
-              "type": "string"
             },
-            "region": {
-              "$schema": "http://json-schema.org/draft-07/schema",
-              "description": "The GCP region to provision resources in.",
-              "examples": [
-                "us-east1",
-                "us-east4",
-                "us-west1",
-                "us-west2",
-                "us-west3",
-                "us-west4",
-                "us-central1"
-              ],
-              "title": "Region",
-              "type": "string"
-            }
-          },
-          "required": [],
-          "title": "GCP Artifact Specs",
-          "type": "object"
+            "required": [
+                "infrastructure",
+                "authentication"
+            ],
+            "type": "object"
         },
-        "rabbitmq": {
-          "$schema": "http://json-schema.org/draft-07/schema",
-          "description": "RabbitMQ specific public information",
-          "properties": {
-            "version": {
-              "description": "Currently deployed RabbitMQ version",
-              "title": "Version of cluster",
-              "type": "string"
-            }
-          },
-          "required": ["version"],
-          "title": "Specs",
-          "type": "object"
+        "specs": {
+            "properties": {
+                "aws": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "",
+                    "properties": {
+                        "region": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "AWS Region to provision in.",
+                            "examples": [
+                                "us-west-2"
+                            ],
+                            "title": "Region",
+                            "type": "string"
+                        }
+                    },
+                    "required": [],
+                    "title": "AWS Artifact Specs",
+                    "type": "object"
+                },
+                "azure": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "",
+                    "properties": {
+                        "region": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "Select the Azure region you'd like to provision your resources in.",
+                            "title": "Azure Region",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "region"
+                    ],
+                    "title": "Azure Artifact Specs",
+                    "type": "object"
+                },
+                "gcp": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "",
+                    "properties": {
+                        "project": {
+                            "title": "GCP Project",
+                            "type": "string"
+                        },
+                        "region": {
+                            "$schema": "http://json-schema.org/draft-07/schema",
+                            "description": "The GCP region to provision resources in.",
+                            "examples": [
+                                "us-east1",
+                                "us-east4",
+                                "us-west1",
+                                "us-west2",
+                                "us-west3",
+                                "us-west4",
+                                "us-central1"
+                            ],
+                            "title": "Region",
+                            "type": "string"
+                        }
+                    },
+                    "required": [],
+                    "title": "GCP Artifact Specs",
+                    "type": "object"
+                },
+                "rabbitmq": {
+                    "$schema": "http://json-schema.org/draft-07/schema",
+                    "description": "RabbitMQ specific public information",
+                    "properties": {
+                        "version": {
+                            "description": "Currently deployed RabbitMQ version",
+                            "title": "Version of cluster",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "version"
+                    ],
+                    "title": "Specs",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "rabbitmq"
+            ],
+            "type": "object"
         }
-      },
-      "required": ["rabbitmq"],
-      "type": "object"
-    }
-  },
-  "required": ["data", "specs"],
-  "title": "RabbitMQ Cluster",
-  "type": "object"
+    },
+    "required": [
+        "data",
+        "specs"
+    ],
+    "title": "RabbitMQ Cluster",
+    "type": "object"
 }
