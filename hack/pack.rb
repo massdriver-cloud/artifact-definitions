@@ -55,7 +55,18 @@ def process_artifact(json_path)
   end
 
   # Write back the modified JSON with trailing newline (required by end-of-file-fixer)
-  File.write(json_path, JSON.pretty_generate(json) + "\n")
+  # Use 2-space indentation to match existing file format
+  original_content = File.read(json_path)
+  original_json = JSON.parse(original_content)
+
+  # Only write if content actually changed (ignoring formatting)
+  if JSON.generate(original_json) != JSON.generate(json)
+    formatted_json = JSON.pretty_generate(json, indent: '  ') + "\n"
+    File.write(json_path, formatted_json)
+  elsif !original_content.end_with?("\n")
+    # If content unchanged but missing trailing newline, add it
+    File.write(json_path, original_content + "\n")
+  end
 end
 
 # Process all JSON files in the artifacts directory
