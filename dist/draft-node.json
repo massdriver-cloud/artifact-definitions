@@ -1,30 +1,38 @@
 {
-  "$md": {
-    "name": "draft-node"
-  },
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
-  "properties": {
-    "data": {
-      "properties": {
-        "name": {
-          "description": "Name",
-          "examples": ["Network", "Cluster", "Function", "Queue"],
-          "title": "name",
-          "type": "string"
-        }
-      },
-      "required": ["name"],
-      "title": "Artifact Data",
-      "type": "object"
+    "$md": {
+        "name": "draft-node"
     },
-    "specs": {
-      "properties": {},
-      "required": [],
-      "type": "object"
-    }
-  },
-  "required": ["data", "specs"],
-  "title": "Draft Node",
-  "type": "object"
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
+    "properties": {
+        "data": {
+            "properties": {
+                "name": {
+                    "description": "Name",
+                    "examples": [
+                        "Network",
+                        "Cluster",
+                        "Function",
+                        "Queue"
+                    ],
+                    "title": "name",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "Artifact Data",
+            "type": "object"
+        },
+        "specs": {
+            "additionalProperties": true,
+            "type": "object"
+        }
+    },
+    "required": [
+        "data"
+    ],
+    "title": "Draft Node",
+    "type": "object"
 }

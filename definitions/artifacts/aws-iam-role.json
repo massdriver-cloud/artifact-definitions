@@ -25,7 +25,10 @@
         }
       ]
     },
-    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png"
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png",
+    "export": [
+
+    ]
   },
   "type": "object",
   "title": "AWS IAM Role",
