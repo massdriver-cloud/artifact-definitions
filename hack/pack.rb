@@ -54,8 +54,8 @@ def process_artifact(json_path)
     }
   end
 
-  # Write back the modified JSON
-  File.write(json_path, JSON.pretty_generate(json))
+  # Write back the modified JSON with trailing newline (required by end-of-file-fixer)
+  File.write(json_path, JSON.pretty_generate(json) + "\n")
 end
 
 # Process all JSON files in the artifacts directory
