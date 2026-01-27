@@ -24,18 +24,13 @@
         }
       ]
     },
-    "export": [
-
-    ]
+    "export": []
   },
   "type": "object",
   "title": "Azure Service Principal",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
@@ -76,8 +71,7 @@
     "specs": {
       "title": "Artifact Specs",
       "type": "object",
-      "properties": {
-      }
+      "properties": {}
     }
   }
 }

@@ -32,25 +32,18 @@
       ]
     },
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png",
-    "export": [
-
-    ]
+    "export": []
   },
   "type": "object",
   "title": "AWS IAM Role",
   "description": "",
   "additionalProperties": false,
-  "required": [
-    "data",
-    "specs"
-  ],
+  "required": ["data", "specs"],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": [
-        "arn"
-      ],
+      "required": ["arn"],
       "properties": {
         "arn": {
           "$ref": "../types/aws-arn.json"
