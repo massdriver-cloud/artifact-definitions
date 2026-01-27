@@ -1,167 +1,145 @@
 {
-    "$md": {
-        "name": "qdrant-authentication"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "Qdrant database authentication.",
-    "properties": {
-        "data": {
-            "properties": {
-                "authentication": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "Qdrant connection string",
-                    "properties": {
-                        "api_key": {
-                            "$md.sensitive": true,
-                            "type": "string"
-                        },
-                        "hostname": {
-                            "type": "string"
-                        },
-                        "port": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Port number",
-                            "maximum": 65535,
-                            "minimum": 0,
-                            "title": "Port",
-                            "type": "integer"
-                        }
-                    },
-                    "required": [
-                        "hostname",
-                        "api_key",
-                        "port"
-                    ],
-                    "title": "Qdrant Authentication"
-                },
-                "infrastructure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "",
-                    "properties": {
-                        "kubernetes_namespace": {
-                            "type": "string"
-                        },
-                        "kubernetes_service": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "kubernetes_namespace"
-                    ],
-                    "title": "Kuberenetes infrastructure config",
-                    "type": "object"
-                }
+  "$md": {
+    "name": "qdrant-authentication"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "Qdrant database authentication.",
+  "properties": {
+    "data": {
+      "properties": {
+        "authentication": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "Qdrant connection string",
+          "properties": {
+            "api_key": {
+              "$md.sensitive": true,
+              "type": "string"
             },
-            "required": [
-                "infrastructure",
-                "authentication"
-            ],
-            "type": "object"
+            "hostname": {
+              "type": "string"
+            },
+            "port": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Port number",
+              "maximum": 65535,
+              "minimum": 0,
+              "title": "Port",
+              "type": "integer"
+            }
+          },
+          "required": ["hostname", "api_key", "port"],
+          "title": "Qdrant Authentication"
         },
-        "specs": {
-            "properties": {
-                "aws": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "AWS Region to provision in.",
-                            "examples": [
-                                "us-west-2"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                },
-                "azure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Select the Azure region you'd like to provision your resources in.",
-                            "title": "Azure Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "region"
-                    ],
-                    "title": "Azure Artifact Specs",
-                    "type": "object"
-                },
-                "gcp": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "project": {
-                            "title": "GCP Project",
-                            "type": "string"
-                        },
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "The GCP region to provision resources in.",
-                            "examples": [
-                                "us-east1",
-                                "us-east4",
-                                "us-west1",
-                                "us-west2",
-                                "us-west3",
-                                "us-west4",
-                                "us-central1"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "GCP Artifact Specs",
-                    "type": "object"
-                },
-                "qdrant": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "Common metadata for Qdrant databases.",
-                    "examples": [
-                        {
-                            "version": "0.6.1"
-                        }
-                    ],
-                    "properties": {
-                        "version": {
-                            "default": "",
-                            "description": "The Qdrant database version.",
-                            "examples": [
-                                "0.6.1"
-                            ],
-                            "title": "Version",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "version"
-                    ],
-                    "title": "Qdrant specs",
-                    "type": "object"
-                }
+        "infrastructure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "",
+          "properties": {
+            "kubernetes_namespace": {
+              "type": "string"
             },
-            "required": [
-                "qdrant"
-            ],
-            "type": "object"
+            "kubernetes_service": {
+              "type": "string"
+            }
+          },
+          "required": ["kubernetes_namespace"],
+          "title": "Kuberenetes infrastructure config",
+          "type": "object"
         }
+      },
+      "required": ["infrastructure", "authentication"],
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "Qdrant Vector Database",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": ["us-west-2"],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        },
+        "azure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Select the Azure region you'd like to provision your resources in.",
+              "title": "Azure Region",
+              "type": "string"
+            }
+          },
+          "required": ["region"],
+          "title": "Azure Artifact Specs",
+          "type": "object"
+        },
+        "gcp": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "project": {
+              "title": "GCP Project",
+              "type": "string"
+            },
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "The GCP region to provision resources in.",
+              "examples": [
+                "us-east1",
+                "us-east4",
+                "us-west1",
+                "us-west2",
+                "us-west3",
+                "us-west4",
+                "us-central1"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "GCP Artifact Specs",
+          "type": "object"
+        },
+        "qdrant": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Common metadata for Qdrant databases.",
+          "examples": [
+            {
+              "version": "0.6.1"
+            }
+          ],
+          "properties": {
+            "version": {
+              "default": "",
+              "description": "The Qdrant database version.",
+              "examples": ["0.6.1"],
+              "title": "Version",
+              "type": "string"
+            }
+          },
+          "required": ["version"],
+          "title": "Qdrant specs",
+          "type": "object"
+        }
+      },
+      "required": ["qdrant"],
+      "type": "object"
+    }
+  },
+  "required": ["data", "specs"],
+  "title": "Qdrant Vector Database",
+  "type": "object"
 }
