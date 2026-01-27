@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Cloud Function Configuration",
   "description": "",
-
   "required": [
     "runtime",
     "entrypoint",

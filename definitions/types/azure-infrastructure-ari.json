@@ -3,7 +3,6 @@
   "type": "object",
   "title": "Azure Infrastructure Resource ID",
   "description": "Minimal Azure Infrastructure Config",
-
   "required": [
     "ari"
   ],

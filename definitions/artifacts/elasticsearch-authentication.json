@@ -6,7 +6,6 @@
   "type": "object",
   "title": "Elasticsearch Cluster",
   "description": "Elasticsearch cluster authentication and cloud-specific configuration.",
-
   "required": [
     "data",
     "specs"

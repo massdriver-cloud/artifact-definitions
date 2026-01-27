@@ -10,7 +10,6 @@
   "type": "object",
   "title": "GCP Global Network",
   "description": "",
-
   "required": [
     "data",
     "specs"

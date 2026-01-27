@@ -7,7 +7,6 @@
     "type": "object",
     "title": "AWS Lambda Function",
     "description": "Connection details for AWS Lambdas",
-
     "required": [
         "data",
         "specs"

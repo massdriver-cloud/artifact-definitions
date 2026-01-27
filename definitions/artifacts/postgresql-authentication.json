@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
-
     "importing": {
       "group": "data"
     },
@@ -11,7 +10,6 @@
   "type": "object",
   "title": "PostgreSQL Authentication",
   "description": "Authentication parameters for a PostgreSQL database",
-
   "required": [
     "data",
     "specs"
@@ -19,7 +17,6 @@
   "properties": {
     "data": {
       "type": "object",
-
       "required": [
         "infrastructure",
         "authentication",
@@ -90,7 +87,6 @@
     },
     "specs": {
       "type": "object",
-
       "required": [
         "rdbms"
       ],

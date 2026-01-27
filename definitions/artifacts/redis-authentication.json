@@ -7,7 +7,6 @@
   "type": "object",
   "title": "Redis Cluster",
   "description": "Redis cluster authentication and cloud-specific configuration.",
-
   "required": [
     "data"
   ],

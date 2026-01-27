@@ -10,7 +10,6 @@
   "type": "object",
   "title": "GCP PubSub Subscription",
   "description": "GCP PubSub Subscription",
-
   "required": [
     "data",
     "specs"
@@ -23,7 +22,6 @@
         "infrastructure",
         "security"
       ],
-
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",

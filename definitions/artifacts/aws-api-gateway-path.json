@@ -7,7 +7,6 @@
     "type": "object",
     "title": "AWS API Gateway REST Path",
     "description": "Path for nested resources in an api gateway",
-
     "required": [
         "data",
         "specs"
