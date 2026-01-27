@@ -1,170 +1,148 @@
 {
-    "$md": {
-        "name": "elasticsearch-authentication"
-    },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "Elasticsearch cluster authentication and cloud-specific configuration.",
-    "properties": {
-        "data": {
-            "properties": {
-                "authentication": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "Elasticsearch connection string",
-                    "properties": {
-                        "hostname": {
-                            "type": "string"
-                        },
-                        "password": {
-                            "type": "string"
-                        },
-                        "port": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Port number",
-                            "maximum": 65535,
-                            "minimum": 0,
-                            "title": "Port",
-                            "type": "integer"
-                        },
-                        "username": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "username",
-                        "password",
-                        "hostname",
-                        "port"
-                    ],
-                    "title": "Elasticsearch Authentication"
-                },
-                "infrastructure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "description": "",
-                    "properties": {
-                        "kubernetes_namespace": {
-                            "type": "string"
-                        },
-                        "kubernetes_service": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "kubernetes_namespace"
-                    ],
-                    "title": "Kuberenetes infrastructure config",
-                    "type": "object"
-                }
+  "$md": {
+    "name": "elasticsearch-authentication"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "Elasticsearch cluster authentication and cloud-specific configuration.",
+  "properties": {
+    "data": {
+      "properties": {
+        "authentication": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "Elasticsearch connection string",
+          "properties": {
+            "hostname": {
+              "type": "string"
             },
-            "required": [
-                "infrastructure",
-                "authentication"
-            ],
-            "type": "object"
+            "password": {
+              "$md.sensitive": true,
+              "type": "string"
+            },
+            "port": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Port number",
+              "maximum": 65535,
+              "minimum": 0,
+              "title": "Port",
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            }
+          },
+          "required": ["username", "password", "hostname", "port"],
+          "title": "Elasticsearch Authentication"
         },
-        "specs": {
-            "properties": {
-                "aws": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "AWS Region to provision in.",
-                            "examples": [
-                                "us-west-2"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "AWS Artifact Specs",
-                    "type": "object"
-                },
-                "azure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Select the Azure region you'd like to provision your resources in.",
-                            "title": "Azure Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "region"
-                    ],
-                    "title": "Azure Artifact Specs",
-                    "type": "object"
-                },
-                "elasticsearch": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "Common metadata for Elasticsearch clusters.",
-                    "examples": [
-                        {
-                            "version": "7.17.1"
-                        }
-                    ],
-                    "properties": {
-                        "version": {
-                            "default": "",
-                            "description": "The Elasticsearch version.",
-                            "examples": [
-                                "7.17.1"
-                            ],
-                            "title": "Version",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "version"
-                    ],
-                    "title": "Elasticsearch specs",
-                    "type": "object"
-                },
-                "gcp": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "project": {
-                            "title": "GCP Project",
-                            "type": "string"
-                        },
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "The GCP region to provision resources in.",
-                            "examples": [
-                                "us-east1",
-                                "us-east4",
-                                "us-west1",
-                                "us-west2",
-                                "us-west3",
-                                "us-west4",
-                                "us-central1"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "GCP Artifact Specs",
-                    "type": "object"
-                }
+        "infrastructure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "description": "",
+          "properties": {
+            "kubernetes_namespace": {
+              "type": "string"
             },
-            "required": [
-                "elasticsearch"
-            ],
-            "type": "object"
+            "kubernetes_service": {
+              "type": "string"
+            }
+          },
+          "required": ["kubernetes_namespace"],
+          "title": "Kuberenetes infrastructure config",
+          "type": "object"
         }
+      },
+      "required": ["infrastructure", "authentication"],
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "Elasticsearch Cluster",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": ["us-west-2"],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        },
+        "azure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Select the Azure region you'd like to provision your resources in.",
+              "title": "Azure Region",
+              "type": "string"
+            }
+          },
+          "required": ["region"],
+          "title": "Azure Artifact Specs",
+          "type": "object"
+        },
+        "elasticsearch": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "Common metadata for Elasticsearch clusters.",
+          "examples": [
+            {
+              "version": "7.17.1"
+            }
+          ],
+          "properties": {
+            "version": {
+              "default": "",
+              "description": "The Elasticsearch version.",
+              "examples": ["7.17.1"],
+              "title": "Version",
+              "type": "string"
+            }
+          },
+          "required": ["version"],
+          "title": "Elasticsearch specs",
+          "type": "object"
+        },
+        "gcp": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "project": {
+              "title": "GCP Project",
+              "type": "string"
+            },
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "The GCP region to provision resources in.",
+              "examples": [
+                "us-east1",
+                "us-east4",
+                "us-west1",
+                "us-west2",
+                "us-west3",
+                "us-west4",
+                "us-central1"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "GCP Artifact Specs",
+          "type": "object"
+        }
+      },
+      "required": ["elasticsearch"],
+      "type": "object"
+    }
+  },
+  "required": ["data", "specs"],
+  "title": "Elasticsearch Cluster",
+  "type": "object"
 }

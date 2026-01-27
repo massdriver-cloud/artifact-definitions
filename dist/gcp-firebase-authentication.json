@@ -1,148 +1,135 @@
 {
-    "$md": {
-        "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/firestore.svg",
-        "importing": {
-            "group": "data"
-        },
-        "name": "gcp-firebase-authentication"
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/firestore.svg",
+    "importing": {
+      "group": "data"
     },
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "description": "Configuration for authenticating with your Firestore databse",
-    "properties": {
-        "data": {
-            "properties": {
-                "authentication": {
-                    "properties": {
-                        "firebase_config": {
-                            "description": "Firebase configuration object",
-                            "properties": {
-                                "apiKey": {
-                                    "title": "API KEY",
-                                    "type": "string"
-                                },
-                                "appId": {
-                                    "title": "App ID",
-                                    "type": "string"
-                                },
-                                "authDomain": {
-                                    "title": "Auth Domain",
-                                    "type": "string"
-                                },
-                                "databaseUrl": {
-                                    "title": "Database URL",
-                                    "type": "string"
-                                },
-                                "measurementId": {
-                                    "title": "Measurement ID",
-                                    "type": "string"
-                                },
-                                "messageSenderId": {
-                                    "title": "Message Sender ID",
-                                    "type": "string"
-                                },
-                                "projectId": {
-                                    "title": "Project ID",
-                                    "type": "string"
-                                },
-                                "storageBucket": {
-                                    "title": "Storage Bucket",
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "apiKey",
-                                "appId",
-                                "authDomain",
-                                "databaseUrl",
-                                "measurementId",
-                                "messageSenderId",
-                                "projectId",
-                                "storageBucket"
-                            ],
-                            "title": "Firebase Config",
-                            "type": "object"
-                        }
-                    },
-                    "required": [
-                        "firebase_config"
-                    ],
-                    "title": "Authentication",
-                    "type": "object"
+    "name": "gcp-firebase-authentication"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "description": "Configuration for authenticating with your Firestore databse",
+  "properties": {
+    "data": {
+      "properties": {
+        "authentication": {
+          "properties": {
+            "firebase_config": {
+              "description": "Firebase configuration object",
+              "properties": {
+                "apiKey": {
+                  "$md.sensitive": true,
+                  "title": "API KEY",
+                  "type": "string"
                 },
-                "infrastructure": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "additionalProperties": false,
-                    "properties": {
-                        "id": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "Firestore ID, GCP Project ID",
-                            "examples": [
-                                "project-id",
-                                "project-gr888t",
-                                "p-r-o-j-e-c-t"
-                            ],
-                            "message": {
-                                "pattern": "The GCP Project ID must be follow these guidelines: https://cloud.google.com/resource-manager/docs/creating-managing-projects#before_you_begin"
-                            },
-                            "pattern": "^[a-z]+[a-z0-9-]{4,28}[a-z0-9]+$",
-                            "title": "Firestore ID",
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "id"
-                    ],
-                    "title": "GCP Firestore Infrastructure",
-                    "type": "object"
+                "appId": {
+                  "title": "App ID",
+                  "type": "string"
+                },
+                "authDomain": {
+                  "title": "Auth Domain",
+                  "type": "string"
+                },
+                "databaseUrl": {
+                  "title": "Database URL",
+                  "type": "string"
+                },
+                "measurementId": {
+                  "title": "Measurement ID",
+                  "type": "string"
+                },
+                "messageSenderId": {
+                  "title": "Message Sender ID",
+                  "type": "string"
+                },
+                "projectId": {
+                  "title": "Project ID",
+                  "type": "string"
+                },
+                "storageBucket": {
+                  "title": "Storage Bucket",
+                  "type": "string"
                 }
-            },
-            "required": [
-                "infrastructure",
-                "authentication"
-            ],
-            "title": "Artifact Data",
-            "type": "object"
+              },
+              "required": [
+                "apiKey",
+                "appId",
+                "authDomain",
+                "databaseUrl",
+                "measurementId",
+                "messageSenderId",
+                "projectId",
+                "storageBucket"
+              ],
+              "title": "Firebase Config",
+              "type": "object"
+            }
+          },
+          "required": ["firebase_config"],
+          "title": "Authentication",
+          "type": "object"
         },
-        "specs": {
-            "properties": {
-                "gcp": {
-                    "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
-                    "properties": {
-                        "project": {
-                            "title": "GCP Project",
-                            "type": "string"
-                        },
-                        "region": {
-                            "$schema": "http://json-schema.org/draft-07/schema",
-                            "description": "The GCP region to provision resources in.",
-                            "examples": [
-                                "us-east1",
-                                "us-east4",
-                                "us-west1",
-                                "us-west2",
-                                "us-west3",
-                                "us-west4",
-                                "us-central1"
-                            ],
-                            "title": "Region",
-                            "type": "string"
-                        }
-                    },
-                    "required": [],
-                    "title": "GCP Artifact Specs",
-                    "type": "object"
-                }
-            },
-            "title": "Artifact Specs",
-            "type": "object"
+        "infrastructure": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "Firestore ID, GCP Project ID",
+              "examples": ["project-id", "project-gr888t", "p-r-o-j-e-c-t"],
+              "message": {
+                "pattern": "The GCP Project ID must be follow these guidelines: https://cloud.google.com/resource-manager/docs/creating-managing-projects#before_you_begin"
+              },
+              "pattern": "^[a-z]+[a-z0-9-]{4,28}[a-z0-9]+$",
+              "title": "Firestore ID",
+              "type": "string"
+            }
+          },
+          "required": ["id"],
+          "title": "GCP Firestore Infrastructure",
+          "type": "object"
         }
+      },
+      "required": ["infrastructure", "authentication"],
+      "title": "Artifact Data",
+      "type": "object"
     },
-    "required": [
-        "data",
-        "specs"
-    ],
-    "title": "GCP Firebase Configuration",
-    "type": "object"
+    "specs": {
+      "properties": {
+        "gcp": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "project": {
+              "title": "GCP Project",
+              "type": "string"
+            },
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "The GCP region to provision resources in.",
+              "examples": [
+                "us-east1",
+                "us-east4",
+                "us-west1",
+                "us-west2",
+                "us-west3",
+                "us-west4",
+                "us-central1"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "GCP Artifact Specs",
+          "type": "object"
+        }
+      },
+      "title": "Artifact Specs",
+      "type": "object"
+    }
+  },
+  "required": ["data", "specs"],
+  "title": "GCP Firebase Configuration",
+  "type": "object"
 }
