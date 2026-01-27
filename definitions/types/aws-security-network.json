@@ -6,7 +6,11 @@
   "patternProperties": {
     "^[a-z-]+$": {
       "type": "object",
-      "required": ["arn", "port", "protocol"],
+      "required": [
+        "arn",
+        "port",
+        "protocol"
+      ],
       "properties": {
         "arn": {
           "title": "Security Group ARN",
@@ -19,7 +23,10 @@
         "protocol": {
           "title": "Network Protocol",
           "type": "string",
-          "enum": ["tcp", "udp"]
+          "enum": [
+            "tcp",
+            "udp"
+          ]
         }
       }
     }

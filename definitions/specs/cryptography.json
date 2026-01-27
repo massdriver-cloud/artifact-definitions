@@ -8,7 +8,9 @@
     "algorithm": {
       "title": "Algorithm",
       "type": "string",
-      "enum": ["RSA"]
+      "enum": [
+        "RSA"
+      ]
     },
     "key_size": {
       "title": "Key Size",

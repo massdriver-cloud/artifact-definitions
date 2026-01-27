@@ -14,12 +14,16 @@
   "type": "object",
   "title": "GCP Subnetwork",
   "description": "A region-bound network for deploying GCP resources",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure"],
+      "required": [
+        "infrastructure"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",

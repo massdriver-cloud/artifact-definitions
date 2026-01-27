@@ -6,16 +6,24 @@
   },
   "type": "object",
   "title": "AWS EFS File System",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
-          "required": ["arn", "dns_name"],
+          "required": [
+            "arn",
+            "dns_name"
+          ],
           "type": "object",
           "properties": {
             "arn": {

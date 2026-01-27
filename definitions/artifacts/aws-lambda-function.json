@@ -7,16 +7,22 @@
   "type": "object",
   "title": "AWS Lambda Function",
   "description": "Connection details for AWS Lambdas",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure"],
+      "required": [
+        "infrastructure"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
-          "required": ["arn"],
+          "required": [
+            "arn"
+          ],
           "type": "object",
           "properties": {
             "arn": {

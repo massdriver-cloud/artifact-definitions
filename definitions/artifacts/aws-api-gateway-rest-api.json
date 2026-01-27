@@ -7,16 +7,24 @@
   "type": "object",
   "title": "AWS API Gateway REST API",
   "description": "AWS API Gateway and it's Default Stage",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure"],
+      "required": [
+        "infrastructure"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
-          "required": ["arn", "stage_arn", "root_resource_id"],
+          "required": [
+            "arn",
+            "stage_arn",
+            "root_resource_id"
+          ],
           "type": "object",
           "properties": {
             "arn": {

@@ -7,17 +7,25 @@
   "type": "object",
   "title": "Azure Machine Learning Workspace",
   "description": "",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
           "type": "object",
-          "required": ["ari", "discovery_url"],
+          "required": [
+            "ari",
+            "discovery_url"
+          ],
           "properties": {
             "ari": {
               "$ref": "../types/azure-resource-id.json"

@@ -3,7 +3,11 @@
   "type": "object",
   "title": "Taint",
   "description": "A taint to apply to Kubernetes nodes",
-  "required": ["taint_key", "taint_value", "effect"],
+  "required": [
+    "taint_key",
+    "taint_value",
+    "effect"
+  ],
   "properties": {
     "taint_key": {
       "type": "string",
@@ -13,7 +17,9 @@
       "message": {
         "pattern": "Name must follow RFC 1123: at most 63 characters, only lowercase alphanumeric characters or '-', and start and end with an alphanumeric character."
       },
-      "examples": ["workloads"]
+      "examples": [
+        "workloads"
+      ]
     },
     "taint_value": {
       "type": "string",
@@ -23,7 +29,9 @@
       "message": {
         "pattern": "Name must follow RFC 1123: at most 63 characters, only lowercase alphanumeric characters or '-', and start and end with an alphanumeric character."
       },
-      "examples": ["gpu"]
+      "examples": [
+        "gpu"
+      ]
     },
     "effect": {
       "type": "string",

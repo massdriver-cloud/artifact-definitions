@@ -2,7 +2,9 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Azure Event Hubs Endpoint",
   "description": "Azure Event Hubs endpoint authentication",
-  "examples": ["sb://eventhub.servicebus.windows.net/"],
+  "examples": [
+    "sb://eventhub.servicebus.windows.net/"
+  ],
   "type": "string",
   "pattern": "^sb://[a-z0-9-]+\\.servicebus\\.windows\\.net(/)?$",
   "message": {

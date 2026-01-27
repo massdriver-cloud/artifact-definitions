@@ -10,12 +10,17 @@
   "type": "object",
   "title": "GCS Bucket",
   "description": "GCP Google Cloud Storage Bucket",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-bucket.json"

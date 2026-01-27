@@ -2,7 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Mongo Authentication",
   "description": "Mongo connection string",
-  "required": ["username", "password", "hostname", "port"],
+  "required": [
+    "username",
+    "password",
+    "hostname",
+    "port"
+  ],
   "properties": {
     "username": {
       "type": "string"

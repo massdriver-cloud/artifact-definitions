@@ -10,12 +10,17 @@
   "type": "object",
   "title": "GCP Healthcare HL7v2 Store",
   "description": "GCP Healthcare HL7v2 Store",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-grn.json"

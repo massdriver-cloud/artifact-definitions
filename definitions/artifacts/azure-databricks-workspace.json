@@ -8,12 +8,17 @@
   "type": "object",
   "title": "Azure Databricks Workspace",
   "description": "",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",

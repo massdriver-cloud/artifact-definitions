@@ -3,7 +3,9 @@
   "type": "object",
   "title": "Azure Redis Cache infrastructure config",
   "description": "",
-  "required": ["ari"],
+  "required": [
+    "ari"
+  ],
   "properties": {
     "ari": {
       "$ref": "./azure-resource-id.json"

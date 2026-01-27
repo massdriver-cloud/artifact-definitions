@@ -3,7 +3,9 @@
   "type": "object",
   "title": "Infrastructure Config",
   "description": "Azure AKS Infrastructure Configuration",
-  "required": ["ari"],
+  "required": [
+    "ari"
+  ],
   "properties": {
     "ari": {
       "$ref": "./azure-resource-id.json"

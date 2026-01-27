@@ -6,11 +6,16 @@
   "type": "object",
   "title": "Qdrant Vector Database",
   "description": "Qdrant database authentication.",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["infrastructure", "authentication"],
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
       "properties": {
         "infrastructure": {
           "$ref": "../types/k8s-application-infrastructure.json"

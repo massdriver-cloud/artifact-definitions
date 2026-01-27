@@ -6,7 +6,10 @@
   "patternProperties": {
     "^[a-z]+[a-z_]*[a-z]$": {
       "type": "object",
-      "required": ["role", "scope"],
+      "required": [
+        "role",
+        "scope"
+      ],
       "properties": {
         "role": {
           "title": "Role",
@@ -15,7 +18,9 @@
           "message": {
             "pattern": "Must be a valid Azure Role (uppercase, lowercase letters and spaces)"
           },
-          "examples": ["Storage Blob Data Reader"]
+          "examples": [
+            "Storage Blob Data Reader"
+          ]
         },
         "scope": {
           "title": "Scope",

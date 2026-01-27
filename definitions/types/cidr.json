@@ -5,5 +5,8 @@
   "message": {
     "pattern": "Correct format of CIDR range is IPv4 address and subnet mask for example: 10.0.0.0/24"
   },
-  "examples": ["10.100.0.0/16", "192.24.12.0/22"]
+  "examples": [
+    "10.100.0.0/16",
+    "192.24.12.0/22"
+  ]
 }

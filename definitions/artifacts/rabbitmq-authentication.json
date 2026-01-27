@@ -6,11 +6,16 @@
   "type": "object",
   "title": "RabbitMQ Cluster",
   "description": "RabbitMQ cluster authentication.",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["infrastructure", "authentication"],
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",

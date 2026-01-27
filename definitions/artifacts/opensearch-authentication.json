@@ -10,11 +10,17 @@
   "type": "object",
   "title": "OpenSearch Authentication",
   "description": "Authentication for OpenSearch",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["infrastructure", "authentication", "security"],
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
       "properties": {
         "security": {
           "title": "Security",
@@ -40,7 +46,12 @@
           "title": "Authentication details",
           "description": "Master Username & Password Authentication",
           "type": "object",
-          "required": ["username", "password", "hostname", "port"],
+          "required": [
+            "username",
+            "password",
+            "hostname",
+            "port"
+          ],
           "properties": {
             "username": {
               "type": "string"

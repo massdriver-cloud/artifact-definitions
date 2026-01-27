@@ -6,16 +6,22 @@
   },
   "type": "object",
   "title": "AWS SNS Topic",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure"],
+      "required": [
+        "infrastructure"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure",
-          "required": ["arn"],
+          "required": [
+            "arn"
+          ],
           "type": "object",
           "properties": {
             "arn": {

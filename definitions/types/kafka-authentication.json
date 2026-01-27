@@ -3,7 +3,10 @@
   "type": "object",
   "title": "Kafka Cluster Authentication",
   "description": "Zookeeper and bootstrap broker connection strings",
-  "required": ["zookeeper_connection_string", "brokers_connection_string"],
+  "required": [
+    "zookeeper_connection_string",
+    "brokers_connection_string"
+  ],
   "properties": {
     "zookeeper_connection_string": {
       "type": "string",

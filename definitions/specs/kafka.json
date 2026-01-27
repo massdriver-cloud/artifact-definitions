@@ -3,7 +3,9 @@
   "type": "object",
   "title": "Kafka specific pulic information",
   "description": "Informs downstream bundles of Kafka specific data",
-  "required": ["version"],
+  "required": [
+    "version"
+  ],
   "properties": {
     "version": {
       "type": "string",

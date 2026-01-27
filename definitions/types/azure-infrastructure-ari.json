@@ -3,7 +3,9 @@
   "type": "object",
   "title": "Azure Infrastructure Resource ID",
   "description": "Minimal Azure Infrastructure Config",
-  "required": ["ari"],
+  "required": [
+    "ari"
+  ],
   "properties": {
     "ari": {
       "$ref": "./azure-resource-id.json"

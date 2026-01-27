@@ -3,7 +3,9 @@
   "type": "object",
   "title": "Mongo specific public information",
   "description": "Informs downstream bundles of Mongo specific data",
-  "required": ["version"],
+  "required": [
+    "version"
+  ],
   "properties": {
     "version": {
       "type": "string",

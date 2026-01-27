@@ -10,12 +10,17 @@
   "type": "object",
   "title": "GCP Healthcare FHIR Store",
   "description": "GCP Healthcare FHIR Store",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "security"],
+      "required": [
+        "infrastructure",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "$ref": "../types/gcp-infrastructure-grn.json"

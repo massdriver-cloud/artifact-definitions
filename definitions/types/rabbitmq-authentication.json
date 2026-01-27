@@ -2,7 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "title": "Authentication",
   "description": "RabbitMQ Authentication",
-  "required": ["username", "password", "hostname", "port"],
+  "required": [
+    "username",
+    "password",
+    "hostname",
+    "port"
+  ],
   "properties": {
     "username": {
       "type": "string"

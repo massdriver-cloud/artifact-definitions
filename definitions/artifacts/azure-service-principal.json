@@ -22,7 +22,9 @@
   "type": "object",
   "title": "Azure Service Principal",
   "description": "",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Service Principal Credentials",

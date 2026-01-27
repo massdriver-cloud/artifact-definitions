@@ -3,7 +3,9 @@
   "type": "object",
   "title": "AWS Infrastructure ARN",
   "description": "Minimal AWS Infrastructure Config",
-  "required": ["arn"],
+  "required": [
+    "arn"
+  ],
   "properties": {
     "arn": {
       "$ref": "./aws-arn.json"

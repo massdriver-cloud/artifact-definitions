@@ -6,11 +6,15 @@
   "type": "object",
   "title": "API / Web Service",
   "description": "An arbitrary API.",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["api"],
+      "required": [
+        "api"
+      ],
       "properties": {
         "etc": {
           "additionalProperties": true,
@@ -18,7 +22,10 @@
           "description": "This field can be used to store arbitrary data to pass to downstream services."
         },
         "api": {
-          "required": ["hostname", "port"],
+          "required": [
+            "hostname",
+            "port"
+          ],
           "type": "object",
           "properties": {
             "hostname": {

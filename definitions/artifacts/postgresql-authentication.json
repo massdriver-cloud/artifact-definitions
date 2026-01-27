@@ -10,11 +10,17 @@
   "type": "object",
   "title": "PostgreSQL Authentication",
   "description": "Authentication parameters for a PostgreSQL database",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["infrastructure", "authentication", "security"],
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
       "properties": {
         "security": {
           "title": "Security details",
@@ -54,7 +60,12 @@
         "authentication": {
           "title": "Authentication details",
           "type": "object",
-          "required": ["username", "password", "hostname", "port"],
+          "required": [
+            "username",
+            "password",
+            "hostname",
+            "port"
+          ],
           "properties": {
             "username": {
               "type": "string"

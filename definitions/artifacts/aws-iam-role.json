@@ -30,13 +30,17 @@
   "type": "object",
   "title": "AWS IAM Role",
   "description": "",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "IAM Role Configuration",
       "description": "AWS IAM role details for Massdriver to assume when provisioning and monitoring your infrastructure.",
       "type": "object",
-      "required": ["arn"],
+      "required": [
+        "arn"
+      ],
       "properties": {
         "arn": {
           "$ref": "../types/aws-arn.json",

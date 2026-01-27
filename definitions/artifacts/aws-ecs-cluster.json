@@ -6,17 +6,25 @@
   },
   "type": "object",
   "title": "AWS ECS Cluster",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "capabilities", "security"],
+      "required": [
+        "infrastructure",
+        "capabilities",
+        "security"
+      ],
       "properties": {
         "capabilities": {
           "title": "Artifact Capabilities",
           "type": "object",
-          "required": ["ingress"],
+          "required": [
+            "ingress"
+          ],
           "properties": {
             "ingress": {
               "title": "Ingress",
@@ -41,7 +49,11 @@
                     "title": "Listeners",
                     "items": {
                       "type": "object",
-                      "required": ["arn", "port", "protocol"],
+                      "required": [
+                        "arn",
+                        "port",
+                        "protocol"
+                      ],
                       "properties": {
                         "arn": {
                           "$ref": "../types/aws-arn.json"
@@ -51,7 +63,10 @@
                         },
                         "protocol": {
                           "type": "string",
-                          "enum": ["http", "https"]
+                          "enum": [
+                            "http",
+                            "https"
+                          ]
                         },
                         "domains": {
                           "type": "array",
@@ -72,7 +87,10 @@
         "infrastructure": {
           "title": "Infrastructure",
           "type": "object",
-          "required": ["arn", "vpc"],
+          "required": [
+            "arn",
+            "vpc"
+          ],
           "properties": {
             "arn": {
               "$ref": "../types/aws-arn.json"

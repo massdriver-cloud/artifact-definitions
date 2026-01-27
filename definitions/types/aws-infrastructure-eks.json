@@ -3,7 +3,10 @@
   "type": "object",
   "title": "AWS EKS infrastructure config",
   "description": "",
-  "required": ["arn", "oidc_issuer_url"],
+  "required": [
+    "arn",
+    "oidc_issuer_url"
+  ],
   "properties": {
     "arn": {
       "$ref": "./aws-arn.json"

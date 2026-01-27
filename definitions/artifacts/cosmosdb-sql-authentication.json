@@ -7,11 +7,16 @@
   "type": "object",
   "title": "Cosmos DB SQL",
   "description": "Cosmos DB SQL authentication and cloud-specific configuration.",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "type": "object",
-      "required": ["infrastructure", "authentication"],
+      "required": [
+        "infrastructure",
+        "authentication"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Cosmos DB SQL Infrastructure",

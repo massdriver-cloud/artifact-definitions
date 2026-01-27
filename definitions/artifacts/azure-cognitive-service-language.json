@@ -7,17 +7,25 @@
   "type": "object",
   "title": "Azure Cognitive Services :: Language",
   "description": "",
-  "required": ["data"],
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
       "title": "Artifact Data",
       "type": "object",
-      "required": ["infrastructure", "authentication", "security"],
+      "required": [
+        "infrastructure",
+        "authentication",
+        "security"
+      ],
       "properties": {
         "infrastructure": {
           "title": "Infrastructure configuration",
           "type": "object",
-          "required": ["ari"],
+          "required": [
+            "ari"
+          ],
           "properties": {
             "ari": {
               "$ref": "../types/azure-resource-id.json"
@@ -27,7 +35,9 @@
         "authentication": {
           "title": "Authentication credentials",
           "type": "object",
-          "required": ["endpoint"],
+          "required": [
+            "endpoint"
+          ],
           "properties": {
             "endpoint": {
               "$ref": "../types/https-url.json"
