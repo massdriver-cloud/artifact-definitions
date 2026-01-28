@@ -6,10 +6,7 @@
     },
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-virtual-private-cloud.svg",
     "name": "aws-vpc",
-    "label": "AWS VPC",
-    "importing": {
-      "group": "networking"
-    }
+    "label": "AWS VPC"
   },
   "type": "object",
   "title": "AWS Virtual Private Cloud",

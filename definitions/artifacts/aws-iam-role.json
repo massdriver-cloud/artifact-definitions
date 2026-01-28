@@ -3,15 +3,9 @@
   "$md": {
     "name": "aws-iam-role",
     "label": "AWS IAM Role",
-    "importing": {
-      "group": "authentication"
-    },
     "containerRepositories": {
       "label": "ECR",
       "cloud": "aws"
-    },
-    "extensions": {
-      "costReporting": true
     },
     "ui": {
       "environmentDefaultGroup": "credentials",
@@ -32,9 +26,7 @@
       ]
     },
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png",
-    "export": [
-
-    ]
+    "export": []
   },
   "type": "object",
   "title": "AWS IAM Role",

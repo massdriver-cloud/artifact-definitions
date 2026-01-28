@@ -3,12 +3,6 @@
   "$md": {
     "label": "Azure Service Principal",
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/azure-service-principal/icon.png",
-    "importing": {
-      "group": "authentication"
-    },
-    "extensions": {
-      "costReporting": true
-    },
     "name": "azure-service-principal",
     "ui": {
       "environmentDefaultGroup": "credentials",
