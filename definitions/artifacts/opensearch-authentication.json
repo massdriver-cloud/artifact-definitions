@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-opensearch-service.svg",
-    "importing": {
-      "group": "data"
-    },
     "name": "opensearch-authentication"
   },
   "type": "object",

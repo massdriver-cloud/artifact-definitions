@@ -1,9 +1,6 @@
 {
     "$md": {
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-tasks.svg",
-        "importing": {
-            "group": "data"
-        },
         "name": "gcp-cloud-tasks-queue"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "$md": {
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-storage.svg",
-    "importing": {
-      "group": "data"
-    },
     "name": "gcp-gcs-bucket"
   },
   "type": "object",

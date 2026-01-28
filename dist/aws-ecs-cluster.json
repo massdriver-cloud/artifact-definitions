@@ -129,9 +129,6 @@
                         "vpc": {
                             "$md": {
                                 "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/aws/arch-amazon-virtual-private-cloud.svg",
-                                "importing": {
-                                    "group": "networking"
-                                },
                                 "label": "AWS VPC",
                                 "name": "aws-vpc",
                                 "ui": {

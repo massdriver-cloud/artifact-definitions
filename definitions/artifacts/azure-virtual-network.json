@@ -6,9 +6,6 @@
     },
     "label": "Azure VNet",
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/azure/virtual-networks.svg",
-    "importing": {
-      "group": "networking"
-    },
     "name": "azure-virtual-network"
   },
   "type": "object",

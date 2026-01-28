@@ -6,9 +6,6 @@
     },
     "label": "GCP Subnetwork",
     "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-network.svg",
-    "importing": {
-      "group": "networking"
-    },
     "name": "gcp-subnetwork"
   },
   "type": "object",
