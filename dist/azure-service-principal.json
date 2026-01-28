@@ -1,13 +1,7 @@
 {
     "$md": {
         "export": [],
-        "extensions": {
-            "costReporting": true
-        },
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/azure-service-principal/icon.png",
-        "importing": {
-            "group": "authentication"
-        },
         "label": "Azure Service Principal",
         "name": "azure-service-principal",
         "ui": {

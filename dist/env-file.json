@@ -1,8 +1,5 @@
 {
     "$md": {
-        "importing": {
-            "group": "data"
-        },
         "name": "env-file"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

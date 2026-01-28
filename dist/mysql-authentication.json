@@ -1,9 +1,6 @@
 {
     "$md": {
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/oss/mysql.svg",
-        "importing": {
-            "group": "data"
-        },
         "name": "mysql-authentication"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

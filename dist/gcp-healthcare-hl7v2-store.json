@@ -1,9 +1,6 @@
 {
     "$md": {
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-healthcare-api.svg",
-        "importing": {
-            "group": "data"
-        },
         "name": "gcp-healthcare-hl7v2-store"
     },
     "$schema": "http://json-schema.org/draft-07/schema",

@@ -1,9 +1,6 @@
 {
     "$md": {
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-network.svg",
-        "importing": {
-            "group": "networking"
-        },
         "label": "GCP Subnetwork",
         "name": "gcp-subnetwork",
         "ui": {

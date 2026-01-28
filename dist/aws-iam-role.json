@@ -5,13 +5,7 @@
             "label": "ECR"
         },
         "export": [],
-        "extensions": {
-            "costReporting": true
-        },
         "icon": "https://raw.githubusercontent.com/massdriver-cloud/artifact-definitions/refs/heads/main/definitions/artifacts/aws-iam-role/icon.png",
-        "importing": {
-            "group": "authentication"
-        },
         "label": "AWS IAM Role",
         "name": "aws-iam-role",
         "ui": {
