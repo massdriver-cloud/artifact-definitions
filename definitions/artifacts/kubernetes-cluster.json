@@ -104,34 +104,8 @@
       }
     },
     "specs": {
-      "title": "Kubernetes Configuration",
-      "description": "Kubernetes cluster specifications and optional cloud provider settings",
       "type": "object",
-      "required": [
-        "kubernetes"
-      ],
-      "properties": {
-        "kubernetes": {
-          "title": "Kubernetes Distribution",
-          "description": "Specify the Kubernetes distribution, version, and cloud provider",
-          "$ref": "../specs/kubernetes.json"
-        },
-        "aws": {
-          "title": "AWS Provider Settings",
-          "description": "Optional AWS provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
-          "$ref": "../specs/aws.json"
-        },
-        "azure": {
-          "title": "Azure Provider Settings",
-          "description": "Optional Azure provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
-          "$ref": "../specs/azure.json"
-        },
-        "gcp": {
-          "title": "GCP Provider Settings",
-          "description": "Optional GCP provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
-          "$ref": "../specs/gcp.json"
-        }
-      }
+      "additionalProperties": true
     }
   }
 }

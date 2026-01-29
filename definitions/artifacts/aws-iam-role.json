@@ -34,8 +34,7 @@
   "title": "AWS IAM Role",
   "description": "",
   "required": [
-    "data",
-    "specs"
+    "data"
   ],
   "properties": {
     "data": {
@@ -55,18 +54,6 @@
           "type": "string",
           "title": "External ID",
           "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy."
-        }
-      }
-    },
-    "specs": {
-      "title": "AWS Configuration",
-      "description": "Optional AWS-specific settings",
-      "type": "object",
-      "properties": {
-        "aws": {
-          "title": "AWS Provider Settings",
-          "description": "Configure AWS provider options for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
-          "$ref": "../specs/aws.json"
         }
       }
     }
