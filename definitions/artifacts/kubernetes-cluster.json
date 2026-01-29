@@ -104,6 +104,7 @@
       }
     },
     "specs": {
+      "type": "object",
       "additionalProperties": true
     }
   }

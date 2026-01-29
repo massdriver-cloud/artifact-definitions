@@ -183,7 +183,8 @@
             "type": "object"
         },
         "specs": {
-            "additionalProperties": true
+            "additionalProperties": true,
+            "type": "object"
         }
     },
     "required": [

@@ -56,9 +56,6 @@
           "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy."
         }
       }
-    },
-    "specs": {
-      "additionalProperties": true
     }
   }
 }

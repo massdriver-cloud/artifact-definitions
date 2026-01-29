@@ -58,9 +58,6 @@
             ],
             "title": "IAM Role Configuration",
             "type": "object"
-        },
-        "specs": {
-            "additionalProperties": true
         }
     },
     "required": [
