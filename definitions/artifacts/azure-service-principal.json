@@ -31,7 +31,8 @@
   ],
   "properties": {
     "data": {
-      "title": "Artifact Data",
+      "title": "Azure Service Principal Credentials",
+      "description": "Enter your Azure service principal authentication details",
       "type": "object",
       "required": [
         "client_id",
@@ -42,17 +43,20 @@
       "properties": {
         "tenant_id": {
           "type": "string",
-          "title": "Tenant ID",
+          "title": "Azure Tenant ID",
+          "description": "The Azure Active Directory tenant ID (also called Directory ID) where your service principal is registered",
           "$ref": "../types/uuid.json"
         },
         "client_id": {
           "type": "string",
-          "title": "Client ID",
+          "title": "Client ID (Application ID)",
+          "description": "The application (client) ID of your Azure service principal. This is also called the Application ID.",
           "$ref": "../types/uuid.json"
         },
         "client_secret": {
           "type": "string",
           "title": "Client Secret",
+          "description": "The secret value (password) for your Azure service principal. This is created when you generate a client secret in Azure AD.",
           "pattern": "[-_.~a-zA-Z0-9]{1,40}",
           "message": {
             "pattern": "Not a valid Client Secret."
@@ -61,16 +65,13 @@
         },
         "subscription_id": {
           "type": "string",
-          "title": "Subscription ID",
+          "title": "Azure Subscription ID",
+          "description": "The Azure subscription ID where Massdriver will provision and manage your infrastructure",
           "$ref": "../types/uuid.json"
         }
       }
     },
     "specs": {
-      "title": "Artifact Specs",
-      "type": "object",
-      "properties": {
-      }
     }
   }
 }

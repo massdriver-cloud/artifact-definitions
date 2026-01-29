@@ -31,10 +31,11 @@
     "description": "",
     "properties": {
         "data": {
+            "description": "Configure your AWS IAM Role connection details",
             "properties": {
                 "arn": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "Amazon Resource Name",
+                    "description": "The Amazon Resource Name (ARN) of the IAM role that Massdriver will assume to access your AWS account. Format: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME",
                     "examples": [
                         "arn:aws:rds::ACCOUNT_NUMBER:db/prod",
                         "arn:aws:ec2::ACCOUNT_NUMBER:vpc/vpc-foo"
@@ -43,11 +44,11 @@
                         "pattern": "Correct format of an arn described here: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
                     },
                     "pattern": "^arn:aws:[a-zA-Z0-9._-]*:[a-zA-Z0-9._-]*:(?:[0-9]{12})?:[a-zA-Z0-9/:._-]+$",
-                    "title": "AWS ARN",
+                    "title": "AWS IAM Role ARN",
                     "type": "string"
                 },
                 "external_id": {
-                    "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role's trust policy, allowing the role to be assumed only when a certain value is present in the external ID.",
+                    "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy.",
                     "title": "External ID",
                     "type": "string"
                 }
@@ -55,14 +56,15 @@
             "required": [
                 "arn"
             ],
-            "title": "Artifact Data",
+            "title": "IAM Role Configuration",
             "type": "object"
         },
         "specs": {
+            "description": "Optional AWS-specific settings",
             "properties": {
                 "aws": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
+                    "description": "Configure AWS provider options for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
                     "properties": {
                         "region": {
                             "$schema": "http://json-schema.org/draft-07/schema",
@@ -75,11 +77,11 @@
                         }
                     },
                     "required": [],
-                    "title": "AWS Artifact Specs",
+                    "title": "AWS Provider Settings",
                     "type": "object"
                 }
             },
-            "title": "Artifact Specs",
+            "title": "AWS Configuration",
             "type": "object"
         }
     },

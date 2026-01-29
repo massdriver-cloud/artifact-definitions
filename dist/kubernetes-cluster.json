@@ -25,21 +25,22 @@
     "description": "Kubernetes cluster authentication and cloud-specific configuration.",
     "properties": {
         "data": {
+            "description": "Configure your Kubernetes cluster connection details",
             "properties": {
                 "authentication": {
-                    "description": "Authentication details required to access the Kubernetes cluster.",
+                    "description": "Connection details required to authenticate with your Kubernetes cluster",
                     "properties": {
                         "cluster": {
-                            "description": "Information about the Kubernetes cluster you wish to connect to.",
+                            "description": "Information about the Kubernetes API server you're connecting to",
                             "properties": {
                                 "certificate-authority-data": {
-                                    "description": "Base64-encoded certificate authority data used to verify the Kubernetes API server's certificate.",
-                                    "title": "Certificate Authority Data",
+                                    "description": "Base64-encoded certificate authority (CA) certificate used to verify the Kubernetes API server's identity. This ensures you're connecting to the correct cluster.",
+                                    "title": "Certificate Authority Certificate",
                                     "type": "string"
                                 },
                                 "server": {
-                                    "description": "The URL or endpoint of the Kubernetes API server.",
-                                    "title": "Server",
+                                    "description": "The full URL endpoint of your Kubernetes API server (e.g., https://api.example.com:6443)",
+                                    "title": "Kubernetes API Server URL",
                                     "type": "string"
                                 }
                             },
@@ -47,23 +48,23 @@
                                 "server",
                                 "certificate-authority-data"
                             ],
-                            "title": "Cluster",
+                            "title": "Cluster Connection Details",
                             "type": "object"
                         },
                         "user": {
-                            "description": "User credentials for authenticating with the Kubernetes cluster.",
+                            "description": "Credentials for authenticating as a user with the Kubernetes cluster",
                             "properties": {
                                 "token": {
                                     "$md.sensitive": true,
-                                    "description": "Bearer token used for authenticating the user with the Kubernetes API server.",
-                                    "title": "Token",
+                                    "description": "Authentication token used to authenticate with the Kubernetes API server. This is typically a service account token or user token.",
+                                    "title": "Bearer Token",
                                     "type": "string"
                                 }
                             },
                             "required": [
                                 "token"
                             ],
-                            "title": "User",
+                            "title": "User Authentication",
                             "type": "object"
                         }
                     },
@@ -71,11 +72,11 @@
                         "cluster",
                         "user"
                     ],
-                    "title": "Authentication",
+                    "title": "Cluster Authentication",
                     "type": "object"
                 },
                 "infrastructure": {
-                    "description": "Cloud specific Kubernetes configuration data.",
+                    "description": "Optional cloud provider-specific configuration for your Kubernetes cluster. Only needed if your cluster is managed by AWS EKS, Azure AKS, or GCP GKE.",
                     "oneOf": [
                         {
                             "$schema": "http://json-schema.org/draft-07/schema",
@@ -171,20 +172,22 @@
                             "type": "object"
                         }
                     ],
-                    "title": "Cloud provider configuration",
+                    "title": "Cloud Provider Information",
                     "type": "object"
                 }
             },
             "required": [
                 "authentication"
             ],
+            "title": "Kubernetes Cluster Configuration",
             "type": "object"
         },
         "specs": {
+            "description": "Kubernetes cluster specifications and optional cloud provider settings",
             "properties": {
                 "aws": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
+                    "description": "Optional AWS provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
                     "properties": {
                         "region": {
                             "$schema": "http://json-schema.org/draft-07/schema",
@@ -197,12 +200,12 @@
                         }
                     },
                     "required": [],
-                    "title": "AWS Artifact Specs",
+                    "title": "AWS Provider Settings",
                     "type": "object"
                 },
                 "azure": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
+                    "description": "Optional Azure provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
                     "properties": {
                         "region": {
                             "$schema": "http://json-schema.org/draft-07/schema",
@@ -214,12 +217,12 @@
                     "required": [
                         "region"
                     ],
-                    "title": "Azure Artifact Specs",
+                    "title": "Azure Provider Settings",
                     "type": "object"
                 },
                 "gcp": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "",
+                    "description": "Optional GCP provider configuration for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
                     "properties": {
                         "project": {
                             "title": "GCP Project",
@@ -242,12 +245,12 @@
                         }
                     },
                     "required": [],
-                    "title": "GCP Artifact Specs",
+                    "title": "GCP Provider Settings",
                     "type": "object"
                 },
                 "kubernetes": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "Kubernetes distribution and version specifications.",
+                    "description": "Specify the Kubernetes distribution, version, and cloud provider",
                     "properties": {
                         "cloud": {
                             "enum": [
@@ -277,13 +280,14 @@
                         "cloud",
                         "distribution"
                     ],
-                    "title": "Kubernetes",
+                    "title": "Kubernetes Distribution",
                     "type": "object"
                 }
             },
             "required": [
                 "kubernetes"
             ],
+            "title": "Kubernetes Configuration",
             "type": "object"
         }
     },

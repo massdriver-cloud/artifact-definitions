@@ -39,27 +39,33 @@
   ],
   "properties": {
     "data": {
-      "title": "Artifact Data",
+      "title": "IAM Role Configuration",
+      "description": "Configure your AWS IAM Role connection details",
       "type": "object",
       "required": [
         "arn"
       ],
       "properties": {
         "arn": {
+          "title": "AWS IAM Role ARN",
+          "description": "The Amazon Resource Name (ARN) of the IAM role that Massdriver will assume to access your AWS account. Format: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME",
           "$ref": "../types/aws-arn.json"
         },
         "external_id": {
           "type": "string",
           "title": "External ID",
-          "description": "An external ID is a piece of data that can be passed to the AssumeRole API of the Security Token Service (STS). You can then use the external ID in the condition element in a role's trust policy, allowing the role to be assumed only when a certain value is present in the external ID."
+          "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy."
         }
       }
     },
     "specs": {
-      "title": "Artifact Specs",
+      "title": "AWS Configuration",
+      "description": "Optional AWS-specific settings",
       "type": "object",
       "properties": {
         "aws": {
+          "title": "AWS Provider Settings",
+          "description": "Configure AWS provider options for Terraform. The region field is optional and serves as a fallback if you're not providing the region from your bundle configuration.",
           "$ref": "../specs/aws.json"
         }
       }
