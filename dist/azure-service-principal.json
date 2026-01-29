@@ -29,19 +29,21 @@
     "description": "",
     "properties": {
         "data": {
+            "description": "Enter your Azure service principal authentication details",
             "properties": {
                 "client_id": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "A valid UUID field",
+                    "description": "The application (client) ID of your Azure service principal. This is also called the Application ID.",
                     "examples": [
                         "123xyz99-ab34-56cd-e7f8-456abc1q2w3e"
                     ],
                     "format": "uuid",
-                    "title": "Client ID",
+                    "title": "Client ID (Application ID)",
                     "type": "string"
                 },
                 "client_secret": {
                     "$md.sensitive": true,
+                    "description": "The secret value (password) for your Azure service principal. This is created when you generate a client secret in Azure AD.",
                     "message": {
                         "pattern": "Not a valid Client Secret."
                     },
@@ -51,22 +53,22 @@
                 },
                 "subscription_id": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "A valid UUID field",
+                    "description": "The Azure subscription ID where Massdriver will provision and manage your infrastructure",
                     "examples": [
                         "123xyz99-ab34-56cd-e7f8-456abc1q2w3e"
                     ],
                     "format": "uuid",
-                    "title": "Subscription ID",
+                    "title": "Azure Subscription ID",
                     "type": "string"
                 },
                 "tenant_id": {
                     "$schema": "http://json-schema.org/draft-07/schema",
-                    "description": "A valid UUID field",
+                    "description": "The Azure Active Directory tenant ID (also called Directory ID) where your service principal is registered",
                     "examples": [
                         "123xyz99-ab34-56cd-e7f8-456abc1q2w3e"
                     ],
                     "format": "uuid",
-                    "title": "Tenant ID",
+                    "title": "Azure Tenant ID",
                     "type": "string"
                 }
             },
@@ -76,14 +78,10 @@
                 "client_secret",
                 "subscription_id"
             ],
-            "title": "Artifact Data",
+            "title": "Azure Service Principal Credentials",
             "type": "object"
         },
-        "specs": {
-            "properties": {},
-            "title": "Artifact Specs",
-            "type": "object"
-        }
+        "specs": {}
     },
     "required": [
         "data",
