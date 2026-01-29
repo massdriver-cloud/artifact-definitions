@@ -60,8 +60,7 @@
             "type": "object"
         },
         "specs": {
-            "additionalProperties": true,
-            "type": "object"
+            "additionalProperties": true
         }
     },
     "required": [
