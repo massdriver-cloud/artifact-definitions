@@ -75,11 +75,13 @@
             "title": "Azure Service Principal Credentials",
             "type": "object"
         },
-        "specs": {}
+        "specs": {
+            "additionalProperties": true,
+            "type": "object"
+        }
     },
     "required": [
-        "data",
-        "specs"
+        "data"
     ],
     "title": "Azure Service Principal",
     "type": "object"
