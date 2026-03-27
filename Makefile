@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 TAG=release-$(shell date +%s)
-MASS_BIN:=massdriver-legacy-cli
+MASS_BIN:=mass
 
 .PHONY: local.server local.shutdown
 
@@ -9,7 +9,7 @@ dist:
 	./hack/pack.rb
 	@mkdir -p dist
 	@rm -f .artifacts/*
-	@$(foreach artifact,$(wildcard definitions/artifacts/*.json),$(MASS_BIN) schema dereference $(artifact) > dist/$(notdir $(basename $(artifact))).json;)
+	@$(foreach artifact,$(wildcard definitions/artifacts/*.json),$(MASS_BIN) schema dereference -f $(artifact) > dist/$(notdir $(basename $(artifact))).json;)
 	@echo "Building dereferenced schemas to dist/"
 
 local.server: local.update
