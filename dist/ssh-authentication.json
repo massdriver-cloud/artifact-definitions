@@ -1,0 +1,73 @@
+{
+  "$md": {
+    "name": "ssh-authentication"
+  },
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "SSH public/private keypair with contextual user and hostname",
+  "properties": {
+    "hostname": {
+      "type": "string"
+    },
+    "private_key": {
+      "$md.sensitive": true,
+      "type": "string"
+    },
+    "public_key": {
+      "type": "string"
+    },
+    "specs": {
+      "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "region": {
+              "$schema": "http://json-schema.org/draft-07/schema",
+              "description": "AWS Region to provision in.",
+              "examples": [
+                "us-west-2"
+              ],
+              "title": "Region",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        },
+        "cryptography": {
+          "$schema": "http://json-schema.org/draft-07/schema",
+          "description": "",
+          "properties": {
+            "algorithm": {
+              "enum": [
+                "RSA"
+              ],
+              "title": "Algorithm",
+              "type": "string"
+            },
+            "key_size": {
+              "title": "Key Size",
+              "type": "integer"
+            }
+          },
+          "required": [],
+          "title": "AWS Artifact Specs",
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "user": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user",
+    "hostname",
+    "private_key",
+    "public_key"
+  ],
+  "title": "SSH Authentication",
+  "type": "object"
+}

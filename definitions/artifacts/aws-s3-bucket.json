@@ -7,33 +7,24 @@
     "type": "object",
     "title": "AWS S3 Bucket",
     "required": [
-        "data",
+        "infrastructure",
         "specs"
     ],
     "properties": {
-        "data": {
-            "title": "Artifact Data",
-            "type": "object",
+        "infrastructure": {
+            "title": "Infrastructure",
             "required": [
-                "infrastructure"
+                "arn"
             ],
+            "type": "object",
             "properties": {
-                "infrastructure": {
-                    "title": "Infrastructure",
-                    "required": [
-                        "arn"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "arn": {
-                            "$ref": "../types/aws-arn.json"
-                        }
-                    }
-                },
-                "security": {
-                    "$ref": "../types/aws-security.json"
+                "arn": {
+                    "$ref": "../types/aws-arn.json"
                 }
             }
+        },
+        "security": {
+            "$ref": "../types/aws-security.json"
         },
         "specs": {
             "title": "Artifact Specs",

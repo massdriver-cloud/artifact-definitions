@@ -12,35 +12,26 @@
   "title": "Azure Virtual Network",
   "description": "",
   "required": [
-    "data"
+    "infrastructure"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
+    "infrastructure": {
+      "title": "Infrastructure configuration",
       "required": [
-        "infrastructure"
+        "id",
+        "cidr",
+        "default_subnet_id"
       ],
+      "type": "object",
       "properties": {
-        "infrastructure": {
-          "title": "Infrastructure configuration",
-          "required": [
-            "id",
-            "cidr",
-            "default_subnet_id"
-          ],
-          "type": "object",
-          "properties": {
-            "id": {
-              "$ref": "../types/azure-resource-id.json"
-            },
-            "cidr": {
-              "$ref": "../types/cidr.json"
-            },
-            "default_subnet_id": {
-              "$ref": "../types/azure-resource-id.json"
-            }
-          }
+        "id": {
+          "$ref": "../types/azure-resource-id.json"
+        },
+        "cidr": {
+          "$ref": "../types/cidr.json"
+        },
+        "default_subnet_id": {
+          "$ref": "../types/azure-resource-id.json"
         }
       }
     },

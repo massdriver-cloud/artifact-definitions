@@ -7,24 +7,16 @@
   "title": "Elasticsearch Cluster",
   "description": "Elasticsearch cluster authentication and cloud-specific configuration.",
   "required": [
-    "data",
+    "infrastructure",
+    "authentication",
     "specs"
   ],
   "properties": {
-    "data": {
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
-      "properties": {
-        "infrastructure": {
-          "$ref": "../types/k8s-application-infrastructure.json"
-        },
-        "authentication": {
-          "$ref": "../types/elasticsearch-authentication.json"
-        }
-      }
+    "infrastructure": {
+      "$ref": "../types/k8s-application-infrastructure.json"
+    },
+    "authentication": {
+      "$ref": "../types/elasticsearch-authentication.json"
     },
     "specs": {
       "type": "object",

@@ -8,75 +8,67 @@
   "title": "Redis Cluster",
   "description": "Redis cluster authentication and cloud-specific configuration.",
   "required": [
-    "data"
+    "infrastructure",
+    "authentication",
+    "security"
   ],
   "properties": {
-    "data": {
+    "infrastructure": {
+      "title": "Cloud provider configuration",
+      "description": "Cloud specific Redis configuration data.",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "../types/aws-infrastructure-arn.json"
+        },
+        {
+          "$ref": "../types/gcp-infrastructure-grn.json"
+        },
+        {
+          "$ref": "../types/azure-cache-redis.json"
+        }
+      ]
+    },
+    "authentication": {
+      "title": "Authentication configuration",
       "type": "object",
       "required": [
-        "infrastructure",
-        "authentication",
-        "security"
+        "username",
+        "password",
+        "hostname",
+        "port"
       ],
       "properties": {
-        "infrastructure": {
-          "title": "Cloud provider configuration",
-          "description": "Cloud specific Redis configuration data.",
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-arn.json"
-            },
-            {
-              "$ref": "../types/gcp-infrastructure-grn.json"
-            },
-            {
-              "$ref": "../types/azure-cache-redis.json"
-            }
-          ]
+        "username": {
+          "type": "string"
         },
-        "authentication": {
-          "title": "Authentication configuration",
-          "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
-          "properties": {
-            "username": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string",
-              "$md.sensitive": true
-            },
-            "hostname": {
-              "type": "string"
-            },
-            "port": {
-              "$ref": "../types/port.json"
-            }
-          }
+        "password": {
+          "type": "string",
+          "$md.sensitive": true
         },
-        "security": {
-          "title": "Security details",
-          "description": "TBD",
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            },
-            {
-              "$ref": "../types/gcp-security.json"
-            },
-            {
-              "$ref": "../types/azure-security.json"
-            }
-          ]
+        "hostname": {
+          "type": "string"
+        },
+        "port": {
+          "$ref": "../types/port.json"
         }
       }
+    },
+    "security": {
+      "title": "Security details",
+      "description": "TBD",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "../types/aws-security.json"
+        },
+        {
+          "$ref": "../types/gcp-security.json"
+        },
+        {
+          "$ref": "../types/azure-security.json"
+        }
+      ]
     },
     "specs": {
       "type": "object",

@@ -8,36 +8,28 @@
   "title": "mongo Cluster",
   "description": "mongo cluster authentication and cloud-specific configuration.",
   "required": [
-    "data"
+    "infrastructure",
+    "authentication"
   ],
   "properties": {
-    "data": {
+    "infrastructure": {
+      "title": "Mongo Cluster Infrastructure",
+      "description": "Mongo cluster infrastructure configuration.",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication"
-      ],
-      "properties": {
-        "infrastructure": {
-          "title": "Mongo Cluster Infrastructure",
-          "description": "Mongo cluster infrastructure configuration.",
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/k8s-application-infrastructure.json"
-            },
-            {
-              "$ref": "../types/azure-infrastructure-ari.json"
-            },
-            {
-              "$ref": "../types/mongodbatlas-infrastructure.json"
-            }
-          ]
+      "oneOf": [
+        {
+          "$ref": "../types/k8s-application-infrastructure.json"
         },
-        "authentication": {
-          "$ref": "../types/mongo-authentication.json"
+        {
+          "$ref": "../types/azure-infrastructure-ari.json"
+        },
+        {
+          "$ref": "../types/mongodbatlas-infrastructure.json"
         }
-      }
+      ]
+    },
+    "authentication": {
+      "$ref": "../types/mongo-authentication.json"
     },
     "specs": {
       "type": "object",

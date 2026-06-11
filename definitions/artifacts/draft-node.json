@@ -7,29 +7,20 @@
   "title": "Draft Node",
   "description": "A resource that can be used to visually design architecture without provisioning real infrastructure.",
   "required": [
-    "data",
+    "name",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "name"
-      ],
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "name",
-          "description": "Name",
-          "examples": [
-            "Network",
-            "Cluster",
-            "Function",
-            "Queue"
-          ]
-        }
-      }
+    "name": {
+      "type": "string",
+      "title": "name",
+      "description": "Name",
+      "examples": [
+        "Network",
+        "Cluster",
+        "Function",
+        "Queue"
+      ]
     },
     "specs": {
       "type": "object",

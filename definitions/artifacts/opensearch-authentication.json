@@ -8,63 +8,55 @@
   "title": "OpenSearch Authentication",
   "description": "Authentication for OpenSearch",
   "required": [
-    "data",
+    "infrastructure",
+    "authentication",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
+    "security": {
+      "title": "Security",
+      "description": "IAM Security Policies",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "../types/aws-security.json"
+        }
+      ]
+    },
+    "infrastructure": {
+      "title": "infrastructure",
+      "description": "Cloud specific infrastructure details.",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "../types/aws-infrastructure-arn.json"
+        }
+      ]
+    },
+    "authentication": {
+      "title": "Authentication details",
+      "description": "Master Username & Password Authentication",
       "type": "object",
       "required": [
-        "infrastructure",
-        "authentication",
-        "security"
+        "username",
+        "password",
+        "hostname",
+        "port"
       ],
       "properties": {
-        "security": {
-          "title": "Security",
-          "description": "IAM Security Policies",
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            }
-          ]
+        "username": {
+          "type": "string"
         },
-        "infrastructure": {
-          "title": "infrastructure",
-          "description": "Cloud specific infrastructure details.",
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-arn.json"
-            }
-          ]
+        "password": {
+          "type": "string",
+          "$md.sensitive": true
         },
-        "authentication": {
-          "title": "Authentication details",
-          "description": "Master Username & Password Authentication",
-          "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
-          "properties": {
-            "username": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string",
-              "$md.sensitive": true
-            },
-            "hostname": {
-              "type": "string"
-            },
-            "port": {
-              "$ref": "../types/port.json"
-            }
-          }
+        "hostname": {
+          "type": "string"
+        },
+        "port": {
+          "$ref": "../types/port.json"
         }
       }
     },
