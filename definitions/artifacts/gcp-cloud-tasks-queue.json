@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$md": {
+    "icon": "https://raw.githubusercontent.com/massdriver-cloud/icons/refs/heads/main/public/gcp/cloud-tasks.svg",
+    "name": "gcp-cloud-tasks-queue"
+  },
+  "type": "object",
+  "title": "Tasks Queue",
+  "description": "GCP Cloud Tasks Queue",
+  "required": [
+    "infrastructure",
+    "security",
+    "specs"
+  ],
+  "properties": {
+    "infrastructure": {
+      "title": "Infrastructure configuration",
+      "description": "PubSub topic configuration",
+      "$ref": "../types/gcp-infrastructure-grn.json"
+    },
+    "security": {
+      "$ref": "../types/gcp-security.json"
+    },
+    "specs": {
+      "title": "Artifact Specs",
+      "type": "object",
+      "properties": {
+        "gcp": {
+          "$ref": "../specs/gcp.json"
+        }
+      }
+    }
+  }
+}
