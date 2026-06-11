@@ -8,74 +8,66 @@
   "title": "MySQL Authentication",
   "description": "Authentication parameters for a MySQL database",
   "required": [
-    "data",
+    "infrastructure",
+    "authentication",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
+    "security": {
+      "title": "Security details",
+      "description": "TBD",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "../types/aws-security.json"
+        },
+        {
+          "$ref": "../types/azure-security.json"
+        },
+        {
+          "$ref": "../types/gcp-security.json"
+        }
+      ]
+    },
+    "infrastructure": {
+      "title": "Cloud provider details",
+      "description": "Cloud specific MySQL configuration data.",
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "../types/aws-infrastructure-arn.json"
+        },
+        {
+          "$ref": "../types/azure-infrastructure-ari.json"
+        },
+        {
+          "$ref": "../types/gcp-infrastructure-name.json"
+        }
+      ]
+    },
+    "authentication": {
+      "title": "Authentication details",
       "type": "object",
       "required": [
-        "infrastructure",
-        "authentication",
-        "security"
+        "username",
+        "password",
+        "hostname",
+        "port"
       ],
       "properties": {
-        "security": {
-          "title": "Security details",
-          "description": "TBD",
-          "type": "object",
-          "anyOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            },
-            {
-              "$ref": "../types/azure-security.json"
-            },
-            {
-              "$ref": "../types/gcp-security.json"
-            }
-          ]
+        "username": {
+          "type": "string"
         },
-        "infrastructure": {
-          "title": "Cloud provider details",
-          "description": "Cloud specific MySQL configuration data.",
-          "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-arn.json"
-            },
-            {
-              "$ref": "../types/azure-infrastructure-ari.json"
-            },
-            {
-              "$ref": "../types/gcp-infrastructure-name.json"
-            }
-          ]
+        "password": {
+          "type": "string",
+          "$md.sensitive": true
         },
-        "authentication": {
-          "title": "Authentication details",
-          "type": "object",
-          "required": [
-            "username",
-            "password",
-            "hostname",
-            "port"
-          ],
-          "properties": {
-            "username": {
-              "type": "string"
-            },
-            "password": {
-              "type": "string",
-              "$md.sensitive": true
-            },
-            "hostname": {
-              "type": "string"
-            },
-            "port": {
-              "$ref": "../types/port.json"
-            }
-          }
+        "hostname": {
+          "type": "string"
+        },
+        "port": {
+          "$ref": "../types/port.json"
         }
       }
     },

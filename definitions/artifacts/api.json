@@ -7,39 +7,31 @@
   "title": "API / Web Service",
   "description": "An arbitrary API.",
   "required": [
-    "data",
+    "api",
     "specs"
   ],
   "properties": {
-    "data": {
+    "api": {
+      "required": ["hostname", "port"],
       "type": "object",
-      "required": [
-        "api"
-      ],
       "properties": {
-        "etc": {
-          "additionalProperties": true,
-          "type": "object",
-          "description": "This field can be used to store arbitrary data to pass to downstream services."
+        "hostname": {
+          "type": "string",
+          "description": "Service host name. If a second host name is needed for internal vs external access, a second artifact is recommended."
         },
-        "api": {
-          "required": ["hostname", "port"],
-          "type": "object",
-          "properties": {
-            "hostname": {
-              "type": "string",
-              "description": "Service host name. If a second host name is needed for internal vs external access, a second artifact is recommended."
-            },
-            "port": {
-              "$ref": "../types/port.json"
-            },
-            "protocol": {
-              "type": "string",
-              "description": "API protocol"
-            }
-          }
+        "port": {
+          "$ref": "../types/port.json"
+        },
+        "protocol": {
+          "type": "string",
+          "description": "API protocol"
         }
       }
+    },
+    "etc": {
+      "additionalProperties": true,
+      "type": "object",
+      "description": "This field can be used to store arbitrary data to pass to downstream services."
     },
     "specs": {
       "type": "object",

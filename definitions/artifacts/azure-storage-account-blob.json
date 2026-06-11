@@ -8,51 +8,42 @@
   "title": "Azure Blob Storage Account",
   "description": "",
   "required": [
-    "data",
+    "infrastructure",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
+    "infrastructure": {
+      "title": "Infrastructure configuration",
       "type": "object",
       "required": [
-        "infrastructure",
-        "security"
+        "ari",
+        "endpoint"
       ],
       "properties": {
-        "infrastructure": {
-          "title": "Infrastructure configuration",
-          "type": "object",
-          "required": [
-            "ari",
-            "endpoint"
-          ],
-          "properties": {
-            "ari": {
-              "$ref": "../types/azure-resource-id.json"
-            },
-            "endpoint": {
-              "$ref": "../types/azure-storage-account-endpoint.json"
-            }
-          }
+        "ari": {
+          "$ref": "../types/azure-resource-id.json"
         },
-        "authentication": {
-          "title": "Authentication configuration",
-          "type": "object",
-          "required": [
-            "sas_token"
-          ],
-          "properties": {
-            "sas_token": {
-              "title": "SAS Token",
-              "type": "string"
-            }
-          }
-        },
-        "security": {
-          "$ref": "../types/azure-security.json"
+        "endpoint": {
+          "$ref": "../types/azure-storage-account-endpoint.json"
         }
       }
+    },
+    "authentication": {
+      "title": "Authentication configuration",
+      "type": "object",
+      "required": [
+        "sas_token"
+      ],
+      "properties": {
+        "sas_token": {
+          "title": "SAS Token",
+          "type": "string"
+        }
+      }
+    },
+    "security": {
+      "$ref": "../types/azure-security.json"
     },
     "specs": {
       "title": "Artifact Specs",

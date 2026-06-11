@@ -8,77 +8,68 @@
   "title": "GCP Firebase Configuration",
   "description": "Configuration for authenticating with your Firestore databse",
   "required": [
-    "data",
+    "infrastructure",
+    "authentication",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
+    "infrastructure": {
+      "$ref": "../types/gcp-infrastructure-firestore.json"
+    },
+    "authentication": {
+      "title": "Authentication",
       "type": "object",
       "required": [
-        "infrastructure",
-        "authentication"
+        "firebase_config"
       ],
       "properties": {
-        "infrastructure": {
-          "$ref": "../types/gcp-infrastructure-firestore.json"
-        },
-        "authentication": {
-          "title": "Authentication",
+        "firebase_config": {
           "type": "object",
+          "title": "Firebase Config",
+          "description": "Firebase configuration object",
           "required": [
-            "firebase_config"
+            "apiKey",
+            "appId",
+            "authDomain",
+            "databaseUrl",
+            "measurementId",
+            "messageSenderId",
+            "projectId",
+            "storageBucket"
           ],
           "properties": {
-            "firebase_config": {
-              "type": "object",
-              "title": "Firebase Config",
-              "description": "Firebase configuration object",
-              "required": [
-                "apiKey",
-                "appId",
-                "authDomain",
-                "databaseUrl",
-                "measurementId",
-                "messageSenderId",
-                "projectId",
-                "storageBucket"
-              ],
-              "properties": {
-                "apiKey": {
-                  "type": "string",
-                  "title": "API KEY",
-                  "$md.sensitive": true
-                },
-                "appId": {
-                  "type": "string",
-                  "title": "App ID"
-                },
-                "authDomain": {
-                  "type": "string",
-                  "title": "Auth Domain"
-                },
-                "databaseUrl": {
-                  "type": "string",
-                  "title": "Database URL"
-                },
-                "measurementId": {
-                  "type": "string",
-                  "title": "Measurement ID"
-                },
-                "messageSenderId": {
-                  "type": "string",
-                  "title": "Message Sender ID"
-                },
-                "projectId": {
-                  "type": "string",
-                  "title": "Project ID"
-                },
-                "storageBucket": {
-                  "type": "string",
-                  "title": "Storage Bucket"
-                }
-              }
+            "apiKey": {
+              "type": "string",
+              "title": "API KEY",
+              "$md.sensitive": true
+            },
+            "appId": {
+              "type": "string",
+              "title": "App ID"
+            },
+            "authDomain": {
+              "type": "string",
+              "title": "Auth Domain"
+            },
+            "databaseUrl": {
+              "type": "string",
+              "title": "Database URL"
+            },
+            "measurementId": {
+              "type": "string",
+              "title": "Measurement ID"
+            },
+            "messageSenderId": {
+              "type": "string",
+              "title": "Message Sender ID"
+            },
+            "projectId": {
+              "type": "string",
+              "title": "Project ID"
+            },
+            "storageBucket": {
+              "type": "string",
+              "title": "Storage Bucket"
             }
           }
         }

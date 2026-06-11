@@ -8,27 +8,19 @@
   "title": "Azure FHIR Service",
   "description": "Azure FHIR Service authentication APIs.",
   "required": [
-    "data"
+    "infrastructure",
+    "authentication",
+    "security"
   ],
   "properties": {
-    "data": {
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "$ref": "../types/azure-infrastructure-ari.json"
-        },
-        "authentication": {
-          "$ref": "../types/azure-fhir-authentication.json"
-        },
-        "security": {
-          "$ref": "../types/azure-security.json"
-        }
-      }
+    "infrastructure": {
+      "$ref": "../types/azure-infrastructure-ari.json"
+    },
+    "authentication": {
+      "$ref": "../types/azure-fhir-authentication.json"
+    },
+    "security": {
+      "$ref": "../types/azure-security.json"
     },
     "specs": {
       "title": "Artifact Specs",

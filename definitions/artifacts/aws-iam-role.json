@@ -32,30 +32,20 @@
   },
   "type": "object",
   "title": "AWS IAM Role",
-  "description": "",
+  "description": "Configure your AWS IAM Role connection details",
   "required": [
-    "data"
+    "arn"
   ],
   "properties": {
-    "data": {
-      "title": "IAM Role Configuration",
-      "description": "Configure your AWS IAM Role connection details",
-      "type": "object",
-      "required": [
-        "arn"
-      ],
-      "properties": {
-        "arn": {
-          "title": "AWS IAM Role ARN",
-          "description": "The Amazon Resource Name (ARN) of the IAM role that Massdriver will assume to access your AWS account. Format: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME",
-          "$ref": "../types/aws-arn.json"
-        },
-        "external_id": {
-          "type": "string",
-          "title": "External ID",
-          "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy."
-        }
-      }
+    "arn": {
+      "title": "AWS IAM Role ARN",
+      "description": "The Amazon Resource Name (ARN) of the IAM role that Massdriver will assume to access your AWS account. Format: arn:aws:iam::ACCOUNT_ID:role/ROLE_NAME",
+      "$ref": "../types/aws-arn.json"
+    },
+    "external_id": {
+      "type": "string",
+      "title": "External ID",
+      "description": "Optional security token used to prevent confused deputy attacks. If your IAM role's trust policy requires an external ID, enter it here. This value must match the external ID condition in your role's trust policy."
     }
   }
 }

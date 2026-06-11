@@ -8,37 +8,28 @@
   "title": "AWS MSK Cluster",
   "description": "Highly scalable event bus managed by AWS.",
   "required": [
-    "data",
+    "infrastructure",
+    "authentication",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "authentication",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-arn.json"
-            }
-          ]
-        },
-        "authentication": {
-          "$ref": "../types/kafka-authentication.json"
-        },
-        "security": {
-          "oneOf": [
-            {
-              "$ref": "../types/aws-security.json"
-            }
-          ]
+    "infrastructure": {
+      "oneOf": [
+        {
+          "$ref": "../types/aws-infrastructure-arn.json"
         }
-      }
+      ]
+    },
+    "authentication": {
+      "$ref": "../types/kafka-authentication.json"
+    },
+    "security": {
+      "oneOf": [
+        {
+          "$ref": "../types/aws-security.json"
+        }
+      ]
     },
     "specs": {
       "title": "Artifact Specs",

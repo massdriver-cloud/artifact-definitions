@@ -8,28 +8,19 @@
   "title": "GCP PubSub Subscription",
   "description": "GCP PubSub Subscription",
   "required": [
-    "data",
+    "infrastructure",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
+    "infrastructure": {
+      "title": "Infrastructure configuration",
+      "description": "PubSub subscription configuration",
       "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "title": "Infrastructure configuration",
-          "description": "PubSub subscription configuration",
-          "type": "object",
-          "$ref": "../types/gcp-infrastructure-grn.json"
-        },
-        "security": {
-          "$ref": "../types/gcp-security.json"
-        }
-      }
+      "$ref": "../types/gcp-infrastructure-grn.json"
+    },
+    "security": {
+      "$ref": "../types/gcp-security.json"
     },
     "specs": {
       "title": "Artifact Specs",

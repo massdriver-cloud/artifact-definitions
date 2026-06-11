@@ -12,40 +12,31 @@
   "title": "GCP Subnetwork",
   "description": "A region-bound network for deploying GCP resources",
   "required": [
-    "data",
+    "infrastructure",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
+    "infrastructure": {
+      "title": "Infrastructure configuration",
       "required": [
-        "infrastructure"
+        "grn",
+        "cidr",
+        "gcp_global_network_grn",
+        "vpc_access_connector"
       ],
+      "type": "object",
       "properties": {
-        "infrastructure": {
-          "title": "Infrastructure configuration",
-          "required": [
-            "grn",
-            "cidr",
-            "gcp_global_network_grn",
-            "vpc_access_connector"
-          ],
-          "type": "object",
-          "properties": {
-            "grn": {
-              "$ref": "../types/gcp-grn.json"
-            },
-            "cidr": {
-              "$ref": "../types/cidr.json"
-            },
-            "gcp_global_network_grn": {
-              "$ref": "../types/gcp-grn.json"
-            },
-            "vpc_access_connector": {
-              "$ref": "../types/gcp-grn.json"
-            }
-          }
+        "grn": {
+          "$ref": "../types/gcp-grn.json"
+        },
+        "cidr": {
+          "$ref": "../types/cidr.json"
+        },
+        "gcp_global_network_grn": {
+          "$ref": "../types/gcp-grn.json"
+        },
+        "vpc_access_connector": {
+          "$ref": "../types/gcp-grn.json"
         }
       }
     },

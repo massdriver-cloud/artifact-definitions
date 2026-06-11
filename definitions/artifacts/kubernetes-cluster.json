@@ -7,7 +7,7 @@
       {
         "downloadButtonText": "Kube Config",
         "fileFormat": "yaml",
-        "template": "YXBpVmVyc2lvbjogdjEKY2x1c3RlcnM6CiAgLSBjbHVzdGVyOgogICAgICBjZXJ0aWZpY2F0ZS1hdXRob3JpdHktZGF0YToge3sgYXJ0aWZhY3QuZGF0YS5hdXRoZW50aWNhdGlvbi5jbHVzdGVyLmNlcnRpZmljYXRlLWF1dGhvcml0eS1kYXRhIH19CiAgICAgIHNlcnZlcjoge3sgYXJ0aWZhY3QuZGF0YS5hdXRoZW50aWNhdGlvbi5jbHVzdGVyLnNlcnZlciB9fQogICAgbmFtZToge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzLWNsdXN0ZXIiIH19CmNvbnRleHRzOgogIC0gY29udGV4dDoKICAgICAgY2x1c3Rlcjoge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzLWNsdXN0ZXIiIH19CiAgICAgIHVzZXI6IHt7IGFydGlmYWN0LmlkIHwgZGVmYXVsdDogIm1kLWs4cy11c2VyIiB9fQogICAgbmFtZToge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzIiB9fQpjdXJyZW50LWNvbnRleHQ6IHt7IGFydGlmYWN0LmlkIHwgZGVmYXVsdDogIm1kLWs4cyIgfX0Ka2luZDogQ29uZmlnCnByZWZlcmVuY2VzOiB7fQp1c2VyczoKICAtIG5hbWU6IHt7IGFydGlmYWN0LmlkIHwgZGVmYXVsdDogIm1kLWs4cy11c2VyIiB9fQogICAgdXNlcjoKICAgICAgdG9rZW46IHt7IGFydGlmYWN0LmRhdGEuYXV0aGVudGljYXRpb24udXNlci50b2tlbiB9fQo=",
+        "template": "YXBpVmVyc2lvbjogdjEKY2x1c3RlcnM6CiAgLSBjbHVzdGVyOgogICAgICBjZXJ0aWZpY2F0ZS1hdXRob3JpdHktZGF0YToge3sgYXJ0aWZhY3QuYXV0aGVudGljYXRpb24uY2x1c3Rlci5jZXJ0aWZpY2F0ZS1hdXRob3JpdHktZGF0YSB9fQogICAgICBzZXJ2ZXI6IHt7IGFydGlmYWN0LmF1dGhlbnRpY2F0aW9uLmNsdXN0ZXIuc2VydmVyIH19CiAgICBuYW1lOiB7eyBhcnRpZmFjdC5pZCB8IGRlZmF1bHQ6ICJtZC1rOHMtY2x1c3RlciIgfX0KY29udGV4dHM6CiAgLSBjb250ZXh0OgogICAgICBjbHVzdGVyOiB7eyBhcnRpZmFjdC5pZCB8IGRlZmF1bHQ6ICJtZC1rOHMtY2x1c3RlciIgfX0KICAgICAgdXNlcjoge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzLXVzZXIiIH19CiAgICBuYW1lOiB7eyBhcnRpZmFjdC5pZCB8IGRlZmF1bHQ6ICJtZC1rOHMiIH19CmN1cnJlbnQtY29udGV4dDoge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzIiB9fQpraW5kOiBDb25maWcKcHJlZmVyZW5jZXM6IHt9CnVzZXJzOgogIC0gbmFtZToge3sgYXJ0aWZhY3QuaWQgfCBkZWZhdWx0OiAibWQtazhzLXVzZXIiIH19CiAgICB1c2VyOgogICAgICB0b2tlbjoge3sgYXJ0aWZhY3QuYXV0aGVudGljYXRpb24udXNlci50b2tlbiB9fQo=",
         "templateLang": "liquid"
       }
     ],
@@ -26,78 +26,68 @@
   "title": "Kubernetes Cluster",
   "description": "Kubernetes cluster authentication and cloud-specific configuration.",
   "required": [
-    "data"
+    "authentication"
   ],
   "properties": {
-    "data": {
-      "title": "Kubernetes Cluster Configuration",
-      "description": "Configure your Kubernetes cluster connection details",
+    "infrastructure": {
+      "title": "Cloud Provider Information",
+      "description": "Optional cloud provider-specific configuration for your Kubernetes cluster. Only needed if your cluster is managed by AWS EKS, Azure AKS, or GCP GKE.",
       "type": "object",
+      "oneOf": [
+        {
+          "$ref": "../types/aws-infrastructure-eks.json"
+        },
+        {
+          "$ref": "../types/azure-infrastructure-aks.json"
+        },
+        {
+          "$ref": "../types/gcp-infrastructure-grn.json"
+        }
+      ]
+    },
+    "authentication": {
+      "type": "object",
+      "title": "Cluster Authentication",
+      "description": "Connection details required to authenticate with your Kubernetes cluster",
       "required": [
-        "authentication"
+        "cluster",
+        "user"
       ],
       "properties": {
-        "infrastructure": {
-          "title": "Cloud Provider Information",
-          "description": "Optional cloud provider-specific configuration for your Kubernetes cluster. Only needed if your cluster is managed by AWS EKS, Azure AKS, or GCP GKE.",
+        "cluster": {
           "type": "object",
-          "oneOf": [
-            {
-              "$ref": "../types/aws-infrastructure-eks.json"
-            },
-            {
-              "$ref": "../types/azure-infrastructure-aks.json"
-            },
-            {
-              "$ref": "../types/gcp-infrastructure-grn.json"
-            }
-          ]
-        },
-        "authentication": {
-          "type": "object",
-          "title": "Cluster Authentication",
-          "description": "Connection details required to authenticate with your Kubernetes cluster",
+          "title": "Cluster Connection Details",
+          "description": "Information about the Kubernetes API server you're connecting to",
           "required": [
-            "cluster",
-            "user"
+            "server",
+            "certificate-authority-data"
           ],
           "properties": {
-            "cluster": {
-              "type": "object",
-              "title": "Cluster Connection Details",
-              "description": "Information about the Kubernetes API server you're connecting to",
-              "required": [
-                "server",
-                "certificate-authority-data"
-              ],
-              "properties": {
-                "server": {
-                  "type": "string",
-                  "title": "Kubernetes API Server URL",
-                  "description": "The full URL endpoint of your Kubernetes API server (e.g., https://api.example.com:6443)"
-                },
-                "certificate-authority-data": {
-                  "type": "string",
-                  "title": "Certificate Authority Certificate",
-                  "description": "Base64-encoded certificate authority (CA) certificate used to verify the Kubernetes API server's identity. This ensures you're connecting to the correct cluster."
-                }
-              }
+            "server": {
+              "type": "string",
+              "title": "Kubernetes API Server URL",
+              "description": "The full URL endpoint of your Kubernetes API server (e.g., https://api.example.com:6443)"
             },
-            "user": {
-              "type": "object",
-              "title": "User Authentication",
-              "description": "Credentials for authenticating as a user with the Kubernetes cluster",
-              "required": [
-                "token"
-              ],
-              "properties": {
-                "token": {
-                  "type": "string",
-                  "title": "Bearer Token",
-                  "description": "Authentication token used to authenticate with the Kubernetes API server. This is typically a service account token or user token.",
-                  "$md.sensitive": true
-                }
-              }
+            "certificate-authority-data": {
+              "type": "string",
+              "title": "Certificate Authority Certificate",
+              "description": "Base64-encoded certificate authority (CA) certificate used to verify the Kubernetes API server's identity. This ensures you're connecting to the correct cluster."
+            }
+          }
+        },
+        "user": {
+          "type": "object",
+          "title": "User Authentication",
+          "description": "Credentials for authenticating as a user with the Kubernetes cluster",
+          "required": [
+            "token"
+          ],
+          "properties": {
+            "token": {
+              "type": "string",
+              "title": "Bearer Token",
+              "description": "Authentication token used to authenticate with the Kubernetes API server. This is typically a service account token or user token.",
+              "$md.sensitive": true
             }
           }
         }

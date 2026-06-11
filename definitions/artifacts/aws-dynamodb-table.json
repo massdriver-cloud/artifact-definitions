@@ -7,27 +7,20 @@
   "type": "object",
   "title": "AWS DynamoDB Table",
   "description": "",
-  "required": ["data", "specs"],
+  "required": ["infrastructure", "specs"],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
+    "infrastructure": {
+      "title": "Infrastructure",
+      "required": ["arn"],
       "type": "object",
-      "required": ["infrastructure"],
       "properties": {
-        "infrastructure": {
-          "title": "Infrastructure",
-          "required": ["arn"],
-          "type": "object",
-          "properties": {
-            "arn": {
-              "$ref": "../types/aws-arn.json"
-            }
-          }
-        },
-        "security": {
-          "$ref": "../types/aws-security.json"
+        "arn": {
+          "$ref": "../types/aws-arn.json"
         }
       }
+    },
+    "security": {
+      "$ref": "../types/aws-security.json"
     },
     "specs": {
       "title": "Artifact Specs",

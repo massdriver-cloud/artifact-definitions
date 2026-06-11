@@ -8,25 +8,16 @@
   "title": "GCP Healthcare Dataset",
   "description": "GCP Healthcare Dataset",
   "required": [
-    "data",
+    "infrastructure",
+    "security",
     "specs"
   ],
   "properties": {
-    "data": {
-      "title": "Artifact Data",
-      "type": "object",
-      "required": [
-        "infrastructure",
-        "security"
-      ],
-      "properties": {
-        "infrastructure": {
-          "$ref": "../types/gcp-infrastructure-grn.json"
-        },
-        "security": {
-          "$ref": "../types/gcp-security.json"
-        }
-      }
+    "infrastructure": {
+      "$ref": "../types/gcp-infrastructure-grn.json"
+    },
+    "security": {
+      "$ref": "../types/gcp-security.json"
     },
     "specs": {
       "title": "Artifact Specs",
